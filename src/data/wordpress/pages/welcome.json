@@ -1,0 +1,28 @@
+{
+  "id": 17135,
+  "title": "Welcome",
+  "slug": "welcome",
+  "url": "https://lifeskillsadvocate.com/welcome/",
+  "content": "Welcome! This is your success page where members are redirected after completing their registration.",
+  "excerpt": "",
+  "author": "ChrisHanson",
+  "published_date": "2024-09-02 19:50:23",
+  "modified_date": "2024-09-02 19:50:23",
+  "status": "publish",
+  "post_type": "page",
+  "post_parent": 17134,
+  "menu_order": 0,
+  "comments_open": false,
+  "ping_status": false,
+  "custom_meta": {
+    "thrive_content_set": "a:0:{}",
+    "wpil_sync_report3": "1",
+    "wpil_links_inbound_internal_count": "0",
+    "wpil_links_inbound_internal_count_data": "eJxLtDKwqq4FAAZPAf4=",
+    "wpil_links_outbound_internal_count": "0",
+    "wpil_links_outbound_internal_count_data": "eJxLtDKwqq4FAAZPAf4=",
+    "wpil_links_outbound_external_count": "0",
+    "wpil_links_outbound_external_count_data": "eJxLtDKwqq4FAAZPAf4=",
+    "wpil_sync_report2_time": "2024-09-15T00:53:10+00:00"
+  }
+}

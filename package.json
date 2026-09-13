@@ -1,0 +1,41 @@
+{
+  "name": "life-skills-advocate",
+  "version": "1.0.0",
+  "description": "Life Skills Advocate - An exact replica of lifeskillsadvocate.com",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "extract:metadata": "node scripts/extract-metadata.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:debug": "playwright test --debug",
+    "test:all": "npm run lint && npm run type-check && npm run test && npm run test:e2e"
+  },
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/xml2js": "^0.4.14",
+    "autoprefixer": "^10.5.4",
+    "jest": "^30.5.0",
+    "postcss": "^8.5.26",
+    "tailwindcss": "3.4.x",
+    "typescript": "^5.0.0"
+  }
+}
