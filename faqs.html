@@ -53,9 +53,10 @@
     />
 
     <style>
+      /* #region RESET + DESIGN TOKENS */
       /* =========================================================
-   0. RESET + DESIGN TOKENS  (kept identical to index.html)
-   ========================================================= */
+      0. RESET + DESIGN TOKENS  (kept identical to index.html)
+      ========================================================= */
       *,
       *::before,
       *::after {
@@ -157,10 +158,11 @@
       .section-tint {
         background: var(--tint);
       }
+      /* #endregion RESET + DESIGN TOKENS */
 
       /* =========================================================
-   1. BUTTONS
-   ========================================================= */
+      1. BUTTONS
+      ========================================================= */
       .btn {
         display: inline-flex;
         align-items: center;
@@ -191,25 +193,28 @@
         background: var(--blue-dark);
       }
 
-      /* =========================================================
-   2. HEADER / NAV  (kept identical to index.html)
-   ========================================================= */
+      /* #region 2. HEADER / NAV */
       .site-header {
-        display: flex;
-        justify-content: center;
         position: sticky;
         top: 0;
-        z-index: 500;
-        background: #fff;
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+        background-color: white;
+        --top-height: 100px;
+        display: flex;
+        justify-content: center;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-        transition: padding 0.2s ease;
+      }
+
+      .site-header.hide-top {
+        transform: translateY(calc(-1 * var(--top-height)));
       }
 
       .header-inner {
         width: 100%;
         display: flex;
         align-items: center;
-        gap: 24px;
+        gap: 5px;
         padding: 14px 30px;
         flex-direction: column;
         justify-content: center;
@@ -222,17 +227,25 @@
         align-self: flex-end;
         width: 60%;
       }
+
+      .header-cta-cont {
+        padding-bottom: 30px;
+        padding-top: 30px;
+      }
+
       .logo img {
-        height: 54px;
+        height: 115px;
         width: auto;
       }
+
       .site-header.scrolled .logo img {
-        height: 42px;
+        height: 115px;
       }
 
       .main-nav {
         flex: 1;
       }
+
       .main-nav > ul {
         display: flex;
         align-items: center;
@@ -240,9 +253,11 @@
         flex-wrap: wrap;
         gap: 4px;
       }
+
       .main-nav > ul > li {
         position: relative;
       }
+
       .main-nav > ul > li > a,
       .main-nav > ul > li > button.nav-top-link {
         display: flex;
@@ -255,16 +270,29 @@
         background: none;
         border: none;
         font-family: var(--font-body);
+        text-decoration: none;
+        border-bottom: none;
+        background-image: linear-gradient(var(--blue), var(--blue));
+        background-size: 0% 1px;
+        background-position: left bottom;
+        background-repeat: no-repeat;
+        transition:
+          background-size 0.4s ease-in-out,
+          color 0.4s ease-in-out;
+        padding-bottom: 4px;
       }
-      .main-nav > ul > li > a:hover,
+
       .main-nav > ul > li:hover > a,
       .main-nav > ul > li:hover > button.nav-top-link {
         color: var(--blue);
+        background-size: 100% 1px;
       }
+
       .caret {
         font-size: 11px;
         transition: transform 0.15s ease;
       }
+
       .main-nav > ul > li:hover .caret {
         transform: rotate(180deg);
       }
@@ -287,15 +315,18 @@
           visibility 0.15s ease;
         z-index: 50;
       }
+
       .main-nav > ul > li:hover > .dropdown,
       .main-nav > ul > li:focus-within > .dropdown {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
       }
+
       .dropdown li {
         position: relative;
       }
+
       .dropdown a,
       .dropdown button.nav-sub-toggle {
         display: flex;
@@ -311,22 +342,35 @@
         text-align: left;
         font-family: var(--font-body);
       }
+
       .dropdown a:hover,
       .dropdown button.nav-sub-toggle:hover {
         color: var(--blue);
         background: var(--tint);
       }
-      .dropdown a[aria-current="page"] {
-        color: var(--blue);
-        font-weight: 700;
-      }
+
       .dropdown .dropdown {
         top: -10px;
         left: 100%;
       }
+
       .header-cta {
         flex-shrink: 0;
       }
+
+      .header-cta:hover {
+        background: linear-gradient(
+          90deg,
+          var(--blue) 0%,
+          var(--blue) 45%,
+          var(--blue-light) 50%,
+          var(--blue) 55%,
+          var(--blue) 100%
+        );
+        background-size: 300% 100%;
+        animation: smooth 1s ease-in-out forwards;
+      }
+
       .nav-toggle {
         display: none;
         background: none;
@@ -338,6 +382,7 @@
         align-items: center;
         gap: 5px;
       }
+
       .nav-toggle span {
         display: block;
         width: 26px;
@@ -346,16 +391,45 @@
         border-radius: 2px;
       }
 
+      .main-nav > ul > li > a.adultinglikeachamp-cont {
+        justify-content: start;
+      }
+
+      .adultinglikeachamp-img img {
+        width: 24px;
+        height: auto;
+      }
+
+      .main-nav > ul > li > a.advocate360-cont {
+        justify-content: start;
+      }
+
+      .advocate360-img img {
+        width: 24px;
+        height: auto;
+      }
+      /* #endregion */
+
       /* =========================================================
    3. PAGE HERO
    ========================================================= */
       .page-hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
         padding: 50px 40px 10px;
-        background: var(--tint);
+        background-image:
+          linear-gradient(
+            158deg,
+            rgba(255, 255, 255, 0.28) 19%,
+            rgba(2, 3, 4, 0.65) 100%
+          ),
+          linear-gradient(rgba(54, 69, 79, 0.8), rgba(54, 69, 79, 0.8)) !important;
         text-align: center;
       }
       .page-hero h1 {
-        font-size: 40px;
+        color: var(--white);
       }
 
       /* =========================================================
@@ -407,15 +481,27 @@
         display: none;
       }
       .faq-item summary::after {
-        content: "+";
+        content: ""; /* Debe estar vacío */
+        display: inline-block;
+        width: 24px;
+        height: 24px;
         flex-shrink: 0;
-        font-size: 24px;
-        line-height: 1;
-        color: var(--blue);
+
+        /* Aquí aplicas el color que quieres que tenga el icono */
+        background-color: var(--navy);
+
+        /* Usamos el SVG codificado como máscara */
+        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z'/%3E%3C/svg%3E")
+          no-repeat center / contain;
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z'/%3E%3C/svg%3E")
+          no-repeat center / contain;
+
         transition: transform 0.2s ease;
       }
+
+      /* Ejemplo de cómo rotarlo al abrir el summary */
       .faq-item[open] summary::after {
-        transform: rotate(45deg);
+        transform: rotate(180deg);
       }
       .faq-item[open] summary {
         background: rgba(0, 174, 239, 0.15);
@@ -453,20 +539,24 @@
         margin: 0 auto 16px;
       }
 
+      /* #region 5. FOOTER */
+
       /* =========================================================
-   5. FOOTER  (kept identical to index.html)
-   ========================================================= */
+      5. RESPONSIVE
+      ========================================================= */
       .site-footer {
         background: var(--footer-bg);
         color: rgba(255, 255, 255, 0.85);
         padding: 50px 40px 30px;
       }
+
       .footer-social {
         display: flex;
         justify-content: center;
         gap: 18px;
         margin-bottom: 30px;
       }
+
       .footer-social a {
         width: 40px;
         height: 40px;
@@ -476,51 +566,89 @@
         align-items: center;
         justify-content: center;
       }
+
       .footer-social svg {
         width: 18px;
         height: 18px;
         fill: #222;
       }
+
       .footer-logos {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         gap: 30px;
         flex-wrap: wrap;
         max-width: var(--max);
         margin: 0 auto 26px;
+        position: relative;
+        z-index: 1;
       }
+
+      .footer-logos a,
       .footer-logos img {
-        height: 46px;
+        display: block;
+      }
+
+      .footer-logos a img {
+        height: 82px;
         width: auto;
         opacity: 0.9;
       }
+
+      .footer-logos > img {
+        height: 180px;
+        width: auto;
+        opacity: 0.9;
+      }
+
       .footer-divider {
         border: none;
         border-top: 1px dashed rgba(255, 255, 255, 0.35);
         max-width: 640px;
         margin: 0 auto 24px;
+        position: relative;
+        z-index: 0;
       }
+
       .footer-bottom {
         text-align: center;
-        font-size: 14px;
+        font-size: 15px;
       }
+
       .footer-bottom p {
         margin: 0 0 8px;
-        font-size: 14px;
+        font-size: 15px;
         color: rgba(255, 255, 255, 0.85);
       }
+
+      .footer-legal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px 0;
+        line-height: 1.8;
+      }
+
       .footer-legal a {
         color: rgba(255, 255, 255, 0.85);
       }
+
       .footer-legal a:hover {
         color: #fff;
         text-decoration: underline;
       }
+
       .footer-legal span {
         color: rgba(255, 255, 255, 0.4);
         margin: 0 6px;
       }
+
+      .footer-legal-secondary {
+        display: block;
+        margin-top: 4px;
+      }
+      /* #endregion */
 
       /* =========================================================
    6. RESPONSIVE
@@ -629,8 +757,9 @@
     </style>
   </head>
   <body>
+    <!-- #region HEADER -->
     <!-- =========================================================
-     HEADER  (copied verbatim from index.html)
+     HEADER
      ========================================================= -->
     <header class="site-header" id="siteHeader">
       <div class="header-inner">
@@ -648,11 +777,13 @@
               fetchpriority="high"
             />
           </a>
-          <a
-            class="btn btn-primary header-cta desktop-only"
-            href="https://lifeskillsadvocate.com/discovery/"
-            >Book A Complimentary Discovery Meeting</a
-          >
+          <div class="header-cta-cont">
+            <a
+              class="btn btn-primary header-cta"
+              href="https://lifeskillsadvocate.com/discovery/"
+              >Book A Complimentary Discovery Meeting</a
+            >
+          </div>
         </div>
 
         <div class="nav-scrim" id="navScrim"></div>
@@ -661,22 +792,26 @@
           <ul>
             <li>
               <button class="nav-top-link" aria-expanded="false">
-                About LSA Ezze <span class="caret">▾</span>
+                About LSA<span class="caret">▾</span>
               </button>
               <ul class="dropdown">
                 <li>
-                  <a href="meet-our-team.html">Meet Our Team</a>
+                  <a href="https://lifeskillsadvocate.com/meet-our-team/"
+                    >Meet Our Team</a
+                  >
                 </li>
                 <li>
                   <a
-                    href="discover-the-life-skills-advocate-difference.html"
+                    href="https://lifeskillsadvocate.com/discover-the-life-skills-advocate-difference/"
                     >Discover The LSA Difference</a
                   >
                 </li>
                 <li>
-                  <a href="core-values.html">Core Values</a>
+                  <a href="https://lifeskillsadvocate.com/core-values/"
+                    >Core Values</a
+                  >
                 </li>
-                <li><a href="faqs.html" aria-current="page">FAQs</a></li>
+                <li><a href="https://lifeskillsadvocate.com/faqs/">FAQs</a></li>
                 <li>
                   <a
                     href="https://lifeskillsadvocate.com/blog/what-is-neurodivergence/"
@@ -777,7 +912,11 @@
             <li>
               <a
                 href="https://lifeskillsadvocate.com/adulting-like-a-champ-workbook/"
-                class="nav-top-link"
+                class="nav-top-link adultinglikeachamp-cont"
+                ><span class="adultinglikeachamp-img"
+                  ><img
+                    src="assets/img/newicon.png"
+                    alt="adultinglikeachamp-img" /></span
                 >Adulting Like A Champ <span class="caret">▾</span></a
               >
               <ul class="dropdown">
@@ -874,7 +1013,7 @@
                     >Adulting Like A Champ</a
                   >
                 </li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="https://lifeskillsadvocate.com/blog/">Blog</a></li>
                 <li>
                   <a
                     href="https://lifeskillsadvocate.com/free-executive-functioning-worksheets/"
@@ -1007,7 +1146,15 @@
               </ul>
             </li>
             <li>
-              <a href="https://advocate360.app/" target="_blank" rel="noopener"
+              <a
+                href="https://advocate360.app/"
+                target="_blank"
+                rel="noopener"
+                class="advocate360-cont"
+                ><span class="advocate360-img"
+                  ><img
+                    src="assets/img/advocate360icon.png"
+                    alt="advocate360-img" /></span
                 >Advocate360</a
               >
             </li>
@@ -1024,6 +1171,7 @@
         </button>
       </div>
     </header>
+    <!-- #endregion HEADER -->
 
     <!-- =========================================================
      PAGE TITLE
@@ -1053,7 +1201,9 @@
               <div class="faq-body">
                 <p>
                   Life Skills Advocate is
-                  <strong>your partner in navigating your neurodiversity.</strong>
+                  <strong
+                    >your partner in navigating your neurodiversity.</strong
+                  >
                 </p>
                 <p>
                   We are a
@@ -1095,8 +1245,8 @@
                     target="_blank"
                     rel="noopener"
                     >cookbook</a
-                  >, and a variety of other materials designed to assist
-                  anyone seeking to understand and navigate neurodiversity.
+                  >, and a variety of other materials designed to assist anyone
+                  seeking to understand and navigate neurodiversity.
                 </p>
                 <p>
                   <strong
@@ -1159,31 +1309,31 @@
               <summary>Why does Life Skills Advocate exist?</summary>
               <div class="faq-body">
                 <p>
-                  Life Skills Advocate was inspired by the personal journey
-                  and professional insights of our founder, Chris Hanson.
-                  Living with ADHD, anxiety, and depression, Chris understood
-                  the challenges and the importance of having strong
-                  advocates. As a special education teacher, he recognized a
-                  gap in services that could empower neurodivergent
-                  individuals to navigate life's hurdles more effectively.
+                  Life Skills Advocate was inspired by the personal journey and
+                  professional insights of our founder, Chris Hanson. Living
+                  with ADHD, anxiety, and depression, Chris understood the
+                  challenges and the importance of having strong advocates. As a
+                  special education teacher, he recognized a gap in services
+                  that could empower neurodivergent individuals to navigate
+                  life's hurdles more effectively.
                 </p>
                 <p>
                   Chris wished for a support system during his own teenage
-                  years, a time of struggle and self-discovery. This wish
-                  became the driving force behind Life Skills Advocate. We
-                  exist to be the support that Chris wished he had, a beacon
-                  for neurodivergent teens, adults, and their families.
+                  years, a time of struggle and self-discovery. This wish became
+                  the driving force behind Life Skills Advocate. We exist to be
+                  the support that Chris wished he had, a beacon for
+                  neurodivergent teens, adults, and their families.
                 </p>
                 <p>
-                  Our approach is rooted in Chris's experiences and insights.
-                  We focus on building confidence, enhancing skills, and
-                  tackling obstacles that may stand in the way of achieving
-                  goals. We are more than a coaching service; we are a
-                  partner in your journey, providing a safe, understanding,
-                  and compassionate environment. We are here to help you
-                  navigate your path, celebrating your successes and
-                  supporting you through challenges. Life Skills Advocate is
-                  your partner in navigating your neurodiversity.
+                  Our approach is rooted in Chris's experiences and insights. We
+                  focus on building confidence, enhancing skills, and tackling
+                  obstacles that may stand in the way of achieving goals. We are
+                  more than a coaching service; we are a partner in your
+                  journey, providing a safe, understanding, and compassionate
+                  environment. We are here to help you navigate your path,
+                  celebrating your successes and supporting you through
+                  challenges. Life Skills Advocate is your partner in navigating
+                  your neurodiversity.
                 </p>
                 <p>
                   Meet the team
@@ -1210,8 +1360,8 @@
                     rel="noopener"
                     >Real-Life Executive Function Coaching</a
                   >
-                  to support neurodivergent individuals across various stages
-                  of life, including
+                  to support neurodivergent individuals across various stages of
+                  life, including
                   <a
                     href="https://lifeskillsadvocate.com/executive-function-coaching-for-high-school-students/"
                     target="_blank"
@@ -1267,26 +1417,24 @@
                     <strong>Holistic:</strong>
                     We take a holistic approach, considering the well-being of
                     the entire family, when applicable. We work closely with
-                    families to support the student's development within
-                    their broader environment.
+                    families to support the student's development within their
+                    broader environment.
                   </li>
                   <li>
                     <strong>We Go Beyond Executive Functioning:</strong>
                     We specialize in supporting executive functioning skills
                     while also addressing the social/emotional aspects of
-                    neurodivergence. Our coaching approach supports students
-                    in navigating both practical and social/emotional
-                    challenges, helping them manage school and life more
-                    effectively.
+                    neurodivergence. Our coaching approach supports students in
+                    navigating both practical and social/emotional challenges,
+                    helping them manage school and life more effectively.
                   </li>
                   <li>
                     <strong>Inclusive and Safe Environment:</strong>
-                    We provide a safe and inclusive space for LGBTQIA+
-                    clients, understanding and respecting the unique
-                    intersection of neurodivergence and LGBTQIA+ issues. Our
-                    approach is tailored to support the whole person,
-                    recognizing the diverse challenges and experiences our
-                    clients may face.
+                    We provide a safe and inclusive space for LGBTQIA+ clients,
+                    understanding and respecting the unique intersection of
+                    neurodivergence and LGBTQIA+ issues. Our approach is
+                    tailored to support the whole person, recognizing the
+                    diverse challenges and experiences our clients may face.
                   </li>
                   <li>
                     <strong>Gentle Accountability Support:</strong>
@@ -1296,8 +1444,7 @@
                 </ul>
                 <p>
                   Read more about what makes LSA unique by clicking
-                  <a
-                    href="discover-the-life-skills-advocate-difference.html"
+                  <a href="discover-the-life-skills-advocate-difference.html"
                     >here</a
                   >.
                 </p>
@@ -1345,10 +1492,10 @@
                   In cases where our clients are dealing with mental health
                   conditions, we believe in a collaborative approach. While we
                   provide coaching to enhance executive functioning skills and
-                  autonomy, we sometimes recommend that clients also engage
-                  with a mental health counselor. This collaborative approach
-                  ensures that our clients receive comprehensive support that
-                  addresses all aspects of their well-being.
+                  autonomy, we sometimes recommend that clients also engage with
+                  a mental health counselor. This collaborative approach ensures
+                  that our clients receive comprehensive support that addresses
+                  all aspects of their well-being.
                 </p>
                 <p>
                   While we acknowledge that a diagnosis may be part of our
@@ -1369,16 +1516,16 @@
                   At Life Skills Advocate, we are committed to providing the
                   most effective support for our clients. However, we
                   acknowledge that coaching may not be the best fit for
-                  everyone. There are certain situations where you or your
-                  child might be better served by another professional:
+                  everyone. There are certain situations where you or your child
+                  might be better served by another professional:
                 </p>
                 <ul>
                   <li>
                     <strong>Lack of commitment to the coaching process</strong>:
-                    Coaching requires active participation and a willingness
-                    to make changes. If an individual is not ready or willing
-                    to engage in the process, they might not benefit fully
-                    from coaching. In such cases,
+                    Coaching requires active participation and a willingness to
+                    make changes. If an individual is not ready or willing to
+                    engage in the process, they might not benefit fully from
+                    coaching. In such cases,
                     <a
                       href="https://lifeskillsadvocate.com/neurodivergent-friendly-tools-resources/"
                       target="_blank"
@@ -1392,8 +1539,8 @@
                     <strong
                       >Expectation that the coach will do all the work</strong
                     >: Coaching is a partnership, and it requires effort from
-                    both the coach and the client. If a client expects the
-                    coach to solve all their problems without their active
+                    both the coach and the client. If a client expects the coach
+                    to solve all their problems without their active
                     involvement, coaching might not be the best fit.
                   </li>
                   <li>
@@ -1403,8 +1550,7 @@
                     >: Safety is paramount in any coaching relationship. If
                     there's a risk of harm to oneself or others, a different
                     type of professional support may be needed. Options may
-                    include dialing 911 or 988
-                    (<a
+                    include dialing 911 or 988 (<a
                       href="https://988lifeline.org/"
                       target="_blank"
                       rel="nofollow noopener"
@@ -1424,8 +1570,8 @@
                       current help from a qualified mental health
                       professional</strong
                     >: While coaching can support personal growth and skill
-                    development, it's not a substitute for professional
-                    mental health services. Organizations like NAMI or
+                    development, it's not a substitute for professional mental
+                    health services. Organizations like NAMI or
                     <a
                       href="https://lifeskillsadvocate.com/neurodivergent-friendly-tools-resources/"
                       target="_blank"
@@ -1437,29 +1583,29 @@
                   </li>
                   <li>
                     <strong>Seeking a quick fix or a magic solution</strong>:
-                    Real change takes time and effort. If you're looking for
-                    an immediate solution, coaching might not meet your
+                    Real change takes time and effort. If you're looking for an
+                    immediate solution, coaching might not meet your
                     expectations.
                   </li>
                   <li>
                     <strong>Looking for respite care</strong>: Coaching is an
-                    active, engaging process, not a form of supervision.
-                    Respite care services through your
+                    active, engaging process, not a form of supervision. Respite
+                    care services through your
                     <a
                       href="https://www.nasddds.org/state-agencies/"
                       target="_blank"
                       rel="nofollow noopener"
                       >state's DDA office</a
                     >
-                    or home health care agencies might be better suited to
-                    meet these needs.
+                    or home health care agencies might be better suited to meet
+                    these needs.
                   </li>
                   <li>
                     <strong
-                      >Active overuse of drugs or alcohol without current
-                      help from a qualified professional</strong
-                    >: Substance use issues can complicate the coaching
-                    process and may require specialized support.
+                      >Active overuse of drugs or alcohol without current help
+                      from a qualified professional</strong
+                    >: Substance use issues can complicate the coaching process
+                    and may require specialized support.
                     <a
                       href="https://www.samhsa.gov/find-help/national-helpline"
                       target="_blank"
@@ -1467,14 +1613,12 @@
                       >SAMHSA</a
                     >
                     has a national helpline and organizations like Alcoholics
-                    Anonymous
-                    (<a
+                    Anonymous (<a
                       href="https://www.aa.org/"
                       target="_blank"
                       rel="nofollow noopener"
                       >AA</a
-                    >) or Narcotics Anonymous
-                    (<a
+                    >) or Narcotics Anonymous (<a
                       href="https://na.org/"
                       target="_blank"
                       rel="nofollow noopener"
@@ -1487,12 +1631,10 @@
                     frequently missed, it may hinder progress.
                   </li>
                   <li>
-                    <strong
-                      >Immediate crisis or emergency situation</strong
-                    >: Coaching is not equipped to handle immediate crises or
-                    emergency situations. In such cases, it's important to
-                    seek help from emergency services by dialing 911 or 988
-                    (<a
+                    <strong>Immediate crisis or emergency situation</strong>:
+                    Coaching is not equipped to handle immediate crises or
+                    emergency situations. In such cases, it's important to seek
+                    help from emergency services by dialing 911 or 988 (<a
                       href="https://988lifeline.org/"
                       target="_blank"
                       rel="nofollow noopener"
@@ -1501,16 +1643,16 @@
                   </li>
                 </ul>
                 <p>
-                  We believe in the importance of finding the right support
-                  for your needs. If you find yourself in any of these
-                  situations and need a referral, please feel free to
+                  We believe in the importance of finding the right support for
+                  your needs. If you find yourself in any of these situations
+                  and need a referral, please feel free to
                   <a
                     href="https://lifeskillsadvocate.com/contact/"
                     target="_blank"
                     rel="nofollow noopener"
                     >contact us</a
-                  >. We're here to help and will do our best to connect you
-                  with a qualified professional.
+                  >. We're here to help and will do our best to connect you with
+                  a qualified professional.
                 </p>
               </div>
             </details>
@@ -1520,9 +1662,9 @@
               <div class="faq-body">
                 <p>
                   At LSA, we believe in a flexible yet structured approach to
-                  our coaching sessions. Each session is tailored to the
-                  unique needs of our clients, ensuring a consistent and
-                  effective framework:
+                  our coaching sessions. Each session is tailored to the unique
+                  needs of our clients, ensuring a consistent and effective
+                  framework:
                 </p>
                 <div class="faq-image">
                   <img
@@ -1535,8 +1677,8 @@
                   <li>
                     <strong>Check-In</strong>: We start by assessing progress
                     and discussing any challenges encountered since the last
-                    session. This is a time for reflection and open
-                    conversation about your experiences.
+                    session. This is a time for reflection and open conversation
+                    about your experiences.
                   </li>
                   <li>
                     <strong>Recap</strong>: Review the previous session's
@@ -1563,8 +1705,7 @@
                     <strong>Accountability</strong>: We provide regular
                     check-ins throughout the week, offering support and
                     encouragement as needed. This is a key part of our service
-                    and is included at
-                    <strong>no extra cost</strong>.
+                    and is included at <strong>no extra cost</strong>.
                   </li>
                 </ul>
                 <p>
@@ -1580,21 +1721,19 @@
               <div class="faq-body">
                 <p>
                   We understand that
-                  <strong>success is a deeply personal concept</strong>,
-                  varying from one individual to another. Therefore, we
-                  collaborate closely with our clients to help them define
-                  their unique goals and learn how to track their progress
-                  towards achieving them.
+                  <strong>success is a deeply personal concept</strong>, varying
+                  from one individual to another. Therefore, we collaborate
+                  closely with our clients to help them define their unique
+                  goals and learn how to track their progress towards achieving
+                  them.
                 </p>
                 <p>
                   We utilize a
-                  <strong
-                    >range of assessment tools and techniques</strong
-                  >
+                  <strong>range of assessment tools and techniques</strong>
                   to monitor progress and evaluate the effectiveness of our
                   coaching strategies (e.g. SMART-A goals). This allows us to
-                  adapt our approach as needed, ensuring we're always
-                  providing the most beneficial support possible.
+                  adapt our approach as needed, ensuring we're always providing
+                  the most beneficial support possible.
                 </p>
                 <p>
                   However, we believe that the most valuable feedback comes
@@ -1622,9 +1761,9 @@
               <div class="faq-body">
                 <p>
                   When appropriate and at the discretion of our clients and
-                  their families, in our coaching process, we work closely
-                  with families, teachers, and other professionals who are
-                  part of our clients' support network.
+                  their families, in our coaching process, we work closely with
+                  families, teachers, and other professionals who are part of
+                  our clients' support network.
                 </p>
                 <p>
                   This collaborative approach allows us to ensure that the
@@ -1636,10 +1775,10 @@
                   and that a common language is being used.
                 </p>
                 <p>
-                  By aligning these strategies, we can significantly enhance
-                  the likelihood of skills being effectively adopted and used
-                  consistently. This collaborative approach is an integral
-                  part of our service and is key to our clients' success.
+                  By aligning these strategies, we can significantly enhance the
+                  likelihood of skills being effectively adopted and used
+                  consistently. This collaborative approach is an integral part
+                  of our service and is key to our clients' success.
                 </p>
               </div>
             </details>
@@ -1648,8 +1787,8 @@
               <summary>Where do coaching sessions take place?</summary>
               <div class="faq-body">
                 <p>
-                  We meet with clients virtually over Zoom, which enables us
-                  to connect with you wherever you are.
+                  We meet with clients virtually over Zoom, which enables us to
+                  connect with you wherever you are.
                 </p>
               </div>
             </details>
@@ -1663,16 +1802,15 @@
                     accountability check-ins between sessions</strong
                   >
                   at no additional cost. We understand that questions and
-                  challenges don't always arise during scheduled sessions, so
-                  we maintain open lines of communication with our clients and
+                  challenges don't always arise during scheduled sessions, so we
+                  maintain open lines of communication with our clients and
                   their families.
                 </p>
                 <p>
                   However, it's important to note that we are mindful of the
-                  balance between providing support and fostering
-                  independence. Our goal is to help our clients autonomy and
-                  independence. This is why we carefully monitor what this
-                  support looks like
+                  balance between providing support and fostering independence.
+                  Our goal is to help our clients autonomy and independence.
+                  This is why we carefully monitor what this support looks like
                   <strong>to ensure it empowers rather than enables.</strong>
                 </p>
               </div>
@@ -1684,17 +1822,16 @@
               </summary>
               <div class="faq-body">
                 <p>
-                  Coaching and therapy serve different but complementary
-                  roles. We often say that while coaching isn't therapy, it's
-                  innately therapeutic.
+                  Coaching and therapy serve different but complementary roles.
+                  We often say that while coaching isn't therapy, it's innately
+                  therapeutic.
                 </p>
                 <p>
                   In general terms, coaching focuses on actionable,
                   forward-looking strategies and tangible outcomes. We
-                  concentrate on enhancing executive functioning skills,
-                  leading to improvements in daily life, work, and school
-                  performance, and a better understanding of one's own
-                  neurodivergence.
+                  concentrate on enhancing executive functioning skills, leading
+                  to improvements in daily life, work, and school performance,
+                  and a better understanding of one's own neurodivergence.
                 </p>
                 <p>
                   On the other hand, therapy typically delves into emotions,
@@ -1703,10 +1840,10 @@
                 </p>
                 <p>
                   While we frequently collaborate with therapists to provide a
-                  comprehensive support system, our coaching services should
-                  not replace professional mental health or medical care.
-                  It's important to remember that our coaches do not act as
-                  mental health counselors or medical professionals.
+                  comprehensive support system, our coaching services should not
+                  replace professional mental health or medical care. It's
+                  important to remember that our coaches do not act as mental
+                  health counselors or medical professionals.
                 </p>
                 <div class="faq-image">
                   <img
@@ -1739,8 +1876,8 @@
 
             <details class="faq-item">
               <summary>
-                Can I use insurance or access a sliding scale discount for
-                your services?
+                Can I use insurance or access a sliding scale discount for your
+                services?
               </summary>
               <div class="faq-body">
                 <p>
@@ -1766,10 +1903,9 @@
                 <p>
                   To further expand the accessibility of our services, we are
                   actively exploring local, state, and federal grants and
-                  partnerships with organizations that align with our
-                  mission. If you are aware of any grants or funding
-                  opportunities that could extend our reach, please contact us
-                  at
+                  partnerships with organizations that align with our mission.
+                  If you are aware of any grants or funding opportunities that
+                  could extend our reach, please contact us at
                   <a href="mailto:admin@lifeskillsadvocate.com"
                     >admin@lifeskillsadvocate.com</a
                   >.
@@ -1785,18 +1921,18 @@
                 <p>Short answer: <strong>no</strong>.</p>
                 <p>
                   While our coaching program is
-                  <strong>not bound by a fixed duration</strong>, we recommend
-                  a
+                  <strong>not bound by a fixed duration</strong>, we recommend a
                   <strong>minimum commitment of 12 weekly sessions</strong>
                   to see meaningful change. However, the exact length of
-                  coaching varies based on your student's goals and
-                  situation.
+                  coaching varies based on your student's goals and situation.
                 </p>
               </div>
             </details>
 
             <details class="faq-item">
-              <summary>Do you have any client case studies you can share?</summary>
+              <summary>
+                Do you have any client case studies you can share?
+              </summary>
               <div class="faq-body">
                 <p>Yes, we do!</p>
                 <p>
@@ -1816,9 +1952,9 @@
               <div class="faq-body">
                 <p>
                   <a href="meet-our-team.html">Click here</a>
-                  to visit our team page. Each of our coaches has their very
-                  own page on our website where you can read their bio and
-                  learn more about their coaching style.
+                  to visit our team page. Each of our coaches has their very own
+                  page on our website where you can read their bio and learn
+                  more about their coaching style.
                 </p>
               </div>
             </details>
@@ -1830,8 +1966,8 @@
                   At Life Skills Advocate, our coaches bring a
                   <strong>wealth of diverse experiences</strong>
                   to their roles. Each coach has
-                  <strong>personal lived experience with neurodivergence</strong>,
-                  which allows them to connect deeply with the students and
+                  <strong>personal lived experience with neurodivergence</strong
+                  >, which allows them to connect deeply with the students and
                   families they work with.
                 </p>
                 <p>
@@ -1847,9 +1983,8 @@
                   <strong>comprehensive internal training</strong>
                   and
                   <strong>regular professional development</strong>
-                  to ensure that our coaches are equipped with the latest
-                  tools and strategies to support your high schooler
-                  effectively.
+                  to ensure that our coaches are equipped with the latest tools
+                  and strategies to support your high schooler effectively.
                 </p>
               </div>
             </details>
@@ -1864,9 +1999,9 @@
                     target="_blank"
                     rel="noopener"
                     >complimentary discovery meeting</a
-                  >, you'll be prompted to fill out a short form. On that
-                  form, there's a place to optionally select a specific coach
-                  you'd like to work with.
+                  >, you'll be prompted to fill out a short form. On that form,
+                  there's a place to optionally select a specific coach you'd
+                  like to work with.
                 </p>
                 <p>
                   <a href="meet-our-team.html">Click here</a>
@@ -1879,10 +2014,10 @@
               <summary>Can I request to switch coaches if needed?</summary>
               <div class="faq-body">
                 <p>
-                  Yes, we are happy to accommodate your preference for a
-                  coach. We want you to feel comfortable and confident in the
-                  coaching relationship, so please don't hesitate to let us
-                  know if you'd like to switch coaches.
+                  Yes, we are happy to accommodate your preference for a coach.
+                  We want you to feel comfortable and confident in the coaching
+                  relationship, so please don't hesitate to let us know if you'd
+                  like to switch coaches.
                 </p>
               </div>
             </details>
@@ -1936,11 +2071,10 @@
               </summary>
               <div class="faq-body">
                 <p>
-                  Yes. While coaching is a private-pay, non-clinical service
-                  and is not typically covered by insurance, some clients
-                  reduce their costs through FSA/HSA funds, employer
-                  programs, or our partnership with the Canopy Neurodiversity
-                  Foundation.
+                  Yes. While coaching is a private-pay, non-clinical service and
+                  is not typically covered by insurance, some clients reduce
+                  their costs through FSA/HSA funds, employer programs, or our
+                  partnership with the Canopy Neurodiversity Foundation.
                 </p>
                 <p>
                   For details and simple step-by-step guidance, visit our
@@ -1989,22 +2123,22 @@
 
             <details class="faq-item">
               <summary>
-                How can I refer someone who I think might be a good fit for
-                your services?
+                How can I refer someone who I think might be a good fit for your
+                services?
               </summary>
               <div class="faq-body">
                 <p>
-                  If you know someone who might benefit from our services,
-                  we'd be delighted to hear from you. The best way to connect
-                  us with potential clients is by sharing our email address,
+                  If you know someone who might benefit from our services, we'd
+                  be delighted to hear from you. The best way to connect us with
+                  potential clients is by sharing our email address,
                   <a href="mailto:admin@lifeskillsadvocate.com"
                     >admin@lifeskillsadvocate.com</a
                   >.
                 </p>
                 <p>
                   If you'd like to discuss a specific case before making a
-                  referral, we're more than happy to schedule a meeting.
-                  Simply reach out to us at the same email address.
+                  referral, we're more than happy to schedule a meeting. Simply
+                  reach out to us at the same email address.
                 </p>
               </div>
             </details>
@@ -2013,12 +2147,11 @@
               <summary>Is Life Skills Advocate currently hiring?</summary>
               <div class="faq-body">
                 <p>
-                  We're always eager to connect with individuals who align
-                  with our mission and
-                  <a href="core-values.html">core values</a>. We regularly
-                  seek out coaches, both locally and virtually, to join our
-                  team. For the most up-to-date list of open positions,
-                  please visit our
+                  We're always eager to connect with individuals who align with
+                  our mission and
+                  <a href="core-values.html">core values</a>. We regularly seek
+                  out coaches, both locally and virtually, to join our team. For
+                  the most up-to-date list of open positions, please visit our
                   <a
                     href="https://lifeskillsadvocate.com/careers/"
                     target="_blank"
@@ -2037,8 +2170,8 @@
                   for future consideration.
                 </p>
                 <p>
-                  We appreciate your interest in becoming part of our mission
-                  to empower neurodiverse individuals and their families.
+                  We appreciate your interest in becoming part of our mission to
+                  empower neurodiverse individuals and their families.
                 </p>
               </div>
             </details>
@@ -2047,8 +2180,8 @@
               <summary>Where can I read your website's legal pages?</summary>
               <div class="faq-body">
                 <p>
-                  Our legal pages can be found in the bulleted list below and
-                  in the footer section:
+                  Our legal pages can be found in the bulleted list below and in
+                  the footer section:
                 </p>
                 <ul>
                   <li>
@@ -2091,8 +2224,9 @@
       </section>
     </main>
 
+    <!-- #region FOOTER -->
     <!-- =========================================================
-     FOOTER  (copied verbatim from index.html)
+     FOOTER
      ========================================================= -->
     <footer class="site-footer">
       <div class="footer-social">
@@ -2111,10 +2245,10 @@
           target="_blank"
           rel="nofollow noopener"
           aria-label="Instagram"
-          ><svg viewBox="0 0 448 512">
+          ><svg viewBox="0 0 448 512" data-id="instagram" data-name="">
             <path
-              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3a26.8 26.8 0 1 1-53.6 0 26.8 26.8 0 0 1 53.6 0zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-            /></svg
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+            ></path></svg
         ></a>
         <a
           href="https://www.pinterest.com/LifeSkillsAdvocate/"
@@ -2139,17 +2273,17 @@
       </div>
 
       <div class="footer-logos">
+        <img
+          src="assets/img/Life-Skills-Advocate-white-cropped.png"
+          alt="Life Skills Advocate"
+          loading="lazy"
+        />
         <a href="https://neurowyld.com/" target="_blank" rel="noopener"
           ><img
             src="assets/img/Neurowyld-Featured-Image-5-e1758586279818.png"
             alt="Neurowyld"
             loading="lazy"
         /></a>
-        <img
-          src="assets/img/Life-Skills-Advocate-white-cropped.png"
-          alt="Life Skills Advocate"
-          loading="lazy"
-        />
       </div>
 
       <hr class="footer-divider" />
@@ -2172,8 +2306,14 @@
           ><span>&bull;</span>
           <a href="https://lifeskillsadvocate.com/contact/">Contact</a>
         </p>
+        <p class="footer-legal footer-legal-secondary">
+          <a href="https://lifeskillsadvocate.com/privacy-policy/"
+            >Privacy Settings</a
+          >
+        </p>
       </div>
     </footer>
+    <!-- #endregion FOOTER -->
 
     <script>
       (function () {
@@ -2234,6 +2374,53 @@
           });
         });
       })();
+
+      // #region Header JS
+      //header visible hidden
+      document.addEventListener("DOMContentLoaded", () => {
+        const siteHeader = document.getElementById("siteHeader");
+        const headerTop = document.querySelector(".header-top");
+        let ultimoScroll = window.scrollY;
+
+        // 1. Función para medir la altura exacta del .header-top
+        function actualizarAlturaTop() {
+          if (headerTop && siteHeader) {
+            // Calculamos la altura en píxeles mas margenes y paddings
+            margins =
+              parseFloat(getComputedStyle(headerTop).marginTop) +
+              parseFloat(getComputedStyle(headerTop).marginBottom);
+            paddings =
+              parseFloat(getComputedStyle(headerTop).paddingTop) +
+              parseFloat(getComputedStyle(headerTop).paddingBottom);
+            var margenManual = 10; // Ajusta este valor según sea necesario
+            const altura =
+              headerTop.offsetHeight + margins + paddings + margenManual;
+            // Se la pasamos a la variable CSS del header
+            siteHeader.style.setProperty("--top-height", `${altura}px`);
+          }
+        }
+
+        // Calculamos al cargar la página y por si el usuario gira el móvil o achica la ventana
+        actualizarAlturaTop();
+        window.addEventListener("resize", actualizarAlturaTop);
+
+        // 2. Lógica del Scroll
+        window.addEventListener("scroll", () => {
+          const scrollActual = window.scrollY;
+
+          // Si bajamos, y ya pasamos la altura inicial (para que no titile arriba del todo)
+          if (scrollActual > ultimoScroll && scrollActual > 100) {
+            siteHeader.classList.add("hide-top");
+          }
+          // Si subimos
+          else if (scrollActual < ultimoScroll) {
+            siteHeader.classList.remove("hide-top");
+          }
+
+          ultimoScroll = scrollActual;
+        });
+      });
+      // #endregion Header JS
     </script>
   </body>
 </html>
