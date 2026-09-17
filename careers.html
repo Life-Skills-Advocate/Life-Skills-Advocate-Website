@@ -39,8 +39,8 @@
 
     <style>
       /* =========================================================
-     0. RESET + DESIGN TOKENS  (kept identical to index.html)
-     ========================================================= */
+      0. RESET + DESIGN TOKENS  (kept identical to index.html)
+      ========================================================= */
       *,
       *::before,
       *::after {
@@ -158,12 +158,12 @@
       }
 
       .section-tint {
-        background: var(--tint);
+        background: none;
       }
 
       /* =========================================================
-     1. BUTTONS
-     ========================================================= */
+      1. BUTTONS
+      ========================================================= */
       .btn {
         display: inline-flex;
         align-items: center;
@@ -214,18 +214,24 @@
         font-size: 15px;
       }
 
+      /* #region 2. HEADER / NAV */
       /* =========================================================
-     2. HEADER / NAV  (kept identical to index.html)
-     ========================================================= */
+        HEADER
+        =========================================================  */
       .site-header {
-        display: flex;
-        justify-content: center;
         position: sticky;
         top: 0;
-        z-index: 500;
-        background: #fff;
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+        background-color: white;
+        --top-height: 100px;
+        display: flex;
+        justify-content: center;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-        transition: padding 0.2s ease;
+      }
+
+      .site-header.hide-top {
+        transform: translateY(calc(-1 * var(--top-height)));
       }
 
       .header-inner {
@@ -245,6 +251,7 @@
         align-self: flex-end;
         width: 60%;
       }
+
       .header-cta-cont {
         padding-bottom: 30px;
         padding-top: 30px;
@@ -287,10 +294,6 @@
         background: none;
         border: none;
         font-family: var(--font-body);
-      }
-
-      .main-nav > ul > li > a,
-      .main-nav > ul > li > button.nav-top-link {
         text-decoration: none;
         border-bottom: none;
         background-image: linear-gradient(var(--blue), var(--blue));
@@ -307,11 +310,6 @@
       .main-nav > ul > li:hover > button.nav-top-link {
         color: var(--blue);
         background-size: 100% 1px;
-      }
-
-      .dropdown a[aria-current="page"] {
-        color: var(--blue);
-        font-weight: 700;
       }
 
       .caret {
@@ -383,6 +381,7 @@
       .header-cta {
         flex-shrink: 0;
       }
+
       .header-cta:hover {
         background: linear-gradient(
           90deg,
@@ -394,15 +393,6 @@
         );
         background-size: 300% 100%;
         animation: smooth 1s ease-in-out forwards;
-      }
-
-      @keyframes smooth {
-        0% {
-          background-position: 100% 0;
-        }
-        100% {
-          background-position: 0% 0;
-        }
       }
 
       .nav-toggle {
@@ -425,30 +415,88 @@
         border-radius: 2px;
       }
 
-      .site-header.scrolled .header-top {
-        height: 0px;
+      .main-nav > ul > li > a.adultinglikeachamp-cont {
+        justify-content: start;
       }
 
+      .adultinglikeachamp-img img {
+        width: 24px;
+        height: auto;
+      }
+
+      .main-nav > ul > li > a.advocate360-cont {
+        justify-content: start;
+      }
+
+      .advocate360-img img {
+        width: 24px;
+        height: auto;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes smooth {
+        0% {
+          background-position: 100% 0;
+        }
+        100% {
+          background-position: 0% 0;
+        }
+      }
+      /* #endregion */
+
       /* =========================================================
-     3. PAGE HERO
-     ========================================================= */
+      3. PAGE HERO
+      ========================================================= */
       .page-hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 854px;
         padding: 50px 40px;
-        background: var(--tint);
+        background: url();
         text-align: center;
+        background-image:
+          linear-gradient(rgba(84, 84, 84, 0.8), rgba(84, 84, 84, 0.8)),
+          url(https://lifeskillsadvocate.com/wp-content/uploads/2021/04/collage.png) !important;
+        background-size: auto, cover !important;
+        background-position:
+          50% 50%,
+          50% 80% !important;
+        background-attachment: scroll, scroll !important;
+        background-repeat: no-repeat, no-repeat !important;
       }
       .page-hero h1 {
         font-size: 40px;
+        color: var(--white);
         margin-bottom: 20px;
+      }
+      .page-hero a.btn.btn-primary {
+        width: 20%;
       }
 
       /* =========================================================
-     4. CAREERS CONTENT
-     ========================================================= */
+      4. CAREERS CONTENT
+      ========================================================= */
       .careers-narrow {
-        max-width: 780px;
+        display: flex;
+        flex-direction: column;
+        max-width: 90%;
         margin: 0 auto;
         text-align: center;
+        justify-content: center;
+        align-items: center;
       }
       .careers-narrow h2 span {
         text-transform: none;
@@ -483,7 +531,7 @@
 
       .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 16px;
         max-width: var(--max);
         margin: 0 auto;
@@ -496,12 +544,37 @@
       }
 
       .about-links {
+        width: 60%;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
+        /* flex-wrap: wrap; */
         justify-content: center;
         gap: 12px;
-        margin: 30px auto;
-        max-width: 900px;
+        margin: 30px;
+        max-width: 60%;
+      }
+      .about-links a {
+        border: 1px solid rgb(225, 225, 225);
+        border-radius: 20px;
+        background-color: rgb(255, 255, 255);
+        --g-regular-weight: 400;
+        --g-bold-weight: 600;
+        --tve-border-radius: 20px;
+        --tve-applied-border: 1px solid rgb(225, 225, 225);
+        padding: 10px 89px !important;
+        margin: 7px !important;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+      }
+      .about-links a:hover {
+        background-color: var(--blue);
+      }
+      .desc {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
 
       .about-photo-section {
@@ -523,16 +596,17 @@
       }
       .benefit-card {
         background: #fff;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
         padding: 30px 24px;
-        text-align: center;
+        text-align: left;
       }
       .benefit-card .icon-wrap {
-        width: 54px;
-        height: 54px;
-        margin: 0 auto 16px;
+        width: 70px;
+        height: 70px;
+        margin: 0 0 15px 0px;
         color: var(--blue);
+        border-radius: 50%;
+        background: #f0f6fb;
+        padding: 15px;
       }
       .benefit-card .icon-wrap svg {
         width: 100%;
@@ -553,28 +627,50 @@
         scroll-margin-top: 100px;
       }
       .openings-content {
-        max-width: 780px;
+        max-width: 90%;
+
         margin: 0 auto;
         text-align: center;
       }
       .openings-content .btn {
         margin: 10px 0 30px;
       }
+      .inline-link {
+        color: var(--blue);
+      }
+      .p-bigger {
+        font-size: 20px;
+      }
+
+      .meet-the-founder {
+        background-color: none;
+      }
+      .meet-the-founder h2 {
+        margin-bottom: 40px;
+      }
+      a.btn.btn-primary {
+        align-self: center;
+      }
+      .founder-info {
+        display: flex;
+        flex-direction: column;
+      }
 
       .founder-grid {
         display: grid;
-        grid-template-columns: 240px 1fr;
+        grid-template-columns: 40% 1fr;
         gap: 50px;
         align-items: start;
         max-width: var(--max);
         margin: 0 auto;
       }
       .founder-photo {
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
+        width: 90%;
+        height: 90%;
+        border-radius: 40px;
         object-fit: cover;
         box-shadow: var(--shadow);
+        align-self: center;
       }
       .founder-linkedin {
         display: inline-flex;
@@ -598,9 +694,135 @@
         text-align: center;
       }
 
+      .sectionWWWU {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .sectionWWWU h2 {
+        margin-bottom: 40px;
+      }
+
+      /* SHARE THIS PAGE */
       /* =========================================================
-     5. FOOTER  (kept identical to index.html)
-     ========================================================= */
+   SHARE THIS PAGE - SOCIAL BUTTONS
+   ========================================================= */
+
+      thrv_wrapper{
+        outline:1px solid var()
+      }/* 1. Contenedor principal y Título */
+      .tve-page-section-in .thrv_text_element p {
+        font-size: 18px;
+        font-weight: 600;
+        color: #383838;
+        margin-bottom: 20px;
+        text-align: center;
+        font-family: var(--font-body, sans-serif);
+      }
+
+      /* 2. Envoltura de los botones (Flexbox para alinearlos) */
+      .tve_social_items {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 15px; /* Espacio entre botones */
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 3. Estilo base para todos los enlaces/botones */
+      .tve_social_items .tve_s_link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px; /* Espacio entre icono y texto */
+        padding: 10px 24px;
+        border-radius: 5px; /* Bordes totalmente redondeados */
+        text-decoration: none;
+        color: #ffffff !important; /* Forzamos blanco para el texto */
+        font-family: var(--font-body, sans-serif);
+        font-size: 15px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      /* 4. Ajuste de los Iconos SVG */
+      .tve_social_items .tve_s_icon {
+        display: flex;
+        align-items: center;
+      }
+
+      .tve_s_text.tve-froala {
+        display: none;
+      }
+
+      .tve_social_items .tve_s_icon svg {
+        width: 18px;
+        height: 18px;
+        fill: #ffffff; /* Iconos en blanco */
+        transition: transform 0.3s ease;
+      }
+
+      /* 5. Ocultar el contador que dice "0" para un diseño más limpio */
+      .tve_social_items .tve_s_count {
+        display: none !important;
+      }
+
+      /* =========================================================
+   COLORES DE MARCA Y EFECTOS HOVER
+   ========================================================= */
+
+      /* Facebook */
+      .tve_s_fb_share .tve_s_link {
+        background-color: #545454;
+      }
+      .tve_s_fb_share .tve_s_link:hover {
+        background-color: #343434;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(21, 21, 21, 0.3);
+      }
+
+      /* X (Twitter) */
+      .tve_s_x_share .tve_s_link {
+        background-color: #545454;
+      }
+      .tve_s_x_share .tve_s_link:hover {
+        background-color: #343434;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(21, 21, 21, 0.3);
+      }
+
+      /* Pinterest */
+      .tve_s_pin_share .tve_s_link {
+        background-color: #545454;
+      }
+      .tve_s_pin_share .tve_s_link:hover {
+        background-color: #343434;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(21, 21, 21, 0.3);
+      }
+
+      /* LinkedIn */
+      .tve_s_in_share .tve_s_link {
+        background-color: #545454;
+      }
+      .tve_s_in_share .tve_s_link:hover {
+        background-color: #343434;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(21, 21, 21, 0.3);
+      }
+
+      /* (Opcional) Pequeña animación en el icono al hacer hover */
+      .tve_social_items .tve_s_link:hover .tve_s_icon svg {
+        transform: scale(1.15);
+      }
+
+      /* =========================================================
+      5. FOOTER  (kept identical to index.html)
+      ========================================================= */
       .site-footer {
         background: var(--footer-bg);
         color: rgba(255, 255, 255, 0.85);
@@ -679,8 +901,8 @@
       }
 
       /* =========================================================
-     6. RESPONSIVE
-     ========================================================= */
+      6. RESPONSIVE
+      ========================================================= */
       @media (max-width: 1023px) {
         h1 {
           font-size: 36px;
@@ -807,13 +1029,18 @@
     </style>
   </head>
   <body>
+    <!-- #region HEADER -->
     <!-- =========================================================
-     HEADER  (copied verbatim from index.html)
+     HEADER
      ========================================================= -->
     <header class="site-header" id="siteHeader">
       <div class="header-inner">
         <div class="header-top">
-          <a class="logo" href="index1.html" aria-label="Life Skills Advocate home">
+          <a
+            class="logo"
+            href="index1.html"
+            aria-label="Life Skills Advocate home"
+          >
             <img
               src="/assets/img/Life-Skills-Advocate-1-e1561588375370.png"
               alt="Life Skills Advocate logo"
@@ -824,7 +1051,7 @@
           </a>
           <div class="header-cta-cont">
             <a
-              class="btn btn-primary header-cta desktop-only"
+              class="btn btn-primary header-cta"
               href="https://lifeskillsadvocate.com/discovery/"
               >Book A Complimentary Discovery Meeting</a
             >
@@ -837,22 +1064,26 @@
           <ul>
             <li>
               <button class="nav-top-link" aria-expanded="false">
-                About LSA Ezze <span class="caret">▾</span>
+                About LSA<span class="caret">▾</span>
               </button>
               <ul class="dropdown">
                 <li>
-                  <a href="meet-our-team.html">Meet Our Team</a>
+                  <a href="https://lifeskillsadvocate.com/meet-our-team/"
+                    >Meet Our Team</a
+                  >
                 </li>
                 <li>
                   <a
-                    href="discover-the-life-skills-advocate-difference.html"
+                    href="https://lifeskillsadvocate.com/discover-the-life-skills-advocate-difference/"
                     >Discover The LSA Difference</a
                   >
                 </li>
                 <li>
-                  <a href="core-values.html">Core Values</a>
+                  <a href="https://lifeskillsadvocate.com/core-values/"
+                    >Core Values</a
+                  >
                 </li>
-                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="https://lifeskillsadvocate.com/faqs/">FAQs</a></li>
                 <li>
                   <a
                     href="https://lifeskillsadvocate.com/blog/what-is-neurodivergence/"
@@ -872,7 +1103,7 @@
                   >
                 </li>
                 <li>
-                  <a href="careers.html" aria-current="page">Careers</a>
+                  <a href="https://lifeskillsadvocate.com/careers/">Careers</a>
                 </li>
                 <li>
                   <a href="https://lifeskillsadvocate.com/contact/">Contact</a>
@@ -953,7 +1184,11 @@
             <li>
               <a
                 href="https://lifeskillsadvocate.com/adulting-like-a-champ-workbook/"
-                class="nav-top-link"
+                class="nav-top-link adultinglikeachamp-cont"
+                ><span class="adultinglikeachamp-img"
+                  ><img
+                    src="assets/img/newicon.png"
+                    alt="adultinglikeachamp-img" /></span
                 >Adulting Like A Champ <span class="caret">▾</span></a
               >
               <ul class="dropdown">
@@ -1050,7 +1285,7 @@
                     >Adulting Like A Champ</a
                   >
                 </li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="https://lifeskillsadvocate.com/blog/">Blog</a></li>
                 <li>
                   <a
                     href="https://lifeskillsadvocate.com/free-executive-functioning-worksheets/"
@@ -1116,7 +1351,10 @@
                   >
                 </li>
                 <li>
-                  <a href="https://neurowyld.com/" target="_blank" rel="noopener"
+                  <a
+                    href="https://neurowyld.com/"
+                    target="_blank"
+                    rel="noopener"
                     >Neurowyld</a
                   >
                 </li>
@@ -1180,7 +1418,15 @@
               </ul>
             </li>
             <li>
-              <a href="https://advocate360.app/" target="_blank" rel="noopener"
+              <a
+                href="https://advocate360.app/"
+                target="_blank"
+                rel="noopener"
+                class="advocate360-cont"
+                ><span class="advocate360-img"
+                  ><img
+                    src="assets/img/advocate360icon.png"
+                    alt="advocate360-img" /></span
                 >Advocate360</a
               >
             </li>
@@ -1197,11 +1443,18 @@
         </button>
       </div>
     </header>
+    <!-- #endregion HEADER -->
 
     <!-- =========================================================
      PAGE TITLE
      ========================================================= -->
     <section class="page-hero">
+      <div class="logo">
+        <img
+          src="https://lifeskillsadvocate.com/wp-content/uploads/2019/10/Life-Skills-Advocate-white-cropped.png"
+          alt="logolsa"
+        />
+      </div>
       <h1>Careers</h1>
       <a href="#openings" class="btn btn-primary">View Jobs</a>
     </section>
@@ -1221,25 +1474,23 @@
               individualized approach to learning?
             </li>
             <li>
-              Has a strong passion for supporting diversely abled teenagers
-              and adults?
+              Has a strong passion for supporting diversely abled teenagers and
+              adults?
             </li>
             <li>
               Possesses the ability to develop, implement and adapt learning
               strategies based on client needs?
             </li>
+            <li>Aligns with our <a href="core-values.html">core values</a>?</li>
             <li>
-              Aligns with our <a href="core-values.html">core values</a>?
+              Has spent time teaching or assisting diversely abled teenagers or
+              adults in a classroom (or similar) setting and is looking for a
+              new challenge?
             </li>
             <li>
-              Has spent time teaching or assisting diversely abled teenagers
-              or adults in a classroom (or similar) setting and is looking
-              for a new challenge?
-            </li>
-            <li>
-              Understands how skills like habit building, organization,
-              problem solving, flexibility, and other executive functioning
-              skills are taught?
+              Understands how skills like habit building, organization, problem
+              solving, flexibility, and other executive functioning skills are
+              taught?
             </li>
             <li>
               Enjoys working independently and in a variety of settings and
@@ -1281,11 +1532,6 @@
             alt="Life Skills Advocate coach with a client"
             loading="lazy"
           />
-          <img
-            src="https://lifeskillsadvocate.com/wp-content/uploads/2021/04/IMG_20200716_164305-1-scaled.jpg"
-            alt="Life Skills Advocate coach with a client"
-            loading="lazy"
-          />
         </div>
       </section>
 
@@ -1296,52 +1542,45 @@
         <div class="careers-narrow">
           <h2>About Life Skills Advocate</h2>
           <div class="about-links">
-            <a class="btn btn-outline btn-sm" href="meet-our-team.html"
-              >Meet Our Team</a
-            >
-            <a
-              class="btn btn-outline btn-sm"
-              href="discover-the-life-skills-advocate-difference.html"
+            <a href="meet-our-team.html">Meet Our Team</a>
+            <a href="discover-the-life-skills-advocate-difference.html"
               >Discover the LSA Difference</a
             >
-            <a
-              class="btn btn-outline btn-sm"
-              href="https://lifeskillsadvocate.com/our-process/"
+            <a href="https://lifeskillsadvocate.com/our-process/"
               >Our Coaching Process</a
             >
-            <a class="btn btn-outline btn-sm" href="core-values.html"
-              >Our Core Values</a
-            >
-            <a class="btn btn-outline btn-sm" href="faqs.html">FAQs</a>
+            <a href="core-values.html">Our Core Values</a>
+            <a href="faqs.html">FAQs</a>
             <a
-              class="btn btn-outline btn-sm"
               href="https://lifeskillsadvocate.com/blog/executive-functioning-ripple-effect/"
               target="_blank"
               rel="noopener"
               >the EF Ripple Effect Explained</a
             >
           </div>
-          <p style="text-align: center">
-            Serving the greater Seattle region, Life Skills Advocate is an
-            executive functioning and life skills coaching and transition
-            support company that empowers neurodiverse teens, adults and
-            families to become their own best advocates and teaches them how
-            to maximize their autonomy and independence.
-          </p>
-          <p style="text-align: center">
-            We provide in-home and virtual support across daily living,
-            academic, vocational and community-based domains.
-          </p>
-          <p style="text-align: center">
-            <strong
-              >Our mission: Uplifting the neurodivergent community to embrace
-              their strengths and self-advocate with confidence.</strong
-            >
-          </p>
-          <p style="text-align: center">
-            Learn more about what we do by
-            <a href="index.html">clicking here.</a>
-          </p>
+          <div class="desc">
+            <p style="text-align: center">
+              Serving the greater Seattle region, Life Skills Advocate is an
+              executive functioning and life skills coaching and transition
+              support company that empowers neurodiverse teens, adults and
+              families to become their own best advocates and teaches them how
+              to maximize their autonomy and independence.
+            </p>
+            <p style="text-align: center">
+              We provide in-home and virtual support across daily living,
+              academic, vocational and community-based domains.
+            </p>
+            <p style="text-align: center">
+              <strong
+                >Our mission: Uplifting the neurodivergent community to embrace
+                their strengths and self-advocate with confidence.</strong
+              >
+            </p>
+            <p style="text-align: center">
+              Learn more about what we do by
+              <a href="index.html">clicking here.</a>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -1363,7 +1602,7 @@
       <!-- =========================================================
          WHY WORK WITH US
          ========================================================= -->
-      <section>
+      <section class="sectionWWWU">
         <h2>Why Work With Us?</h2>
         <div class="benefits-grid">
           <div class="benefit-card">
@@ -1376,8 +1615,8 @@
             </div>
             <h3>Our Awesome Clients</h3>
             <p>
-              What can we say? Our clients and their families are just
-              awesome! We really can't stress this enough.
+              What can we say? Our clients and their families are just awesome!
+              We really can't stress this enough.
             </p>
           </div>
           <div class="benefit-card">
@@ -1390,9 +1629,9 @@
             </div>
             <h3>Make a REAL difference</h3>
             <p>
-              You'll be working with clients on real-world skills they
-              actually care about. For example, creating a savings plan,
-              making breakfast, grocery shopping, riding public transit, etc.
+              You'll be working with clients on real-world skills they actually
+              care about. For example, creating a savings plan, making
+              breakfast, grocery shopping, riding public transit, etc.
             </p>
           </div>
           <div class="benefit-card">
@@ -1419,8 +1658,8 @@
             </div>
             <h3>Collaboration Time</h3>
             <p>
-              Schedule collaboration time as needed with families, other
-              support professionals or Life Skills Advocate team members.
+              Schedule collaboration time as needed with families, other support
+              professionals or Life Skills Advocate team members.
             </p>
           </div>
           <div class="benefit-card">
@@ -1433,8 +1672,8 @@
             </div>
             <h3>Training &amp; Ongoing Support</h3>
             <p>
-              During onboarding, you'll get to shadow and see real-world
-              client support in action. Once onboarded, additional training
+              During onboarding, you'll get to shadow and see real-world client
+              support in action. Once onboarded, additional training
               opportunities will be made available on a continuous basis.
             </p>
           </div>
@@ -1479,17 +1718,18 @@
         <div class="openings-content">
           <h2>Opportunities for everyone</h2>
           <p>
-            Life Skills Advocate is proud to be an equal opportunity
-            workplace that seeks to recruit, develop, and retain the most
-            talented people from a variety of backgrounds, perspectives and
-            skills. We therefore encourage applications from all genders,
-            races, religions, ages and sexual orientations, as well as
-            parents, veterans, people living with disabilities, and any other
-            groups that could bring diverse perspectives to our business.
+            Life Skills Advocate is proud to be an equal opportunity workplace
+            that seeks to recruit, develop, and retain the most talented people
+            from a variety of backgrounds, perspectives and skills. We therefore
+            encourage applications from all genders, races, religions, ages and
+            sexual orientations, as well as parents, veterans, people living
+            with disabilities, and any other groups that could bring diverse
+            perspectives to our business.
           </p>
           <p>
-            To view and apply for any open positions, click the
-            "<strong>View Current Job Openings</strong>" button below.
+            To view and apply for any open positions, click the "<strong
+              >View Current Job Openings</strong
+            >" button below.
           </p>
           <a
             class="btn btn-primary"
@@ -1498,10 +1738,10 @@
             rel="nofollow noopener"
             >View Current Job Openings</a
           >
-          <p>
-            If there are no current openings, we still welcome your
-            interest. *Feel free to email your resume to
-            <a href="mailto:careers@lifeskillsadvocate.com"
+          <p class="p-bigger">
+            If there are no current openings, we still welcome your interest.
+            *Feel free to email your resume to
+            <a class="inline-link" href="mailto:careers@lifeskillsadvocate.com"
               >careers@lifeskillsadvocate.com</a
             >
             with the subject line
@@ -1516,16 +1756,16 @@
       <!-- =========================================================
          MEET THE FOUNDER
          ========================================================= -->
-      <section>
+      <section class="meet-the-founder">
         <h2>Meet The Founder</h2>
         <div class="founder-grid">
           <img
             class="founder-photo"
-            src="assets/img/Chris-Hanson-leadership-headshot.jpg"
+            src="https://lifeskillsadvocate.com/wp-content/uploads/2021/01/IMG_20200501_132915-scaled.jpg"
             alt="Chris Hanson, founder of Life Skills Advocate"
             loading="lazy"
           />
-          <div>
+          <div class="founder-info">
             <h3>About Chris.</h3>
             <a
               class="founder-linkedin"
@@ -1541,32 +1781,152 @@
               </svg>
             </a>
             <p>
-              Life Skills Advocate was founded in 2019 by Chris Hanson, who
-              has personal experience with ADHD, anxiety &amp; depression and
+              Life Skills Advocate was founded in 2019 by Chris Hanson, who has
+              personal experience with ADHD, anxiety &amp; depression and
               understands the importance of having strong advocates on your
               side.
               <strong
-                >Chris started Life Skills Advocate because he wanted to
-                create the type of support service he wishes he had when he
-                was a teenager struggling to find his path in life.</strong
+                >Chris started Life Skills Advocate because he wanted to create
+                the type of support service he wishes he had when he was a
+                teenager struggling to find his path in life.</strong
               >
             </p>
             <p>
               Professionally, Chris holds a Bachelor of Science in Special
-              Education and spent 8+ years as a high school special
-              education teacher and paraeducator in the Kent School
-              District. Over time, he saw a critical need to support
-              students (and adults) in becoming their own best advocates,
-              and helping them build the confidence and skills needed to
-              tackle what's getting in the way of pursuing their goals and
-              having a higher high quality of life.
+              Education and spent 8+ years as a high school special education
+              teacher and paraeducator in the Kent School District. Over time,
+              he saw a critical need to support students (and adults) in
+              becoming their own best advocates, and helping them build the
+              confidence and skills needed to tackle what's getting in the way
+              of pursuing their goals and having a higher high quality of life.
             </p>
-            <a class="btn btn-outline" href="meet-our-team.html"
+            <a class="btn btn-primary" href="meet-our-team.html"
               >Meet the Team</a
             >
           </div>
         </div>
       </section>
+
+      <!-- =========================================================
+         SHARE THIS PAGE
+         ========================================================= -->
+
+      <div class="tve-page-section-in" data-css="tve-u-178a14bc9b8">
+        <div
+          class="thrv_wrapper thrv_text_element"
+          data-css="tve-u-178a14b7b4d"
+          style=""
+        >
+          <p data-css="tve-u-178a14b7b55" style="text-align: center">
+            Share this page:
+          </p>
+        </div>
+        <div
+          class="thrv_wrapper thrv_social_custom thrv_social tve_share_left tve_style_2 tcb-custom-branding-social"
+          data-counts=""
+          data-min_shares="0"
+          data-device-config='{"desktop":{"button_type":"tve_social_ib","isFullWidth":"0","showCount":"0"},"tablet":{},"mobile":{"button_type":"tve_social_ib","showCount":"0"}}'
+          data-css="tve-u-178a14b4008"
+          style=""
+        >
+          <div
+            class="tve_social_items tve_social_custom tve-prevent-content-edit tve_style_2 tve_social_ib"
+          >
+            <div
+              class="thrv_wrapper tve_s_item tve_s_fb_share tve_share_item"
+              data-s="fb_share"
+              data-href="https://lifeskillsadvocate.com/careers/"
+              data-label="Share"
+            >
+              <a href="javascript:void(0)" class="tve_s_link">
+                <span class="thrv_wrapper tve_s_icon">
+                  <svg
+                    class="tcb-icon"
+                    viewBox="0 0 264 512"
+                    data-id="icon-fb"
+                    data-name=""
+                  >
+                    <path
+                      d="M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H256l-11.7 91h-73.6v229"
+                    ></path>
+                  </svg>
+                </span>
+                <span class="tve_s_text tve-froala">Share</span>
+                <span class="tve_s_count">0</span>
+              </a>
+            </div>
+            <div
+              class="thrv_wrapper tve_s_item tve_s_x_share tve_share_item"
+              data-s="x_share"
+              data-href="https://lifeskillsadvocate.com/careers/"
+              data-label="Post"
+            >
+              <a href="javascript:void(0)" class="tve_s_link">
+                <span class="thrv_wrapper tve_s_icon">
+                  <svg
+                    class="tcb-icon"
+                    viewBox="0 0 512 512"
+                    data-id="icon-x"
+                    data-name=""
+                  >
+                    <path
+                      d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                    ></path>
+                  </svg>
+                </span>
+                <span class="tve_s_text tve-froala">Post</span>
+                <span class="tve_s_count">0</span>
+              </a>
+            </div>
+            <div
+              class="thrv_wrapper tve_s_item tve_s_pin_share tve_share_item"
+              data-s="pin_share"
+              data-href="https://lifeskillsadvocate.com/careers/"
+              data-label="Pin"
+            >
+              <a href="javascript:void(0)" class="tve_s_link">
+                <span class="thrv_wrapper tve_s_icon">
+                  <svg
+                    class="tcb-icon"
+                    viewBox="0 0 384 512"
+                    data-id="icon-pin"
+                    data-name=""
+                  >
+                    <path
+                      d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4 0-9.3-23.7-29.1-23.7-67.8 0-80.4 61.2-137.4 140.4-137.4 68.1 0 118.5 38.7 118.5 109.8 0 53.1-21.3 152.7-90.3 152.7-24.9 0-46.2-18-46.2-43.8 0-37.8 26.4-74.4 26.4-113.4 0-66.2-93.9-54.2-93.9 25.8 0 16.8 2.1 35.4 9.6 50.7-13.8 59.4-42 147.9-42 209.1 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z"
+                    ></path>
+                  </svg>
+                </span>
+                <span class="tve_s_text tve-froala">Pin</span>
+                <span class="tve_s_count">0</span>
+              </a>
+            </div>
+            <div
+              class="thrv_wrapper tve_s_item tve_s_in_share tve_share_item"
+              data-s="in_share"
+              data-href="https://lifeskillsadvocate.com/careers/"
+              data-label="Share"
+            >
+              <a href="javascript:void(0)" class="tve_s_link">
+                <span class="thrv_wrapper tve_s_icon">
+                  <svg
+                    class="tcb-icon"
+                    viewBox="0 0 448 512"
+                    data-id="icon-in"
+                    data-name=""
+                  >
+                    <path
+                      d="M100.3 480H7.4V180.9h92.9V480zM53.8 140.1C24.1 140.1 0 115.5 0 85.8 0 56.1 24.1 32 53.8 32c29.7 0 53.8 24.1 53.8 53.8 0 29.7-24.1 54.3-53.8 54.3zM448 480h-92.7V334.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V480h-92.8V180.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V480z"
+                    ></path>
+                  </svg>
+                </span>
+                <span class="tve_s_text tve-froala">Share</span>
+                <span class="tve_s_count">0</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- =========================================================
          CLOSING
@@ -1595,12 +1955,12 @@
             apply.
           </p>
           <p class="legal-text">
-            Life Skills Advocate, LLC is an equal opportunity employer and
-            does not discriminate on the basis of race, sex, color,
-            religion, age, national origin, marital status, disability,
-            veteran status, genetic information, sexual orientation, gender
-            identity or any other reason prohibited by law in provision of
-            employment opportunities and benefits.
+            Life Skills Advocate, LLC is an equal opportunity employer and does
+            not discriminate on the basis of race, sex, color, religion, age,
+            national origin, marital status, disability, veteran status, genetic
+            information, sexual orientation, gender identity or any other reason
+            prohibited by law in provision of employment opportunities and
+            benefits.
           </p>
         </div>
       </section>
@@ -1749,6 +2109,53 @@
           });
         });
       })();
+
+      // #region Header JS
+      //header visible hidden
+      document.addEventListener("DOMContentLoaded", () => {
+        const siteHeader = document.getElementById("siteHeader");
+        const headerTop = document.querySelector(".header-top");
+        let ultimoScroll = window.scrollY;
+
+        // 1. Función para medir la altura exacta del .header-top
+        function actualizarAlturaTop() {
+          if (headerTop && siteHeader) {
+            // Calculamos la altura en píxeles mas margenes y paddings
+            margins =
+              parseFloat(getComputedStyle(headerTop).marginTop) +
+              parseFloat(getComputedStyle(headerTop).marginBottom);
+            paddings =
+              parseFloat(getComputedStyle(headerTop).paddingTop) +
+              parseFloat(getComputedStyle(headerTop).paddingBottom);
+            var margenManual = 10; // Ajusta este valor según sea necesario
+            const altura =
+              headerTop.offsetHeight + margins + paddings + margenManual;
+            // Se la pasamos a la variable CSS del header
+            siteHeader.style.setProperty("--top-height", `${altura}px`);
+          }
+        }
+
+        // Calculamos al cargar la página y por si el usuario gira el móvil o achica la ventana
+        actualizarAlturaTop();
+        window.addEventListener("resize", actualizarAlturaTop);
+
+        // 2. Lógica del Scroll
+        window.addEventListener("scroll", () => {
+          const scrollActual = window.scrollY;
+
+          // Si bajamos, y ya pasamos la altura inicial (para que no titile arriba del todo)
+          if (scrollActual > ultimoScroll && scrollActual > 100) {
+            siteHeader.classList.add("hide-top");
+          }
+          // Si subimos
+          else if (scrollActual < ultimoScroll) {
+            siteHeader.classList.remove("hide-top");
+          }
+
+          ultimoScroll = scrollActual;
+        });
+      });
+      // #endregion Header JS
     </script>
   </body>
 </html>

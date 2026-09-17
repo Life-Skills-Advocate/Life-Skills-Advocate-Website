@@ -94,6 +94,7 @@
 
       :root {
         --blue: #00aeef;
+        --blue-light: #a3e4fa;
         --blue-dark: #0089bc;
         --navy: #0c1115;
         --footer-bg: #36454f;
@@ -407,6 +408,27 @@
       .advocate360-img img {
         width: 24px;
         height: auto;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes smooth {
+        0% {
+          background-position: 100% 0;
+        }
+        100% {
+          background-position: 0% 0;
+        }
       }
       /* #endregion */
 
@@ -1456,13 +1478,6 @@
         <!-- =========================================================
          FAQs ABOUT COACHING
          ========================================================= -->
-        <div class="cta-center">
-          <a
-            class="btn btn-primary"
-            href="https://lifeskillsadvocate.com/discovery/"
-            >Book A Complimentary Discovery Meeting</a
-          >
-        </div>
 
         <div class="faq-group">
           <h2>FAQs About Coaching</h2>

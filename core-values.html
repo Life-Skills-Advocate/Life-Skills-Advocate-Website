@@ -89,6 +89,7 @@
 
       :root {
         --blue: #00aeef;
+        --blue-light: #a3e4fa;
         --blue-dark: #0089bc;
         --navy: #0c1115;
         --footer-bg: #36454f;
@@ -365,6 +366,18 @@
 
       .header-cta {
         flex-shrink: 0;
+      }
+      .header-cta:hover {
+        background: linear-gradient(
+          90deg,
+          var(--blue) 0%,
+          var(--blue) 45%,
+          var(--blue-light) 50%,
+          var(--blue) 55%,
+          var(--blue) 100%
+        );
+        background-size: 300% 100%;
+        animation: smooth 1s ease-in-out forwards;
       }
 
       .nav-toggle {
