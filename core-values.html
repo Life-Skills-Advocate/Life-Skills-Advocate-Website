@@ -186,9 +186,8 @@
       .btn-primary:hover {
         background: var(--blue-dark);
       }
-
       /* =========================================================
-   2. HEADER / NAV  (kept identical to index.html)
+   2. HEADER / NAV
    ========================================================= */
       .site-header {
         display: flex;
@@ -205,7 +204,7 @@
         width: 100%;
         display: flex;
         align-items: center;
-        gap: 24px;
+        gap: 5px;
         padding: 14px 30px;
         flex-direction: column;
         justify-content: center;
@@ -218,17 +217,24 @@
         align-self: flex-end;
         width: 60%;
       }
+      .header-cta-cont {
+        padding-bottom: 30px;
+        padding-top: 30px;
+      }
+
       .logo img {
-        height: 54px;
+        height: 115px;
         width: auto;
       }
+
       .site-header.scrolled .logo img {
-        height: 42px;
+        height: 115px;
       }
 
       .main-nav {
         flex: 1;
       }
+
       .main-nav > ul {
         display: flex;
         align-items: center;
@@ -236,9 +242,11 @@
         flex-wrap: wrap;
         gap: 4px;
       }
+
       .main-nav > ul > li {
         position: relative;
       }
+
       .main-nav > ul > li > a,
       .main-nav > ul > li > button.nav-top-link {
         display: flex;
@@ -252,15 +260,48 @@
         border: none;
         font-family: var(--font-body);
       }
-      .main-nav > ul > li > a:hover,
+
+      /* Estado normal para los enlaces <a> y el botón */
+      .main-nav > ul > li > a,
+      .main-nav > ul > li > button.nav-top-link {
+        text-decoration: none; /* Fundamental para los <a>: quita el subrayado feo por defecto */
+        border-bottom: none;
+
+        /* Creamos la "línea" */
+        background-image: linear-gradient(var(--blue), var(--blue));
+
+        /* Mide 0% de ancho y 2px de alto */
+        background-size: 0% 1px;
+
+        /* Posición: abajo a la izquierda */
+        background-position: left bottom;
+
+        /* Evitamos que se repita */
+        background-repeat: no-repeat;
+
+        /* Transición suave */
+        transition:
+          background-size 0.4s ease-in-out,
+          color 0.4s ease-in-out;
+
+        /* Le damos un poquito de aire abajo para que la línea se vea separada del texto */
+        padding-bottom: 4px;
+      }
+
+      /* Estado al pasar el cursor (hover) para AMBOS */
       .main-nav > ul > li:hover > a,
       .main-nav > ul > li:hover > button.nav-top-link {
         color: var(--blue);
+
+        /* Expandimos la línea al 100% de ancho */
+        background-size: 100% 1px;
       }
+
       .caret {
         font-size: 11px;
         transition: transform 0.15s ease;
       }
+
       .main-nav > ul > li:hover .caret {
         transform: rotate(180deg);
       }
@@ -283,15 +324,18 @@
           visibility 0.15s ease;
         z-index: 50;
       }
+
       .main-nav > ul > li:hover > .dropdown,
       .main-nav > ul > li:focus-within > .dropdown {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
       }
+
       .dropdown li {
         position: relative;
       }
+
       .dropdown a,
       .dropdown button.nav-sub-toggle {
         display: flex;
@@ -307,22 +351,22 @@
         text-align: left;
         font-family: var(--font-body);
       }
+
       .dropdown a:hover,
       .dropdown button.nav-sub-toggle:hover {
         color: var(--blue);
         background: var(--tint);
       }
-      .dropdown a[aria-current="page"] {
-        color: var(--blue);
-        font-weight: 700;
-      }
+
       .dropdown .dropdown {
         top: -10px;
         left: 100%;
       }
+
       .header-cta {
         flex-shrink: 0;
       }
+
       .nav-toggle {
         display: none;
         background: none;
@@ -334,6 +378,7 @@
         align-items: center;
         gap: 5px;
       }
+
       .nav-toggle span {
         display: block;
         width: 26px;
@@ -342,16 +387,141 @@
         border-radius: 2px;
       }
 
+      .main-nav > ul > li > a.adultinglikeachamp-cont {
+        justify-content: start;
+      }
+      .adultinglikeachamp-img img {
+        width: 24px;
+        height: auto;
+      }
+      .main-nav > ul > li > a.advocate360-cont {
+        justify-content: start;
+      }
+      .advocate360-img img {
+        width: 24px;
+        height: auto;
+      }
+      /* 2. La clase que ocultará el header-top */
+      .site-header.hide-top {
+        /* Mueve TODO el header hacia arriba exactamente lo que mide el top */
+        transform: translateY(calc(-1 * var(--top-height)));
+      }
+
+      /* Tu clase original la dejamos tranquila, solo asegúrate de no ponerle fixed a esta */
+      .header-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* align-self: flex-end; width: 60%; (Mantén tus estilos originales aquí) */
+      }
+
+      /* 1. Aseguramos que el header principal se quede pegado arriba */
+      .site-header {
+        position: sticky; /* Sticky es mejor que fixed para evitar saltos en la página */
+        top: 0;
+        z-index: 1000;
+        /* Animamos el transform para que use la tarjeta gráfica (cero vibraciones) */
+        transition: transform 0.3s ease-in-out;
+        background-color: white; /* Asegura que tenga fondo para que no se vea el texto por detrás al bajar */
+
+        /* Valor por defecto por si acaso, el JS lo actualizará */
+        --top-height: 100px;
+      }
+
+      /* 2. La clase que ocultará el header-top */
+      .site-header.hide-top {
+        /* Mueve TODO el header hacia arriba exactamente lo que mide el top */
+        transform: translateY(calc(-1 * var(--top-height)));
+      }
+
+      /* Tu clase original la dejamos tranquila, solo asegúrate de no ponerle fixed a esta */
+      .header-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* align-self: flex-end; width: 60%; (Mantén tus estilos originales aquí) */
+      }
+
+      .hero-btn-cta {
+        background-color: white;
+        color: var(--blue);
+        font-size: 17px;
+        font-weight: bold;
+        padding: 12px 16px;
+        border-radius: var(--radius);
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .hero-btn-cta:hover {
+        /* Creamos el degradado: Gris <- Línea Blanca <- Color Tint */
+        background: linear-gradient(
+          90deg,
+          var(--tint) 0%,
+          /* Lado gris (color final) */ var(--tint) 45%,
+          /* Mantenemos el gris sólido */ rgba(255, 255, 255, 0.9) 50%,
+          /* Línea brillante del escáner */ var(--white) 55%,
+          /* Color Tint (color inicial del hover) */ var(--tint) 100%
+            /* Mantenemos el Tint sólido */
+        );
+        background-size: 300% 100%;
+
+        /* Cambiamos el texto a blanco para que resalte sobre el gris/tint */
+        color: var(--blue);
+        background-color: var(--white);
+
+        /* Agregamos 'forwards' para que el botón se QUEDE gris al terminar el segundo */
+        animation: smooth 1s ease-in-out forwards;
+      }
+
+      /* Dejo tu animación pulse intacta por si la llamas en otra parte */
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.05);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+      /* Modificamos tu animación 'smooth' para deslizar el fondo gigante */
+      @keyframes smooth {
+        0% {
+          /* Comienza a la derecha (mostrando el bloque de color var(--tint)) */
+          background-position: 100% 0;
+        }
+
+        100% {
+          /* Termina a la izquierda (mostrando el bloque gris) */
+          background-position: 0% 0;
+        }
+      }
+
       /* =========================================================
    3. PAGE HERO
    ========================================================= */
       .page-hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
         padding: 50px 40px 10px;
-        background: var(--tint);
+        background-image:
+          linear-gradient(
+            158deg,
+            rgba(255, 255, 255, 0.28) 19%,
+            rgba(2, 3, 4, 0.65) 100%
+          ),
+          linear-gradient(rgba(54, 69, 79, 0.8), rgba(54, 69, 79, 0.8)) !important;
         text-align: center;
       }
       .page-hero h1 {
-        font-size: 40px;
+        color: var(--white);
       }
 
       /* =========================================================
@@ -359,6 +529,9 @@
    ========================================================= */
       .core-values-section {
         padding: 50px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
       }
       .core-values-intro {
         max-width: 780px;
@@ -373,9 +546,10 @@
         margin-bottom: 40px;
       }
       .values-accordion {
+        width: 100%;
+        max-width: 800px;
         display: grid;
         gap: 18px;
-        max-width: 900px;
         margin: 0 auto 40px;
       }
       .value-item {
@@ -413,20 +587,28 @@
         transform: rotate(45deg);
       }
       .value-item[open] summary {
-        background: rgba(0, 174, 239, 0.15);
+        background: #00aeef33;
+      }
+      .value-item summary:hover {
+        background: #00aeef66;
       }
       .value-body {
         display: flex;
-        align-items: flex-start;
+        flex-direction: column;
+        align-items: center;
+
         gap: 24px;
         padding: 24px 30px 30px;
       }
       .value-icon {
-        width: 60px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: auto;
         flex-shrink: 0;
       }
       .value-icon img {
-        width: 60px;
+        width: 250px;
         height: auto;
       }
       .value-body p {
@@ -439,20 +621,19 @@
         margin: -20px 0 40px;
       }
 
-      /* =========================================================
-   5. FOOTER  (kept identical to index.html)
-   ========================================================= */
       .site-footer {
         background: var(--footer-bg);
         color: rgba(255, 255, 255, 0.85);
         padding: 50px 40px 30px;
       }
+
       .footer-social {
         display: flex;
         justify-content: center;
         gap: 18px;
         margin-bottom: 30px;
       }
+
       .footer-social a {
         width: 40px;
         height: 40px;
@@ -462,50 +643,87 @@
         align-items: center;
         justify-content: center;
       }
+
       .footer-social svg {
         width: 18px;
         height: 18px;
         fill: #222;
       }
+
       .footer-logos {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         gap: 30px;
         flex-wrap: wrap;
         max-width: var(--max);
         margin: 0 auto 26px;
+        position: relative;
+        z-index: 1;
       }
+
+      .footer-logos a,
       .footer-logos img {
-        height: 46px;
+        display: block;
+      }
+
+      .footer-logos a img {
+        height: 82px;
         width: auto;
         opacity: 0.9;
       }
+
+      .footer-logos > img {
+        height: 180px;
+        width: auto;
+        opacity: 0.9;
+      }
+
       .footer-divider {
         border: none;
         border-top: 1px dashed rgba(255, 255, 255, 0.35);
         max-width: 640px;
         margin: 0 auto 24px;
+        position: relative;
+        z-index: 0;
       }
+
       .footer-bottom {
         text-align: center;
-        font-size: 14px;
+        font-size: 15px;
       }
+
       .footer-bottom p {
         margin: 0 0 8px;
-        font-size: 14px;
+        font-size: 15px;
         color: rgba(255, 255, 255, 0.85);
       }
+
+      .footer-legal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px 0;
+        line-height: 1.8;
+      }
+
       .footer-legal a {
         color: rgba(255, 255, 255, 0.85);
       }
+
       .footer-legal a:hover {
         color: #fff;
         text-decoration: underline;
       }
+
       .footer-legal span {
         color: rgba(255, 255, 255, 0.4);
         margin: 0 6px;
+      }
+
+      .footer-legal-secondary {
+        display: block;
+        margin-top: 4px;
       }
 
       /* =========================================================
@@ -534,25 +752,31 @@
           transform: translateX(100%);
           transition: transform 0.25s ease;
           padding: 90px 0 40px;
+          z-index: 450;
         }
+
         .main-nav.open {
           transform: translateX(0);
         }
+
         .main-nav > ul {
           flex-direction: column;
           align-items: stretch;
           gap: 0;
         }
+
         .main-nav > ul > li {
           width: 100%;
           border-bottom: 1px solid #eee;
         }
+
         .main-nav > ul > li > a,
         .main-nav > ul > li > button.nav-top-link {
           width: 100%;
           justify-content: space-between;
           padding: 16px 24px;
         }
+
         .dropdown {
           position: static;
           box-shadow: none;
@@ -563,18 +787,23 @@
           width: 100%;
           padding-left: 12px;
         }
+
         .main-nav > ul > li.open > .dropdown {
           display: block;
         }
+
         .dropdown .dropdown {
           left: 0;
         }
+
         .nav-toggle {
           display: flex;
         }
+
         .header-cta.desktop-only {
           display: none;
         }
+
         .nav-scrim {
           position: fixed;
           inset: 0;
@@ -584,6 +813,7 @@
           transition: opacity 0.25s ease;
           z-index: 400;
         }
+
         .nav-scrim.open {
           opacity: 1;
           visibility: visible;
@@ -614,12 +844,33 @@
           justify-content: center;
           text-align: center;
         }
+        .header-top {
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+        .header-cta-cont {
+          width: 95%;
+          display: flex;
+          justify-content: center;
+          padding-bottom: 10px;
+          padding-top: 10px;
+        }
+        .header-cta {
+          width: 100%;
+          height: auto;
+          max-width: 320px;
+          font-size: 14px;
+          text-align: center;
+          text-wrap: wrap;
+        }
       }
     </style>
   </head>
   <body>
     <!-- =========================================================
-     HEADER  (copied verbatim from index.html)
+     HEADER
      ========================================================= -->
     <header class="site-header" id="siteHeader">
       <div class="header-inner">
@@ -637,11 +888,13 @@
               fetchpriority="high"
             />
           </a>
-          <a
-            class="btn btn-primary header-cta desktop-only"
-            href="https://lifeskillsadvocate.com/discovery/"
-            >Book A Complimentary Discovery Meeting</a
-          >
+          <div class="header-cta-cont">
+            <a
+              class="btn btn-primary header-cta"
+              href="https://lifeskillsadvocate.com/discovery/"
+              >Book A Complimentary Discovery Meeting</a
+            >
+          </div>
         </div>
 
         <div class="nav-scrim" id="navScrim"></div>
@@ -650,20 +903,22 @@
           <ul>
             <li>
               <button class="nav-top-link" aria-expanded="false">
-                About LSA Ezze <span class="caret">▾</span>
+                About LSA<span class="caret">▾</span>
               </button>
               <ul class="dropdown">
                 <li>
-                  <a href="meet-our-team.html">Meet Our Team</a>
+                  <a href="https://lifeskillsadvocate.com/meet-our-team/"
+                    >Meet Our Team</a
+                  >
                 </li>
                 <li>
                   <a
-                    href="discover-the-life-skills-advocate-difference.html"
+                    href="https://lifeskillsadvocate.com/discover-the-life-skills-advocate-difference/"
                     >Discover The LSA Difference</a
                   >
                 </li>
                 <li>
-                  <a href="core-values.html" aria-current="page"
+                  <a href="https://lifeskillsadvocate.com/core-values/"
                     >Core Values</a
                   >
                 </li>
@@ -768,7 +1023,11 @@
             <li>
               <a
                 href="https://lifeskillsadvocate.com/adulting-like-a-champ-workbook/"
-                class="nav-top-link"
+                class="nav-top-link adultinglikeachamp-cont"
+                ><span class="adultinglikeachamp-img"
+                  ><img
+                    src="assets/img/newicon.png"
+                    alt="adultinglikeachamp-img" /></span
                 >Adulting Like A Champ <span class="caret">▾</span></a
               >
               <ul class="dropdown">
@@ -865,7 +1124,7 @@
                     >Adulting Like A Champ</a
                   >
                 </li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="https://lifeskillsadvocate.com/blog/">Blog</a></li>
                 <li>
                   <a
                     href="https://lifeskillsadvocate.com/free-executive-functioning-worksheets/"
@@ -998,7 +1257,15 @@
               </ul>
             </li>
             <li>
-              <a href="https://advocate360.app/" target="_blank" rel="noopener"
+              <a
+                href="https://advocate360.app/"
+                target="_blank"
+                rel="noopener"
+                class="advocate360-cont"
+                ><span class="advocate360-img"
+                  ><img
+                    src="assets/img/advocate360icon.png"
+                    alt="advocate360-img" /></span
                 >Advocate360</a
               >
             </li>
@@ -1033,8 +1300,8 @@
             One of the most critical components to helping our clients take
             meaningful action includes clearly defining who they are as
             individuals and what they stand for. As professionals, it's
-            important for us to model this practice, so you know right from
-            the start how we approach our work and our relationships with our
+            important for us to model this practice, so you know right from the
+            start how we approach our work and our relationships with our
             clients.
           </p>
           <div class="cta-center">
@@ -1060,13 +1327,13 @@
                 />
               </div>
               <p>
-                We show up exactly as we are and inspire our clients to do
-                the same. We tap into the unique strengths and experiences
-                that accompany our neurodivergence, demonstrating that it is
-                not just something to manage, but a source of powerful
-                insight and capability. Our shared lived experiences enable
-                us to stand with our clients, showing what's achievable, and
-                inspiring them to embrace their own neurodivergent journey.
+                We show up exactly as we are and inspire our clients to do the
+                same. We tap into the unique strengths and experiences that
+                accompany our neurodivergence, demonstrating that it is not just
+                something to manage, but a source of powerful insight and
+                capability. Our shared lived experiences enable us to stand with
+                our clients, showing what's achievable, and inspiring them to
+                embrace their own neurodivergent journey.
               </p>
             </div>
           </details>
@@ -1084,12 +1351,12 @@
                 />
               </div>
               <p>
-                We're not just different, we dare to be so. We challenge
-                norms and question the status quo. Drawing from our
-                extensive experience both working with and being
-                neurodivergent, we navigate beyond conventional, ineffective
-                tactics, leveraging our unique perspectives to find the path
-                that results in success for our clients.
+                We're not just different, we dare to be so. We challenge norms
+                and question the status quo. Drawing from our extensive
+                experience both working with and being neurodivergent, we
+                navigate beyond conventional, ineffective tactics, leveraging
+                our unique perspectives to find the path that results in success
+                for our clients.
               </p>
             </div>
           </details>
@@ -1108,12 +1375,11 @@
               </div>
               <p>
                 We strive for excellence in every aspect of our work. Our
-                approach is to harness the unique perspectives and skills
-                that come with neurodiversity, transforming challenges into
-                victories and setting new benchmarks for success. This
-                pursuit of excellence is what we model for our clients,
-                encouraging them to harness their distinct talents to
-                achieve their personal best.
+                approach is to harness the unique perspectives and skills that
+                come with neurodiversity, transforming challenges into victories
+                and setting new benchmarks for success. This pursuit of
+                excellence is what we model for our clients, encouraging them to
+                harness their distinct talents to achieve their personal best.
               </p>
             </div>
           </details>
@@ -1152,10 +1418,10 @@
                 />
               </div>
               <p>
-                We think strategically, adapting for the greater good and
-                future of our community. We empower our clients to see
-                beyond immediate challenges to the bigger picture, fostering
-                independence and resilience.
+                We think strategically, adapting for the greater good and future
+                of our community. We empower our clients to see beyond immediate
+                challenges to the bigger picture, fostering independence and
+                resilience.
               </p>
             </div>
           </details>
@@ -1173,14 +1439,13 @@
                 />
               </div>
               <p>
-                We put the neurodivergent community first in everything we
-                do. Our actions and decisions are driven by empathy and the
-                unique needs of our clients, not profit. By ensuring the
-                health of our business, we maintain our independence and the
-                ability to nimbly adapt to best serve our community. We're
-                forging our own path, leading the charge, and demonstrating
-                that a thriving business can, and should, prioritize the
-                people it serves.
+                We put the neurodivergent community first in everything we do.
+                Our actions and decisions are driven by empathy and the unique
+                needs of our clients, not profit. By ensuring the health of our
+                business, we maintain our independence and the ability to nimbly
+                adapt to best serve our community. We're forging our own path,
+                leading the charge, and demonstrating that a thriving business
+                can, and should, prioritize the people it serves.
               </p>
             </div>
           </details>
@@ -1198,32 +1463,23 @@
                 />
               </div>
               <p>
-                Within our team and when serving our clients, we emphasize
-                the importance of impartiality and deep respect. We
-                celebrate all diversities and value each individual's
-                unique perspective. We leave our political beliefs at the
-                door, allowing us to fully concentrate on our larger
-                mission: uplifting the neurodivergent community. This
-                approach ensures that everyone feels comfortable, valued,
-                and heard, keeping our shared goals at the forefront of our
-                efforts.
+                Within our team and when serving our clients, we emphasize the
+                importance of impartiality and deep respect. We celebrate all
+                diversities and value each individual's unique perspective. We
+                leave our political beliefs at the door, allowing us to fully
+                concentrate on our larger mission: uplifting the neurodivergent
+                community. This approach ensures that everyone feels
+                comfortable, valued, and heard, keeping our shared goals at the
+                forefront of our efforts.
               </p>
             </div>
           </details>
-        </div>
-
-        <div class="cta-center">
-          <a
-            class="btn btn-primary"
-            href="https://lifeskillsadvocate.com/discovery/"
-            >Book A Complimentary Discovery Meeting</a
-          >
         </div>
       </section>
     </main>
 
     <!-- =========================================================
-     FOOTER  (copied verbatim from index.html)
+     FOOTER
      ========================================================= -->
     <footer class="site-footer">
       <div class="footer-social">
@@ -1242,10 +1498,10 @@
           target="_blank"
           rel="nofollow noopener"
           aria-label="Instagram"
-          ><svg viewBox="0 0 448 512">
+          ><svg viewBox="0 0 448 512" data-id="instagram" data-name="">
             <path
-              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3a26.8 26.8 0 1 1-53.6 0 26.8 26.8 0 0 1 53.6 0zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-            /></svg
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+            ></path></svg
         ></a>
         <a
           href="https://www.pinterest.com/LifeSkillsAdvocate/"
@@ -1270,17 +1526,17 @@
       </div>
 
       <div class="footer-logos">
+        <img
+          src="assets/img/Life-Skills-Advocate-white-cropped.png"
+          alt="Life Skills Advocate"
+          loading="lazy"
+        />
         <a href="https://neurowyld.com/" target="_blank" rel="noopener"
           ><img
             src="assets/img/Neurowyld-Featured-Image-5-e1758586279818.png"
             alt="Neurowyld"
             loading="lazy"
         /></a>
-        <img
-          src="assets/img/Life-Skills-Advocate-white-cropped.png"
-          alt="Life Skills Advocate"
-          loading="lazy"
-        />
       </div>
 
       <hr class="footer-divider" />
@@ -1302,6 +1558,11 @@
           <a href="https://lifeskillsadvocate.com/disclaimer/">Disclaimer</a
           ><span>&bull;</span>
           <a href="https://lifeskillsadvocate.com/contact/">Contact</a>
+        </p>
+        <p class="footer-legal footer-legal-secondary">
+          <a href="https://lifeskillsadvocate.com/privacy-policy/"
+            >Privacy Settings</a
+          >
         </p>
       </div>
     </footer>
@@ -1365,6 +1626,51 @@
           });
         });
       })();
+
+      //header visible hidden
+      document.addEventListener("DOMContentLoaded", () => {
+        const siteHeader = document.getElementById("siteHeader");
+        const headerTop = document.querySelector(".header-top");
+        let ultimoScroll = window.scrollY;
+
+        // 1. Función para medir la altura exacta del .header-top
+        function actualizarAlturaTop() {
+          if (headerTop && siteHeader) {
+            // Calculamos la altura en píxeles mas margenes y paddings
+            margins =
+              parseFloat(getComputedStyle(headerTop).marginTop) +
+              parseFloat(getComputedStyle(headerTop).marginBottom);
+            paddings =
+              parseFloat(getComputedStyle(headerTop).paddingTop) +
+              parseFloat(getComputedStyle(headerTop).paddingBottom);
+            var margenManual = 10; // Ajusta este valor según sea necesario
+            const altura =
+              headerTop.offsetHeight + margins + paddings + margenManual;
+            // Se la pasamos a la variable CSS del header
+            siteHeader.style.setProperty("--top-height", `${altura}px`);
+          }
+        }
+
+        // Calculamos al cargar la página y por si el usuario gira el móvil o achica la ventana
+        actualizarAlturaTop();
+        window.addEventListener("resize", actualizarAlturaTop);
+
+        // 2. Lógica del Scroll
+        window.addEventListener("scroll", () => {
+          const scrollActual = window.scrollY;
+
+          // Si bajamos, y ya pasamos la altura inicial (para que no titile arriba del todo)
+          if (scrollActual > ultimoScroll && scrollActual > 100) {
+            siteHeader.classList.add("hide-top");
+          }
+          // Si subimos
+          else if (scrollActual < ultimoScroll) {
+            siteHeader.classList.remove("hide-top");
+          }
+
+          ultimoScroll = scrollActual;
+        });
+      });
     </script>
   </body>
 </html>

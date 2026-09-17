@@ -164,6 +164,16 @@
 
     .section-tint {
       background: var(--tint);
+      padding-bottom: 0;
+    }
+
+    .section-tint .tint-section {
+      padding-bottom: 0;
+    }
+
+    .tint-content .footnote-link {
+      display: inline;
+      color: var(--blue);
     }
 
     .section-navy {
@@ -328,9 +338,6 @@
       border: none;
       font-family: var(--font-body);
     }
-    /* .advocate360-img{
-      background-image: url("assets/img/advocate360-icon-purple.webp");
-    } */
 
     /* Estado normal para los enlaces <a> y el botón */
     .main-nav > ul > li > a,
@@ -471,7 +478,7 @@
     /* =========================================================
    3. HERO
    ========================================================= */
-    .hero {
+    /* .hero {
       position: relative;
       padding: 90px 40px;
       background:
@@ -481,6 +488,16 @@
           rgba(45, 181, 230, 0.25) 100%),
         url("assets/img/00100lrPORTRAIT_00100_BURST20200120104948443_COVER-scaled.jpg") center 40% / cover no-repeat;
       color: var(--white);
+    } */
+    .hero {
+        padding: 50px 20px;
+        /* Primero el degradado, luego la imagen */
+        background-image: 
+            linear-gradient(113deg, rgba(0, 174, 239, 0.9) 0%, var(--blue) 55%, rgba(45, 181, 230, 0.25) 100%),
+            url('assets/img/00100lrPORTRAIT_00100_BURST20200120104948443_COVER-scaled.jpg');
+        background-position: center 40%;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     .hero-card {
@@ -710,49 +727,60 @@
 
     .carousel {
       position: relative;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
       aspect-ratio: 3/4;
-      background: #ddd;
+      background: transparent;
+    }
+    .carousel-viewport {
+      overflow: hidden;
+      width: 80%;
+      height: 100%;
+      margin-left: 10%;
+      
     }
 
     .carousel-track {
       display: flex;
       height: 100%;
+      width: 100%;
       transition: transform 0.6s ease;
     }
 
     .carousel-slide {
       min-width: 100%;
-      height: 100%;
+      height: 90%;
       position: relative;
+      flex: 0 0 100%;
+      display: flex;
+      align-items: stretch;
+      margin: 0;
     }
 
     .carousel-slide img {
       width: 100%;
       height: 100%;
+      display: block;
       object-fit: cover;
+      object-position: center;
     }
 
-    .carousel-slide figcaption {
+    .carousel-slide figcaption {    
       position: absolute;
-      bottom: 0;
+      bottom: -50px;
       left: 0;
       right: 0;
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.65));
-      color: #fff;
-      padding: 30px 16px 14px;
+      /* background: linear-gradient(transparent, rgba(0, 0, 0, 0.65)); */
+      color: #817f7f;
+      padding: 30px 0px 20px;
       font-weight: 700;
-      text-align: center;
+      text-align: left;
     }
 
     .carousel-dots {
       position: absolute;
+      display: none;
       bottom: 12px;
       left: 0;
       right: 0;
-      display: flex;
       justify-content: center;
       gap: 8px;
     }
@@ -769,6 +797,35 @@
     .carousel-dots button.active {
       background: #fff;
     }
+
+    /* 2. Tus flechas con la posición horizontal añadida */
+    .prev-arrow,
+    .next-arrow {
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    /* Posición horizontal individual */
+    .prev-arrow {
+      left: 0px; /* Distancia desde la izquierda del carrusel */
+    }
+
+    .next-arrow {
+        right: 0px; /* Distancia desde la derecha del carrusel */
+    }
+
+    .prev-arrow svg,
+    .next-arrow svg {
+        width: 40px;
+        height: 40px;
+        stroke: var(--muted); /* Nota: como usas stroke-width en el SVG, es mejor usar stroke en lugar de fill */
+    }
+
 
     /* =========================================================
    7. MISSION BAND
@@ -799,7 +856,7 @@
    8. BOOKING SECTION
    ========================================================= */
     .booking-section {
-      background: var(--tint-solid);
+      background: #00AEEF26;
       text-align: center;
     }
 
@@ -830,77 +887,106 @@
 
     .steps-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 227px));
       gap: 24px;
+      justify-content: center;
       max-width: 1000px;
       margin: 0 auto;
     }
 
     .step-card {
+      position: relative;
       background: #fff;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 30px 16px;
+      /* padding: 22px 18px 18px; */
       text-align: center;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
+    .step-card h4{
+      width: 100%;
+    }
+    .step-card .tcb-clear{
+      height: 40%;
+      width: 100%;
+    } 
 
     .step-num {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
+      position: absolute;
+      width: 61px;
+      height: 86px;
+      border-radius: 5px;
       background: rgba(0, 174, 239, 0.15);
-      color: var(--blue);
+      color: var(--navy);
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: var(--font-accent);
       font-weight: 800;
       font-size: 20px;
-      margin: 0 auto 16px;
+      margin: 0 0 18px;
     }
 
     .step-card h4 {
-      font-size: 18px;
+      font-size: 22px;
       margin-bottom: 10px;
     }
 
     .step-card p {
-      font-size: 15px;
+      font-size: 16px;
       color: var(--muted);
       margin: 0;
+      line-height: 1.6;
     }
 
     /* =========================================================
    9. TESTIMONIALS
    ========================================================= */
+    .testimonial-section {
+      background: #36454F;
+      color: #fff;
+    }
+
+    .testimonial-section .eyebrow,
+    .testimonial-section .testimonial-card,
+    .testimonial-section .testimonial-card .role {
+      color: var(--blue);
+    }
+
     .testimonial-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 100px;
       max-width: var(--max);
-      margin: 0 auto 44px;
+      margin: 50px auto 44px;
     }
 
     .testimonial-card {
-      background: #fff;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 30px;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
     }
 
     .testimonial-card p {
-      font-style: italic;
+      font-style: normal;
       font-size: 17px;
-      color: #444;
+      font-style: italic;
+      color: #fff;
     }
 
     .testimonial-card h4 {
       margin-bottom: 2px;
       font-size: 18px;
+      color: var(--white);
     }
 
     .testimonial-card .role {
-      color: var(--muted);
+      color: var(--blue);
       font-size: 14px;
     }
 
@@ -909,8 +995,8 @@
    ========================================================= */
     .partners-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 28px 26px;
       align-items: center;
       max-width: var(--max);
       margin: 0 auto;
@@ -923,6 +1009,7 @@
       filter: grayscale(15%);
       opacity: 0.85;
       transition: opacity 0.15s ease;
+      min-height: 100px;
     }
 
     .partners-grid a:hover {
@@ -930,16 +1017,17 @@
     }
 
     .partners-grid img {
-      max-height: 70px;
+      max-height: 80px;
       width: auto;
+      object-fit: contain;
     }
 
     /* =========================================================
    11. NEUROWYLD PROMO
    ========================================================= */
     .neurowyld {
-      background: var(--navy);
-      color: #fff;
+      background: #fff;
+      color: var(--navy);
       border-radius: 0;
       padding: 70px 40px;
     }
@@ -955,30 +1043,49 @@
       align-items: center;
     }
 
-    .neurowyld-grid img {
-      border-radius: var(--radius);
+    .neurowyld-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
     }
 
-    .neurowyld-eyebrow {
-      color: var(--blue);
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-size: 14px;
-      margin-bottom: 10px;
+    .neurowyld-visual img {
       display: block;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      border-radius: 0;
+      object-fit: contain;
+      margin: 0 auto;
     }
 
     .neurowyld h2 {
       text-align: left;
-      color: #fff;
+      color: var(--navy);
     }
 
     .neurowyld p {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(17, 24, 39, 0.8);
     }
 
+    .neurowyld-grid > div:last-child {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .neurowyld .btn-white {
+      background: #E404EF80;
+      color: #fff;
+      margin: 0 auto;
+      display: inline-flex;
+      align-self: center;
+    }
+    /* que ocupe dos columnas */
     .neurowyld-banner {
+      grid-column: 1 / span 2;
       margin-top: 50px;
       text-align: center;
     }
@@ -986,6 +1093,11 @@
     /* =========================================================
    12. WORKBOOK PROMO
    ========================================================= */
+    .workbook-section {
+      background: var(--blue);
+      color: #fff;
+    }
+
     .workbook-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -993,6 +1105,23 @@
       align-items: center;
       max-width: var(--max);
       margin: 0 auto;
+    }
+
+    .workbook-grid h2,
+    .workbook-grid p,
+    .workbook-grid a {
+      color: #fff;
+    }
+
+    .workbook-grid p + p {
+      margin-top: 12px;
+    }
+
+    .workbook-grid .btn {
+      background: #fff;
+      color: #000;
+      border-color: transparent;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
     }
 
     .workbook-grid h2 {
@@ -1012,6 +1141,25 @@
       gap: 30px;
       max-width: var(--max);
       margin: 0 auto 40px;
+    }
+
+    .blog-section {
+      background: #fff;
+      margin-bottom: 50px;
+    }
+
+    .blog-section .post-card {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      overflow: visible;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-section .post-card-body {
+      padding: 20px 0 0;
     }
 
     .post-card {
@@ -1085,16 +1233,29 @@
 
     .footer-logos {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       gap: 30px;
       flex-wrap: wrap;
       max-width: var(--max);
       margin: 0 auto 26px;
+      position: relative;
+      z-index: 1;
     }
 
+    .footer-logos a,
     .footer-logos img {
-      height: 46px;
+      display: block;
+    }
+
+    .footer-logos a img {
+      height: 82px;
+      width: auto;
+      opacity: 0.9;
+    }
+
+    .footer-logos > img {
+      height: 180px;
       width: auto;
       opacity: 0.9;
     }
@@ -1104,17 +1265,27 @@
       border-top: 1px dashed rgba(255, 255, 255, 0.35);
       max-width: 640px;
       margin: 0 auto 24px;
+      position: relative;
+      z-index: 0;
     }
 
     .footer-bottom {
       text-align: center;
-      font-size: 14px;
+      font-size: 15px;
     }
 
     .footer-bottom p {
       margin: 0 0 8px;
-      font-size: 14px;
+      font-size: 15px;
       color: rgba(255, 255, 255, 0.85);
+    }
+
+    .footer-legal {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px 0;
+      line-height: 1.8;
     }
 
     .footer-legal a {
@@ -1129,6 +1300,11 @@
     .footer-legal span {
       color: rgba(255, 255, 255, 0.4);
       margin: 0 6px;
+    }
+
+    .footer-legal-secondary {
+      display: block;
+      margin-top: 4px;
     }
 
     .learn-more-btn{
@@ -1191,10 +1367,53 @@
         /* align-self: flex-end; width: 60%; (Mantén tus estilos originales aquí) */
     }
 
+    .testimonial-title{
+      color: var(--white);
+    }
+    .testimonial-item{
+      color: var(--white);
+    }
+    .neurowyld-title-img{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .neurowyld-title-img-p1{
+      width: 60%;
+      height: auto;
+    }
+    .neurowyld-title-img-p2{
+
+      width: 45%;
+      height: auto;
+    }
+    .main-nav>ul>li>a.adultinglikeachamp-cont{
+      justify-content: start;
+    }
+    .adultinglikeachamp-img img{
+      width: 24px;
+      height: auto;
+    }
+    .main-nav>ul>li>a.advocate360-cont{
+      justify-content: start;
+    }
+    .advocate360-img img{
+      width: 24px;
+      height: auto;
+    }
+
     /* =========================================================
    15. RESPONSIVE
    ========================================================= */
     @media (max-width: 1023px) {
+      html,
+      body,
+      .site-header {
+        overflow-x: hidden;
+      }
+
       h1 {
         font-size: 36px;
       }
@@ -1247,6 +1466,7 @@
         transform: translateX(100%);
         transition: transform 0.25s ease;
         padding: 90px 0 40px;
+        z-index: 450;
       }
 
       .main-nav.open {
@@ -1313,15 +1533,49 @@
         visibility: visible;
       }
     }
-
     @media (max-width: 767px) {
+      .header-top{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      .header-cta-cont{
+        width: 95%;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 10px;
+        padding-top: 10px;
+      }
+      .header-cta {
+        width: 100%;
+        height: auto;
+        max-width: 320px;
+        font-size: 14px;
+        text-align: center;
+        text-wrap: wrap;
+      }
+
       .hero {
-        padding: 50px 20px;
+          /* Prueba forzando que se centre exactamente o que cubra desde la derecha/izquierda según dónde esté la cara */
+          background-position: 70% center; /* Cambia el 70% si necesitas moverlo más a la izquierda o derecha */
+          background-image: linear-gradient(113deg, rgba(0, 174, 239, 0.7) 0%, var(--blue) 30%, rgba(45, 181, 230, 0.10) 100%), url(assets/img/00100lrPORTRAIT_00100_BURST20200120104948443_COVER-scaled.jpg);
       }
 
       .hero-card {
-        padding: 28px;
+        padding: 5px;
+        max-width: 100%;
       }
+      .hero-card h1 {
+        font-size: 28px;
+      }
+      .hero-btn-cta {
+        width: 100%;
+        font-size: 14px;
+        text-align: center;
+        text-wrap: wrap;
+      }
+      
 
       h1 {
         font-size: 30px;
@@ -1353,6 +1607,131 @@
         justify-content: center;
         text-align: center;
       }
+
+      #ef-ripple .split-media{
+        display: none;
+      }
+      #ef-ripple .split{
+        display: block;
+      }
+      #ef-ripple .split h2{
+        text-align: center;
+        font-size: 32px;
+      }
+      .learn-more-btn{
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 14px;
+      }
+      .split-media {
+          order: 0;
+      }
+      .lede {
+        display: none;
+      }
+      .suport-by-age .card-grid.cols-3{
+        grid-template-columns: repeat(1, 1fr);
+      }
+      .who-section div.who-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .who-section div.carousel{
+        width: 100%;
+        flex-direction: row;
+      }
+      .who-section div h2{
+        text-align: center;
+        font-size: 32px;
+      }
+      .who-section a.btn.btn-primary{
+        align-self: center;
+      }
+
+      .booking-section .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .booking-section .steps-grid .step-card{
+        min-height: 270px;
+      }
+      .booking-section .steps-grid .step-card .step-num{
+        width: 45px;
+        height: 65px;
+      }
+      .booking-section .steps-grid .step-card .tcb-clear{
+        height: 30%;
+        width: 100%;
+      }
+      .booking-section .steps-title{
+        margin-bottom: 40px;
+      }
+
+      .testimonial-grid {
+          gap: 40px;
+      }
+
+      .testimonial-section .center a.btn.btn-primary{
+        width: 100%;
+        font-size: 14px;
+      }
+
+      .section-tint.section-partners .partners-grid{
+          grid-template-columns: repeat(4, 1fr);
+      }
+      .neurowyld .container{
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+      }
+      .neurowyld .container .neurowyld-grid{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .container .neurowyld-grid .neurowyld-banner.t-shirt-img{
+        display: none
+      }
+      .neurowyld-visual img{
+        width: 100%;
+        height: auto;
+      }
+      .container .neurowyld-grid .neurowyld-content{
+        display: flex;
+        flex-direction: column;
+      }
+      .neurowyld-title-img-p1 {
+        width: 100%;
+        height: auto;
+      }
+      .neurowyld-title-img-p2 {
+        width: 90%;
+        height: auto;
+      }
+      .footer-logos > img {
+          height: 180px;
+          width: auto;
+          opacity: 0.9;
+      }
+
+      .workbook-grid img {
+          border-radius: var(--radius);
+          height: auto;
+          width: 100%;
+      }
+
+      /* Posición horizontal individual */
+      .prev-arrow {
+        left: -10px; /* Distancia desde la izquierda del carrusel */
+      }
+
+      .next-arrow {
+          right: -10px; /* Distancia desde la derecha del carrusel */
+      }
     }
   </style>
 </head>
@@ -1369,7 +1748,7 @@
             height="auto" fetchpriority="high" />
         </a>
         <div class="header-cta-cont">
-          <a class="btn btn-primary header-cta desktop-only" href="https://lifeskillsadvocate.com/discovery/">Book A
+          <a class="btn btn-primary header-cta" href="https://lifeskillsadvocate.com/discovery/">Book A
             Complimentary Discovery Meeting</a>
         </div>
       </div>
@@ -1461,7 +1840,7 @@
             </ul>
           </li>
           <li>
-            <a href="https://lifeskillsadvocate.com/adulting-like-a-champ-workbook/" class="nav-top-link">Adulting Like
+            <a href="https://lifeskillsadvocate.com/adulting-like-a-champ-workbook/" class="nav-top-link adultinglikeachamp-cont"><span class="adultinglikeachamp-img"><img src="assets/img/newicon.png" alt="adultinglikeachamp-img"></span>Adulting Like
               A Champ <span class="caret">▾</span></a>
             <ul class="dropdown">
               <li>
@@ -1612,7 +1991,7 @@
             </ul>
           </li>
           <li>
-            <a href="https://advocate360.app/" target="_blank" rel="noopener">Advocate360</a>
+            <a href="https://advocate360.app/" target="_blank" rel="noopener" class="advocate360-cont"><span class="advocate360-img"><img src="assets/img/advocate360icon.png" alt="advocate360-img"></span>Advocate360</a>
           </li>
         </ul>
       </nav>
@@ -1876,7 +2255,7 @@
        ========================================================= -->
     <section class="who-section">
       <div class="who-grid">
-        <div>
+        <div class="who-content">
           <h2>Who is Life Skills Advocate?</h2>
           <p>
             Life Skills Advocate, founded in 2019 by special educator Chris
@@ -1902,28 +2281,41 @@
           <a class="btn btn-primary" href="https://lifeskillsadvocate.com/meet-our-team/">Meet Our Whole Team</a>
         </div>
         <div class="carousel" id="teamCarousel">
-          <div class="carousel-track" id="carouselTrack">
-            <figure class="carousel-slide">
-              <img src="assets/img/PXL_20220310_232300224.PORTRAIT-768x1024.jpg" alt="Chris Hanson" loading="lazy" />
-              <figcaption>Chris Hanson</figcaption>
-            </figure>
-            <figure class="carousel-slide">
-              <img src="assets/img/PXL_20220104_215355715.PORTRAIT_2-scaled-e1699905698584-768x1024.jpg"
-                alt="Karrissa Doree" loading="lazy" />
-              <figcaption>Karrissa Doree</figcaption>
-            </figure>
-            <figure class="carousel-slide">
-              <img src="assets/img/Amy-Kim-Waschke-1-e1699905765181-767x1024.jpg" alt="Amy Kim Waschke"
-                loading="lazy" />
-              <figcaption>Amy Kim Waschke</figcaption>
-            </figure>
-            <figure class="carousel-slide">
-              <img src="assets/img/GRACEWAY_015-Shannon-Snow-scaled-e1699906001573-769x1024.jpg" alt="Shannon Snow"
-                loading="lazy" />
-              <figcaption>Shannon Snow</figcaption>
-            </figure>
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="carouselTrack">
+              <figure class="carousel-slide">
+                <img src="assets/img/PXL_20220310_232300224.PORTRAIT-768x1024.jpg" alt="Chris Hanson" loading="lazy" />
+                <figcaption>Chris Hanson</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="assets/img/PXL_20220104_215355715.PORTRAIT_2-scaled-e1699905698584-768x1024.jpg"
+                  alt="Karrissa Doree" loading="lazy" />
+                <figcaption>Karrissa Doree</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="assets/img/Amy-Kim-Waschke-1-e1699905765181-767x1024.jpg" alt="Amy Kim Waschke"
+                  loading="lazy" />
+                <figcaption>Amy Kim Waschke</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="assets/img/GRACEWAY_015-Shannon-Snow-scaled-e1699906001573-769x1024.jpg" alt="Shannon Snow"
+                  loading="lazy" />
+                <figcaption>Shannon Snow</figcaption>
+              </figure>
+            </div>
           </div>
           <div class="carousel-dots" id="carouselDots"></div>
+          <div class="prev-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+          </div>
+          <div class="next-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+  
+          </div>
         </div>
       </div>
     </section>
@@ -1961,9 +2353,10 @@
       </div>
 
       <h3 class="steps-title">What to Expect During the Discovery Meeting</h3>
-      <div class="steps-grid">
+      <div class="steps-grid ">
         <div class="step-card">
           <div class="step-num">1</div>
+          <div class="tcb-clear"></div>
           <h4>Welcome 😃</h4>
           <p>
             Introduce yourself and learn how coaching with LSA may be able to
@@ -1972,6 +2365,7 @@
         </div>
         <div class="step-card">
           <div class="step-num">2</div>
+          <div class="tcb-clear"></div>
           <h4>Goals 🎯</h4>
           <p>
             Discuss your goals and expectations to customize your coaching
@@ -1980,6 +2374,7 @@
         </div>
         <div class="step-card">
           <div class="step-num">3</div>
+          <div class="tcb-clear"></div>
           <h4>Overview 🔍</h4>
           <p>
             Discover more about our coaching process and how it can benefit
@@ -1988,6 +2383,7 @@
         </div>
         <div class="step-card">
           <div class="step-num">4</div>
+          <div class="tcb-clear"></div>
           <h4>Next Steps ✔️</h4>
           <p>
             Get paired with the right coach &amp; book a foundation session.
@@ -1999,9 +2395,9 @@
     <!-- =========================================================
        TESTIMONIALS
        ========================================================= -->
-    <section>
+    <section class="testimonial-section">
       <span class="eyebrow">testimonials</span>
-      <h2>What Our Clients &amp; Parents Are Saying</h2>
+      <h2 class="testimonial-title">What Our Clients &amp; Parents Are Saying</h2>
       <div class="testimonial-grid">
         <div class="testimonial-card">
           <p>
@@ -2036,14 +2432,14 @@
         </div>
       </div>
       <div class="center">
-        <a class="btn btn-primary hero-btn-cta" href="#booking">Book a Complimentary Discovery Meeting</a>
+        <a class="btn btn-primary" href="#booking">Book a Complimentary Discovery Meeting</a>
       </div>
     </section>
 
     <!-- =========================================================
        PARTNERSHIPS
        ========================================================= -->
-    <section class="section-tint">
+    <section class="section-tint section-partners">
       <h2>Partnerships &amp; Professional Affiliations</h2>
       <div class="partners-grid">
         <a href="https://thepolytech.com/" target="_blank" rel="nofollow noopener"><img
@@ -2085,10 +2481,14 @@
     <section class="neurowyld">
       <div class="container">
         <div class="neurowyld-grid">
-          <img src="assets/img/Teen-14-e1758628774970.png" alt="Neurowyld apparel model" loading="lazy" width="618"
-            height="562" />
-          <div>
-            <span class="neurowyld-eyebrow">New from LSA</span>
+          <div class="neurowyld-banner neurowyld-title-img">
+            <img class="neurowyld-title-img-p1" src="assets/img/neurowyldImg.png" alt="Neurowyld banner" loading="lazy" width="1250" height="189" />
+            <img class="neurowyld-title-img-p2" src="assets/img/neurodiversityImg.png" alt="Neurowyld banner" loading="lazy" width="1250" height="189" />
+          </div>
+          <div class="neurowyld-visual">
+            <img src="assets/img/Teen-14-e1758628774970.png" alt="Neurowyld featured image" loading="lazy" width="600" height="600" />
+          </div>
+          <div class="neurowyld-content" >
             <h2>We've launched Neurowyld</h2>
             <p>
               Our new shop featuring neurodivergent-affirming merch that
@@ -2102,10 +2502,9 @@
             </p>
             <a class="btn btn-white" href="https://neurowyld.com/" target="_blank" rel="noopener">Shop Neurowyld</a>
           </div>
-        </div>
-        <div class="neurowyld-banner">
-          <img src="assets/img/Neurowyld-Facebook-Banner-1-e1758628620626.png" alt="Neurowyld banner" loading="lazy"
-            width="1250" height="189" />
+          <div class="neurowyld-banner t-shirt-img">
+            <img src="assets/img/Neurowyld-Facebook-Banner-1-e1758628620626.png" alt="Neurowyld banner" loading="lazy" width="1250" height="189" />
+          </div>
         </div>
       </div>
     </section>
@@ -2113,7 +2512,7 @@
     <!-- =========================================================
        WORKBOOK PROMO
        ========================================================= -->
-    <section>
+    <section class="workbook-section">
       <div class="workbook-grid">
         <div>
           <h2 style="text-align: center">
@@ -2147,7 +2546,7 @@
     <!-- =========================================================
        BLOG
        ========================================================= -->
-    <section class="section-tint">
+    <section class="section-tint blog-section">
       <span class="eyebrow">research-based strategies</span>
       <h2>From Our Blog</h2>
       <div class="blog-grid">
@@ -2193,7 +2592,7 @@
         </article>
       </div>
       <div class="center">
-        <a class="btn btn-outline" href="https://lifeskillsadvocate.com/blog/">Visit Our Blog</a>
+        <a class="btn btn-primary" href="https://lifeskillsadvocate.com/blog/">Visit Our Blog</a>
       </div>
     </section>
   </main>
@@ -2209,10 +2608,11 @@
             d="M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H256l-11.7 91h-73.6v229" />
         </svg></a>
       <a href="https://www.instagram.com/life_skills_advocate/" target="_blank" rel="nofollow noopener"
-        aria-label="Instagram"><svg viewBox="0 0 448 512">
-          <path
-            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3a26.8 26.8 0 1 1-53.6 0 26.8 26.8 0 0 1 53.6 0zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8z" />
-        </svg></a>
+        aria-label="Instagram"><svg viewBox="0 0 448 512" data-id="instagram" data-name="">
+            <path
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+            ></path></svg
+        ></a>
       <a href="https://www.pinterest.com/LifeSkillsAdvocate/" target="_blank" rel="nofollow noopener"
         aria-label="Pinterest"><svg viewBox="0 0 384 512">
           <path
@@ -2226,9 +2626,9 @@
     </div>
 
     <div class="footer-logos">
+      <img src="assets/img/Life-Skills-Advocate-white-cropped.png" alt="Life Skills Advocate" loading="lazy" />
       <a href="https://neurowyld.com/" target="_blank" rel="noopener"><img
           src="assets/img/Neurowyld-Featured-Image-5-e1758586279818.png" alt="Neurowyld" loading="lazy" /></a>
-      <img src="assets/img/Life-Skills-Advocate-white-cropped.png" alt="Life Skills Advocate" loading="lazy" />
     </div>
 
     <hr class="footer-divider" />
@@ -2243,6 +2643,9 @@
         <a href="https://lifeskillsadvocate.com/cookie-policy/">Cookie Policy</a><span>&bull;</span>
         <a href="https://lifeskillsadvocate.com/disclaimer/">Disclaimer</a><span>&bull;</span>
         <a href="https://lifeskillsadvocate.com/contact/">Contact</a>
+      </p>
+      <p class="footer-legal footer-legal-secondary">
+        <a href="https://lifeskillsadvocate.com/privacy-policy/">Privacy Settings</a>
       </p>
     </div>
   </footer>
@@ -2346,6 +2749,16 @@
               goTo(index + 1);
             }, 4500);
           });
+
+        var prevArrow = track.closest(".carousel").querySelector(".prev-arrow");
+        var nextArrow = track.closest(".carousel").querySelector(".next-arrow");
+        prevArrow.addEventListener("click", function () {
+          goTo(index - 1);
+        });
+        nextArrow.addEventListener("click", function () {
+          goTo(index + 1);
+        });
+
       }
     })();
 

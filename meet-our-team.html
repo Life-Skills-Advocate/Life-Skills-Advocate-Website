@@ -30,10 +30,9 @@
     <meta name="twitter:title" content="Meet Our Team | Life Skills Advocate" />
     <meta
       name="twitter:description"
-    content="Meet the team of coaches and staff Life Skills Advocate who are ready to help you thrive!"
+      content="Meet the team of coaches and staff Life Skills Advocate who are ready to help you thrive!"
     />
     <meta name="twitter:image" content="assets/img/logo.png" />
-    a
 
     <link
       rel="icon"
@@ -123,18 +122,18 @@
         color: var(--heading);
         font-weight: 700;
         line-height: 1.25;
-        margin: 0 0 16px;
+        margin: 0 0 40px;
       }
       h1 {
         font-size: 40px;
         text-align: center;
       }
       h2 {
-        font-size: 32px;
+        font-size: 34px;
         text-align: center;
       }
       h3 {
-        font-size: 24px;
+        font-size: 26px;
       }
       h4 {
         font-size: 18px;
@@ -189,6 +188,10 @@
         background: var(--blue);
         color: #fff;
       }
+      .btn-services-client {
+        background-color: #fbaf42;
+        color: #fff;
+      }
       .btn-primary:hover {
         background: var(--blue-dark);
       }
@@ -212,6 +215,8 @@
    2. HEADER / NAV
    ========================================================= */
       .site-header {
+        display: flex;
+        justify-content: center;
         position: sticky;
         top: 0;
         z-index: 500;
@@ -220,19 +225,30 @@
         transition: padding 0.2s ease;
       }
       .header-inner {
-        max-width: 1400px;
-        margin: 0 auto;
+        width: 100%;
         display: flex;
         align-items: center;
-        gap: 24px;
+        gap: 5px;
         padding: 14px 30px;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .header-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 60%;
+      }
+      .header-cta-cont {
+        padding: 30px 0;
       }
       .logo img {
-        height: 54px;
+        height: 115px;
         width: auto;
       }
       .site-header.scrolled .logo img {
-        height: 42px;
+        height: 115px;
       }
 
       .main-nav {
@@ -253,18 +269,43 @@
         display: flex;
         align-items: center;
         gap: 6px;
-        padding: 12px 14px;
+        padding: 12px 14px 4px;
         font-size: 15px;
         font-weight: 600;
         color: #383838;
         background: none;
         border: none;
         font-family: var(--font-body);
+        text-decoration: none;
+        border-bottom: none;
+        background-image: linear-gradient(var(--blue), var(--blue));
+        background-size: 0% 1px;
+        background-position: left bottom;
+        background-repeat: no-repeat;
+        transition:
+          background-size 0.4s ease-in-out,
+          color 0.4s ease-in-out;
       }
-      .main-nav > ul > li > a:hover,
       .main-nav > ul > li:hover > a,
-      .main-nav > ul > li:hover > button.nav-top-link {
+      .main-nav > ul > li:hover > button.nav-top-link,
+      .main-nav > ul > li > a:hover,
+      .main-nav > ul > li > button.nav-top-link:hover {
         color: var(--blue);
+        background-size: 100% 1px;
+      }
+      .main-nav > ul > li > a.adultinglikeachamp-cont {
+        justify-content: start;
+      }
+      .adultinglikeachamp-img img {
+        width: 24px;
+        height: auto;
+      }
+      .main-nav > ul > li > a.advocate360-cont {
+        justify-content: start;
+      }
+      .advocate360-img img {
+        width: 24px;
+        height: auto;
       }
       .caret {
         font-size: 11px;
@@ -332,6 +373,18 @@
       .header-cta {
         flex-shrink: 0;
       }
+      .header-cta:hover {
+        background: linear-gradient(
+          90deg,
+          var(--blue) 0%,
+          var(--blue) 45%,
+          #a3e4fa 50%,
+          var(--blue) 55%,
+          var(--blue) 100%
+        );
+        background-size: 300% 100%;
+        animation: smooth 1s ease-in-out forwards;
+      }
       .nav-toggle {
         display: none;
         background: none;
@@ -355,23 +408,40 @@
    3. PAGE HERO
    ========================================================= */
       .page-hero {
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         padding: 50px 40px 10px;
-        background: var(--tint);
+        background-image:
+          linear-gradient(
+            158deg,
+            rgba(255, 255, 255, 0.28) 19%,
+            rgba(2, 3, 4, 0.65) 100%
+          ),
+          linear-gradient(rgba(54, 69, 79, 0.8), rgba(54, 69, 79, 0.8)) !important;
+      }
+      .page-hero h1 {
+        color: var(--white);
       }
 
       /* =========================================================
    4. TEAM SECTIONS
    ========================================================= */
+      .upercase {
+        text-transform: uppercase;
+      }
+
       .team-section {
         padding: 50px 40px;
       }
       .team-intro {
         text-align: center;
         max-width: 900px;
-        margin: 0 auto 20px;
+        margin: 0 auto 40px;
       }
       .team-intro h2 {
-        font-size: 26px;
+        /* font-size: 26px; */
       }
       .team-intro .accent {
         color: var(--blue);
@@ -389,28 +459,27 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
-        max-width: 900px;
-        margin: 0 auto;
+        /* max-width: 900px; */
+        margin: 0 10px;
       }
       .team-grid.cols-3 {
         grid-template-columns: repeat(3, 1fr);
-        max-width: var(--max);
       }
       .team-grid.cols-1 {
-        grid-template-columns: 1fr;
-        max-width: 420px;
+        grid-template-columns: repeat(1, 1fr);
       }
 
       .team-card {
         background: #fff;
+        border: none;
         border-radius: var(--radius);
-        box-shadow: var(--shadow);
+        box-shadow: none;
         padding: 30px 24px;
         text-align: center;
       }
       .team-card img {
-        width: 160px;
-        height: 160px;
+        width: 250px;
+        height: auto;
         border-radius: 50%;
         object-fit: cover;
         margin: 0 auto 18px;
@@ -421,9 +490,21 @@
         margin-bottom: 4px;
       }
       .team-card .role {
-        color: var(--muted);
+        color: var(--blue);
         font-size: 14.5px;
         margin-bottom: 18px;
+      }
+      .team-card .btn-outline {
+        background: var(--blue);
+        color: #fff;
+        border-color: var(--blue);
+        box-shadow: none;
+        margin: 10px 0px 20px 0px;
+      }
+      .team-card .btn-outline:hover {
+        background: var(--blue-dark);
+        border-color: var(--blue-dark);
+        color: #fff;
       }
       .team-card .card-buttons {
         display: flex;
@@ -440,12 +521,14 @@
         color: rgba(255, 255, 255, 0.85);
         padding: 50px 40px 30px;
       }
+
       .footer-social {
         display: flex;
         justify-content: center;
         gap: 18px;
         margin-bottom: 30px;
       }
+
       .footer-social a {
         width: 40px;
         height: 40px;
@@ -455,52 +538,129 @@
         align-items: center;
         justify-content: center;
       }
+
       .footer-social svg {
         width: 18px;
         height: 18px;
         fill: #222;
       }
+
       .footer-logos {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         gap: 30px;
         flex-wrap: wrap;
         max-width: var(--max);
         margin: 0 auto 26px;
+        position: relative;
+        z-index: 1;
       }
+
+      .footer-logos a,
       .footer-logos img {
-        height: 46px;
+        display: block;
+      }
+
+      .footer-logos a img {
+        height: 82px;
         width: auto;
         opacity: 0.9;
       }
+
+      .footer-logos > img {
+        height: 180px;
+        width: auto;
+        opacity: 0.9;
+      }
+
       .footer-divider {
         border: none;
         border-top: 1px dashed rgba(255, 255, 255, 0.35);
         max-width: 640px;
         margin: 0 auto 24px;
+        position: relative;
+        z-index: 0;
       }
+
       .footer-bottom {
         text-align: center;
-        font-size: 14px;
+        font-size: 15px;
       }
+
       .footer-bottom p {
         margin: 0 0 8px;
-        font-size: 14px;
+        font-size: 15px;
         color: rgba(255, 255, 255, 0.85);
       }
+
+      .footer-legal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px 0;
+        line-height: 1.8;
+      }
+
       .footer-legal a {
         color: rgba(255, 255, 255, 0.85);
       }
+
       .footer-legal a:hover {
         color: #fff;
         text-decoration: underline;
       }
+
       .footer-legal span {
         color: rgba(255, 255, 255, 0.4);
         margin: 0 6px;
       }
 
+      .footer-legal-secondary {
+        display: block;
+        margin-top: 4px;
+      }
+
+      /* 2. La clase que ocultará el header-top */
+      .site-header.hide-top {
+        /* Mueve TODO el header hacia arriba exactamente lo que mide el top */
+        transform: translateY(calc(-1 * var(--top-height)));
+      }
+
+      /* Tu clase original la dejamos tranquila, solo asegúrate de no ponerle fixed a esta */
+      .header-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* align-self: flex-end; width: 60%; (Mantén tus estilos originales aquí) */
+      }
+
+      /* 1. Aseguramos que el header principal se quede pegado arriba */
+      .site-header {
+        position: sticky; /* Sticky es mejor que fixed para evitar saltos en la página */
+        top: 0;
+        z-index: 1000;
+        /* Animamos el transform para que use la tarjeta gráfica (cero vibraciones) */
+        transition: transform 0.3s ease-in-out;
+        background-color: white; /* Asegura que tenga fondo para que no se vea el texto por detrás al bajar */
+
+        /* Valor por defecto por si acaso, el JS lo actualizará */
+        --top-height: 100px;
+      }
+
+      /* 2. La clase que ocultará el header-top */
+      .site-header.hide-top {
+        /* Mueve TODO el header hacia arriba exactamente lo que mide el top */
+        transform: translateY(calc(-1 * var(--top-height)));
+      }
+
+      /* Tu clase original la dejamos tranquila, solo asegúrate de no ponerle fixed a esta */
+      .header-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* align-self: flex-end; width: 60%; (Mantén tus estilos originales aquí) */
+      }
       /* =========================================================
    6. RESPONSIVE
    ========================================================= */
@@ -612,19 +772,29 @@
      ========================================================= -->
     <header class="site-header" id="siteHeader">
       <div class="header-inner">
-        <a
-          class="logo"
-          href="index.html"
-          aria-label="Life Skills Advocate home"
-        >
-          <img
-            src="assets/img/Life-Skills-Advocate-1-e1561588375370.png"
-            alt="Life Skills Advocate logo"
-            width="180"
-            height="auto"
-            fetchpriority="high"
-          />
-        </a>
+        <div class="header-top">
+          <a
+            class="logo"
+            href="index.html"
+            aria-label="Life Skills Advocate home"
+          >
+            <img
+              src="assets/img/Life-Skills-Advocate-1-e1561588375370.png"
+              alt="Life Skills Advocate logo"
+              width="180"
+              height="auto"
+              fetchpriority="high"
+            />
+          </a>
+
+          <div class="header-cta-cont">
+            <a
+              class="btn btn-primary header-cta"
+              href="https://lifeskillsadvocate.com/discovery/"
+              >Book A Complimentary Discovery Meeting</a
+            >
+          </div>
+        </div>
 
         <div class="nav-scrim" id="navScrim"></div>
 
@@ -752,7 +922,11 @@
             <li>
               <a
                 href="https://lifeskillsadvocate.com/adulting-like-a-champ-workbook/"
-                class="nav-top-link"
+                class="nav-top-link adultinglikeachamp-cont"
+                ><span class="adultinglikeachamp-img"
+                  ><img
+                    src="assets/img/newicon.png"
+                    alt="adultinglikeachamp-img" /></span
                 >Adulting Like A Champ <span class="caret">▾</span></a
               >
               <ul class="dropdown">
@@ -982,18 +1156,20 @@
               </ul>
             </li>
             <li>
-              <a href="https://advocate360.app/" target="_blank" rel="noopener"
+              <a
+                href="https://advocate360.app/"
+                target="_blank"
+                rel="noopener"
+                class="advocate360-cont"
+                ><span class="advocate360-img"
+                  ><img
+                    src="assets/img/advocate360icon.png"
+                    alt="advocate360-img" /></span
                 >Advocate360</a
               >
             </li>
           </ul>
         </nav>
-
-        <a
-          class="btn btn-primary header-cta desktop-only"
-          href="https://lifeskillsadvocate.com/discovery/"
-          >Book A Complimentary Discovery Meeting</a
-        >
 
         <button
           class="nav-toggle"
@@ -1050,16 +1226,11 @@
               height="160"
             />
             <h4>Shannon Snow</h4>
-            <p class="role">Coach</p>
+            <p class="role upercase">Coach</p>
             <a
               class="btn btn-outline"
               href="https://lifeskillsadvocate.com/shannon-snow/"
             >
-              <svg viewBox="0 0 18 14">
-                <path
-                  d="M17.5,1.9v10.6c0,0.8-0.6,1.4-1.4,1.4h-14c-0.8,0-1.4-0.6-1.4-1.4V1.9c0-0.8,0.6-1.4,1.4-1.4h14 C16.9,0.5,17.5,1.1,17.5,1.9z M1.9,1.9v2h14.5v-2c0-0.1-0.1-0.3-0.3-0.3h-14C2,1.6,1.9,1.7,1.9,1.9z M16.4,12.5V7.2H1.9v5.3 c0,0.1,0.1,0.3,0.3,0.3h14C16.3,12.8,16.4,12.6,16.4,12.5z M3,10.5h2.2v1.1H3V10.5z M6.3,10.5h3.4v1.1H6.3V10.5z"
-                />
-              </svg>
               Read Bio
             </a>
           </div>
@@ -1072,16 +1243,11 @@
               height="160"
             />
             <h4>Jess Brady</h4>
-            <p class="role">Coach</p>
+            <p class="role upercase">Coach</p>
             <a
               class="btn btn-outline"
               href="https://lifeskillsadvocate.com/jess-brady/"
             >
-              <svg viewBox="0 0 18 14">
-                <path
-                  d="M17.5,1.9v10.6c0,0.8-0.6,1.4-1.4,1.4h-14c-0.8,0-1.4-0.6-1.4-1.4V1.9c0-0.8,0.6-1.4,1.4-1.4h14 C16.9,0.5,17.5,1.1,17.5,1.9z M1.9,1.9v2h14.5v-2c0-0.1-0.1-0.3-0.3-0.3h-14C2,1.6,1.9,1.7,1.9,1.9z M16.4,12.5V7.2H1.9v5.3 c0,0.1,0.1,0.3,0.3,0.3h14C16.3,12.8,16.4,12.6,16.4,12.5z M3,10.5h2.2v1.1H3V10.5z M6.3,10.5h3.4v1.1H6.3V10.5z"
-                />
-              </svg>
               Read Bio
             </a>
           </div>
@@ -1094,16 +1260,11 @@
               height="160"
             />
             <h4>Eleanor Chapman</h4>
-            <p class="role">Coach</p>
+            <p class="role upercase">Coach</p>
             <a
               class="btn btn-outline"
               href="https://lifeskillsadvocate.com/eleanor-chapman/"
             >
-              <svg viewBox="0 0 18 14">
-                <path
-                  d="M17.5,1.9v10.6c0,0.8-0.6,1.4-1.4,1.4h-14c-0.8,0-1.4-0.6-1.4-1.4V1.9c0-0.8,0.6-1.4,1.4-1.4h14 C16.9,0.5,17.5,1.1,17.5,1.9z M1.9,1.9v2h14.5v-2c0-0.1-0.1-0.3-0.3-0.3h-14C2,1.6,1.9,1.7,1.9,1.9z M16.4,12.5V7.2H1.9v5.3 c0,0.1,0.1,0.3,0.3,0.3h14C16.3,12.8,16.4,12.6,16.4,12.5z M3,10.5h2.2v1.1H3V10.5z M6.3,10.5h3.4v1.1H6.3V10.5z"
-                />
-              </svg>
               Read Bio
             </a>
           </div>
@@ -1116,16 +1277,11 @@
               height="160"
             />
             <h4>Heather Reed</h4>
-            <p class="role">Coach</p>
+            <p class="role upercase">Coach</p>
             <a
               class="btn btn-outline"
               href="https://lifeskillsadvocate.com/heather-reed/"
             >
-              <svg viewBox="0 0 18 14">
-                <path
-                  d="M17.5,1.9v10.6c0,0.8-0.6,1.4-1.4,1.4h-14c-0.8,0-1.4-0.6-1.4-1.4V1.9c0-0.8,0.6-1.4,1.4-1.4h14 C16.9,0.5,17.5,1.1,17.5,1.9z M1.9,1.9v2h14.5v-2c0-0.1-0.1-0.3-0.3-0.3h-14C2,1.6,1.9,1.7,1.9,1.9z M16.4,12.5V7.2H1.9v5.3 c0,0.1,0.1,0.3,0.3,0.3h14C16.3,12.8,16.4,12.6,16.4,12.5z M3,10.5h2.2v1.1H3V10.5z M6.3,10.5h3.4v1.1H6.3V10.5z"
-                />
-              </svg>
               Read Bio
             </a>
           </div>
@@ -1138,16 +1294,11 @@
               height="160"
             />
             <h4>Morgan Hale</h4>
-            <p class="role">Coach</p>
+            <p class="role upercase">Coach</p>
             <a
               class="btn btn-outline"
               href="https://lifeskillsadvocate.com/morgan-hale/"
             >
-              <svg viewBox="0 0 18 14">
-                <path
-                  d="M17.5,1.9v10.6c0,0.8-0.6,1.4-1.4,1.4h-14c-0.8,0-1.4-0.6-1.4-1.4V1.9c0-0.8,0.6-1.4,1.4-1.4h14 C16.9,0.5,17.5,1.1,17.5,1.9z M1.9,1.9v2h14.5v-2c0-0.1-0.1-0.3-0.3-0.3h-14C2,1.6,1.9,1.7,1.9,1.9z M16.4,12.5V7.2H1.9v5.3 c0,0.1,0.1,0.3,0.3,0.3h14C16.3,12.8,16.4,12.6,16.4,12.5z M3,10.5h2.2v1.1H3V10.5z M6.3,10.5h3.4v1.1H6.3V10.5z"
-                />
-              </svg>
               Read Bio
             </a>
           </div>
@@ -1160,16 +1311,11 @@
               height="160"
             />
             <h4>Liz Makhramadzhyan</h4>
-            <p class="role">Coach</p>
+            <p class="role upercase">Coach</p>
             <a
               class="btn btn-outline"
               href="https://lifeskillsadvocate.com/liz-makhramadzhyan/"
             >
-              <svg viewBox="0 0 18 14">
-                <path
-                  d="M17.5,1.9v10.6c0,0.8-0.6,1.4-1.4,1.4h-14c-0.8,0-1.4-0.6-1.4-1.4V1.9c0-0.8,0.6-1.4,1.4-1.4h14 C16.9,0.5,17.5,1.1,17.5,1.9z M1.9,1.9v2h14.5v-2c0-0.1-0.1-0.3-0.3-0.3h-14C2,1.6,1.9,1.7,1.9,1.9z M16.4,12.5V7.2H1.9v5.3 c0,0.1,0.1,0.3,0.3,0.3h14C16.3,12.8,16.4,12.6,16.4,12.5z M3,10.5h2.2v1.1H3V10.5z M6.3,10.5h3.4v1.1H6.3V10.5z"
-                />
-              </svg>
               Read Bio
             </a>
           </div>
@@ -1182,16 +1328,11 @@
               height="160"
             />
             <h4>Ket Buchholz</h4>
-            <p class="role">Coach</p>
+            <p class="role upercase">Coach</p>
             <a
               class="btn btn-outline"
               href="https://lifeskillsadvocate.com/ket-buchholz/"
             >
-              <svg viewBox="0 0 18 14">
-                <path
-                  d="M17.5,1.9v10.6c0,0.8-0.6,1.4-1.4,1.4h-14c-0.8,0-1.4-0.6-1.4-1.4V1.9c0-0.8,0.6-1.4,1.4-1.4h14 C16.9,0.5,17.5,1.1,17.5,1.9z M1.9,1.9v2h14.5v-2c0-0.1-0.1-0.3-0.3-0.3h-14C2,1.6,1.9,1.7,1.9,1.9z M16.4,12.5V7.2H1.9v5.3 c0,0.1,0.1,0.3,0.3,0.3h14C16.3,12.8,16.4,12.6,16.4,12.5z M3,10.5h2.2v1.1H3V10.5z M6.3,10.5h3.4v1.1H6.3V10.5z"
-                />
-              </svg>
               Read Bio
             </a>
           </div>
@@ -1204,16 +1345,11 @@
               height="160"
             />
             <h4>Danny Doyle</h4>
-            <p class="role">Coach</p>
+            <p class="role upercase">Coach</p>
             <a
               class="btn btn-outline"
               href="https://lifeskillsadvocate.com/danny-doyle/"
             >
-              <svg viewBox="0 0 18 14">
-                <path
-                  d="M17.5,1.9v10.6c0,0.8-0.6,1.4-1.4,1.4h-14c-0.8,0-1.4-0.6-1.4-1.4V1.9c0-0.8,0.6-1.4,1.4-1.4h14 C16.9,0.5,17.5,1.1,17.5,1.9z M1.9,1.9v2h14.5v-2c0-0.1-0.1-0.3-0.3-0.3h-14C2,1.6,1.9,1.7,1.9,1.9z M16.4,12.5V7.2H1.9v5.3 c0,0.1,0.1,0.3,0.3,0.3h14C16.3,12.8,16.4,12.6,16.4,12.5z M3,10.5h2.2v1.1H3V10.5z M6.3,10.5h3.4v1.1H6.3V10.5z"
-                />
-              </svg>
               Read Bio
             </a>
           </div>
@@ -1235,21 +1371,16 @@
               height="160"
             />
             <h4>Amy Kim Waschke</h4>
-            <p class="role">Client Services Coordinator</p>
+            <p class="role upercase">Client Services Coordinator</p>
             <div class="card-buttons">
               <a
                 class="btn btn-outline"
                 href="https://lifeskillsadvocate.com/amy-kim-waschke/"
               >
-                <svg viewBox="0 0 18 14">
-                  <path
-                    d="M17.5,1.9v10.6c0,0.8-0.6,1.4-1.4,1.4h-14c-0.8,0-1.4-0.6-1.4-1.4V1.9c0-0.8,0.6-1.4,1.4-1.4h14 C16.9,0.5,17.5,1.1,17.5,1.9z M1.9,1.9v2h14.5v-2c0-0.1-0.1-0.3-0.3-0.3h-14C2,1.6,1.9,1.7,1.9,1.9z M16.4,12.5V7.2H1.9v5.3 c0,0.1,0.1,0.3,0.3,0.3h14C16.3,12.8,16.4,12.6,16.4,12.5z M3,10.5h2.2v1.1H3V10.5z M6.3,10.5h3.4v1.1H6.3V10.5z"
-                  />
-                </svg>
                 Read Bio
               </a>
               <a
-                class="btn btn-primary"
+                class="btn btn-services-client"
                 href="https://lifeskillsadvocate.com/discovery/"
                 target="_blank"
                 rel="nofollow"
@@ -1275,16 +1406,11 @@
               height="160"
             />
             <h4>Jennifer Schmidt</h4>
-            <p class="role">Content Specialist</p>
+            <p class="role upercase">Content Specialist</p>
             <a
               class="btn btn-outline"
               href="https://lifeskillsadvocate.com/jennifer-schmidt/"
             >
-              <svg viewBox="0 0 18 14">
-                <path
-                  d="M17.5,1.9v10.6c0,0.8-0.6,1.4-1.4,1.4h-14c-0.8,0-1.4-0.6-1.4-1.4V1.9c0-0.8,0.6-1.4,1.4-1.4h14 C16.9,0.5,17.5,1.1,17.5,1.9z M1.9,1.9v2h14.5v-2c0-0.1-0.1-0.3-0.3-0.3h-14C2,1.6,1.9,1.7,1.9,1.9z M16.4,12.5V7.2H1.9v5.3 c0,0.1,0.1,0.3,0.3,0.3h14C16.3,12.8,16.4,12.6,16.4,12.5z M3,10.5h2.2v1.1H3V10.5z M6.3,10.5h3.4v1.1H6.3V10.5z"
-                />
-              </svg>
               Read Bio
             </a>
           </div>
@@ -1306,16 +1432,11 @@
               height="160"
             />
             <h4>Chris Hanson</h4>
-            <p class="role">Founder</p>
+            <p class="role upercase">Founder</p>
             <a
               class="btn btn-outline"
               href="https://lifeskillsadvocate.com/chris-hanson/"
             >
-              <svg viewBox="0 0 18 14">
-                <path
-                  d="M17.5,1.9v10.6c0,0.8-0.6,1.4-1.4,1.4h-14c-0.8,0-1.4-0.6-1.4-1.4V1.9c0-0.8,0.6-1.4,1.4-1.4h14 C16.9,0.5,17.5,1.1,17.5,1.9z M1.9,1.9v2h14.5v-2c0-0.1-0.1-0.3-0.3-0.3h-14C2,1.6,1.9,1.7,1.9,1.9z M16.4,12.5V7.2H1.9v5.3 c0,0.1,0.1,0.3,0.3,0.3h14C16.3,12.8,16.4,12.6,16.4,12.5z M3,10.5h2.2v1.1H3V10.5z M6.3,10.5h3.4v1.1H6.3V10.5z"
-                />
-              </svg>
               Read Bio
             </a>
           </div>
@@ -1328,16 +1449,11 @@
               height="160"
             />
             <h4>Karrissa Doree</h4>
-            <p class="role">Head of Operations</p>
+            <p class="role upercase">Head of Operations</p>
             <a
               class="btn btn-outline"
               href="https://lifeskillsadvocate.com/karrissa-doree/"
             >
-              <svg viewBox="0 0 18 14">
-                <path
-                  d="M17.5,1.9v10.6c0,0.8-0.6,1.4-1.4,1.4h-14c-0.8,0-1.4-0.6-1.4-1.4V1.9c0-0.8,0.6-1.4,1.4-1.4h14 C16.9,0.5,17.5,1.1,17.5,1.9z M1.9,1.9v2h14.5v-2c0-0.1-0.1-0.3-0.3-0.3h-14C2,1.6,1.9,1.7,1.9,1.9z M16.4,12.5V7.2H1.9v5.3 c0,0.1,0.1,0.3,0.3,0.3h14C16.3,12.8,16.4,12.6,16.4,12.5z M3,10.5h2.2v1.1H3V10.5z M6.3,10.5h3.4v1.1H6.3V10.5z"
-                />
-              </svg>
               Read Bio
             </a>
           </div>
@@ -1350,17 +1466,12 @@
               height="160"
             />
             <h4>Kyle Mosler</h4>
-            <p class="role">Head of Growth &amp; Marketing</p>
+            <p class="role upercase">Head of Growth &amp; Marketing</p>
             <a
               class="btn btn-outline"
               href="https://lifeskillsadvocate.com/kyle-mosler/"
               target="_blank"
             >
-              <svg viewBox="0 0 18 14">
-                <path
-                  d="M17.5,1.9v10.6c0,0.8-0.6,1.4-1.4,1.4h-14c-0.8,0-1.4-0.6-1.4-1.4V1.9c0-0.8,0.6-1.4,1.4-1.4h14 C16.9,0.5,17.5,1.1,17.5,1.9z M1.9,1.9v2h14.5v-2c0-0.1-0.1-0.3-0.3-0.3h-14C2,1.6,1.9,1.7,1.9,1.9z M16.4,12.5V7.2H1.9v5.3 c0,0.1,0.1,0.3,0.3,0.3h14C16.3,12.8,16.4,12.6,16.4,12.5z M3,10.5h2.2v1.1H3V10.5z M6.3,10.5h3.4v1.1H6.3V10.5z"
-                />
-              </svg>
               Read Bio
             </a>
           </div>
@@ -1388,10 +1499,10 @@
           target="_blank"
           rel="nofollow noopener"
           aria-label="Instagram"
-          ><svg viewBox="0 0 448 512">
+          ><svg viewBox="0 0 448 512" data-id="instagram" data-name="">
             <path
-              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3a26.8 26.8 0 1 1-53.6 0 26.8 26.8 0 0 1 53.6 0zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8z"
-            /></svg
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+            ></path></svg
         ></a>
         <a
           href="https://www.pinterest.com/LifeSkillsAdvocate/"
@@ -1416,17 +1527,17 @@
       </div>
 
       <div class="footer-logos">
+        <img
+          src="assets/img/Life-Skills-Advocate-white-cropped.png"
+          alt="Life Skills Advocate"
+          loading="lazy"
+        />
         <a href="https://neurowyld.com/" target="_blank" rel="noopener"
           ><img
             src="assets/img/Neurowyld-Featured-Image-5-e1758586279818.png"
             alt="Neurowyld"
             loading="lazy"
         /></a>
-        <img
-          src="assets/img/Life-Skills-Advocate-white-cropped.png"
-          alt="Life Skills Advocate"
-          loading="lazy"
-        />
       </div>
 
       <hr class="footer-divider" />
@@ -1506,6 +1617,51 @@
           });
         });
       })();
+
+      //header visible hidden
+      document.addEventListener("DOMContentLoaded", () => {
+        const siteHeader = document.getElementById("siteHeader");
+        const headerTop = document.querySelector(".header-top");
+        let ultimoScroll = window.scrollY;
+
+        // 1. Función para medir la altura exacta del .header-top
+        function actualizarAlturaTop() {
+          if (headerTop && siteHeader) {
+            // Calculamos la altura en píxeles mas margenes y paddings
+            margins =
+              parseFloat(getComputedStyle(headerTop).marginTop) +
+              parseFloat(getComputedStyle(headerTop).marginBottom);
+            paddings =
+              parseFloat(getComputedStyle(headerTop).paddingTop) +
+              parseFloat(getComputedStyle(headerTop).paddingBottom);
+            var margenManual = 10; // Ajusta este valor según sea necesario
+            const altura =
+              headerTop.offsetHeight + margins + paddings + margenManual;
+            // Se la pasamos a la variable CSS del header
+            siteHeader.style.setProperty("--top-height", `${altura}px`);
+          }
+        }
+
+        // Calculamos al cargar la página y por si el usuario gira el móvil o achica la ventana
+        actualizarAlturaTop();
+        window.addEventListener("resize", actualizarAlturaTop);
+
+        // 2. Lógica del Scroll
+        window.addEventListener("scroll", () => {
+          const scrollActual = window.scrollY;
+
+          // Si bajamos, y ya pasamos la altura inicial (para que no titile arriba del todo)
+          if (scrollActual > ultimoScroll && scrollActual > 100) {
+            siteHeader.classList.add("hide-top");
+          }
+          // Si subimos
+          else if (scrollActual < ultimoScroll) {
+            siteHeader.classList.remove("hide-top");
+          }
+
+          ultimoScroll = scrollActual;
+        });
+      });
     </script>
   </body>
 </html>

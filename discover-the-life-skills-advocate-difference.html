@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Discover The Life Skills Advocate Difference | Life Skills Advocate</title>
+    <title>
+      Discover The Life Skills Advocate Difference | Life Skills Advocate
+    </title>
     <meta
       name="description"
       content="Discover why Life Skills Advocate has become the go-to resource for neurodiverse individuals and families seeking a better path towards greater independence."
@@ -236,12 +238,19 @@
         align-self: flex-end;
         width: 60%;
       }
+      .header-cta-cont {
+        padding-bottom: 30px;
+        padding-top: 30px;
+      }
       .logo img {
-        height: 54px;
+        height: 115px;
         width: auto;
       }
       .site-header.scrolled .logo img {
-        height: 42px;
+        height: 115px;
+      }
+      .site-header.scrolled .header-inner {
+        gap: 0;
       }
 
       .main-nav {
@@ -364,12 +373,22 @@
    3. PAGE HERO
    ========================================================= */
       .page-hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
         padding: 50px 40px 10px;
-        background: var(--tint);
+        background-image:
+          linear-gradient(
+            158deg,
+            rgba(255, 255, 255, 0.28) 19%,
+            rgba(2, 3, 4, 0.65) 100%
+          ),
+          linear-gradient(rgba(54, 69, 79, 0.8), rgba(54, 69, 79, 0.8)) !important;
         text-align: center;
       }
       .page-hero h1 {
-        font-size: 40px;
+        color: var(--white);
       }
 
       /* =========================================================
@@ -379,6 +398,10 @@
         padding: 50px 40px;
       }
       .difference-intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         max-width: 820px;
         margin: 0 auto;
         text-align: center;
@@ -403,7 +426,7 @@
       .feature-list {
         display: grid;
         gap: 30px;
-        max-width: 900px;
+        max-width: 1144px;
         margin: 0 auto 40px;
       }
       .feature-card {
@@ -415,6 +438,9 @@
         grid-template-columns: 80px 1fr;
         gap: 30px;
         align-items: start;
+      }
+      .feature-card:hover {
+        box-shadow: 0px 0px 20px 0px var(--blue, rgba(47, 139, 231, 0.18)) !important;
       }
       .feature-icon {
         width: 72px;
@@ -436,9 +462,17 @@
         margin-bottom: 6px;
       }
       .tldr-section {
-        background: var(--tint);
+        /* background: var(--tint); */
+      }
+      .cta-center {
+        width: 50%;
       }
       .tldr-block {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
         max-width: 860px;
         margin: 0 auto;
         text-align: center;
@@ -449,19 +483,21 @@
       }
 
       /* =========================================================
-   5. FOOTER  (kept identical to index.html)
+   5. FOOTER
    ========================================================= */
       .site-footer {
         background: var(--footer-bg);
         color: rgba(255, 255, 255, 0.85);
         padding: 50px 40px 30px;
       }
+
       .footer-social {
         display: flex;
         justify-content: center;
         gap: 18px;
         margin-bottom: 30px;
       }
+
       .footer-social a {
         width: 40px;
         height: 40px;
@@ -471,50 +507,142 @@
         align-items: center;
         justify-content: center;
       }
+
       .footer-social svg {
         width: 18px;
         height: 18px;
         fill: #222;
       }
+
       .footer-logos {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         gap: 30px;
         flex-wrap: wrap;
         max-width: var(--max);
         margin: 0 auto 26px;
+        position: relative;
+        z-index: 1;
       }
+
+      .footer-logos a,
       .footer-logos img {
-        height: 46px;
+        display: block;
+      }
+
+      .footer-logos a img {
+        height: 82px;
         width: auto;
         opacity: 0.9;
       }
+
+      .footer-logos > img {
+        height: 180px;
+        width: auto;
+        opacity: 0.9;
+      }
+
       .footer-divider {
         border: none;
         border-top: 1px dashed rgba(255, 255, 255, 0.35);
         max-width: 640px;
         margin: 0 auto 24px;
+        position: relative;
+        z-index: 0;
       }
+
       .footer-bottom {
         text-align: center;
-        font-size: 14px;
+        font-size: 15px;
       }
+
       .footer-bottom p {
         margin: 0 0 8px;
-        font-size: 14px;
+        font-size: 15px;
         color: rgba(255, 255, 255, 0.85);
       }
+
+      .footer-legal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px 0;
+        line-height: 1.8;
+      }
+
       .footer-legal a {
         color: rgba(255, 255, 255, 0.85);
       }
+
       .footer-legal a:hover {
         color: #fff;
         text-decoration: underline;
       }
+
       .footer-legal span {
         color: rgba(255, 255, 255, 0.4);
         margin: 0 6px;
+      }
+
+      .footer-legal-secondary {
+        display: block;
+        margin-top: 4px;
+      }
+
+      .main-nav > ul > li > a.adultinglikeachamp-cont {
+        justify-content: start;
+      }
+      .adultinglikeachamp-img img {
+        width: 24px;
+        height: auto;
+      }
+      .main-nav > ul > li > a.advocate360-cont {
+        justify-content: start;
+      }
+      .advocate360-img img {
+        width: 24px;
+        height: auto;
+      }
+      /* 2. La clase que ocultará el header-top */
+      .site-header.hide-top {
+        /* Mueve TODO el header hacia arriba exactamente lo que mide el top */
+        transform: translateY(calc(-1 * var(--top-height)));
+      }
+
+      /* Tu clase original la dejamos tranquila, solo asegúrate de no ponerle fixed a esta */
+      .header-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* align-self: flex-end; width: 60%; (Mantén tus estilos originales aquí) */
+      }
+
+      /* 1. Aseguramos que el header principal se quede pegado arriba */
+      .site-header {
+        position: sticky; /* Sticky es mejor que fixed para evitar saltos en la página */
+        top: 0;
+        z-index: 1000;
+        /* Animamos el transform para que use la tarjeta gráfica (cero vibraciones) */
+        transition: transform 0.3s ease-in-out;
+        background-color: white; /* Asegura que tenga fondo para que no se vea el texto por detrás al bajar */
+
+        /* Valor por defecto por si acaso, el JS lo actualizará */
+        --top-height: 100px;
+      }
+
+      /* 2. La clase que ocultará el header-top */
+      .site-header.hide-top {
+        /* Mueve TODO el header hacia arriba exactamente lo que mide el top */
+        transform: translateY(calc(-1 * var(--top-height)));
+      }
+
+      /* Tu clase original la dejamos tranquila, solo asegúrate de no ponerle fixed a esta */
+      .header-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* align-self: flex-end; width: 60%; (Mantén tus estilos originales aquí) */
       }
 
       /* =========================================================
@@ -543,25 +671,31 @@
           transform: translateX(100%);
           transition: transform 0.25s ease;
           padding: 90px 0 40px;
+          z-index: 450;
         }
+
         .main-nav.open {
           transform: translateX(0);
         }
+
         .main-nav > ul {
           flex-direction: column;
           align-items: stretch;
           gap: 0;
         }
+
         .main-nav > ul > li {
           width: 100%;
           border-bottom: 1px solid #eee;
         }
+
         .main-nav > ul > li > a,
         .main-nav > ul > li > button.nav-top-link {
           width: 100%;
           justify-content: space-between;
           padding: 16px 24px;
         }
+
         .dropdown {
           position: static;
           box-shadow: none;
@@ -572,18 +706,23 @@
           width: 100%;
           padding-left: 12px;
         }
+
         .main-nav > ul > li.open > .dropdown {
           display: block;
         }
+
         .dropdown .dropdown {
           left: 0;
         }
+
         .nav-toggle {
           display: flex;
         }
+
         .header-cta.desktop-only {
           display: none;
         }
+
         .nav-scrim {
           position: fixed;
           inset: 0;
@@ -593,6 +732,7 @@
           transition: opacity 0.25s ease;
           z-index: 400;
         }
+
         .nav-scrim.open {
           opacity: 1;
           visibility: visible;
@@ -625,12 +765,34 @@
           justify-content: center;
           text-align: center;
         }
+
+        .header-top {
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+        .header-cta-cont {
+          width: 95%;
+          display: flex;
+          justify-content: center;
+          padding-bottom: 10px;
+          padding-top: 10px;
+        }
+        .header-cta {
+          width: 100%;
+          height: auto;
+          max-width: 320px;
+          font-size: 14px;
+          text-align: center;
+          text-wrap: wrap;
+        }
       }
     </style>
   </head>
   <body>
     <!-- =========================================================
-     HEADER  (copied verbatim from index.html)
+     HEADER
      ========================================================= -->
     <header class="site-header" id="siteHeader">
       <div class="header-inner">
@@ -648,11 +810,13 @@
               fetchpriority="high"
             />
           </a>
-          <a
-            class="btn btn-primary header-cta desktop-only"
-            href="https://lifeskillsadvocate.com/discovery/"
-            >Book A Complimentary Discovery Meeting</a
-          >
+          <div class="header-cta-cont">
+            <a
+              class="btn btn-primary header-cta"
+              href="https://lifeskillsadvocate.com/discovery/"
+              >Book A Complimentary Discovery Meeting</a
+            >
+          </div>
         </div>
 
         <div class="nav-scrim" id="navScrim"></div>
@@ -661,16 +825,17 @@
           <ul>
             <li>
               <button class="nav-top-link" aria-expanded="false">
-                About LSA Ezze <span class="caret">▾</span>
+                About LSA<span class="caret">▾</span>
               </button>
               <ul class="dropdown">
                 <li>
-                  <a href="meet-our-team.html">Meet Our Team</a>
+                  <a href="https://lifeskillsadvocate.com/meet-our-team/"
+                    >Meet Our Team</a
+                  >
                 </li>
                 <li>
                   <a
-                    href="discover-the-life-skills-advocate-difference.html"
-                    aria-current="page"
+                    href="https://lifeskillsadvocate.com/discover-the-life-skills-advocate-difference/"
                     >Discover The LSA Difference</a
                   >
                 </li>
@@ -780,7 +945,11 @@
             <li>
               <a
                 href="https://lifeskillsadvocate.com/adulting-like-a-champ-workbook/"
-                class="nav-top-link"
+                class="nav-top-link adultinglikeachamp-cont"
+                ><span class="adultinglikeachamp-img"
+                  ><img
+                    src="assets/img/newicon.png"
+                    alt="adultinglikeachamp-img" /></span
                 >Adulting Like A Champ <span class="caret">▾</span></a
               >
               <ul class="dropdown">
@@ -877,7 +1046,7 @@
                     >Adulting Like A Champ</a
                   >
                 </li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="https://lifeskillsadvocate.com/blog/">Blog</a></li>
                 <li>
                   <a
                     href="https://lifeskillsadvocate.com/free-executive-functioning-worksheets/"
@@ -1010,7 +1179,15 @@
               </ul>
             </li>
             <li>
-              <a href="https://advocate360.app/" target="_blank" rel="noopener"
+              <a
+                href="https://advocate360.app/"
+                target="_blank"
+                rel="noopener"
+                class="advocate360-cont"
+                ><span class="advocate360-img"
+                  ><img
+                    src="assets/img/advocate360icon.png"
+                    alt="advocate360-img" /></span
                 >Advocate360</a
               >
             </li>
@@ -1042,18 +1219,17 @@
       <section class="difference-section">
         <div class="difference-intro">
           <p>
-            Explore how Life Skills Advocate stands apart as a unique
-            coaching service, dedicated to empowering neurodivergent
-            individuals on their journey to enhanced executive functioning,
-            life skills, and overall well-being.
+            Explore how Life Skills Advocate stands apart as a unique coaching
+            service, dedicated to empowering neurodivergent individuals on their
+            journey to enhanced executive functioning, life skills, and overall
+            well-being.
           </p>
           <p>
-            Our approach, rooted in our personal experience with
-            neurodivergence and a deep commitment to client-centered
-            relationships, provides the support you need to boost your
-            motivation, improve academic performance, and achieve greater
-            autonomy and independence. Discover the Life Skills Advocate
-            difference below.
+            Our approach, rooted in our personal experience with neurodivergence
+            and a deep commitment to client-centered relationships, provides the
+            support you need to boost your motivation, improve academic
+            performance, and achieve greater autonomy and independence. Discover
+            the Life Skills Advocate difference below.
           </p>
           <div class="cta-center">
             <a
@@ -1085,16 +1261,15 @@
             <div>
               <h3>Our Coaches Share Lived Experience With Neurodivergence</h3>
               <p>
-                Our team of expert coaches, guided by our founder Chris
-                Hanson, who himself has personal experience with ADHD, brings
-                a wealth of both personal and professional experience in
-                assisting neurodivergent individuals grappling with executive
-                functioning challenges. We understand the profound impact
-                that compromised executive functioning can have on
-                self-confidence, capacity to take healthy risks,
-                relationships, life skills development, and overall
-                well-being. We're here to provide the support you need to
-                navigate and overcome these challenges.
+                Our team of expert coaches, guided by our founder Chris Hanson,
+                who himself has personal experience with ADHD, brings a wealth
+                of both personal and professional experience in assisting
+                neurodivergent individuals grappling with executive functioning
+                challenges. We understand the profound impact that compromised
+                executive functioning can have on self-confidence, capacity to
+                take healthy risks, relationships, life skills development, and
+                overall well-being. We're here to provide the support you need
+                to navigate and overcome these challenges.
               </p>
             </div>
           </div>
@@ -1117,9 +1292,9 @@
               <p>
                 Did you know that the strength of the relationship between a
                 coach and a client can significantly influence the success of
-                the coaching process? In fact, relationship factors account
-                for about 30% of what drives change, while specific
-                techniques and modalities contribute to around 15% (1).
+                the coaching process? In fact, relationship factors account for
+                about 30% of what drives change, while specific techniques and
+                modalities contribute to around 15% (1).
               </p>
               <p>
                 While we certainly value and utilize effective techniques, we
@@ -1129,20 +1304,20 @@
                 significantly reduced.
               </p>
               <p>
-                That's why we place a high priority on getting to know you as
-                an individual in a judgment-free environment. We want to
-                understand your unique needs, goals, and what motivates you.
-                Our coaches are committed to providing a safe space where you
-                can feel comfortable and understood. This client-centered and
-                relationship-focused approach is not only more humanistic,
-                but it also allows us to tailor our coaching strategies to be
-                most effective for you.
+                That's why we place a high priority on getting to know you as an
+                individual in a judgment-free environment. We want to understand
+                your unique needs, goals, and what motivates you. Our coaches
+                are committed to providing a safe space where you can feel
+                comfortable and understood. This client-centered and
+                relationship-focused approach is not only more humanistic, but
+                it also allows us to tailor our coaching strategies to be most
+                effective for you.
               </p>
               <p class="cite">
                 <em
-                  >(1) Thomas, M. L. (2006). The contributing factors of
-                  change in a therapeutic process. Contemporary Family
-                  Therapy, 28, 201-210.</em
+                  >(1) Thomas, M. L. (2006). The contributing factors of change
+                  in a therapeutic process. Contemporary Family Therapy, 28,
+                  201-210.</em
                 >
               </p>
             </div>
@@ -1159,46 +1334,47 @@
               />
             </div>
             <div>
-              <h3>We Believe That Coaching Should Be Rooted in Your Everyday Life</h3>
+              <h3>
+                We Believe That Coaching Should Be Rooted in Your Everyday Life
+              </h3>
               <p>
-                Simply discussing strategies and plans often falls short of
-                the mark. We believe that engaging in real-life activities,
-                guided by our experienced coaches, is typically the most
-                effective way to identify what's working, what needs
-                adjustment, and what kind of support is necessary for
-                success.
+                Simply discussing strategies and plans often falls short of the
+                mark. We believe that engaging in real-life activities, guided
+                by our experienced coaches, is typically the most effective way
+                to identify what's working, what needs adjustment, and what kind
+                of support is necessary for success.
               </p>
               <p>
-                Take, for instance, managing your weekly schedule. We can
-                assist you in crafting a robust schedule that accounts for
-                all your responsibilities and interests. However, if the
-                process becomes too daunting in practice - perhaps due to
-                juggling multiple tasks, prioritizing, or dealing with
-                unexpected changes - it can be challenging to identify the
-                exact source of the stress and devise solutions. This is
-                where giving up might seem like the easiest option.
+                Take, for instance, managing your weekly schedule. We can assist
+                you in crafting a robust schedule that accounts for all your
+                responsibilities and interests. However, if the process becomes
+                too daunting in practice - perhaps due to juggling multiple
+                tasks, prioritizing, or dealing with unexpected changes - it can
+                be challenging to identify the exact source of the stress and
+                devise solutions. This is where giving up might seem like the
+                easiest option.
               </p>
               <p>
-                But, when you navigate your weekly scheduling with a coach,
-                they can offer guidance, helping you to slow down, identify
-                the issues, and problem-solve. This enables you not only to
-                manage your schedule effectively but also to reap the broader
-                benefits of good time management, such as less reliance on
-                last-minute adjustments, better control over your time, and
-                increased independence.
+                But, when you navigate your weekly scheduling with a coach, they
+                can offer guidance, helping you to slow down, identify the
+                issues, and problem-solve. This enables you not only to manage
+                your schedule effectively but also to reap the broader benefits
+                of good time management, such as less reliance on last-minute
+                adjustments, better control over your time, and increased
+                independence.
               </p>
               <p>
-                This approach applies whether you're working with us
-                in-person or virtually. We're committed to helping you
-                navigate your real-life challenges, wherever you are.
+                This approach applies whether you're working with us in-person
+                or virtually. We're committed to helping you navigate your
+                real-life challenges, wherever you are.
               </p>
             </div>
           </div>
         </div>
 
         <p class="jump-note">
-          <a href="#tldr">Click to jump</a> to the TL;DR (too long; didn't
-          read) version.
+          <a href="#tldr">Click to jump</a> to the TL;DR (too long; didn't read)
+          version.
         </p>
 
         <!-- =========================================================
@@ -1220,24 +1396,23 @@
               <p>
                 Executive functioning, encompassing skills such as time
                 management, organization, and impulse control, is the
-                cornerstone of our daily activities. When these skills
-                falter, it can lead to struggles with motivation,
-                self-confidence, and academic performance, often resulting in
-                feelings of depression and anxiety. Our approach is to delve
-                into the root causes of these struggles, enabling us to
-                construct a framework that makes the learning and application
-                of various life skills more achievable.
+                cornerstone of our daily activities. When these skills falter,
+                it can lead to struggles with motivation, self-confidence, and
+                academic performance, often resulting in feelings of depression
+                and anxiety. Our approach is to delve into the root causes of
+                these struggles, enabling us to construct a framework that makes
+                the learning and application of various life skills more
+                achievable.
               </p>
               <p>
-                Consider the ripple effect that executive functioning has on
-                our lives. A single disruption – a challenging homework
-                assignment, a change at work, or car troubles – can cause a
-                broader set of disruptions when we struggle with executive
-                functioning skills. By enhancing your executive functioning
-                skills, we aim to help you better manage these disruptions,
-                leading to improved academic achievement, healthier
-                relationships, increased confidence, and a greater sense of
-                independence.
+                Consider the ripple effect that executive functioning has on our
+                lives. A single disruption – a challenging homework assignment,
+                a change at work, or car troubles – can cause a broader set of
+                disruptions when we struggle with executive functioning skills.
+                By enhancing your executive functioning skills, we aim to help
+                you better manage these disruptions, leading to improved
+                academic achievement, healthier relationships, increased
+                confidence, and a greater sense of independence.
               </p>
               <p>
                 In essence, we're here to help you reverse the
@@ -1269,13 +1444,13 @@
               </h3>
               <p>
                 We believe in the power of gentle accountability as needed to
-                keep you motivated and on track towards your goals. Our
-                coaches maintain an open line of communication with you
-                between sessions, offering gentle reminders, celebrating your
-                successes, and providing support when needed. This ongoing
-                dialogue allows you to focus on your progress, while also
-                easing the load on family members, enabling them to
-                concentrate on nurturing their relationships.
+                keep you motivated and on track towards your goals. Our coaches
+                maintain an open line of communication with you between
+                sessions, offering gentle reminders, celebrating your successes,
+                and providing support when needed. This ongoing dialogue allows
+                you to focus on your progress, while also easing the load on
+                family members, enabling them to concentrate on nurturing their
+                relationships.
               </p>
               <p>
                 Whether it's through text or email, our coaches are ready to
@@ -1284,11 +1459,11 @@
                 encouragement and guidance you need, when you need it.
               </p>
               <p>
-                Best of all, this on-demand accountability support is
-                included as part of our core service. There are no
-                additional fees or upsell. We're committed to providing
-                comprehensive support to help you navigate your path to
-                greater autonomy and independence.
+                Best of all, this on-demand accountability support is included
+                as part of our core service. There are no additional fees or
+                upsell. We're committed to providing comprehensive support to
+                help you navigate your path to greater autonomy and
+                independence.
               </p>
             </div>
           </div>
@@ -1311,34 +1486,34 @@
               <p>
                 Starting with our founder (who's neurodivergent himself), at
                 Life Skills Advocate, we understand the unique needs of the
-                neurodivergent community and prioritize our clients'
-                well-being above all else.
+                neurodivergent community and prioritize our clients' well-being
+                above all else.
               </p>
               <p>
                 For example, things like session length are totally
                 individualized and flexible, as they should be. Would daily
                 15-minute sessions work better for your brain? We can
-                accommodate. We also offer flexible billing options that
-                don't require you to commit to a subscription or package.
+                accommodate. We also offer flexible billing options that don't
+                require you to commit to a subscription or package.
               </p>
               <p>
                 We're a small business that's grown into a larger one. Not a
                 "startup". Unlike many startups, which often prioritize rapid
                 growth and profit over the needs of their clients, we take a
-                people before profits approach. Our coaching model is
-                centered on the individual needs of our clients, and we work
-                collaboratively with them to set and achieve their goals.
-                Don't settle for a cookie-cutter coaching approach from a
-                startup. Try Life Skills Advocate for a truly personalized
-                and compassionate coaching experience.
+                people before profits approach. Our coaching model is centered
+                on the individual needs of our clients, and we work
+                collaboratively with them to set and achieve their goals. Don't
+                settle for a cookie-cutter coaching approach from a startup. Try
+                Life Skills Advocate for a truly personalized and compassionate
+                coaching experience.
               </p>
             </div>
           </div>
         </div>
 
         <p class="jump-note">
-          <a href="#tldr">Click to jump</a> to the TL;DR (too long; didn't
-          read) version.
+          <a href="#tldr">Click to jump</a> to the TL;DR (too long; didn't read)
+          version.
         </p>
 
         <!-- =========================================================
@@ -1357,8 +1532,8 @@
             </div>
             <div>
               <h3>
-                We Empower You to Maintain Your Progress with a Customized
-                Plan to Fade Coaching Support
+                We Empower You to Maintain Your Progress with a Customized Plan
+                to Fade Coaching Support
               </h3>
               <p>
                 Our mission is: Uplifting the neurodivergent community to
@@ -1366,23 +1541,22 @@
               </p>
               <p>
                 A crucial part of this journey is fostering self-reliance and
-                confidence in our clients. To achieve this, we work with you
-                to develop a personalized plan to gradually reduce the
-                intensity of coaching support. This isn't about pulling away,
-                but rather about empowering you to apply the skills and
-                strategies you've learned independently. As you grow more
-                confident and capable in managing your executive functioning
-                and life skills, the need for intensive coaching naturally
-                diminishes.
+                confidence in our clients. To achieve this, we work with you to
+                develop a personalized plan to gradually reduce the intensity of
+                coaching support. This isn't about pulling away, but rather
+                about empowering you to apply the skills and strategies you've
+                learned independently. As you grow more confident and capable in
+                managing your executive functioning and life skills, the need
+                for intensive coaching naturally diminishes.
               </p>
               <p>
                 This approach is a key component of our commitment to your
                 long-term success. We celebrate each step you take towards
                 greater independence, and we're here to provide support and
-                guidance as you navigate this journey. Our ultimate goal is
-                for you to feel confident and capable in managing your life
-                skills and executive functioning, knowing that you have the
-                tools and strategies to do so.
+                guidance as you navigate this journey. Our ultimate goal is for
+                you to feel confident and capable in managing your life skills
+                and executive functioning, knowing that you have the tools and
+                strategies to do so.
               </p>
             </div>
           </div>
@@ -1403,52 +1577,49 @@
                 Clients
               </h3>
               <p>
-                The queer and neurodiverse communities have been sharing
-                space for many years. A 2020 study of 247 women with autism
-                found that half of them reported identifying as not
-                cisgender (2). In contrast the general US population reports
-                only 0.6% of people identify as transgender. Those with ADHD
-                could make up 67.5% of individuals with gender dysphoria
-                according to the Psychiatry and Clinical Psychopharmacology
-                journal (3).
+                The queer and neurodiverse communities have been sharing space
+                for many years. A 2020 study of 247 women with autism found that
+                half of them reported identifying as not cisgender (2). In
+                contrast the general US population reports only 0.6% of people
+                identify as transgender. Those with ADHD could make up 67.5% of
+                individuals with gender dysphoria according to the Psychiatry
+                and Clinical Psychopharmacology journal (3).
               </p>
               <p>
-                Another study conducted by Sexual Medicine Reviews in 2016
-                found that “people who do not identify with the sex they
-                were assigned at birth are 3 to 6 times more likely to be
-                autistic than cisgender people" (4). This study also found
-                that gender diverse people were more likely to report
-                autistic traits and suspect that they have undiagnosed
-                autism.
+                Another study conducted by Sexual Medicine Reviews in 2016 found
+                that “people who do not identify with the sex they were assigned
+                at birth are 3 to 6 times more likely to be autistic than
+                cisgender people" (4). This study also found that gender diverse
+                people were more likely to report autistic traits and suspect
+                that they have undiagnosed autism.
               </p>
               <p>
                 Armed with this knowledge, Life Skills Advocate is a
-                queer-affirming service that integrates our client's
-                identities and self-discovery into our practice.
+                queer-affirming service that integrates our client's identities
+                and self-discovery into our practice.
               </p>
               <p class="cite">
                 <em
                   >(2) Bush, H. H., Williams, L. W., &amp; Mendes, E. (2021).
                   Brief report: Asexuality and young women on the autism
-                  spectrum. Journal of autism and developmental disorders,
-                  51, 725-733.</em
+                  spectrum. Journal of autism and developmental disorders, 51,
+                  725-733.</em
                 >
               </p>
               <p class="cite">
                 <em
-                  >(3) Yildirim, B., Perdahli Fis, N., Yazkan Akgul, G.,
-                  &amp; Ayaz, A. B. (2017). Gender dysphoria and attention
-                  problems: possible clue for biological underpinnings.
-                  Psychiatry and clinical psychopharmacology, 27(3),
-                  283-290.</em
+                  >(3) Yildirim, B., Perdahli Fis, N., Yazkan Akgul, G., &amp;
+                  Ayaz, A. B. (2017). Gender dysphoria and attention problems:
+                  possible clue for biological underpinnings. Psychiatry and
+                  clinical psychopharmacology, 27(3), 283-290.</em
                 >
               </p>
               <p class="cite">
                 <em
-                  >(4) Glidden, D., Bouman, W. P., Jones, B. A., &amp;
-                  Arcelus, J. (2016). Gender dysphoria and autism spectrum
-                  disorder: A systematic review of the literature. Sexual
-                  Medicine Reviews, 4(1), 3-14.</em
+                  >(4) Glidden, D., Bouman, W. P., Jones, B. A., &amp; Arcelus,
+                  J. (2016). Gender dysphoria and autism spectrum disorder: A
+                  systematic review of the literature. Sexual Medicine Reviews,
+                  4(1), 3-14.</em
                 >
               </p>
             </div>
@@ -1487,23 +1658,24 @@
        ========================================================= -->
       <section class="difference-section tldr-section" id="tldr">
         <div class="tldr-block">
-          <h2>TL;DR <span class="small">(too long; didn't read)</span> version</h2>
+          <h2>
+            TL;DR <span class="small">(too long; didn't read)</span> version
+          </h2>
           <p>
-            Life Skills Advocate is a coaching service that offers
-            personalized support to individuals with executive functioning
-            challenges. Our coaches, who have personal and professional
-            experience with neurodivergence, prioritize building strong,
-            judgment-free relationships with clients. We believe in coaching
-            rooted in real-life experiences and focus on enhancing your
-            executive functioning skills. We offer gentle, on-demand
-            accountability support at no extra cost and take a "people
-            before profits" approach. We're inclusive and welcoming to
-            LGBTQIA+ clients and provide both in-person and virtual support.
-            We also have a workbook on executive functioning to help address
-            real-life challenges.
+            Life Skills Advocate is a coaching service that offers personalized
+            support to individuals with executive functioning challenges. Our
+            coaches, who have personal and professional experience with
+            neurodivergence, prioritize building strong, judgment-free
+            relationships with clients. We believe in coaching rooted in
+            real-life experiences and focus on enhancing your executive
+            functioning skills. We offer gentle, on-demand accountability
+            support at no extra cost and take a "people before profits"
+            approach. We're inclusive and welcoming to LGBTQIA+ clients and
+            provide both in-person and virtual support. We also have a workbook
+            on executive functioning to help address real-life challenges.
           </p>
           <a
-            class="btn btn-primary"
+            class="btn btn-primary cta-center"
             href="https://lifeskillsadvocate.com/discovery/"
             >Book A Complimentary Discovery Meeting</a
           >
@@ -1512,7 +1684,7 @@
     </main>
 
     <!-- =========================================================
-     FOOTER  (copied verbatim from index.html)
+     FOOTER
      ========================================================= -->
     <footer class="site-footer">
       <div class="footer-social">
@@ -1531,10 +1703,10 @@
           target="_blank"
           rel="nofollow noopener"
           aria-label="Instagram"
-          ><svg viewBox="0 0 448 512">
+          ><svg viewBox="0 0 448 512" data-id="instagram" data-name="">
             <path
-              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3a26.8 26.8 0 1 1-53.6 0 26.8 26.8 0 0 1 53.6 0zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8z"
-            /></svg
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+            ></path></svg
         ></a>
         <a
           href="https://www.pinterest.com/LifeSkillsAdvocate/"
@@ -1559,17 +1731,17 @@
       </div>
 
       <div class="footer-logos">
+        <img
+          src="assets/img/Life-Skills-Advocate-white-cropped.png"
+          alt="Life Skills Advocate"
+          loading="lazy"
+        />
         <a href="https://neurowyld.com/" target="_blank" rel="noopener"
           ><img
             src="assets/img/Neurowyld-Featured-Image-5-e1758586279818.png"
             alt="Neurowyld"
             loading="lazy"
         /></a>
-        <img
-          src="assets/img/Life-Skills-Advocate-white-cropped.png"
-          alt="Life Skills Advocate"
-          loading="lazy"
-        />
       </div>
 
       <hr class="footer-divider" />
@@ -1591,6 +1763,11 @@
           <a href="https://lifeskillsadvocate.com/disclaimer/">Disclaimer</a
           ><span>&bull;</span>
           <a href="https://lifeskillsadvocate.com/contact/">Contact</a>
+        </p>
+        <p class="footer-legal footer-legal-secondary">
+          <a href="https://lifeskillsadvocate.com/privacy-policy/"
+            >Privacy Settings</a
+          >
         </p>
       </div>
     </footer>
@@ -1654,6 +1831,51 @@
           });
         });
       })();
+
+      //header visible hidden
+      document.addEventListener("DOMContentLoaded", () => {
+        const siteHeader = document.getElementById("siteHeader");
+        const headerTop = document.querySelector(".header-top");
+        let ultimoScroll = window.scrollY;
+
+        // 1. Función para medir la altura exacta del .header-top
+        function actualizarAlturaTop() {
+          if (headerTop && siteHeader) {
+            // Calculamos la altura en píxeles mas margenes y paddings
+            margins =
+              parseFloat(getComputedStyle(headerTop).marginTop) +
+              parseFloat(getComputedStyle(headerTop).marginBottom);
+            paddings =
+              parseFloat(getComputedStyle(headerTop).paddingTop) +
+              parseFloat(getComputedStyle(headerTop).paddingBottom);
+            var margenManual = 10; // Ajusta este valor según sea necesario
+            const altura =
+              headerTop.offsetHeight + margins + paddings + margenManual;
+            // Se la pasamos a la variable CSS del header
+            siteHeader.style.setProperty("--top-height", `${altura}px`);
+          }
+        }
+
+        // Calculamos al cargar la página y por si el usuario gira el móvil o achica la ventana
+        actualizarAlturaTop();
+        window.addEventListener("resize", actualizarAlturaTop);
+
+        // 2. Lógica del Scroll
+        window.addEventListener("scroll", () => {
+          const scrollActual = window.scrollY;
+
+          // Si bajamos, y ya pasamos la altura inicial (para que no titile arriba del todo)
+          if (scrollActual > ultimoScroll && scrollActual > 100) {
+            siteHeader.classList.add("hide-top");
+          }
+          // Si subimos
+          else if (scrollActual < ultimoScroll) {
+            siteHeader.classList.remove("hide-top");
+          }
+
+          ultimoScroll = scrollActual;
+        });
+      });
     </script>
   </body>
 </html>
