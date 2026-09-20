@@ -443,6 +443,17 @@
         left: 100%;
       }
 
+      .dropdown li:hover > .dropdown,
+      .dropdown li:focus-within > .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .dropdown li.open > .dropdown {
+        display: block; /* o visibility: visible; opacity: 1; según tu diseño */
+      }
+
       .header-cta {
         flex-shrink: 0;
       }
@@ -1882,17 +1893,17 @@
               </button>
               <ul class="dropdown">
                 <li>
-                  <a href="meet-our-team.html">Meet Our Team</a>
+                  <a href="/meet-our-team.html">Meet Our Team</a>
                 </li>
                 <li>
-                  <a href="discover-the-life-skills-advocate-difference.html"
+                  <a href="/discover-the-life-skills-advocate-difference.html"
                     >Discover The LSA Difference</a
                   >
                 </li>
                 <li>
-                  <a href="core-values.html">Core Values</a>
+                  <a href="/core-values.html">Core Values</a>
                 </li>
-                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="/faqs.html">FAQs</a></li>
                 <li>
                   <a
                     href="https://lifeskillsadvocate.com/blog/what-is-neurodivergence/"
@@ -1912,17 +1923,15 @@
                   >
                 </li>
                 <li>
-                  <a href="careers.html">Careers</a>
+                  <a href="/careers.html">Careers</a>
                 </li>
                 <li>
-                  <a href="contact.html" aria-current="page">Contact</a>
+                  <a href="/contact.html">Contact</a>
                 </li>
               </ul>
             </li>
             <li>
-              <a
-                href="https://lifeskillsadvocate.com/executive-function-coaching/"
-                class="nav-top-link"
+              <a href="/executive-function-coaching.html" class="nav-top-link"
                 >Explore Coaching <span class="caret">▾</span></a
               >
               <ul class="dropdown">
@@ -1932,8 +1941,7 @@
                   </button>
                   <ul class="dropdown">
                     <li>
-                      <a
-                        href="https://lifeskillsadvocate.com/academic-coaching-for-neurodivergent-minds/"
+                      <a href="/academic-coaching-for-neurodivergent-minds.html"
                         >School</a
                       >
                     </li>
@@ -2094,7 +2102,7 @@
                     >Adulting Like A Champ</a
                   >
                 </li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="/blog.html">Blog</a></li>
                 <li>
                   <a
                     href="https://lifeskillsadvocate.com/free-executive-functioning-worksheets/"
@@ -2370,7 +2378,7 @@
           ><span>&bull;</span>
           <a href="https://lifeskillsadvocate.com/disclaimer/">Disclaimer</a
           ><span>&bull;</span>
-          <a href="https://lifeskillsadvocate.com/contact/">Contact</a>
+          <a href="/contact.html">Contact</a>
         </p>
         <p class="footer-legal footer-legal-secondary">
           <a href="https://lifeskillsadvocate.com/privacy-policy/"
@@ -2380,6 +2388,7 @@
       </div>
     </footer>
     <!-- #endregion FOOTER -->
+
     <script>
       (function () {
         "use strict";
