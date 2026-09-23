@@ -1,0 +1,149 @@
+/* =========================================================
+      3. PAGE HERO
+      ========================================================= */
+.page-hero {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 40px 10px;
+  background-image:
+    linear-gradient(
+      158deg,
+      rgba(255, 255, 255, 0.28) 19%,
+      rgba(2, 3, 4, 0.65) 100%
+    ),
+    linear-gradient(rgba(54, 69, 79, 0.8), rgba(54, 69, 79, 0.8)) !important;
+}
+.page-hero h1 {
+  color: var(--white);
+}
+
+/* =========================================================
+   4. TEAM SECTIONS
+   ========================================================= */
+.upercase {
+  text-transform: uppercase;
+}
+
+.team-section {
+  padding: 50px 40px;
+}
+.team-intro {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+.team-intro h2 {
+  /* font-size: 26px; */
+}
+.team-intro .accent {
+  color: var(--blue);
+}
+
+.team-section-title {
+  text-align: center;
+  margin: 60px 0 30px;
+}
+.team-section-title .accent {
+  color: var(--blue);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  /* max-width: 900px; */
+  margin: 0 10px;
+}
+.team-grid.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.team-grid.cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.team-card {
+  background: #fff;
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: none;
+  padding: 30px 24px;
+  text-align: center;
+}
+.team-card img {
+  width: 250px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 18px;
+  box-shadow: var(--shadow);
+}
+.team-card h4 {
+  font-size: 19px;
+  margin-bottom: 4px;
+}
+.team-card .role {
+  color: var(--blue);
+  font-size: 14.5px;
+  margin-bottom: 18px;
+}
+.team-card .btn-outline {
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+  box-shadow: none;
+  margin: 10px 0px 20px 0px;
+}
+.team-card .btn-outline:hover {
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
+  color: #fff;
+}
+.team-card .card-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+/* =========================================================
+   6. RESPONSIVE
+   ========================================================= */
+@media (max-width: 1023px) {
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  .team-grid,
+  .team-grid.cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .team-section {
+    padding: 40px 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-hero {
+    padding: 30px 20px 10px;
+  }
+  h1 {
+    font-size: 27px;
+  }
+  .team-grid,
+  .team-grid.cols-3 {
+    grid-template-columns: 1fr;
+  }
+  .footer-logos {
+    justify-content: center;
+    text-align: center;
+  }
+  .team-intro a.btn.btn-primary {
+    display: none;
+  }
+  .team-card {
+    padding: 0px;
+  }
+}

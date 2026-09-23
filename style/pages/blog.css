@@ -1,0 +1,276 @@
+/* =========================================================
+      3. BLOG HERO
+      ========================================================= */
+.blog-hero {
+  padding: 60px 40px 40px;
+  text-align: center;
+}
+.blog-hero h1 {
+  font-size: 32px;
+}
+
+.search-wrap {
+  max-width: 480px;
+  margin: 0 auto 10px;
+}
+.search-form {
+  display: flex;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.search-form input {
+  flex: 1;
+  border: none;
+  padding: 14px 18px;
+  font-size: 16px;
+  font-family: var(--font-body);
+  border: 1px solid var(--blue);
+  border-radius: var(--radius) 0px 0px var(--radius);
+}
+.search-form input:focus {
+  outline: 2px solid var(--blue);
+  outline-offset: -2px;
+}
+.search-form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  padding: 6px;
+  font-weight: 400;
+}
+.search-form button:hover {
+  background: var(--blue-dark);
+}
+
+.search-form button svg {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  vertical-align: middle;
+  stroke-width: 0;
+  stroke: currentcolor;
+  fill: currentcolor;
+  box-sizing: content-box;
+}
+
+/* =========================================================
+      4. LAYOUT: sidebar + post grid
+      ========================================================= */
+.blog-layout {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 48px;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 20px 10px;
+  align-items: start;
+}
+
+.filter-panel {
+  position: sticky;
+  top: 100px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: var(--radius);
+  padding: 24px 20px;
+}
+.filter-panel h3 {
+  font-size: 16px;
+  text-align: left;
+  margin: 0 0 14px;
+}
+.filter-panel h3:not(:first-child) {
+  margin-top: 26px;
+}
+.filter-group {
+  display: grid;
+  gap: 10px;
+}
+/* 1. Ocultar el input nativo pero mantenerlo funcional */
+.filter-check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* 2. Darle forma al cuadrito (checkmark) */
+.filter-check .checkmark {
+  --blue-check: #00b0f0;
+  --blue-check-bg: #00b0f08f;
+  --tcb-checkbox-size: 14px;
+  background-color: #fff;
+  position: relative;
+  border: 1px solid #afafaf;
+  width: var(--tcb-checkbox-size);
+  height: var(--tcb-checkbox-size);
+
+  /* Usamos flex para centrar el SVG perfectamente */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+
+  margin-right: 10px;
+  padding: 2px;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out; /* Suaviza el cambio de color de fondo y borde */
+}
+
+/* 3. Ocultar y achicar el SVG por defecto */
+.filter-check .checkmark svg {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  fill: var(--blue-check);
+
+  /* Encogemos el SVG a tamaño 0 en lugar de usar display: none */
+  transform: scale(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* 4. EL EFECTO TOGGLE: Cuando el input está "checked", cambiar fondo y borde */
+.filter-check input:checked + .checkmark {
+  background-color: #fff; /* Ahora el fondo se queda blanco */
+  border-color: var(--blue-check); /* El borde se pinta de azul */
+}
+
+/* 5. Mostrar la palomita (SVG) cuando está checked */
+.filter-check input:checked + .checkmark svg {
+  transform: scale(1);
+  fill: var(--blue-check); /* La palomita se pinta de azul */
+}
+/* 6. EFECTO HOVER: Cuando pasas el ratón por encima y NO está marcado */
+.filter-check:hover input:not(:checked) + .checkmark {
+  background-color: var(--blue-check-bg);
+  background-image: linear-gradient(#ffffffe6, #ffffffe6);
+  border-color: var(--blue-check);
+}
+
+/* (Opcional) Si quieres que al hacer hover en uno que SÍ está marcado cambie un poquito */
+.filter-check:hover input:checked + .checkmark {
+  filter: brightness(
+    0.9
+  ); /* Lo oscurece un 10% para que se note la interacción */
+}
+
+.filter-note {
+  margin-top: 20px;
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* =========================================================
+      5. POST GRID
+      ========================================================= */
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px 30px;
+}
+.blog-post {
+  display: flex;
+  flex-direction: column;
+}
+.post-categories {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+.post-categories a {
+  color: var(--blue);
+  font-weight: 600;
+}
+.post-categories a:hover {
+  text-decoration: underline;
+}
+.blog-post h2 {
+  text-align: left;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+.blog-post h2 a:hover {
+  color: var(--blue);
+}
+.post-thumb {
+  display: block;
+  aspect-ratio: 600/338;
+  border-radius: var(--radius);
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease;
+}
+.post-thumb:hover {
+  transform: translateY(-3px);
+}
+
+.load-more-wrap {
+  text-align: center;
+  margin-top: 50px;
+}
+.load-more-note {
+  max-width: 560px;
+  margin: 14px auto 0;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.blog-hero.mobile-only {
+  display: none;
+}
+
+/* =========================================================
+      7. RESPONSIVE
+      ========================================================= */
+@media (max-width: 1023px) {
+  h1 {
+    font-size: 32px;
+  }
+  .blog-layout {
+    grid-template-columns: 1fr;
+    padding: 40px 24px;
+  }
+  .filter-panel {
+    position: static;
+  }
+  .post-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .blog-layout {
+    grid-template-columns: 1fr; /* Pasa de dos columnas a una sola */
+    padding: 30px 20px; /* Reduce un poco el padding para móviles */
+    gap: 30px;
+  }
+  .filter-panel {
+    order: -1; /* Esto fuerza al panel a mostrarse arriba del todo */
+
+    /* RECOMENDACIÓN: Quitar el sticky en móvil */
+    position: relative;
+    top: 0;
+  }
+  .blog-hero {
+    padding: 40px 20px 30px;
+  }
+  .blog-hero.mobile-only {
+    display: block;
+    padding: 40px 20px 30px;
+    order: -1;
+  }
+  h1 {
+    font-size: 27px;
+  }
+
+  /* #endregion */
+}

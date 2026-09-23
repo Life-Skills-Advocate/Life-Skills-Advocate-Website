@@ -1,0 +1,415 @@
+/* =========================================================
+         3. PAGE HERO
+         ========================================================= */
+.page-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 854px;
+  padding: 50px 40px;
+  background: url();
+  text-align: center;
+  background-image:
+    linear-gradient(rgba(84, 84, 84, 0.8), rgba(84, 84, 84, 0.8)),
+    url(/assets/img/collage.png) !important;
+  background-size: auto, cover !important;
+  background-position:
+    50% 50%,
+    50% 80% !important;
+  background-attachment: scroll, scroll !important;
+  background-repeat: no-repeat, no-repeat !important;
+}
+.page-hero h1 {
+  font-size: 40px;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.page-hero a.btn.btn-primary {
+  width: 20%;
+}
+
+/* =========================================================
+         4. CAREERS CONTENT
+         ========================================================= */
+.careers-narrow {
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.careers-narrow h2 span {
+  text-transform: none;
+}
+.careers-narrow p {
+  text-align: left;
+}
+.check-list {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 30px;
+  text-align: left;
+}
+.check-list li {
+  position: relative;
+  padding-left: 30px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.check-list li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--blue);
+  font-weight: 800;
+}
+.check-list a {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.gallery-grid img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.about-links {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  gap: 12px;
+  margin: 30px;
+  max-width: 60%;
+}
+.about-links a {
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  --g-regular-weight: 400;
+  --g-bold-weight: 600;
+  --tve-border-radius: 20px;
+  --tve-applied-border: 1px solid rgb(225, 225, 225);
+  padding: 10px 89px !important;
+  margin: 7px !important;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+.about-links a:hover {
+  background-color: var(--blue);
+}
+.desc {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-photo-section {
+  text-align: center;
+}
+.about-photo {
+  margin: 0 auto 30px;
+  max-width: 445px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.benefit-card {
+  background: #fff;
+  padding: 30px 24px;
+  text-align: left;
+}
+.benefit-card .icon-wrap {
+  width: 70px;
+  height: 70px;
+  margin: 0 0 15px 0px;
+  color: var(--blue);
+  border-radius: 50%;
+  background: #f0f6fb;
+  padding: 15px;
+}
+.benefit-card .icon-wrap svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--blue);
+}
+.benefit-card h3 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+.benefit-card p {
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0;
+}
+
+#openings {
+  scroll-margin-top: 100px;
+}
+.openings-content {
+  max-width: 90%;
+
+  margin: 0 auto;
+  text-align: center;
+}
+.openings-content .btn {
+  margin: 10px 0 30px;
+}
+.inline-link {
+  color: var(--blue);
+}
+.p-bigger {
+  font-size: 20px;
+}
+
+.meet-the-founder {
+  background-color: none;
+}
+.meet-the-founder h2 {
+  margin-bottom: 40px;
+}
+a.btn.btn-primary {
+  align-self: center;
+}
+.founder-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  gap: 50px;
+  align-items: start;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.founder-photo {
+  width: 90%;
+  height: 90%;
+  border-radius: 40px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+  align-self: center;
+}
+.founder-linkedin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--blue);
+  margin-bottom: 16px;
+}
+.founder-linkedin svg {
+  width: 18px;
+  height: 18px;
+  fill: #fff;
+}
+
+.legal-text {
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.sectionWWWU {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionWWWU h2 {
+  margin-bottom: 40px;
+}
+
+/* SHARE THIS PAGE */
+/* =========================================================
+      SHARE THIS PAGE - SOCIAL BUTTONS
+      ========================================================= */
+
+.thrv_wrapper.tve_s_item.tve_share_item {
+  outline: 3px solid #545454;
+  border-radius: 7px;
+  border-top: 1px solid white;
+} /* 1. Contenedor principal y Título */
+.tve-page-section-in .thrv_text_element p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #383838;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: var(--font-body, sans-serif);
+}
+
+/* 2. Envoltura de los botones (Flexbox para alinearlos) */
+.tve_social_items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Espacio entre botones */
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Estilo base para todos los enlaces/botones */
+.tve_social_items .tve_s_link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Espacio entre icono y texto */
+  padding: 10px 15px;
+  border-radius: 5px; /* Bordes totalmente redondeados */
+  text-decoration: none;
+  color: #ffffff !important; /* Forzamos blanco para el texto */
+  font-family: var(--font-body, sans-serif);
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* 4. Ajuste de los Iconos SVG */
+.tve_social_items .tve_s_icon {
+  display: flex;
+  align-items: center;
+}
+
+.tve_s_text.tve-froala {
+  display: none;
+}
+
+.tve_social_items .tve_s_icon svg {
+  width: 18px;
+  height: 18px;
+  fill: #ffffff; /* Iconos en blanco */
+  transition: transform 0.3s ease;
+}
+
+/* 5. Ocultar el contador que dice "0" para un diseño más limpio */
+.tve_social_items .tve_s_count {
+  display: none !important;
+}
+
+/* =========================================================
+      COLORES DE MARCA Y EFECTOS HOVER
+      ========================================================= */
+
+/* Facebook */
+.tve_s_fb_share .tve_s_link {
+  background-color: #545454;
+}
+.tve_s_fb_share .tve_s_link:hover {
+  background-color: #343434;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(21, 21, 21, 0.3);
+}
+
+/* X (Twitter) */
+.tve_s_x_share .tve_s_link {
+  background-color: #545454;
+}
+.tve_s_x_share .tve_s_link:hover {
+  background-color: #343434;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(21, 21, 21, 0.3);
+}
+
+/* Pinterest */
+.tve_s_pin_share .tve_s_link {
+  background-color: #545454;
+}
+.tve_s_pin_share .tve_s_link:hover {
+  background-color: #343434;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(21, 21, 21, 0.3);
+}
+
+/* LinkedIn */
+.tve_s_in_share .tve_s_link {
+  background-color: #545454;
+}
+.tve_s_in_share .tve_s_link:hover {
+  background-color: #343434;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(21, 21, 21, 0.3);
+}
+
+/* (Opcional) Pequeña animación en el icono al hacer hover */
+.tve_social_items .tve_s_link:hover .tve_s_icon svg {
+  transform: scale(1.15);
+}
+
+/* =========================================================
+         6. RESPONSIVE
+         ========================================================= */
+@media (max-width: 1023px) {
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  section {
+    padding: 50px 24px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .founder-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  .page-hero {
+    padding: 30px 20px;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero {
+    height: auto;
+  }
+}
