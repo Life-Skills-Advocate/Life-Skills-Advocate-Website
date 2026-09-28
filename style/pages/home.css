@@ -9,8 +9,8 @@
     linear-gradient(
       113deg,
       rgba(0, 174, 239, 0.9) 0%,
-      var(--blue) 55%,
-      rgba(45, 181, 230, 0.25) 100%
+      var(--blue) 37%,
+      rgba(45, 181, 230, 0.25) 70%
     ),
     url("/assets/img/00100lrPORTRAIT_00100_BURST20200120104948443_COVER-scaled.jpg");
   background-position: center 40%;
@@ -167,6 +167,13 @@
   gap: 20px;
 }
 
+.section-help {
+  padding-top: 110px;
+  padding-bottom: 0;
+  padding-left: 123.5px;
+  padding-right: 123.5px;
+}
+
 .tint-section {
   display: flex;
   flex-direction: column;
@@ -260,6 +267,12 @@
 
 .who-grid h2 {
   text-align: left;
+}
+
+.who-content .btn-primary {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .carousel {
@@ -392,6 +405,8 @@
 .booking-section {
   background: #00aeef26;
   text-align: center;
+  padding-left: 85px;
+  padding-right: 85px;
 }
 
 .booking-avatar {
@@ -620,8 +635,28 @@
   background: #e404ef80;
   color: #fff;
   margin: 0 auto;
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   align-self: center;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.neurowyld .btn-white::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0%;
+  background: #dd04e8;
+  transition: height 0.45s ease-in-out;
+  z-index: -1;
+}
+
+.neurowyld .btn-white:hover::before {
+  height: 100%;
 }
 
 .neurowyld-banner {
@@ -778,6 +813,16 @@
 
   section {
     padding: 50px 24px;
+  }
+
+  .section-help {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .booking-section {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   /* #endregion */

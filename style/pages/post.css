@@ -1,0 +1,387 @@
+/* =========================================================
+   PAGE HERO
+   ========================================================= */
+/* =========================================================
+      3. PAGE HERO
+      ========================================================= */
+.page-hero {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 40px 10px;
+  background-image:
+    linear-gradient(
+      158deg,
+      rgba(255, 255, 255, 0.28) 19%,
+      rgba(2, 3, 4, 0.65) 100%
+    ),
+    linear-gradient(rgba(54, 69, 79, 0.8), rgba(54, 69, 79, 0.8)) !important;
+}
+.page-hero h1 {
+  color: var(--white);
+}
+
+
+.page-hero {
+    width: 100%;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.page-hero h1 {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.15;
+}
+
+
+/* =========================================================
+   POST
+   ========================================================= */
+main{
+    background-color: #d7d7d7;
+}
+
+.post-section {
+    width: min(1200px, 90%);
+    margin: 0 auto 100px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 60px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   POST CONTENT
+   ========================================================= */
+.left-side{
+    padding: 40px 10px;
+    background-color: white;
+}
+
+.divisor{
+    border-top: 2px dotted #ccc;
+    margin: 20px;
+}
+.filed-under{
+    text-align: center;
+    font-style: italic;
+}
+.post-dates{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.lead-conversion-section{
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blue-light);
+    border: 1px solid var(--blue);
+    border-radius: 5px;
+}
+.lead-conversion-p1{
+    display: flex;
+
+}
+.lead-conversion-p1 img{
+    height: auto;
+    width: 30%;
+}
+.lead-conversion-p1 p{
+    text-align: center;
+    align-self: center;
+    font-size: 30px;
+}
+.lead-conversion-p2{
+    text-align: center;
+    margin: 10px;
+    font-weight: 700;
+}
+.lead-conversion-p3{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin-left: 2.5%;
+}
+.lead-conversion-p3 input{
+    width: 65%;
+    padding: 15px;
+    background-color: #ffffffb1;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.lead-conversion-p3 input:focus{
+    border: var(--gold);
+    outline: 1px solid var(--gold);
+}
+.lead-conversion-p3 button{ 
+    width: 25%;      
+    background-color: var(--gold);
+    box-shadow: var(--shadow-lg);
+    border: none;
+    color: white;
+}
+.lead-conversion-p3 button:hover{
+    filter: brightness(90%);
+}
+.lead-conversion-p4{
+    padding: 10px;
+    text-align: center;
+    color: var(--muted);
+}
+.lead-conversion-p4 p{
+    font-size: 14px;
+}
+.lead-conversion-p4 span{
+    color: var(--blue);
+}
+.lead-conversion-p4 span:hover{
+    cursor: pointer;
+    color: var(--blue-dark);
+}
+
+.post-content {
+    min-width: 0;
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+    padding: 20px;
+    
+    background-color: white;
+}
+
+
+/* Texto */
+
+.post-content p {
+    margin: 0 0 1.5rem;
+}
+
+
+/* Títulos */
+
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+
+    line-height: 1.3;
+}
+
+
+/* Links */
+
+.post-content a {
+    text-decoration: underline;
+}
+
+
+/* Listas */
+
+.post-content ul,
+.post-content ol {
+    margin: 0 0 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
+}
+
+
+/* =========================================================
+   IMAGES
+   ========================================================= */
+
+.post-content img {
+    display: block;
+
+    max-width: 100%;
+    height: auto;
+
+    margin: 2rem auto;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+   ========================================================= */
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    position: sticky;
+    top: 30px;
+}
+
+
+/* =========================================================
+   RELATED POST
+   ========================================================= */
+
+.related-post {
+    width: 100%;
+}
+
+
+/* =========================================================
+   SHARE THIS POST
+   ========================================================= */
+
+.share-this-post {
+    width: 100%;
+}
+
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+
+    margin: 2rem 0;
+}
+
+.post-content th,
+.post-content td {
+    padding: 10px;
+    border: 1px solid #ddd;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   BLOCKQUOTES
+   ========================================================= */
+
+.post-content blockquote {
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+
+    border-left: 4px solid currentColor;
+}
+
+/* =========================================================
+   RELATED POST
+   ========================================================= */
+.right-side{
+    display: flex;
+    flex-direction: column;
+}
+.related-post{
+    padding: 20px;
+}
+.related-post h2{
+    text-align: left;
+}
+.related-post-list{
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.related-post-item{
+    font-weight: 700;
+}
+.related-post-item:hover{
+    text-decoration: underline;
+}
+
+/* =========================================================
+   SHARE THIS POST
+   ========================================================= */
+.share-this-post .footer-social a {
+    background-color: #545454;
+}
+.share-this-post .footer-social svg {
+    color: white;
+    fill: white;
+}
+
+
+
+/* =========================================================
+   CTA BLUE CARD
+   ========================================================= */
+
+.cta-blue-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    background-color: var(--blue);
+    outline: 1px solid var(--blue);
+    border: 3px solid white;
+}
+.cta-blue-card h2{
+    color: white;
+    font-size: 24px;
+}
+.cta-blue-card img{
+    border-radius: 45%;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .post-section {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .right-side {
+        position: static;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .page-hero {
+        padding: 50px 20px;
+    }
+
+    .post-section {
+        width: 92%;
+        margin-bottom: 60px;
+    }
+
+    .post-content {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .right-side {
+        grid-template-columns: 1fr;
+    }
+
+}

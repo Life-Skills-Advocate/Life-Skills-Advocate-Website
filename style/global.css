@@ -51,6 +51,7 @@ button {
   --body-text: rgba(10, 10, 10, 0.85);
   --muted: rgba(41, 47, 51, 0.65);
   --white: #fff;
+  --gold: #fbaf42;
 
   --font-heading: "Literata", Georgia, serif;
   --font-body: "Open Sans", Arial, sans-serif;
