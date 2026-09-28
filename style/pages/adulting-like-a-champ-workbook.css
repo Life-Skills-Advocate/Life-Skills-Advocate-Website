@@ -1,0 +1,425 @@
+
+/* ============================================================
+   WORKBOOK HERO
+   ============================================================ */
+
+.workbook-hero {
+    background-color: var(--tint);
+    padding: 0px;
+    display: flex;
+}
+
+
+/* ============================================================
+   HERO — CONTENT
+   ============================================================ */
+
+.workbook-hero-content {
+    padding: 5% 15%;
+    padding-right: 10px;
+    text-align: left;
+}
+
+
+/* Eyebrow */
+
+.workbook-hero-content .eyebrow {
+    text-align: left;
+    background-color: white;
+    width: fit-content;
+    padding: 5px 10px;
+    border: 1px solid #0b6e94;
+    border-radius: 25px;
+    color: #0b6e94;
+    font-weight: 600;
+}
+
+
+/* Título */
+
+.workbook-hero-content h1 {
+    color: #0b6e94;
+    text-align: left;
+}
+
+
+/* Subtítulo */
+
+.workbook-hero-content h2 {
+    font-weight: 600;
+    text-align: left;
+}
+
+
+/* Descripción */
+
+.workbook-hero-content > p:not(.hero-note) {
+    color: var(--muted);
+}
+
+
+/* Botón */
+
+.workbook-hero-content .btn {
+    background-color: var(--gold);
+    margin-bottom: 10px;
+}
+
+
+/* Nota */
+
+.workbook-hero-content .hero-note {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0b6e94;
+    filter: brightness(60%);
+}
+
+.workbook-intro{
+    --workbook-intro-bg: #2c3a43;
+    display: flex;
+    padding-left: 15%;
+    padding-right: 15%;
+    height: 350px;
+    text-align: center;
+    background-color: var(--workbook-intro-bg);
+    align-items: center;
+}
+.workbook-intro .section-inner{
+    color: white;
+}
+.workbook-intro .section-inner h2{
+
+    color: white;
+}
+
+
+/* ============================================================
+   HERO — IMAGE
+   ============================================================ */
+
+.workbook-hero-image {
+    padding: 5% 15%;
+    padding-left:10px ;
+}
+
+
+/* Badge "FREE PDF" */
+
+.workbook-hero-image .image-label {
+    background-color: var(--gold);
+    padding: 10px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50px;
+    right: 178px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+
+/* Imagen */
+
+.workbook-hero-image img {
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+}
+
+.workbook-inside{
+    padding: 5% 15%;
+}
+.section-heading h2{
+    
+    text-align: left;
+}
+.section-heading .eyebrow{
+    text-align: left;
+    background-color: white;
+    width: fit-content;
+    padding: 5px 10px;
+    border: 1px solid #0b6e94;
+    border-radius: 25px;
+    color: #0b6e94;
+    font-weight: 600;
+}
+.workbook-inside-images{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.workbook-inside-images figure{
+    margin: 0px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+.workbook-inside-images figcaption{
+    padding: 20px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.workbook-feature-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap :20px;
+    
+}
+.workbook-feature-list article{
+    border-radius: 20px;
+    border: 1px solid #0b6d9484;
+    padding: 20px;
+    
+}
+.workbook-feature-list article svg{
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    height: auto;
+    width:  48px;
+    padding: 10px;
+    background-color: #0b6d9453;
+    border-radius: 10px;
+    fill: #0b6e94;
+}
+.workbook-feature-list article h3{
+    color: #0b6e94;
+    font-size: 18px;
+}
+.workbook-feature-list article p{
+    font-size: 14px;
+}
+
+.starting-point{
+    padding: 5% 15%;
+    background-color: var(--tint);
+
+}
+.starting-point .starting-point-content{
+    display: flex;
+}
+.starting-point .starting-point-content .starting-point-list{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    order: 1;
+}
+.starting-point-item-cont{
+    
+    margin: 10px;
+    display: flex;
+}
+.starting-point-item-cont svg{
+    height: 32px;
+    width: auto;
+    align-self: center;
+    display: flex;
+    margin-right: 10px;
+    padding: 5px;
+    fill: #0b6e94;
+    background-color: #0b6d9453;
+    border-radius: 50%;
+}
+.starting-point-item-cont span{
+    color: #0b6e94;
+    font-size: 14px;
+}
+figure.assessment-image{
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    height: auto;
+    width: 50%;
+}
+figure.assessment-image figcaption{
+    padding: 10px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.starting-point a.btn{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    margin: 20px;
+    background-color: var(--gold);
+}
+
+.why-it-works{
+    padding: 5% 15%;
+}
+.feature-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1,1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.feature-card{
+    border: 1px solid #0b6d944b;
+    padding: 20px;
+    border-radius: 20px;
+    height: 100%;
+    color: #0b6e94;
+
+}
+.feature-card h3{ font-size: 18px; 
+    color: #0b6e94;}
+.feature-card p{font-size: 14px;
+    color: var(--navy);}
+
+.who-its-for{
+    background-color: var(--tint);
+    padding: 5% 15%;
+}
+.audience-grid{
+    display: grid;
+    
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.audience-grid article{
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    padding: 20px;
+}
+.audience-grid article h3{
+    color: #0b6e94;
+    font-size: 18px;
+}
+.audience-grid article p{
+    font-size: 14px;
+}
+.audience-grid article.gold{
+    border-top: 3px solid var(--gold);
+}
+.audience-grid article.blue{
+    border-top: 3px solid var(--blue);
+}
+.audience-grid article.navy{
+    border-top: 3px solid var(--navy);
+}
+.who-its-for a.btn{
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    margin: 20px;
+    background-color: var(--gold);    
+}
+
+.who-made-it{
+    
+    --workbook-intro-bg: #2c3a43;
+    padding: 5% 15%;
+    background-color: var(--workbook-intro-bg);
+    color: white;
+}
+.who-made-it h2,h3{
+    color: white;
+}
+.authors-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.author-card{
+    border-radius: 20px;
+    padding: 20px;
+    background-color: white;
+    color: var(--navy);
+}
+.author-card h3,h2{
+    color: #0b6e94;
+}
+.author-card img{
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    height: auto;
+    width: 20%;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: var(--shadow-lg);
+}
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .workbook-hero {
+    }
+
+    .workbook-hero-content {
+    }
+
+    .workbook-hero-content .eyebrow {
+    }
+
+    .workbook-hero-content h1 {
+    }
+
+    .workbook-hero-content h2 {
+    }
+
+    .workbook-hero-content > p:not(.hero-note) {
+    }
+
+    .workbook-hero-content .btn {
+    }
+
+    .workbook-hero-content .hero-note {
+    }
+
+    .workbook-hero-image {
+    }
+
+    .workbook-hero-image .image-label {
+    }
+
+    .workbook-hero-image img {
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .workbook-hero {
+    }
+
+    .workbook-hero-content {
+    }
+
+    .workbook-hero-content .eyebrow {
+    }
+
+    .workbook-hero-content h1 {
+    }
+
+    .workbook-hero-content h2 {
+    }
+
+    .workbook-hero-content > p:not(.hero-note) {
+    }
+
+    .workbook-hero-content .btn {
+    }
+
+    .workbook-hero-content .hero-note {
+    }
+
+    .workbook-hero-image {
+    }
+
+    .workbook-hero-image .image-label {
+    }
+
+    .workbook-hero-image img {
+    }
+
+}
