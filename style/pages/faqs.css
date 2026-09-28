@@ -1,0 +1,175 @@
+/* =========================================================
+   3. PAGE HERO
+   ========================================================= */
+.page-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  padding: 50px 40px 10px;
+  background-image:
+    linear-gradient(
+      158deg,
+      rgba(255, 255, 255, 0.28) 19%,
+      rgba(2, 3, 4, 0.65) 100%
+    ),
+    linear-gradient(rgba(54, 69, 79, 0.8), rgba(54, 69, 79, 0.8)) !important;
+  text-align: center;
+}
+.page-hero h1 {
+  color: var(--white);
+}
+
+/* =========================================================
+   4. FAQ CONTENT
+   ========================================================= */
+.faq-section {
+  padding: 50px 40px;
+}
+.faq-section > .cta-center:first-child {
+  margin-bottom: 30px;
+}
+.cta-center {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.faq-group {
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+.faq-group h2 {
+  margin-bottom: 30px;
+  scroll-margin-top: 100px;
+}
+.faq-accordion {
+  display: grid;
+  gap: 14px;
+}
+.faq-item {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 26px;
+  background: rgba(0, 174, 239, 0.08);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--heading);
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item summary::after {
+  content: ""; /* Debe estar vacío */
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+
+  /* Aquí aplicas el color que quieres que tenga el icono */
+  background-color: var(--navy);
+
+  /* Usamos el SVG codificado como máscara */
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z'/%3E%3C/svg%3E")
+    no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z'/%3E%3C/svg%3E")
+    no-repeat center / contain;
+
+  transition: transform 0.2s ease;
+}
+
+/* Ejemplo de cómo rotarlo al abrir el summary */
+.faq-item[open] summary::after {
+  transform: rotate(180deg);
+}
+.faq-item[open] summary {
+  background: rgba(0, 174, 239, 0.15);
+}
+.faq-body {
+  padding: 22px 26px 26px;
+}
+.faq-body p {
+  margin: 0 0 16px;
+  font-size: 17px;
+}
+.faq-body p:last-child {
+  margin-bottom: 0;
+}
+.faq-body ol,
+.faq-body ul {
+  list-style: decimal;
+  padding-left: 22px;
+  margin: 0 0 16px;
+}
+.faq-body ul {
+  list-style: disc;
+}
+.faq-body li {
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.faq-body a {
+  color: var(--blue);
+  text-decoration: underline;
+}
+.faq-image {
+  max-width: 320px;
+  margin: 0 auto 16px;
+}
+
+/* =========================================================
+   6. RESPONSIVE
+   ========================================================= */
+@media (max-width: 1023px) {
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  section {
+    padding: 50px 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  .page-hero {
+    padding: 30px 20px 10px;
+  }
+  .faq-item summary {
+    padding: 14px 18px;
+    font-size: 16px;
+  }
+  .faq-body {
+    padding: 18px 18px 22px;
+  }
+  .cta-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+    text-wrap: auto;
+  }
+  .cta-center a {
+    text-wrap: auto;
+  }
+}

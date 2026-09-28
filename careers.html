@@ -37,783 +37,26 @@
       href="https://fonts.googleapis.com/css2?family=Literata:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Muli:wght@400;600;700;800&family=Nunito:wght@400;700;800&display=swap"
     />
 
-    <style>
-      /* =========================================================
-     0. RESET + DESIGN TOKENS  (kept identical to index.html)
-     ========================================================= */
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
+    <link rel="preload" href="/style/global.css" as="style" />
+    <link rel="stylesheet" href="/style/global.css" />
 
-      html {
-        scroll-behavior: smooth;
-        -webkit-text-size-adjust: 100%;
-      }
+    <link rel="stylesheet" href="/style/pages/careers.css" />
 
-      body {
-        margin: 0;
-        font-family: "Open Sans", Arial, sans-serif;
-        color: rgba(10, 10, 10, 0.85);
-        line-height: 1.6;
-        background: #fff;
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      button {
-        font: inherit;
-        cursor: pointer;
-      }
-
-      :root {
-        --blue: #00aeef;
-        --blue-light: #a3e4fa;
-        --blue-dark: #0089bc;
-        --navy: #0c1115;
-        --footer-bg: #36454f;
-        --tint: rgba(240, 246, 251, 0.85);
-        --tint-solid: #f0f6fb;
-        --heading: #292f33;
-        --body-text: rgba(10, 10, 10, 0.85);
-        --muted: rgba(41, 47, 51, 0.65);
-        --white: #fff;
-
-        --font-heading: "Literata", Georgia, serif;
-        --font-body: "Open Sans", Arial, sans-serif;
-        --font-base: "Muli", Arial, sans-serif;
-        --font-accent: "Nunito", Arial, sans-serif;
-
-        --radius: 5px;
-        --shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-        --shadow-lg: 0 8px 12px rgba(0, 0, 0, 0.25);
-        --max: 1250px;
-        --header-h: 84px;
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: var(--font-heading);
-        color: var(--heading);
-        font-weight: 700;
-        line-height: 1.25;
-        margin: 0 0 16px;
-      }
-
-      h1 {
-        font-size: 44px;
-      }
-
-      h2 {
-        font-size: 34px;
-        text-align: center;
-      }
-
-      h3 {
-        font-size: 24px;
-      }
-
-      h4 {
-        font-size: 20px;
-        font-weight: 600;
-      }
-
-      p {
-        margin: 0 0 20px;
-        font-size: 18px;
-        line-height: 1.75;
-      }
-
-      .center {
-        text-align: center;
-      }
-
-      .container {
-        max-width: var(--max);
-        margin: 0 auto;
-        padding: 0 40px;
-      }
-
-      section {
-        padding: 70px 40px;
-      }
-
-      .section-tint {
-        background: var(--tint);
-      }
-
-      /* =========================================================
-     1. BUTTONS
-     ========================================================= */
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        font-family: var(--font-body);
-        font-weight: 700;
-        font-size: 17px;
-        padding: 14px 26px;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow-lg);
-        border: none;
-        transition:
-          transform 0.15s ease,
-          box-shadow 0.15s ease,
-          background 0.15s ease;
-        cursor: pointer;
-        white-space: nowrap;
-      }
-
-      .btn:hover {
-        transform: translateY(-1px);
-      }
-
-      .btn-primary {
-        background: var(--blue);
-        color: #fff;
-      }
-
-      .btn-primary:hover {
-        background: var(--blue-dark);
-      }
-
-      .btn-outline {
-        background: transparent;
-        color: var(--blue);
-        border: 2px solid var(--blue);
-        box-shadow: none;
-      }
-
-      .btn-outline:hover {
-        background: var(--blue);
-        color: #fff;
-      }
-
-      .btn-sm {
-        padding: 10px 18px;
-        font-size: 15px;
-      }
-
-      /* =========================================================
-     2. HEADER / NAV  (kept identical to index.html)
-     ========================================================= */
-      .site-header {
-        display: flex;
-        justify-content: center;
-        position: sticky;
-        top: 0;
-        z-index: 500;
-        background: #fff;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-        transition: padding 0.2s ease;
-      }
-
-      .header-inner {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        padding: 14px 30px;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .header-top {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-self: flex-end;
-        width: 60%;
-      }
-      .header-cta-cont {
-        padding-bottom: 30px;
-        padding-top: 30px;
-      }
-
-      .logo img {
-        height: 115px;
-        width: auto;
-      }
-
-      .site-header.scrolled .logo img {
-        height: 115px;
-      }
-
-      .main-nav {
-        flex: 1;
-      }
-
-      .main-nav > ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 4px;
-      }
-
-      .main-nav > ul > li {
-        position: relative;
-      }
-
-      .main-nav > ul > li > a,
-      .main-nav > ul > li > button.nav-top-link {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        padding: 12px 14px;
-        font-size: 15px;
-        font-weight: 600;
-        color: #383838;
-        background: none;
-        border: none;
-        font-family: var(--font-body);
-      }
-
-      .main-nav > ul > li > a,
-      .main-nav > ul > li > button.nav-top-link {
-        text-decoration: none;
-        border-bottom: none;
-        background-image: linear-gradient(var(--blue), var(--blue));
-        background-size: 0% 1px;
-        background-position: left bottom;
-        background-repeat: no-repeat;
-        transition:
-          background-size 0.4s ease-in-out,
-          color 0.4s ease-in-out;
-        padding-bottom: 4px;
-      }
-
-      .main-nav > ul > li:hover > a,
-      .main-nav > ul > li:hover > button.nav-top-link {
-        color: var(--blue);
-        background-size: 100% 1px;
-      }
-
-      .dropdown a[aria-current="page"] {
-        color: var(--blue);
-        font-weight: 700;
-      }
-
-      .caret {
-        font-size: 11px;
-        transition: transform 0.15s ease;
-      }
-
-      .main-nav > ul > li:hover .caret {
-        transform: rotate(180deg);
-      }
-
-      .dropdown {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        min-width: 280px;
-        background: #fff;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow-lg);
-        padding: 10px 0;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(8px);
-        transition:
-          opacity 0.15s ease,
-          transform 0.15s ease,
-          visibility 0.15s ease;
-        z-index: 50;
-      }
-
-      .main-nav > ul > li:hover > .dropdown,
-      .main-nav > ul > li:focus-within > .dropdown {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      .dropdown li {
-        position: relative;
-      }
-
-      .dropdown a,
-      .dropdown button.nav-sub-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 8px;
-        padding: 10px 20px;
-        font-size: 14.5px;
-        color: #383838;
-        background: none;
-        border: none;
-        width: 100%;
-        text-align: left;
-        font-family: var(--font-body);
-      }
-
-      .dropdown a:hover,
-      .dropdown button.nav-sub-toggle:hover {
-        color: var(--blue);
-        background: var(--tint);
-      }
-
-      .dropdown .dropdown {
-        top: -10px;
-        left: 100%;
-      }
-
-      .header-cta {
-        flex-shrink: 0;
-      }
-      .header-cta:hover {
-        background: linear-gradient(
-          90deg,
-          var(--blue) 0%,
-          var(--blue) 45%,
-          var(--blue-light) 50%,
-          var(--blue) 55%,
-          var(--blue) 100%
-        );
-        background-size: 300% 100%;
-        animation: smooth 1s ease-in-out forwards;
-      }
-
-      @keyframes smooth {
-        0% {
-          background-position: 100% 0;
-        }
-        100% {
-          background-position: 0% 0;
-        }
-      }
-
-      .nav-toggle {
-        display: none;
-        background: none;
-        border: none;
-        width: 40px;
-        height: 40px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-      }
-
-      .nav-toggle span {
-        display: block;
-        width: 26px;
-        height: 3px;
-        background: #383838;
-        border-radius: 2px;
-      }
-
-      .site-header.scrolled .header-top {
-        height: 0px;
-      }
-
-      /* =========================================================
-     3. PAGE HERO
-     ========================================================= */
-      .page-hero {
-        padding: 50px 40px;
-        background: var(--tint);
-        text-align: center;
-      }
-      .page-hero h1 {
-        font-size: 40px;
-        margin-bottom: 20px;
-      }
-
-      /* =========================================================
-     4. CAREERS CONTENT
-     ========================================================= */
-      .careers-narrow {
-        max-width: 780px;
-        margin: 0 auto;
-        text-align: center;
-      }
-      .careers-narrow h2 span {
-        text-transform: none;
-      }
-      .careers-narrow p {
-        text-align: left;
-      }
-      .check-list {
-        display: grid;
-        gap: 12px;
-        margin: 0 0 30px;
-        text-align: left;
-      }
-      .check-list li {
-        position: relative;
-        padding-left: 30px;
-        font-size: 18px;
-        line-height: 1.6;
-      }
-      .check-list li::before {
-        content: "\2713";
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: var(--blue);
-        font-weight: 800;
-      }
-      .check-list a {
-        color: var(--blue);
-        text-decoration: underline;
-      }
-
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 16px;
-        max-width: var(--max);
-        margin: 0 auto;
-      }
-      .gallery-grid img {
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-      }
-
-      .about-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-        margin: 30px auto;
-        max-width: 900px;
-      }
-
-      .about-photo-section {
-        text-align: center;
-      }
-      .about-photo {
-        margin: 0 auto 30px;
-        max-width: 445px;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-      }
-
-      .benefits-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-        max-width: var(--max);
-        margin: 0 auto;
-      }
-      .benefit-card {
-        background: #fff;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        padding: 30px 24px;
-        text-align: center;
-      }
-      .benefit-card .icon-wrap {
-        width: 54px;
-        height: 54px;
-        margin: 0 auto 16px;
-        color: var(--blue);
-      }
-      .benefit-card .icon-wrap svg {
-        width: 100%;
-        height: 100%;
-        fill: var(--blue);
-      }
-      .benefit-card h3 {
-        font-size: 19px;
-        margin-bottom: 8px;
-      }
-      .benefit-card p {
-        font-size: 15px;
-        color: var(--muted);
-        margin: 0;
-      }
-
-      #openings {
-        scroll-margin-top: 100px;
-      }
-      .openings-content {
-        max-width: 780px;
-        margin: 0 auto;
-        text-align: center;
-      }
-      .openings-content .btn {
-        margin: 10px 0 30px;
-      }
-
-      .founder-grid {
-        display: grid;
-        grid-template-columns: 240px 1fr;
-        gap: 50px;
-        align-items: start;
-        max-width: var(--max);
-        margin: 0 auto;
-      }
-      .founder-photo {
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-        object-fit: cover;
-        box-shadow: var(--shadow);
-      }
-      .founder-linkedin {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: var(--blue);
-        margin-bottom: 16px;
-      }
-      .founder-linkedin svg {
-        width: 18px;
-        height: 18px;
-        fill: #fff;
-      }
-
-      .legal-text {
-        font-size: 13px;
-        color: var(--muted);
-        text-align: center;
-      }
-
-      /* =========================================================
-     5. FOOTER  (kept identical to index.html)
-     ========================================================= */
-      .site-footer {
-        background: var(--footer-bg);
-        color: rgba(255, 255, 255, 0.85);
-        padding: 50px 40px 30px;
-      }
-
-      .footer-social {
-        display: flex;
-        justify-content: center;
-        gap: 18px;
-        margin-bottom: 30px;
-      }
-
-      .footer-social a {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .footer-social svg {
-        width: 18px;
-        height: 18px;
-        fill: #222;
-      }
-
-      .footer-logos {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 30px;
-        flex-wrap: wrap;
-        max-width: var(--max);
-        margin: 0 auto 26px;
-      }
-
-      .footer-logos img {
-        height: 46px;
-        width: auto;
-        opacity: 0.9;
-      }
-
-      .footer-divider {
-        border: none;
-        border-top: 1px dashed rgba(255, 255, 255, 0.35);
-        max-width: 640px;
-        margin: 0 auto 24px;
-      }
-
-      .footer-bottom {
-        text-align: center;
-        font-size: 14px;
-      }
-
-      .footer-bottom p {
-        margin: 0 0 8px;
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.85);
-      }
-
-      .footer-legal a {
-        color: rgba(255, 255, 255, 0.85);
-      }
-
-      .footer-legal a:hover {
-        color: #fff;
-        text-decoration: underline;
-      }
-
-      .footer-legal span {
-        color: rgba(255, 255, 255, 0.4);
-        margin: 0 6px;
-      }
-
-      /* =========================================================
-     6. RESPONSIVE
-     ========================================================= */
-      @media (max-width: 1023px) {
-        h1 {
-          font-size: 36px;
-        }
-        h2 {
-          font-size: 28px;
-        }
-        section {
-          padding: 50px 24px;
-        }
-
-        .gallery-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-        .benefits-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .founder-grid {
-          grid-template-columns: 1fr;
-          justify-items: center;
-          text-align: center;
-        }
-
-        .main-nav {
-          position: fixed;
-          inset: 0 0 0 auto;
-          width: 320px;
-          max-width: 85vw;
-          background: #fff;
-          height: 100vh;
-          overflow-y: auto;
-          box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
-          transform: translateX(100%);
-          transition: transform 0.25s ease;
-          padding: 90px 0 40px;
-        }
-
-        .main-nav.open {
-          transform: translateX(0);
-        }
-
-        .main-nav > ul {
-          flex-direction: column;
-          align-items: stretch;
-          gap: 0;
-        }
-
-        .main-nav > ul > li {
-          width: 100%;
-          border-bottom: 1px solid #eee;
-        }
-
-        .main-nav > ul > li > a,
-        .main-nav > ul > li > button.nav-top-link {
-          width: 100%;
-          justify-content: space-between;
-          padding: 16px 24px;
-        }
-
-        .dropdown {
-          position: static;
-          box-shadow: none;
-          opacity: 1;
-          visibility: visible;
-          transform: none;
-          display: none;
-          width: 100%;
-          padding-left: 12px;
-        }
-
-        .main-nav > ul > li.open > .dropdown {
-          display: block;
-        }
-
-        .dropdown .dropdown {
-          left: 0;
-        }
-
-        .nav-toggle {
-          display: flex;
-        }
-
-        .header-cta.desktop-only {
-          display: none;
-        }
-
-        .nav-scrim {
-          position: fixed;
-          inset: 0;
-          background: rgba(0, 0, 0, 0.4);
-          opacity: 0;
-          visibility: hidden;
-          transition: opacity 0.25s ease;
-          z-index: 400;
-        }
-
-        .nav-scrim.open {
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-
-      @media (max-width: 767px) {
-        h1 {
-          font-size: 30px;
-        }
-        h2 {
-          font-size: 26px;
-        }
-        .page-hero {
-          padding: 30px 20px;
-        }
-        .gallery-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .benefits-grid {
-          grid-template-columns: 1fr;
-        }
-        .footer-logos {
-          justify-content: center;
-          text-align: center;
-        }
-      }
-    </style>
+    <style></style>
   </head>
   <body>
+    <!-- #region HEADER -->
     <!-- =========================================================
-     HEADER  (copied verbatim from index.html)
+     HEADER
      ========================================================= -->
     <header class="site-header" id="siteHeader">
       <div class="header-inner">
         <div class="header-top">
-          <a class="logo" href="index1.html" aria-label="Life Skills Advocate home">
+          <a
+            class="logo"
+            href="index.html"
+            aria-label="Life Skills Advocate home"
+          >
             <img
               src="/assets/img/Life-Skills-Advocate-1-e1561588375370.png"
               alt="Life Skills Advocate logo"
@@ -824,7 +67,7 @@
           </a>
           <div class="header-cta-cont">
             <a
-              class="btn btn-primary header-cta desktop-only"
+              class="btn btn-primary header-cta"
               href="https://lifeskillsadvocate.com/discovery/"
               >Book A Complimentary Discovery Meeting</a
             >
@@ -837,22 +80,21 @@
           <ul>
             <li>
               <button class="nav-top-link" aria-expanded="false">
-                About LSA Ezze <span class="caret">▾</span>
+                About LSA<span class="caret">▾</span>
               </button>
               <ul class="dropdown">
                 <li>
-                  <a href="meet-our-team.html">Meet Our Team</a>
+                  <a href="/meet-our-team.html">Meet Our Team</a>
                 </li>
                 <li>
-                  <a
-                    href="discover-the-life-skills-advocate-difference.html"
+                  <a href="/discover-the-life-skills-advocate-difference.html"
                     >Discover The LSA Difference</a
                   >
                 </li>
                 <li>
-                  <a href="core-values.html">Core Values</a>
+                  <a href="/core-values.html">Core Values</a>
                 </li>
-                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="/faqs.html">FAQs</a></li>
                 <li>
                   <a
                     href="https://lifeskillsadvocate.com/blog/what-is-neurodivergence/"
@@ -872,17 +114,15 @@
                   >
                 </li>
                 <li>
-                  <a href="careers.html" aria-current="page">Careers</a>
+                  <a href="/careers.html">Careers</a>
                 </li>
                 <li>
-                  <a href="https://lifeskillsadvocate.com/contact/">Contact</a>
+                  <a href="/contact.html">Contact</a>
                 </li>
               </ul>
             </li>
             <li>
-              <a
-                href="https://lifeskillsadvocate.com/executive-function-coaching/"
-                class="nav-top-link"
+              <a href="/executive-function-coaching.html" class="nav-top-link"
                 >Explore Coaching <span class="caret">▾</span></a
               >
               <ul class="dropdown">
@@ -892,8 +132,7 @@
                   </button>
                   <ul class="dropdown">
                     <li>
-                      <a
-                        href="https://lifeskillsadvocate.com/academic-coaching-for-neurodivergent-minds/"
+                      <a href="/academic-coaching-for-neurodivergent-minds.html"
                         >School</a
                       >
                     </li>
@@ -953,7 +192,11 @@
             <li>
               <a
                 href="https://lifeskillsadvocate.com/adulting-like-a-champ-workbook/"
-                class="nav-top-link"
+                class="nav-top-link adultinglikeachamp-cont"
+                ><span class="adultinglikeachamp-img"
+                  ><img
+                    src="assets/img/newicon.png"
+                    alt="adultinglikeachamp-img" /></span
                 >Adulting Like A Champ <span class="caret">▾</span></a
               >
               <ul class="dropdown">
@@ -1050,7 +293,7 @@
                     >Adulting Like A Champ</a
                   >
                 </li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="/blog.html">Blog</a></li>
                 <li>
                   <a
                     href="https://lifeskillsadvocate.com/free-executive-functioning-worksheets/"
@@ -1116,7 +359,10 @@
                   >
                 </li>
                 <li>
-                  <a href="https://neurowyld.com/" target="_blank" rel="noopener"
+                  <a
+                    href="https://neurowyld.com/"
+                    target="_blank"
+                    rel="noopener"
                     >Neurowyld</a
                   >
                 </li>
@@ -1180,7 +426,15 @@
               </ul>
             </li>
             <li>
-              <a href="https://advocate360.app/" target="_blank" rel="noopener"
+              <a
+                href="https://advocate360.app/"
+                target="_blank"
+                rel="noopener"
+                class="advocate360-cont"
+                ><span class="advocate360-img"
+                  ><img
+                    src="assets/img/advocate360icon.png"
+                    alt="advocate360-img" /></span
                 >Advocate360</a
               >
             </li>
@@ -1197,11 +451,18 @@
         </button>
       </div>
     </header>
+    <!-- #endregion HEADER -->
 
     <!-- =========================================================
      PAGE TITLE
      ========================================================= -->
     <section class="page-hero">
+      <div class="logo">
+        <img
+          src="assets/img/Life-Skills-Advocate-white-cropped.png"
+          alt="logolsa"
+        />
+      </div>
       <h1>Careers</h1>
       <a href="#openings" class="btn btn-primary">View Jobs</a>
     </section>
@@ -1221,25 +482,23 @@
               individualized approach to learning?
             </li>
             <li>
-              Has a strong passion for supporting diversely abled teenagers
-              and adults?
+              Has a strong passion for supporting diversely abled teenagers and
+              adults?
             </li>
             <li>
               Possesses the ability to develop, implement and adapt learning
               strategies based on client needs?
             </li>
+            <li>Aligns with our <a href="core-values.html">core values</a>?</li>
             <li>
-              Aligns with our <a href="core-values.html">core values</a>?
+              Has spent time teaching or assisting diversely abled teenagers or
+              adults in a classroom (or similar) setting and is looking for a
+              new challenge?
             </li>
             <li>
-              Has spent time teaching or assisting diversely abled teenagers
-              or adults in a classroom (or similar) setting and is looking
-              for a new challenge?
-            </li>
-            <li>
-              Understands how skills like habit building, organization,
-              problem solving, flexibility, and other executive functioning
-              skills are taught?
+              Understands how skills like habit building, organization, problem
+              solving, flexibility, and other executive functioning skills are
+              taught?
             </li>
             <li>
               Enjoys working independently and in a variety of settings and
@@ -1262,27 +521,22 @@
       <section class="section-tint">
         <div class="gallery-grid">
           <img
-            src="https://lifeskillsadvocate.com/wp-content/uploads/2021/04/IMG_20200629_184347-1-scaled.jpg"
+            src="assets/img/IMG_20200629_184347-1-scaled.png"
             alt="Life Skills Advocate coach with a client"
             loading="lazy"
           />
           <img
-            src="https://lifeskillsadvocate.com/wp-content/uploads/2021/04/IMG_20200121_150906-1-scaled.jpg"
+            src="assets/img/IMG_20200121_150906-1-scaled.png"
             alt="Life Skills Advocate coach with a client"
             loading="lazy"
           />
           <img
-            src="https://lifeskillsadvocate.com/wp-content/uploads/2021/04/IMG_20200615_175351-1-scaled-e1617602746264.jpg"
+            src="assets/img/IMG_20200615_175351-1-scaled-e1617602746264.png"
             alt="Life Skills Advocate coach with a client"
             loading="lazy"
           />
           <img
-            src="https://lifeskillsadvocate.com/wp-content/uploads/2021/04/IMG_20200121_125616-scaled.jpg"
-            alt="Life Skills Advocate coach with a client"
-            loading="lazy"
-          />
-          <img
-            src="https://lifeskillsadvocate.com/wp-content/uploads/2021/04/IMG_20200716_164305-1-scaled.jpg"
+            src="assets/img/IMG_20200121_125616-scaled.png"
             alt="Life Skills Advocate coach with a client"
             loading="lazy"
           />
@@ -1295,53 +549,46 @@
       <section>
         <div class="careers-narrow">
           <h2>About Life Skills Advocate</h2>
-          <div class="about-links">
-            <a class="btn btn-outline btn-sm" href="meet-our-team.html"
-              >Meet Our Team</a
-            >
-            <a
-              class="btn btn-outline btn-sm"
-              href="discover-the-life-skills-advocate-difference.html"
+          <div class="about-links desktop-only">
+            <a href="meet-our-team.html">Meet Our Team</a>
+            <a href="discover-the-life-skills-advocate-difference.html"
               >Discover the LSA Difference</a
             >
-            <a
-              class="btn btn-outline btn-sm"
-              href="https://lifeskillsadvocate.com/our-process/"
+            <a href="https://lifeskillsadvocate.com/our-process/"
               >Our Coaching Process</a
             >
-            <a class="btn btn-outline btn-sm" href="core-values.html"
-              >Our Core Values</a
-            >
-            <a class="btn btn-outline btn-sm" href="faqs.html">FAQs</a>
+            <a href="core-values.html">Our Core Values</a>
+            <a href="faqs.html">FAQs</a>
             <a
-              class="btn btn-outline btn-sm"
               href="https://lifeskillsadvocate.com/blog/executive-functioning-ripple-effect/"
               target="_blank"
               rel="noopener"
               >the EF Ripple Effect Explained</a
             >
           </div>
-          <p style="text-align: center">
-            Serving the greater Seattle region, Life Skills Advocate is an
-            executive functioning and life skills coaching and transition
-            support company that empowers neurodiverse teens, adults and
-            families to become their own best advocates and teaches them how
-            to maximize their autonomy and independence.
-          </p>
-          <p style="text-align: center">
-            We provide in-home and virtual support across daily living,
-            academic, vocational and community-based domains.
-          </p>
-          <p style="text-align: center">
-            <strong
-              >Our mission: Uplifting the neurodivergent community to embrace
-              their strengths and self-advocate with confidence.</strong
-            >
-          </p>
-          <p style="text-align: center">
-            Learn more about what we do by
-            <a href="index.html">clicking here.</a>
-          </p>
+          <div class="desc">
+            <p style="text-align: center">
+              Serving the greater Seattle region, Life Skills Advocate is an
+              executive functioning and life skills coaching and transition
+              support company that empowers neurodiverse teens, adults and
+              families to become their own best advocates and teaches them how
+              to maximize their autonomy and independence.
+            </p>
+            <p style="text-align: center">
+              We provide in-home and virtual support across daily living,
+              academic, vocational and community-based domains.
+            </p>
+            <p style="text-align: center">
+              <strong
+                >Our mission: Uplifting the neurodivergent community to embrace
+                their strengths and self-advocate with confidence.</strong
+              >
+            </p>
+            <p style="text-align: center">
+              Learn more about what we do by
+              <a href="index.html">clicking here.</a>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -1351,7 +598,7 @@
       <section class="section-tint about-photo-section">
         <img
           class="about-photo"
-          src="https://lifeskillsadvocate.com/wp-content/uploads/2023/05/PXL_20230222_2106340212.jpg"
+          src="assets/img/PXL_20230222_2106340212.png"
           alt="Life Skills Advocate coaching session in the community"
           loading="lazy"
           width="445"
@@ -1363,7 +610,7 @@
       <!-- =========================================================
          WHY WORK WITH US
          ========================================================= -->
-      <section>
+      <section class="sectionWWWU">
         <h2>Why Work With Us?</h2>
         <div class="benefits-grid">
           <div class="benefit-card">
@@ -1376,8 +623,8 @@
             </div>
             <h3>Our Awesome Clients</h3>
             <p>
-              What can we say? Our clients and their families are just
-              awesome! We really can't stress this enough.
+              What can we say? Our clients and their families are just awesome!
+              We really can't stress this enough.
             </p>
           </div>
           <div class="benefit-card">
@@ -1390,9 +637,9 @@
             </div>
             <h3>Make a REAL difference</h3>
             <p>
-              You'll be working with clients on real-world skills they
-              actually care about. For example, creating a savings plan,
-              making breakfast, grocery shopping, riding public transit, etc.
+              You'll be working with clients on real-world skills they actually
+              care about. For example, creating a savings plan, making
+              breakfast, grocery shopping, riding public transit, etc.
             </p>
           </div>
           <div class="benefit-card">
@@ -1419,8 +666,8 @@
             </div>
             <h3>Collaboration Time</h3>
             <p>
-              Schedule collaboration time as needed with families, other
-              support professionals or Life Skills Advocate team members.
+              Schedule collaboration time as needed with families, other support
+              professionals or Life Skills Advocate team members.
             </p>
           </div>
           <div class="benefit-card">
@@ -1433,8 +680,8 @@
             </div>
             <h3>Training &amp; Ongoing Support</h3>
             <p>
-              During onboarding, you'll get to shadow and see real-world
-              client support in action. Once onboarded, additional training
+              During onboarding, you'll get to shadow and see real-world client
+              support in action. Once onboarded, additional training
               opportunities will be made available on a continuous basis.
             </p>
           </div>
@@ -1479,17 +726,18 @@
         <div class="openings-content">
           <h2>Opportunities for everyone</h2>
           <p>
-            Life Skills Advocate is proud to be an equal opportunity
-            workplace that seeks to recruit, develop, and retain the most
-            talented people from a variety of backgrounds, perspectives and
-            skills. We therefore encourage applications from all genders,
-            races, religions, ages and sexual orientations, as well as
-            parents, veterans, people living with disabilities, and any other
-            groups that could bring diverse perspectives to our business.
+            Life Skills Advocate is proud to be an equal opportunity workplace
+            that seeks to recruit, develop, and retain the most talented people
+            from a variety of backgrounds, perspectives and skills. We therefore
+            encourage applications from all genders, races, religions, ages and
+            sexual orientations, as well as parents, veterans, people living
+            with disabilities, and any other groups that could bring diverse
+            perspectives to our business.
           </p>
           <p>
-            To view and apply for any open positions, click the
-            "<strong>View Current Job Openings</strong>" button below.
+            To view and apply for any open positions, click the "<strong
+              >View Current Job Openings</strong
+            >" button below.
           </p>
           <a
             class="btn btn-primary"
@@ -1498,10 +746,10 @@
             rel="nofollow noopener"
             >View Current Job Openings</a
           >
-          <p>
-            If there are no current openings, we still welcome your
-            interest. *Feel free to email your resume to
-            <a href="mailto:careers@lifeskillsadvocate.com"
+          <p class="p-bigger">
+            If there are no current openings, we still welcome your interest.
+            *Feel free to email your resume to
+            <a class="inline-link" href="mailto:careers@lifeskillsadvocate.com"
               >careers@lifeskillsadvocate.com</a
             >
             with the subject line
@@ -1516,16 +764,16 @@
       <!-- =========================================================
          MEET THE FOUNDER
          ========================================================= -->
-      <section>
+      <section class="meet-the-founder">
         <h2>Meet The Founder</h2>
         <div class="founder-grid">
           <img
             class="founder-photo"
-            src="assets/img/Chris-Hanson-leadership-headshot.jpg"
+            src="assets/img/IMG_20200501_132915-scaled.png"
             alt="Chris Hanson, founder of Life Skills Advocate"
             loading="lazy"
           />
-          <div>
+          <div class="founder-info">
             <h3>About Chris.</h3>
             <a
               class="founder-linkedin"
@@ -1541,32 +789,152 @@
               </svg>
             </a>
             <p>
-              Life Skills Advocate was founded in 2019 by Chris Hanson, who
-              has personal experience with ADHD, anxiety &amp; depression and
+              Life Skills Advocate was founded in 2019 by Chris Hanson, who has
+              personal experience with ADHD, anxiety &amp; depression and
               understands the importance of having strong advocates on your
               side.
               <strong
-                >Chris started Life Skills Advocate because he wanted to
-                create the type of support service he wishes he had when he
-                was a teenager struggling to find his path in life.</strong
+                >Chris started Life Skills Advocate because he wanted to create
+                the type of support service he wishes he had when he was a
+                teenager struggling to find his path in life.</strong
               >
             </p>
             <p>
               Professionally, Chris holds a Bachelor of Science in Special
-              Education and spent 8+ years as a high school special
-              education teacher and paraeducator in the Kent School
-              District. Over time, he saw a critical need to support
-              students (and adults) in becoming their own best advocates,
-              and helping them build the confidence and skills needed to
-              tackle what's getting in the way of pursuing their goals and
-              having a higher high quality of life.
+              Education and spent 8+ years as a high school special education
+              teacher and paraeducator in the Kent School District. Over time,
+              he saw a critical need to support students (and adults) in
+              becoming their own best advocates, and helping them build the
+              confidence and skills needed to tackle what's getting in the way
+              of pursuing their goals and having a higher high quality of life.
             </p>
-            <a class="btn btn-outline" href="meet-our-team.html"
+            <a class="btn btn-primary" href="meet-our-team.html"
               >Meet the Team</a
             >
           </div>
         </div>
       </section>
+
+      <!-- =========================================================
+         SHARE THIS PAGE
+         ========================================================= -->
+
+      <div class="tve-page-section-in" data-css="tve-u-178a14bc9b8">
+        <div
+          class="thrv_wrapper thrv_text_element"
+          data-css="tve-u-178a14b7b4d"
+          style=""
+        >
+          <p data-css="tve-u-178a14b7b55" style="text-align: center">
+            Share this page:
+          </p>
+        </div>
+        <div
+          class="thrv_wrapper thrv_social_custom thrv_social tve_share_left tve_style_2 tcb-custom-branding-social"
+          data-counts=""
+          data-min_shares="0"
+          data-device-config='{"desktop":{"button_type":"tve_social_ib","isFullWidth":"0","showCount":"0"},"tablet":{},"mobile":{"button_type":"tve_social_ib","showCount":"0"}}'
+          data-css="tve-u-178a14b4008"
+          style=""
+        >
+          <div
+            class="tve_social_items tve_social_custom tve-prevent-content-edit tve_style_2 tve_social_ib"
+          >
+            <div
+              class="thrv_wrapper tve_s_item tve_s_fb_share tve_share_item"
+              data-s="fb_share"
+              data-href="https://lifeskillsadvocate.com/careers/"
+              data-label="Share"
+            >
+              <a href="javascript:void(0)" class="tve_s_link">
+                <span class="thrv_wrapper tve_s_icon">
+                  <svg
+                    class="tcb-icon"
+                    viewBox="0 0 264 512"
+                    data-id="icon-fb"
+                    data-name=""
+                  >
+                    <path
+                      d="M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H256l-11.7 91h-73.6v229"
+                    ></path>
+                  </svg>
+                </span>
+                <span class="tve_s_text tve-froala">Share</span>
+                <span class="tve_s_count">0</span>
+              </a>
+            </div>
+            <div
+              class="thrv_wrapper tve_s_item tve_s_x_share tve_share_item"
+              data-s="x_share"
+              data-href="https://lifeskillsadvocate.com/careers/"
+              data-label="Post"
+            >
+              <a href="javascript:void(0)" class="tve_s_link">
+                <span class="thrv_wrapper tve_s_icon">
+                  <svg
+                    class="tcb-icon"
+                    viewBox="0 0 512 512"
+                    data-id="icon-x"
+                    data-name=""
+                  >
+                    <path
+                      d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                    ></path>
+                  </svg>
+                </span>
+                <span class="tve_s_text tve-froala">Post</span>
+                <span class="tve_s_count">0</span>
+              </a>
+            </div>
+            <div
+              class="thrv_wrapper tve_s_item tve_s_pin_share tve_share_item"
+              data-s="pin_share"
+              data-href="https://lifeskillsadvocate.com/careers/"
+              data-label="Pin"
+            >
+              <a href="javascript:void(0)" class="tve_s_link">
+                <span class="thrv_wrapper tve_s_icon">
+                  <svg
+                    class="tcb-icon"
+                    viewBox="0 0 384 512"
+                    data-id="icon-pin"
+                    data-name=""
+                  >
+                    <path
+                      d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4 0-9.3-23.7-29.1-23.7-67.8 0-80.4 61.2-137.4 140.4-137.4 68.1 0 118.5 38.7 118.5 109.8 0 53.1-21.3 152.7-90.3 152.7-24.9 0-46.2-18-46.2-43.8 0-37.8 26.4-74.4 26.4-113.4 0-66.2-93.9-54.2-93.9 25.8 0 16.8 2.1 35.4 9.6 50.7-13.8 59.4-42 147.9-42 209.1 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z"
+                    ></path>
+                  </svg>
+                </span>
+                <span class="tve_s_text tve-froala">Pin</span>
+                <span class="tve_s_count">0</span>
+              </a>
+            </div>
+            <div
+              class="thrv_wrapper tve_s_item tve_s_in_share tve_share_item"
+              data-s="in_share"
+              data-href="https://lifeskillsadvocate.com/careers/"
+              data-label="Share"
+            >
+              <a href="javascript:void(0)" class="tve_s_link">
+                <span class="thrv_wrapper tve_s_icon">
+                  <svg
+                    class="tcb-icon"
+                    viewBox="0 0 448 512"
+                    data-id="icon-in"
+                    data-name=""
+                  >
+                    <path
+                      d="M100.3 480H7.4V180.9h92.9V480zM53.8 140.1C24.1 140.1 0 115.5 0 85.8 0 56.1 24.1 32 53.8 32c29.7 0 53.8 24.1 53.8 53.8 0 29.7-24.1 54.3-53.8 54.3zM448 480h-92.7V334.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V480h-92.8V180.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V480z"
+                    ></path>
+                  </svg>
+                </span>
+                <span class="tve_s_text tve-froala">Share</span>
+                <span class="tve_s_count">0</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- =========================================================
          CLOSING
@@ -1575,11 +943,12 @@
         <div class="careers-narrow">
           <p class="center">
             Return to the Life Skills Advocate
-            <a href="index.html">homepage</a>.
+            <a class="inline-link" href="index.html">homepage</a>.
           </p>
           <p class="legal-text">
             This site is protected by reCAPTCHA and the Google
             <a
+              class="inline-link"
               href="https://policies.google.com/privacy"
               target="_blank"
               rel="noopener"
@@ -1587,6 +956,7 @@
             >
             and
             <a
+              class="inline-link"
               href="https://policies.google.com/terms"
               target="_blank"
               rel="noopener"
@@ -1595,19 +965,20 @@
             apply.
           </p>
           <p class="legal-text">
-            Life Skills Advocate, LLC is an equal opportunity employer and
-            does not discriminate on the basis of race, sex, color,
-            religion, age, national origin, marital status, disability,
-            veteran status, genetic information, sexual orientation, gender
-            identity or any other reason prohibited by law in provision of
-            employment opportunities and benefits.
+            Life Skills Advocate, LLC is an equal opportunity employer and does
+            not discriminate on the basis of race, sex, color, religion, age,
+            national origin, marital status, disability, veteran status, genetic
+            information, sexual orientation, gender identity or any other reason
+            prohibited by law in provision of employment opportunities and
+            benefits.
           </p>
         </div>
       </section>
     </main>
 
+    <!-- #region FOOTER -->
     <!-- =========================================================
-     FOOTER  (copied verbatim from index.html)
+     FOOTER
      ========================================================= -->
     <footer class="site-footer">
       <div class="footer-social">
@@ -1626,10 +997,10 @@
           target="_blank"
           rel="nofollow noopener"
           aria-label="Instagram"
-          ><svg viewBox="0 0 448 512">
+          ><svg viewBox="0 0 448 512" data-id="instagram" data-name="">
             <path
-              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3a26.8 26.8 0 1 1-53.6 0 26.8 26.8 0 0 1 53.6 0zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-            /></svg
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+            ></path></svg
         ></a>
         <a
           href="https://www.pinterest.com/LifeSkillsAdvocate/"
@@ -1654,17 +1025,17 @@
       </div>
 
       <div class="footer-logos">
+        <img
+          src="assets/img/Life-Skills-Advocate-white-cropped.png"
+          alt="Life Skills Advocate"
+          loading="lazy"
+        />
         <a href="https://neurowyld.com/" target="_blank" rel="noopener"
           ><img
             src="assets/img/Neurowyld-Featured-Image-5-e1758586279818.png"
             alt="Neurowyld"
             loading="lazy"
         /></a>
-        <img
-          src="assets/img/Life-Skills-Advocate-white-cropped.png"
-          alt="Life Skills Advocate"
-          loading="lazy"
-        />
       </div>
 
       <hr class="footer-divider" />
@@ -1685,70 +1056,17 @@
           ><span>&bull;</span>
           <a href="https://lifeskillsadvocate.com/disclaimer/">Disclaimer</a
           ><span>&bull;</span>
-          <a href="https://lifeskillsadvocate.com/contact/">Contact</a>
+          <a href="/contact.html">Contact</a>
+        </p>
+        <p class="footer-legal footer-legal-secondary">
+          <a href="https://lifeskillsadvocate.com/privacy-policy/"
+            >Privacy Settings</a
+          >
         </p>
       </div>
     </footer>
+    <!-- #endregion FOOTER -->
 
-    <script>
-      (function () {
-        "use strict";
-
-        /* ---- Footer year ---- */
-        document.getElementById("copyYear").textContent =
-          new Date().getFullYear();
-
-        /* ---- Sticky header shrink on scroll ---- */
-        var header = document.getElementById("siteHeader");
-        var onScroll = function () {
-          header.classList.toggle("scrolled", window.scrollY > 60);
-        };
-        window.addEventListener("scroll", onScroll, { passive: true });
-        onScroll();
-
-        /* ---- Mobile nav toggle ---- */
-        var navToggle = document.getElementById("navToggle");
-        var mainNav = document.getElementById("mainNav");
-        var navScrim = document.getElementById("navScrim");
-
-        function closeNav() {
-          mainNav.classList.remove("open");
-          navScrim.classList.remove("open");
-          navToggle.setAttribute("aria-expanded", "false");
-          document.querySelectorAll(".main-nav li.open").forEach(function (li) {
-            li.classList.remove("open");
-          });
-        }
-        function toggleNav() {
-          var isOpen = mainNav.classList.toggle("open");
-          navScrim.classList.toggle("open", isOpen);
-          navToggle.setAttribute("aria-expanded", String(isOpen));
-        }
-        navToggle.addEventListener("click", toggleNav);
-        navScrim.addEventListener("click", closeNav);
-
-        /* ---- Mobile accordion for dropdown items ---- */
-        document
-          .querySelectorAll(".nav-top-link, .nav-sub-toggle")
-          .forEach(function (btn) {
-            btn.addEventListener("click", function (e) {
-              if (window.innerWidth > 1023) return; // desktop uses hover
-              var li = btn.closest("li");
-              var hasDropdown = li.querySelector(":scope > .dropdown");
-              if (!hasDropdown) return;
-              e.preventDefault();
-              var wasOpen = li.classList.contains("open");
-              li.classList.toggle("open", !wasOpen);
-            });
-          });
-
-        /* Close mobile nav on link click */
-        document.querySelectorAll(".main-nav a").forEach(function (a) {
-          a.addEventListener("click", function () {
-            if (window.innerWidth <= 1023) closeNav();
-          });
-        });
-      })();
-    </script>
+    <script src="/js/main.js"></script>
   </body>
 </html>
