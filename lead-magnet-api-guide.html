@@ -1,0 +1,489 @@
+<title>Lead Magnet Request API</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --ground: #F7F7FA;
+    --surface: #FFFFFF;
+    --surface-sunk: #F1F0F7;
+    --ink: #212121;
+    --ink-soft: #55535F;
+    --ink-faint: #7A7885;
+    --rule: #DFDEE8;
+    --rule-soft: #ECEBF3;
+    --accent: #7A3FE0;
+    --accent-soft: #F3EEFE;
+    --resource: #17784B;
+    --resource-soft: #E4F3EB;
+    --exercise: #3F52C9;
+    --exercise-soft: #EAEDFB;
+    --danger: #B32F27;
+    --danger-soft: #FAEBEA;
+    --code-ground: #201D2B;
+    --code-ink: #E9E6F2;
+    --code-key: #C4A8FF;
+    --code-str: #9BDCB4;
+    --code-com: #8B87A0;
+    --shadow: 0 1px 2px rgba(33,31,45,.05), 0 8px 24px -12px rgba(33,31,45,.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #15131C;
+      --surface: #1D1A26;
+      --surface-sunk: #232030;
+      --ink: #EDEBF3;
+      --ink-soft: #B4B0C2;
+      --ink-faint: #8B8799;
+      --rule: #34303F;
+      --rule-soft: #2A2735;
+      --accent: #B18CFF;
+      --accent-soft: #2A2340;
+      --resource: #5FC48D;
+      --resource-soft: #1B3327;
+      --exercise: #8E9CF5;
+      --exercise-soft: #22273F;
+      --danger: #F08076;
+      --danger-soft: #38211F;
+      --code-ground: #100E17;
+      --code-ink: #E9E6F2;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #15131C;
+    --surface: #1D1A26;
+    --surface-sunk: #232030;
+    --ink: #EDEBF3;
+    --ink-soft: #B4B0C2;
+    --ink-faint: #8B8799;
+    --rule: #34303F;
+    --rule-soft: #2A2735;
+    --accent: #B18CFF;
+    --accent-soft: #2A2340;
+    --resource: #5FC48D;
+    --resource-soft: #1B3327;
+    --exercise: #8E9CF5;
+    --exercise-soft: #22273F;
+    --danger: #F08076;
+    --danger-soft: #38211F;
+    --code-ground: #100E17;
+    --code-ink: #E9E6F2;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 940px; margin: 0 auto; padding: 56px 24px 96px; }
+
+  /* ---- masthead ---- */
+  .masthead { border-bottom: 2px solid var(--ink); padding-bottom: 28px; margin-bottom: 44px; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11.5px; font-weight: 500; letter-spacing: .13em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 14px;
+  }
+  h1 {
+    font-size: clamp(30px, 5vw, 44px); font-weight: 700; line-height: 1.12;
+    letter-spacing: -.021em; margin: 0 0 14px; text-wrap: balance;
+  }
+  .standfirst {
+    font-size: 17.5px; color: var(--ink-soft); margin: 0; max-width: 66ch; line-height: 1.6;
+  }
+  .meta {
+    display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 22px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--ink-faint);
+  }
+  .meta b { color: var(--ink-soft); font-weight: 500; }
+
+  /* ---- sections ---- */
+  section { margin: 0 0 56px; }
+  h2 {
+    font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    color: var(--ink); margin: 0 0 6px; padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .h2sub { color: var(--ink-faint); font-size: 14px; margin: 0 0 22px; }
+  h3 {
+    font-size: 16.5px; font-weight: 600; margin: 30px 0 10px; letter-spacing: -.005em;
+  }
+  p { margin: 0 0 14px; max-width: 72ch; }
+  p.lede { max-width: 72ch; }
+  ul { margin: 0 0 14px; padding-left: 20px; max-width: 72ch; }
+  li { margin-bottom: 7px; }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  a:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px;
+  }
+  code {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .875em; background: var(--surface-sunk);
+    padding: .12em .38em; border-radius: 4px; border: 1px solid var(--rule-soft);
+  }
+
+  /* ---- endpoint card ---- */
+  .endpoint {
+    background: var(--surface); border: 1px solid var(--rule);
+    border-radius: 10px; box-shadow: var(--shadow); overflow: hidden; margin-bottom: 20px;
+  }
+  .endpoint-top {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    padding: 16px 20px; border-bottom: 1px solid var(--rule-soft); background: var(--surface-sunk);
+  }
+  .verb {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; font-weight: 600; letter-spacing: .06em;
+    background: var(--resource); color: #fff; padding: 4px 9px; border-radius: 4px;
+  }
+  :root[data-theme="dark"] .verb { color: #0F2418; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .verb { color: #0F2418; } }
+  .path {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 15px; font-weight: 500; word-break: break-all;
+  }
+  .endpoint-body { padding: 18px 20px; }
+  .kv { display: grid; grid-template-columns: 140px 1fr; gap: 8px 18px; font-size: 14.5px; }
+  .kv dt {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12.5px; color: var(--ink-faint); padding-top: 2px;
+  }
+  .kv dd { margin: 0; color: var(--ink-soft); }
+  .kv dd code { font-size: 13px; }
+  @media (max-width: 620px) { .kv { grid-template-columns: 1fr; gap: 2px 0; } .kv dd { margin-bottom: 10px; } }
+
+  /* ---- code ---- */
+  pre {
+    background: var(--code-ground); color: var(--code-ink);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 13px; line-height: 1.62; padding: 18px 20px; border-radius: 9px;
+    overflow-x: auto; margin: 0 0 18px; border: 1px solid var(--rule);
+  }
+  pre .k { color: var(--code-key); }
+  pre .s { color: var(--code-str); }
+  pre .c { color: var(--code-com); font-style: italic; }
+  .code-label {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--ink-faint); margin: 0 0 8px;
+  }
+
+  /* ---- flow ---- */
+  .flow { display: flex; flex-direction: column; gap: 0; margin: 4px 0 8px; }
+  .step { display: grid; grid-template-columns: 34px 1fr; gap: 16px; position: relative; padding-bottom: 20px; }
+  .step:last-child { padding-bottom: 0; }
+  .step:not(:last-child)::before {
+    content: ""; position: absolute; left: 16.5px; top: 30px; bottom: 2px;
+    width: 1.5px; background: var(--rule);
+  }
+  .step-n {
+    width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
+    background: var(--surface); border: 1.5px solid var(--rule); color: var(--accent);
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12.5px; font-weight: 600;
+    position: relative; z-index: 1;
+  }
+  .step-b { padding-top: 4px; }
+  .step-b strong { display: block; font-size: 15.5px; font-weight: 600; margin-bottom: 2px; }
+  .step-b span { color: var(--ink-soft); font-size: 14.5px; }
+  .step-b span code { font-size: 13px; }
+  .owner {
+    display: inline-block; font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10.5px; letter-spacing: .07em; text-transform: uppercase;
+    padding: 2px 7px; border-radius: 3px; margin-left: 8px; vertical-align: 2px;
+    background: var(--accent-soft); color: var(--accent); font-weight: 500;
+  }
+  .owner.a360 { background: var(--exercise-soft); color: var(--exercise); }
+
+  /* ---- split compare ---- */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 22px; }
+  @media (max-width: 720px) { .split { grid-template-columns: 1fr; } }
+  .pane {
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 10px;
+    overflow: hidden; box-shadow: var(--shadow);
+  }
+  .pane-head {
+    padding: 13px 18px; border-bottom: 1px solid var(--rule-soft);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12.5px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase;
+  }
+  .pane.res .pane-head { background: var(--resource-soft); color: var(--resource); }
+  .pane.exe .pane-head { background: var(--exercise-soft); color: var(--exercise); }
+  .pane-body { padding: 16px 18px; font-size: 14.5px; }
+  .pane-body p { margin: 0 0 12px; }
+  .pane-body p:last-child { margin-bottom: 0; }
+  .pane-body ul { margin: 0; padding-left: 18px; }
+  .pane-body li { font-size: 14px; color: var(--ink-soft); }
+  .pane-body li b { color: var(--ink); font-weight: 500; }
+  .pane pre { border-radius: 0; border: 0; border-top: 1px solid var(--rule-soft); margin: 0; }
+
+  /* ---- table ---- */
+  .tw { overflow-x: auto; margin-bottom: 18px; border: 1px solid var(--rule); border-radius: 10px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; min-width: 560px; }
+  th, td { text-align: left; padding: 11px 16px; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+  th {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase;
+    color: var(--ink-faint); font-weight: 500; background: var(--surface-sunk);
+    border-bottom: 1px solid var(--rule);
+  }
+  tr:last-child td { border-bottom: 0; }
+  td code { font-size: 12.5px; }
+  td.status { font-family: "IBM Plex Mono", ui-monospace, monospace; font-weight: 600; white-space: nowrap; }
+  .s-ok { color: var(--resource); }
+  .s-err { color: var(--danger); }
+
+  /* ---- callout ---- */
+  .callout {
+    border: 1px solid var(--rule); border-left: 3px solid var(--danger);
+    background: var(--surface); border-radius: 8px; padding: 20px 22px; margin: 0 0 22px;
+    box-shadow: var(--shadow);
+  }
+  .callout.note { border-left-color: var(--accent); }
+  .callout-title {
+    font-size: 15.5px; font-weight: 600; margin: 0 0 10px; color: var(--danger);
+    display: flex; align-items: center; gap: 9px;
+  }
+  .callout.note .callout-title { color: var(--accent); }
+  .callout p:last-child, .callout ul:last-child { margin-bottom: 0; }
+  .callout svg { flex: none; }
+
+  footer {
+    margin-top: 64px; padding-top: 22px; border-top: 1px solid var(--rule);
+    font-size: 13.5px; color: var(--ink-faint); max-width: 72ch;
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">Advocate360 · Integration reference</p>
+    <h1>Lead Magnet Request API</h1>
+    <p class="standfirst">How a freebie form on lifeskillsadvocate.com hands a lead to Advocate360, and what the new hand-coded site has to send to reproduce what Thrive Leads does today.</p>
+    <div class="meta">
+      <span><b>For</b> Edder Flores</span>
+      <span><b>From</b> Webster Munoz</span>
+      <span><b>Verified against</b> develop @ 2026-09-01</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>What this replaces</h2>
+    <p class="h2sub">The mechanism behind every freebie form on the current WordPress site.</p>
+    <p>Today each Thrive Leads form has a <strong>webhook</strong> connection with a hardcoded asset ID — the <code>89</code> and <code>106</code> you saw in the form builder. On submit, WordPress posts the email plus that ID to Advocate360. Advocate360 is the router from there: it validates the asset, stores the lead, mints a one-off token, and tells Klaviyo to send the delivery email. The new site does the same POST; nothing downstream changes.</p>
+
+    <div class="flow">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div class="step-b"><strong>Visitor submits the form<span class="owner">Your site</span></strong><span>You collect an email, optionally a first name, and you already know which asset the form is for.</span></div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div class="step-b"><strong>POST to the lead magnet endpoint<span class="owner">Your site</span></strong><span>One JSON request with an <code>X-API-Key</code> header. This is the only call you make.</span></div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div class="step-b"><strong>Advocate360 validates and records<span class="owner a360">A360</span></strong><span>Confirms the asset exists and is actually giveaway-eligible, normalises the email to lowercase, generates a unique token, writes the request row. If the email already has an account, the asset also lands in that user's My Materials.</span></div>
+      </div>
+      <div class="step">
+        <div class="step-n">4</div>
+        <div class="step-b"><strong>Klaviyo subscribes and sends<span class="owner a360">A360</span></strong><span>The profile is added to the list as a fresh opt-in (which clears any past unsubscribe), then the lead magnet event fires with the link.</span></div>
+      </div>
+      <div class="step">
+        <div class="step-n">5</div>
+        <div class="step-b"><strong>Visitor opens the link<span class="owner a360">A360</span></strong><span><code>/lead/{token}</code> — the splash page where they download the file and can create an account. Entirely ours; you do not build it.</span></div>
+      </div>
+    </div>
+    <p>Your job stops at step 2. Show a "check your email" confirmation on a <code>200</code> and you are done.</p>
+  </section>
+
+  <section>
+    <h2>The endpoint</h2>
+    <p class="h2sub">One route, one method, one header.</p>
+
+    <div class="endpoint">
+      <div class="endpoint-top">
+        <span class="verb">POST</span>
+        <span class="path">/api/lead-magnet/request</span>
+      </div>
+      <div class="endpoint-body">
+        <dl class="kv">
+          <dt>Production</dt>
+          <dd><code>https://advocate360.app/api/lead-magnet/request</code></dd>
+          <dt>Dev / staging</dt>
+          <dd><code>https://dev-app.lifeskillsadvocate.com/api/lead-magnet/request</code></dd>
+          <dt>Auth</dt>
+          <dd><code>X-API-Key: &lt;key&gt;</code> — sent separately, never in the repo</dd>
+          <dt>Content type</dt>
+          <dd><code>application/json</code></dd>
+        </dl>
+      </div>
+    </div>
+
+    <p>Build against dev first. It is a full copy of the stack with its own database, so you can submit as many test leads as you like without touching real contacts. The two environments use <strong>different API keys</strong>.</p>
+
+    <div class="callout note">
+      <p class="callout-title"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8.25" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5M10 6.2v.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Use advocate360.app, not the old host</p>
+      <p>The existing Thrive webhooks still point at <code>app.lifeskillsadvocate.com</code> and still work — page requests on that host redirect, but <code>/api/*</code> is deliberately never redirected so nothing breaks mid-migration. New code should use <code>advocate360.app</code> anyway.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Request body</h2>
+    <p class="h2sub">Four fields. Two of them are the whole story.</p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><code>email</code></td><td>string</td><td>Yes</td><td>Validated as a real address. Stored lowercase.</td></tr>
+          <tr><td><code>first_name</code></td><td>string</td><td>No</td><td>Passed to Klaviyo for the email greeting. Send it when the form has the field.</td></tr>
+          <tr><td><code>resource_id</code></td><td>integer</td><td rowspan="2">Exactly one</td><td>Use for a resource (PDF, workbook, guide).</td></tr>
+          <tr><td><code>exercise_id</code></td><td>integer</td><td>Use for an exercise or template.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>Exactly one of <code>resource_id</code> or <code>exercise_id</code>.</strong> Sending neither is rejected; sending both is rejected. There is no <code>type</code> field — the field name you pick <em>is</em> the type.</p>
+
+    <p class="code-label">Minimal request</p>
+<pre><span class="k">POST</span> /api/lead-magnet/request
+<span class="k">Host</span>: advocate360.app
+<span class="k">Content-Type</span>: application/json
+<span class="k">X-API-Key</span>: <span class="s">&lt;your key&gt;</span>
+
+{
+  <span class="k">"email"</span>: <span class="s">"parent@example.com"</span>,
+  <span class="k">"first_name"</span>: <span class="s">"Sam"</span>,
+  <span class="k">"resource_id"</span>: 106
+}</pre>
+
+    <p class="code-label">curl, to try it against dev</p>
+<pre>curl -X POST https://dev-app.lifeskillsadvocate.com/api/lead-magnet/request \
+  -H <span class="s">"Content-Type: application/json"</span> \
+  -H <span class="s">"X-API-Key: $LEAD_MAGNET_API_KEY"</span> \
+  -d <span class="s">'{"email":"edder+test@example.com","first_name":"Edder","resource_id":106}'</span></pre>
+  </section>
+
+  <section>
+    <h2>Resource vs exercise</h2>
+    <p class="h2sub">Same endpoint, same headers, same response. One field name changes — and the eligibility rules behind it differ.</p>
+
+    <div class="split">
+      <div class="pane res">
+        <div class="pane-head">Resource</div>
+        <div class="pane-body">
+          <p>A downloadable file — the PDFs, workbooks and guides in the resource library. This is what almost every current freebie form sends.</p>
+          <p style="margin-bottom:8px"><strong>Advocate360 rejects it unless:</strong></p>
+          <ul>
+            <li><b>is_paid</b> is false — a lead magnet can never give away something we sell</li>
+            <li><b>is_public</b> is true — staff-only internal documents are not giveaway material</li>
+          </ul>
+        </div>
+<pre>{
+  <span class="k">"email"</span>: <span class="s">"parent@example.com"</span>,
+  <span class="k">"first_name"</span>: <span class="s">"Sam"</span>,
+  <span class="k">"resource_id"</span>: 106
+}</pre>
+      </div>
+
+      <div class="pane exe">
+        <div class="pane-head">Exercise</div>
+        <div class="pane-body">
+          <p>An exercise or template from the exercise library. Structurally identical to send — only the field name and the eligibility rules differ.</p>
+          <p style="margin-bottom:8px"><strong>Advocate360 rejects it unless:</strong></p>
+          <ul>
+            <li><b>is_published</b> is true — drafts cannot be handed out</li>
+            <li><b>is_gated</b> is false — gated exercises are for signed-in users</li>
+          </ul>
+        </div>
+<pre>{
+  <span class="k">"email"</span>: <span class="s">"parent@example.com"</span>,
+  <span class="k">"first_name"</span>: <span class="s">"Sam"</span>,
+  <span class="k">"exercise_id"</span>: 42
+}</pre>
+      </div>
+    </div>
+
+    <p>Practically: your form component takes an asset type and an ID, and picks the key name from the type. One component covers both, which is the reuse you were after with React components.</p>
+
+    <div class="callout note">
+      <p class="callout-title"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8.25" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5M10 6.2v.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>The eligibility rules are the ones that bite in practice</p>
+      <p>The IDs are stable, but an asset's flags are edited in the admin area and nothing warns the website when one changes. If a form that worked yesterday starts returning <code>400</code>, somebody almost certainly marked the asset paid, unpublished or gated — it is not a bug in your request.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Responses</h2>
+    <p class="h2sub">What comes back, and what each failure actually means.</p>
+
+    <p class="code-label">200 OK</p>
+<pre>{
+  <span class="k">"success"</span>: true,
+  <span class="k">"token"</span>: <span class="s">"Xk3nQ8vRt2mBpL7a"</span>,
+  <span class="k">"link"</span>: <span class="s">"https://advocate360.app/lead/Xk3nQ8vRt2mBpL7a"</span>,
+  <span class="k">"existing_user"</span>: false
+}</pre>
+
+    <p>You do not need to do anything with <code>token</code> or <code>link</code> — Klaviyo already has them and sends the email. <code>existing_user</code> tells you the address already has an Advocate360 account; the asset was also added to their library. If you ever want different confirmation copy for returning users, that is the flag to read.</p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>Status</th><th>Means</th><th>What to do</th></tr></thead>
+        <tbody>
+          <tr><td class="status s-ok">200</td><td>Lead recorded, email on its way</td><td>Show the confirmation message</td></tr>
+          <tr><td class="status s-err">401</td><td>API key missing or wrong</td><td>Check the header name is exactly <code>X-API-Key</code>, and that you are using the key for that environment</td></tr>
+          <tr><td class="status s-err">404</td><td>No asset with that ID</td><td>Wrong ID, or a dev ID used against production. The two databases do not share IDs.</td></tr>
+          <tr><td class="status s-err">400</td><td>Asset exists but is not giveaway-eligible</td><td>Read the <code>detail</code> string — it names the reason (paid, internal, not published, gated)</td></tr>
+          <tr><td class="status s-err">422</td><td>Body failed validation</td><td>Both IDs sent, neither sent, or the email is malformed</td></tr>
+          <tr><td class="status s-err">500</td><td>Key not configured on the server</td><td>Ours, not yours — tell Webster</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Every error returns a JSON body with a <code>detail</code> string. Log it; it names the exact cause.</p>
+  </section>
+
+  <section>
+    <h2>This cannot be a browser fetch</h2>
+    <p class="h2sub">The one thing to settle before you build the form component.</p>
+
+    <div class="callout">
+      <p class="callout-title"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2.6 18.2 17H1.8L10 2.6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 8v3.6M10 14.2v.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Posting this straight from client-side JavaScript will not work, and should not</p>
+      <p>On the call you described capturing the input fields and pushing to Advocate360 with JavaScript. That plan hits three walls, and the first two are hard stops:</p>
+      <ul>
+        <li><strong>CORS blocks it.</strong> The API only accepts browser requests from the Advocate360 hostnames. <code>lifeskillsadvocate.com</code> is deliberately not on that list — the integration was built as server-to-server and needs no origin.</li>
+        <li><strong>The API key would be public.</strong> Anything in front-end JavaScript is readable by anyone who opens devtools. That key authorises freebie requests for any email address.</li>
+        <li><strong>There is no rate limit on this endpoint</strong>, because until now only WordPress could reach it. A leaked key means anyone can send our files to any address, at any volume, from our domain.</li>
+      </ul>
+      <p><strong>The fix is small:</strong> post the form to a server-side route on the new site, and have that route add the <code>X-API-Key</code> and call Advocate360. Same-origin from the browser, so no CORS; the key stays in the host's environment variables. On Vercel or Netlify that is one serverless function.</p>
+      <p>This is also the point that decides your React-vs-static question in a way we did not discuss: whichever you pick, the site needs somewhere to run that one piece of server code. Worth confirming with Chris where the new site will be hosted before you build the form.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Where the IDs come from</h2>
+    <p class="h2sub">And an honest answer on the automatic library idea.</p>
+    <p>Today: the Advocate360 admin area lists every resource and exercise with its ID, the same screen I shared on the call. Chris and I can pull you the current list of giveaway-eligible assets whenever you need it.</p>
+    <p><strong>There is no public endpoint you can call to enumerate them.</strong> The resource and exercise listing endpoints both require a signed-in user, so a build step cannot fetch the catalogue as things stand.</p>
+    <p>So the library that auto-syncs IDs into the website — and the idea of a new freebie generating its own form — is real and buildable, but it is <em>net new work on our side</em>, not something you can wire up against what exists. We agreed to keep it out of the MVP; I will raise it as a ticket so it is on the board rather than living in a call recording.</p>
+  </section>
+
+  <section>
+    <h2>Two things not to carry over</h2>
+    <p class="h2sub">Assumptions in the current site's copy that are wrong.</p>
+    <h3>Lead magnet links do not expire</h3>
+    <p>If any page or email template you migrate says a download link expires — 30 days is the number that has floated around — drop that sentence rather than reproducing it. The links have no expiry, and we have already had one round of policy drafting misled by a stale comment in our own code. Publishing an expiry we do not enforce is a promise we would be breaking.</p>
+    <h3>Stripe and HubSpot stay as redirects</h3>
+    <p>Paid resources and the discovery-call buttons are plain outbound links to Stripe Checkout and the HubSpot scheduler. There is no API contract to rebuild there — keep them as links and they keep working.</p>
+  </section>
+
+  <footer>
+    Written against the <code>lead_magnet_router</code> and request schema on <code>develop</code>, 2026-09-01. If the contract changes, this page is the thing to update — Webster.
+  </footer>
+
+</div>

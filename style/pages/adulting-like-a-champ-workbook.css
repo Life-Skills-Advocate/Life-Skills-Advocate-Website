@@ -346,6 +346,72 @@ figure.assessment-image figcaption{
     box-shadow: var(--shadow-lg);
 }
 /* ============================================================
+   GET WORKBOOK — EMAIL FORM
+   ============================================================ */
+
+.workbook-email-form {
+    width: 100%;
+    max-width: 460px;
+}
+
+.workbook-email-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    background-color: white;
+    padding: 8px;
+    border-radius: 50px;
+    box-shadow: var(--shadow-lg);
+}
+
+.workbook-email-input {
+    flex: 1 1 220px;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 12px 18px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--navy);
+    background: transparent;
+}
+
+.workbook-email-input::placeholder {
+    color: var(--muted);
+}
+
+.workbook-email-row .btn {
+    background-color: var(--gold);
+    flex: 0 0 auto;
+    border-radius: 50px;
+}
+
+.workbook-email-row .btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.workbook-form-status {
+    margin: 12px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.workbook-form-status:empty {
+    display: none;
+}
+
+.workbook-form-status.is-success {
+    color: #1f7a5c;
+}
+
+.workbook-form-status.is-error {
+    color: #b3261e;
+}
+
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 
