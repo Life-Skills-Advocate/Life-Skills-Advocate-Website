@@ -1,0 +1,534 @@
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.listen-hero {
+    background-color: var(--tint);
+    padding: 0px;
+    display: flex;
+}
+
+.listen-hero-content {
+    padding: 5% 15%;
+    padding-right: 10px;
+    text-align: left;
+}
+
+.listen-hero-content .eyebrow {
+    text-align: left;
+    background-color: white;
+    width: fit-content;
+    padding: 5px 10px;
+    border: 1px solid #0b6e94;
+    border-radius: 25px;
+    color: #0b6e94;
+    font-weight: 600;
+}
+
+.listen-hero-content h1 {
+    color: #0b6e94;
+    text-align: left;
+}
+
+.listen-hero-content > p {
+    color: var(--muted);
+}
+
+.listen-hero-content .btn {
+    background-color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.listen-hero-content .hero-note {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0b6e94;
+    filter: brightness(60%);
+}
+
+.listen-hero-image {
+    padding: 5% 15%;
+    padding-left: 10px;
+    position: relative;
+}
+
+.listen-hero-image .image-label {
+    background-color: var(--gold);
+    padding: 10px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.listen-hero-image img {
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* ============================================================
+   PRICE
+   ============================================================ */
+
+.listen-price {
+    font-size: 34px;
+    font-weight: 700;
+    color: #0b6e94;
+    margin-bottom: 8px;
+}
+
+.listen-price span {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+
+/* ============================================================
+   WHY IT'S HARD
+   ============================================================ */
+
+.listen-why {
+    --workbook-intro-bg: #2c3a43;
+    padding: 5% 15%;
+    text-align: center;
+    background-color: var(--workbook-intro-bg);
+}
+
+.listen-why .section-inner {
+    color: white;
+}
+
+.listen-why .eyebrow {
+    color: var(--gold);
+}
+
+.listen-why h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.listen-why p {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* ============================================================
+   SHARED SECTION HEADING
+   ============================================================ */
+
+.section-heading h2 {
+    text-align: left;
+}
+
+.section-heading .eyebrow {
+    text-align: left;
+    background-color: white;
+    width: fit-content;
+    padding: 5px 10px;
+    border: 1px solid #0b6e94;
+    border-radius: 25px;
+    color: #0b6e94;
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   WHAT'S INSIDE — LEVELS
+   ============================================================ */
+
+.listen-inside {
+    padding: 5% 15%;
+}
+
+.listen-levels {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.listen-levels article {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid #DCE6EE;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.listen-levels .level-badge {
+    flex: none;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--blue);
+    background: #F0F6FB;
+    border-radius: 6px;
+    padding: 6px 9px;
+}
+
+.listen-levels h3 {
+    color: #0b6e94;
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.listen-levels p {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+
+/* ============================================================
+   LOOK INSIDE THE WORKBOOK
+   ============================================================ */
+
+.listen-preview {
+    padding: 5% 15%;
+    background-color: var(--tint);
+}
+
+.listen-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.listen-preview-grid figure {
+    margin: 0;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.listen-preview-grid figcaption {
+    padding: 16px 20px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.listen-preview-grid .level-tag {
+    display: block;
+    color: var(--blue);
+    font-weight: 700;
+    letter-spacing: .04em;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+
+/* ============================================================
+   WHO IT'S FOR
+   ============================================================ */
+
+.listen-audience {
+    padding: 5% 15%;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.audience-grid article {
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    padding: 20px;
+}
+
+.audience-grid article h3 {
+    color: #0b6e94;
+    font-size: 18px;
+}
+
+.audience-grid article p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.audience-grid article.gold {
+    border-top: 3px solid var(--gold);
+}
+
+.audience-grid article.blue {
+    border-top: 3px solid var(--blue);
+}
+
+.audience-grid article.navy {
+    border-top: 3px solid var(--navy);
+}
+
+
+/* ============================================================
+   WHO MADE IT
+   ============================================================ */
+
+.listen-authors {
+    --workbook-intro-bg: #2c3a43;
+    padding: 5% 15%;
+    background-color: var(--workbook-intro-bg);
+    color: white;
+}
+
+.listen-authors .section-heading h2,
+.listen-authors .section-heading p {
+    color: white;
+}
+
+.authors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.author-card {
+    border-radius: 20px;
+    padding: 20px;
+    background-color: white;
+    color: var(--navy);
+}
+
+.author-card h3 {
+    color: #0b6e94;
+}
+
+.author-card p {
+    margin-bottom: 0;
+}
+
+.author-card img {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    height: auto;
+    width: 20%;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: var(--shadow-lg);
+}
+
+.listen-start-free {
+    margin: 30px 0 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.listen-start-free strong {
+    display: block;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.listen-start-free a {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   COMPLETE THE SET
+   ============================================================ */
+
+.listen-bundle {
+    padding: 5% 15%;
+    background-color: var(--tint);
+    text-align: center;
+}
+
+.listen-bundle .btn {
+    background-color: var(--gold);
+}
+
+
+/* ============================================================
+   RELATED POWER SKILLS
+   ============================================================ */
+
+.listen-related {
+    padding: 5% 15%;
+}
+
+.listen-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.listen-related-card {
+    display: block;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid #DCE6EE;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.15s ease;
+}
+
+.listen-related-card:hover {
+    transform: translateY(-3px);
+}
+
+.listen-related-card img {
+    width: 100%;
+}
+
+.listen-related-card span {
+    display: block;
+    padding: 14px;
+    font-weight: 700;
+    color: #0b6e94;
+}
+
+
+/* ============================================================
+   HOW YOU GET IT
+   ============================================================ */
+
+.listen-how {
+    padding: 5% 15%;
+    background-color: var(--tint);
+}
+
+.listen-how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.listen-how-grid article h3 {
+    color: #0b6e94;
+    font-size: 18px;
+}
+
+.listen-how-grid article p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+
+.listen-faq {
+    padding: 5% 15%;
+}
+
+.faq-list {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-list details {
+    border: 1px solid #DCE6EE;
+    border-radius: 12px;
+    padding: 16px 20px;
+}
+
+.faq-list summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #0b6e94;
+    list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-list details p {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+
+.listen-cta {
+    padding: 5% 15%;
+    background-color: var(--tint);
+    text-align: center;
+}
+
+.listen-cta-content {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.listen-cta .listen-price {
+    justify-content: center;
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+}
+
+.listen-guarantee {
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.listen-cta .btn {
+    background-color: var(--gold);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .listen-hero {
+        flex-direction: column;
+    }
+
+    .listen-levels,
+    .listen-preview-grid,
+    .audience-grid,
+    .authors-grid,
+    .listen-related-grid,
+    .listen-how-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .listen-hero-content,
+    .listen-why,
+    .listen-inside,
+    .listen-preview,
+    .listen-audience,
+    .listen-authors,
+    .listen-bundle,
+    .listen-related,
+    .listen-how,
+    .listen-faq,
+    .listen-cta {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+}

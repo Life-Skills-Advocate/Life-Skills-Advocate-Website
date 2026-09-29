@@ -1,0 +1,534 @@
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.time-hero {
+    background-color: var(--tint);
+    padding: 0px;
+    display: flex;
+}
+
+.time-hero-content {
+    padding: 5% 15%;
+    padding-right: 10px;
+    text-align: left;
+}
+
+.time-hero-content .eyebrow {
+    text-align: left;
+    background-color: white;
+    width: fit-content;
+    padding: 5px 10px;
+    border: 1px solid #0b6e94;
+    border-radius: 25px;
+    color: #0b6e94;
+    font-weight: 600;
+}
+
+.time-hero-content h1 {
+    color: #0b6e94;
+    text-align: left;
+}
+
+.time-hero-content > p {
+    color: var(--muted);
+}
+
+.time-hero-content .btn {
+    background-color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.time-hero-content .hero-note {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0b6e94;
+    filter: brightness(60%);
+}
+
+.time-hero-image {
+    padding: 5% 15%;
+    padding-left: 10px;
+    position: relative;
+}
+
+.time-hero-image .image-label {
+    background-color: var(--gold);
+    padding: 10px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.time-hero-image img {
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* ============================================================
+   PRICE
+   ============================================================ */
+
+.time-price {
+    font-size: 34px;
+    font-weight: 700;
+    color: #0b6e94;
+    margin-bottom: 8px;
+}
+
+.time-price span {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+
+/* ============================================================
+   WHY IT'S HARD
+   ============================================================ */
+
+.time-why {
+    --workbook-intro-bg: #2c3a43;
+    padding: 5% 15%;
+    text-align: center;
+    background-color: var(--workbook-intro-bg);
+}
+
+.time-why .section-inner {
+    color: white;
+}
+
+.time-why .eyebrow {
+    color: var(--gold);
+}
+
+.time-why h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.time-why p {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* ============================================================
+   SHARED SECTION HEADING
+   ============================================================ */
+
+.section-heading h2 {
+    text-align: left;
+}
+
+.section-heading .eyebrow {
+    text-align: left;
+    background-color: white;
+    width: fit-content;
+    padding: 5px 10px;
+    border: 1px solid #0b6e94;
+    border-radius: 25px;
+    color: #0b6e94;
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   WHAT'S INSIDE — LEVELS
+   ============================================================ */
+
+.time-inside {
+    padding: 5% 15%;
+}
+
+.time-levels {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.time-levels article {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid #DCE6EE;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.time-levels .level-badge {
+    flex: none;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--blue);
+    background: #F0F6FB;
+    border-radius: 6px;
+    padding: 6px 9px;
+}
+
+.time-levels h3 {
+    color: #0b6e94;
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.time-levels p {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+
+/* ============================================================
+   LOOK INSIDE THE WORKBOOK
+   ============================================================ */
+
+.time-preview {
+    padding: 5% 15%;
+    background-color: var(--tint);
+}
+
+.time-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.time-preview-grid figure {
+    margin: 0;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.time-preview-grid figcaption {
+    padding: 16px 20px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.time-preview-grid .level-tag {
+    display: block;
+    color: var(--blue);
+    font-weight: 700;
+    letter-spacing: .04em;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+
+/* ============================================================
+   WHO IT'S FOR
+   ============================================================ */
+
+.time-audience {
+    padding: 5% 15%;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.audience-grid article {
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    padding: 20px;
+}
+
+.audience-grid article h3 {
+    color: #0b6e94;
+    font-size: 18px;
+}
+
+.audience-grid article p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.audience-grid article.gold {
+    border-top: 3px solid var(--gold);
+}
+
+.audience-grid article.blue {
+    border-top: 3px solid var(--blue);
+}
+
+.audience-grid article.navy {
+    border-top: 3px solid var(--navy);
+}
+
+
+/* ============================================================
+   WHO MADE IT
+   ============================================================ */
+
+.time-authors {
+    --workbook-intro-bg: #2c3a43;
+    padding: 5% 15%;
+    background-color: var(--workbook-intro-bg);
+    color: white;
+}
+
+.time-authors .section-heading h2,
+.time-authors .section-heading p {
+    color: white;
+}
+
+.authors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.author-card {
+    border-radius: 20px;
+    padding: 20px;
+    background-color: white;
+    color: var(--navy);
+}
+
+.author-card h3 {
+    color: #0b6e94;
+}
+
+.author-card p {
+    margin-bottom: 0;
+}
+
+.author-card img {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    height: auto;
+    width: 20%;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: var(--shadow-lg);
+}
+
+.time-start-free {
+    margin: 30px 0 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.time-start-free strong {
+    display: block;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.time-start-free a {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   COMPLETE THE SET
+   ============================================================ */
+
+.time-bundle {
+    padding: 5% 15%;
+    background-color: var(--tint);
+    text-align: center;
+}
+
+.time-bundle .btn {
+    background-color: var(--gold);
+}
+
+
+/* ============================================================
+   RELATED POWER SKILLS
+   ============================================================ */
+
+.time-related {
+    padding: 5% 15%;
+}
+
+.time-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.time-related-card {
+    display: block;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid #DCE6EE;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.15s ease;
+}
+
+.time-related-card:hover {
+    transform: translateY(-3px);
+}
+
+.time-related-card img {
+    width: 100%;
+}
+
+.time-related-card span {
+    display: block;
+    padding: 14px;
+    font-weight: 700;
+    color: #0b6e94;
+}
+
+
+/* ============================================================
+   HOW YOU GET IT
+   ============================================================ */
+
+.time-how {
+    padding: 5% 15%;
+    background-color: var(--tint);
+}
+
+.time-how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.time-how-grid article h3 {
+    color: #0b6e94;
+    font-size: 18px;
+}
+
+.time-how-grid article p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+
+.time-faq {
+    padding: 5% 15%;
+}
+
+.faq-list {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-list details {
+    border: 1px solid #DCE6EE;
+    border-radius: 12px;
+    padding: 16px 20px;
+}
+
+.faq-list summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #0b6e94;
+    list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-list details p {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+
+.time-cta {
+    padding: 5% 15%;
+    background-color: var(--tint);
+    text-align: center;
+}
+
+.time-cta-content {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.time-cta .time-price {
+    justify-content: center;
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+}
+
+.time-guarantee {
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.time-cta .btn {
+    background-color: var(--gold);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .time-hero {
+        flex-direction: column;
+    }
+
+    .time-levels,
+    .time-preview-grid,
+    .audience-grid,
+    .authors-grid,
+    .time-related-grid,
+    .time-how-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .time-hero-content,
+    .time-why,
+    .time-inside,
+    .time-preview,
+    .time-audience,
+    .time-authors,
+    .time-bundle,
+    .time-related,
+    .time-how,
+    .time-faq,
+    .time-cta {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+}
