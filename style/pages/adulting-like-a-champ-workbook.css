@@ -345,6 +345,207 @@ figure.assessment-image figcaption{
     border: 3px solid white;
     box-shadow: var(--shadow-lg);
 }
+
+.power-skills{
+    padding: 5% 15%;
+}
+.power-skills-grid{
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.power-skills-grid article{
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+}
+.power-skills-grid article h3{
+    display: flex;
+    justify-self: center;
+    padding: 20px;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.coming-soon{
+    padding: 5% 15%;
+    
+}
+.coming-soon h2{
+    display: flex;
+    justify-self: center;
+    margin-bottom: 40px;
+}
+.coming-soon-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.coming-soon-grid div{
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+.coming-soon-grid div h3{
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #0b6e94;
+    color: #0b6e94;
+    width: fit-content;
+    display: flex;
+    justify-self: center;
+}
+.coming-soon-grid div li{
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.coming-soon--blue{
+    border: 3px solid var(--blue);
+}
+.coming-soon--gold{
+    border: 3px solid var(--gold);
+}
+.coming-soon--blue-dark{
+    border: 3px solid #0b6e94;
+}
+.coming-soon--navy{
+    border: 3px solid var(--muted);
+}
+.coming-soon--green{
+    border: 3px solid #1f7a5c80;
+}
+
+.workbook-faq{
+    padding: 5% 15%;
+    background-color: var(--tint);
+}   
+.faq-list{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.faq-list details{
+    padding: 10px;
+    border-radius: 20px;
+
+    width: 100%;
+    border: 1px solid var(--muted);
+    background-color: var(--white);
+    margin-bottom: 20px;
+}
+.faq-list details summary{
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-list details summary svg{
+    height: auto;
+    width: 16px;
+    display: flex;
+    justify-self: self-end;
+    align-self: center;
+}
+.tcb-icon{
+    fill: #0b6e94;
+}
+
+.get-workbook{
+    padding: 5% 15%;
+}
+.get-workbook-content h2{
+    text-align: left;
+}
+.get-workbook-steps{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.get-workbook-steps article{
+    padding: 20px;
+    border: 1px solid var(--muted);
+    border-radius: 20px;
+}
+.get-workbook-steps article h3{
+    font-size: 18px;
+    color: #0b6e94;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+.get-workbook-steps article p{
+    
+    font-size: 14px;
+    color: var(--navy);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+.get-workbook-steps article svg{
+    background-color: var(--blue);
+    border-radius: 50%;
+    fill: white;
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+.get-workbook-content a.btn{
+    margin: 20px;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    background-color: var(--gold);
+}
+
+.cta-post-hero-section{
+    display: flex;
+    justify-content: center;
+    padding: 5% 15%;
+}
+.cta-post-hero-content{
+    padding: 20px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.input-cont{
+    display: flex;
+    width: 90%; 
+    gap: 20px;
+}
+.input-cont input{
+    width: 70%;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid var(--muted);
+    border-radius: 5px;
+
+}
+.input-cont button.btn{
+    width: 30%;
+    background-color: var(--gold);
+    color: var(--navy);
+}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
