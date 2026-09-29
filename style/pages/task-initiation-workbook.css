@@ -1,0 +1,534 @@
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.task-hero {
+    background-color: var(--tint);
+    padding: 0px;
+    display: flex;
+}
+
+.task-hero-content {
+    padding: 5% 15%;
+    padding-right: 10px;
+    text-align: left;
+}
+
+.task-hero-content .eyebrow {
+    text-align: left;
+    background-color: white;
+    width: fit-content;
+    padding: 5px 10px;
+    border: 1px solid #0b6e94;
+    border-radius: 25px;
+    color: #0b6e94;
+    font-weight: 600;
+}
+
+.task-hero-content h1 {
+    color: #0b6e94;
+    text-align: left;
+}
+
+.task-hero-content > p {
+    color: var(--muted);
+}
+
+.task-hero-content .btn {
+    background-color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.task-hero-content .hero-note {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0b6e94;
+    filter: brightness(60%);
+}
+
+.task-hero-image {
+    padding: 5% 15%;
+    padding-left: 10px;
+    position: relative;
+}
+
+.task-hero-image .image-label {
+    background-color: var(--gold);
+    padding: 10px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.task-hero-image img {
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* ============================================================
+   PRICE
+   ============================================================ */
+
+.task-price {
+    font-size: 34px;
+    font-weight: 700;
+    color: #0b6e94;
+    margin-bottom: 8px;
+}
+
+.task-price span {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+
+/* ============================================================
+   WHY IT'S HARD
+   ============================================================ */
+
+.task-why {
+    --workbook-intro-bg: #2c3a43;
+    padding: 5% 15%;
+    text-align: center;
+    background-color: var(--workbook-intro-bg);
+}
+
+.task-why .section-inner {
+    color: white;
+}
+
+.task-why .eyebrow {
+    color: var(--gold);
+}
+
+.task-why h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.task-why p {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* ============================================================
+   SHARED SECTION HEADING
+   ============================================================ */
+
+.section-heading h2 {
+    text-align: left;
+}
+
+.section-heading .eyebrow {
+    text-align: left;
+    background-color: white;
+    width: fit-content;
+    padding: 5px 10px;
+    border: 1px solid #0b6e94;
+    border-radius: 25px;
+    color: #0b6e94;
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   WHAT'S INSIDE — LEVELS
+   ============================================================ */
+
+.task-inside {
+    padding: 5% 15%;
+}
+
+.task-levels {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.task-levels article {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid #DCE6EE;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.task-levels .level-badge {
+    flex: none;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--blue);
+    background: #F0F6FB;
+    border-radius: 6px;
+    padding: 6px 9px;
+}
+
+.task-levels h3 {
+    color: #0b6e94;
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.task-levels p {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+
+/* ============================================================
+   LOOK INSIDE THE WORKBOOK
+   ============================================================ */
+
+.task-preview {
+    padding: 5% 15%;
+    background-color: var(--tint);
+}
+
+.task-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.task-preview-grid figure {
+    margin: 0;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.task-preview-grid figcaption {
+    padding: 16px 20px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.task-preview-grid .level-tag {
+    display: block;
+    color: var(--blue);
+    font-weight: 700;
+    letter-spacing: .04em;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+
+/* ============================================================
+   WHO IT'S FOR
+   ============================================================ */
+
+.task-audience {
+    padding: 5% 15%;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.audience-grid article {
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    padding: 20px;
+}
+
+.audience-grid article h3 {
+    color: #0b6e94;
+    font-size: 18px;
+}
+
+.audience-grid article p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.audience-grid article.gold {
+    border-top: 3px solid var(--gold);
+}
+
+.audience-grid article.blue {
+    border-top: 3px solid var(--blue);
+}
+
+.audience-grid article.navy {
+    border-top: 3px solid var(--navy);
+}
+
+
+/* ============================================================
+   WHO MADE IT
+   ============================================================ */
+
+.task-authors {
+    --workbook-intro-bg: #2c3a43;
+    padding: 5% 15%;
+    background-color: var(--workbook-intro-bg);
+    color: white;
+}
+
+.task-authors .section-heading h2,
+.task-authors .section-heading p {
+    color: white;
+}
+
+.authors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.author-card {
+    border-radius: 20px;
+    padding: 20px;
+    background-color: white;
+    color: var(--navy);
+}
+
+.author-card h3 {
+    color: #0b6e94;
+}
+
+.author-card p {
+    margin-bottom: 0;
+}
+
+.author-card img {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    height: auto;
+    width: 20%;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: var(--shadow-lg);
+}
+
+.task-start-free {
+    margin: 30px 0 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.task-start-free strong {
+    display: block;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.task-start-free a {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   COMPLETE THE SET
+   ============================================================ */
+
+.task-bundle {
+    padding: 5% 15%;
+    background-color: var(--tint);
+    text-align: center;
+}
+
+.task-bundle .btn {
+    background-color: var(--gold);
+}
+
+
+/* ============================================================
+   RELATED POWER SKILLS
+   ============================================================ */
+
+.task-related {
+    padding: 5% 15%;
+}
+
+.task-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.task-related-card {
+    display: block;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid #DCE6EE;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.15s ease;
+}
+
+.task-related-card:hover {
+    transform: translateY(-3px);
+}
+
+.task-related-card img {
+    width: 100%;
+}
+
+.task-related-card span {
+    display: block;
+    padding: 14px;
+    font-weight: 700;
+    color: #0b6e94;
+}
+
+
+/* ============================================================
+   HOW YOU GET IT
+   ============================================================ */
+
+.task-how {
+    padding: 5% 15%;
+    background-color: var(--tint);
+}
+
+.task-how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.task-how-grid article h3 {
+    color: #0b6e94;
+    font-size: 18px;
+}
+
+.task-how-grid article p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+
+.task-faq {
+    padding: 5% 15%;
+}
+
+.faq-list {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-list details {
+    border: 1px solid #DCE6EE;
+    border-radius: 12px;
+    padding: 16px 20px;
+}
+
+.faq-list summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #0b6e94;
+    list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-list details p {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+
+.task-cta {
+    padding: 5% 15%;
+    background-color: var(--tint);
+    text-align: center;
+}
+
+.task-cta-content {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.task-cta .task-price {
+    justify-content: center;
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+}
+
+.task-guarantee {
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.task-cta .btn {
+    background-color: var(--gold);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .task-hero {
+        flex-direction: column;
+    }
+
+    .task-levels,
+    .task-preview-grid,
+    .audience-grid,
+    .authors-grid,
+    .task-related-grid,
+    .task-how-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .task-hero-content,
+    .task-why,
+    .task-inside,
+    .task-preview,
+    .task-audience,
+    .task-authors,
+    .task-bundle,
+    .task-related,
+    .task-how,
+    .task-faq,
+    .task-cta {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+}

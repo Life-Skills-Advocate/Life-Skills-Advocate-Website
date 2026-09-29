@@ -1,0 +1,534 @@
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.conflict-hero {
+    background-color: var(--tint);
+    padding: 0px;
+    display: flex;
+}
+
+.conflict-hero-content {
+    padding: 5% 15%;
+    padding-right: 10px;
+    text-align: left;
+}
+
+.conflict-hero-content .eyebrow {
+    text-align: left;
+    background-color: white;
+    width: fit-content;
+    padding: 5px 10px;
+    border: 1px solid #0b6e94;
+    border-radius: 25px;
+    color: #0b6e94;
+    font-weight: 600;
+}
+
+.conflict-hero-content h1 {
+    color: #0b6e94;
+    text-align: left;
+}
+
+.conflict-hero-content > p {
+    color: var(--muted);
+}
+
+.conflict-hero-content .btn {
+    background-color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.conflict-hero-content .hero-note {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0b6e94;
+    filter: brightness(60%);
+}
+
+.conflict-hero-image {
+    padding: 5% 15%;
+    padding-left: 10px;
+    position: relative;
+}
+
+.conflict-hero-image .image-label {
+    background-color: var(--gold);
+    padding: 10px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.conflict-hero-image img {
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* ============================================================
+   PRICE
+   ============================================================ */
+
+.conflict-price {
+    font-size: 34px;
+    font-weight: 700;
+    color: #0b6e94;
+    margin-bottom: 8px;
+}
+
+.conflict-price span {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+
+/* ============================================================
+   WHY IT'S HARD
+   ============================================================ */
+
+.conflict-why {
+    --workbook-intro-bg: #2c3a43;
+    padding: 5% 15%;
+    text-align: center;
+    background-color: var(--workbook-intro-bg);
+}
+
+.conflict-why .section-inner {
+    color: white;
+}
+
+.conflict-why .eyebrow {
+    color: var(--gold);
+}
+
+.conflict-why h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.conflict-why p {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* ============================================================
+   SHARED SECTION HEADING
+   ============================================================ */
+
+.section-heading h2 {
+    text-align: left;
+}
+
+.section-heading .eyebrow {
+    text-align: left;
+    background-color: white;
+    width: fit-content;
+    padding: 5px 10px;
+    border: 1px solid #0b6e94;
+    border-radius: 25px;
+    color: #0b6e94;
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   WHAT'S INSIDE — LEVELS
+   ============================================================ */
+
+.conflict-inside {
+    padding: 5% 15%;
+}
+
+.conflict-levels {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.conflict-levels article {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid #DCE6EE;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.conflict-levels .level-badge {
+    flex: none;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--blue);
+    background: #F0F6FB;
+    border-radius: 6px;
+    padding: 6px 9px;
+}
+
+.conflict-levels h3 {
+    color: #0b6e94;
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.conflict-levels p {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+
+/* ============================================================
+   LOOK INSIDE THE WORKBOOK
+   ============================================================ */
+
+.conflict-preview {
+    padding: 5% 15%;
+    background-color: var(--tint);
+}
+
+.conflict-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.conflict-preview-grid figure {
+    margin: 0;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.conflict-preview-grid figcaption {
+    padding: 16px 20px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.conflict-preview-grid .level-tag {
+    display: block;
+    color: var(--blue);
+    font-weight: 700;
+    letter-spacing: .04em;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+
+/* ============================================================
+   WHO IT'S FOR
+   ============================================================ */
+
+.conflict-audience {
+    padding: 5% 15%;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.audience-grid article {
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    padding: 20px;
+}
+
+.audience-grid article h3 {
+    color: #0b6e94;
+    font-size: 18px;
+}
+
+.audience-grid article p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.audience-grid article.gold {
+    border-top: 3px solid var(--gold);
+}
+
+.audience-grid article.blue {
+    border-top: 3px solid var(--blue);
+}
+
+.audience-grid article.navy {
+    border-top: 3px solid var(--navy);
+}
+
+
+/* ============================================================
+   WHO MADE IT
+   ============================================================ */
+
+.conflict-authors {
+    --workbook-intro-bg: #2c3a43;
+    padding: 5% 15%;
+    background-color: var(--workbook-intro-bg);
+    color: white;
+}
+
+.conflict-authors .section-heading h2,
+.conflict-authors .section-heading p {
+    color: white;
+}
+
+.authors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.author-card {
+    border-radius: 20px;
+    padding: 20px;
+    background-color: white;
+    color: var(--navy);
+}
+
+.author-card h3 {
+    color: #0b6e94;
+}
+
+.author-card p {
+    margin-bottom: 0;
+}
+
+.author-card img {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    height: auto;
+    width: 20%;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: var(--shadow-lg);
+}
+
+.conflict-start-free {
+    margin: 30px 0 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.conflict-start-free strong {
+    display: block;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.conflict-start-free a {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   COMPLETE THE SET
+   ============================================================ */
+
+.conflict-bundle {
+    padding: 5% 15%;
+    background-color: var(--tint);
+    text-align: center;
+}
+
+.conflict-bundle .btn {
+    background-color: var(--gold);
+}
+
+
+/* ============================================================
+   RELATED POWER SKILLS
+   ============================================================ */
+
+.conflict-related {
+    padding: 5% 15%;
+}
+
+.conflict-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.conflict-related-card {
+    display: block;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid #DCE6EE;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.15s ease;
+}
+
+.conflict-related-card:hover {
+    transform: translateY(-3px);
+}
+
+.conflict-related-card img {
+    width: 100%;
+}
+
+.conflict-related-card span {
+    display: block;
+    padding: 14px;
+    font-weight: 700;
+    color: #0b6e94;
+}
+
+
+/* ============================================================
+   HOW YOU GET IT
+   ============================================================ */
+
+.conflict-how {
+    padding: 5% 15%;
+    background-color: var(--tint);
+}
+
+.conflict-how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.conflict-how-grid article h3 {
+    color: #0b6e94;
+    font-size: 18px;
+}
+
+.conflict-how-grid article p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+
+.conflict-faq {
+    padding: 5% 15%;
+}
+
+.faq-list {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-list details {
+    border: 1px solid #DCE6EE;
+    border-radius: 12px;
+    padding: 16px 20px;
+}
+
+.faq-list summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #0b6e94;
+    list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-list details p {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+
+.conflict-cta {
+    padding: 5% 15%;
+    background-color: var(--tint);
+    text-align: center;
+}
+
+.conflict-cta-content {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.conflict-cta .conflict-price {
+    justify-content: center;
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+}
+
+.conflict-guarantee {
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.conflict-cta .btn {
+    background-color: var(--gold);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .conflict-hero {
+        flex-direction: column;
+    }
+
+    .conflict-levels,
+    .conflict-preview-grid,
+    .audience-grid,
+    .authors-grid,
+    .conflict-related-grid,
+    .conflict-how-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .conflict-hero-content,
+    .conflict-why,
+    .conflict-inside,
+    .conflict-preview,
+    .conflict-audience,
+    .conflict-authors,
+    .conflict-bundle,
+    .conflict-related,
+    .conflict-how,
+    .conflict-faq,
+    .conflict-cta {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+}

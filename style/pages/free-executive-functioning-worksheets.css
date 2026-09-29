@@ -1,0 +1,352 @@
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.fe-hero {
+    background-color: var(--tint);
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.fe-hero-inner {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.fe-hero h1 {
+    font-size: 38px;
+}
+
+.fe-hero .lede {
+    margin-bottom: 8px;
+}
+
+.fe-hero-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.fe-hero-note {
+    margin-top: 14px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+
+/* ============================================================
+   JUMP TO
+   ============================================================ */
+
+.fe-jumpto {
+    padding: 30px 40px 10px;
+    text-align: center;
+}
+
+.fe-jumpto h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.fe-jumpto ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.fe-jumpto a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 3px solid #e1e1e1;
+    background: #fff;
+    color: var(--heading);
+    font-weight: 600;
+    text-decoration: none;
+    font-family: var(--font-base);
+}
+
+.fe-jumpto a:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+
+/* ============================================================
+   SHARED CARD GRID
+   ============================================================ */
+
+.fe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.fe-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.fe-card {
+    border: 1px solid #eee;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #fff;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease;
+}
+
+.fe-card:hover {
+    transform: translateY(-3px);
+}
+
+.fe-card a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.fe-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 600 / 338;
+    object-fit: cover;
+}
+
+.fe-card h3 {
+    margin: 0;
+    padding: 18px 20px;
+    font-size: 18px;
+    color: var(--heading);
+}
+
+.fe-card[hidden] {
+    display: none;
+}
+
+
+/* ============================================================
+   FEATURED RESOURCES (TABS)
+   ============================================================ */
+
+.fe-featured {
+    padding: 60px 40px;
+}
+
+.fe-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    border-bottom: 2px solid #edece6;
+    margin-bottom: 40px;
+}
+
+.fe-tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    padding: 14px 18px 12px;
+    font-family: var(--font-base);
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #545454;
+    cursor: pointer;
+}
+
+.fe-tab:hover {
+    color: var(--blue);
+}
+
+.fe-tab[aria-selected="true"] {
+    color: var(--blue);
+    border-bottom-color: var(--blue);
+}
+
+.fe-tab-panel[hidden] {
+    display: none;
+}
+
+
+/* ============================================================
+   ADVOCATE360 LIBRARY CTA
+   ============================================================ */
+
+.fe-library-cta {
+    padding: 50px 40px;
+    background-color: var(--footer-bg);
+    color: #fff;
+}
+
+.fe-library-cta .container {
+    max-width: 600px;
+}
+
+.fe-library-cta h2 {
+    color: #fff;
+}
+
+.fe-a360-logo {
+    height: 20px;
+    width: auto;
+    margin: 0 auto 24px;
+    display: block;
+}
+
+.fe-library-cta p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.fe-library-cta .btn {
+    margin-top: 10px;
+}
+
+.fe-or {
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+
+/* ============================================================
+   BROWSE ALL RESOURCES
+   ============================================================ */
+
+.fe-browse {
+    padding: 60px 40px;
+}
+
+.fe-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    max-width: var(--max);
+    margin: 0 auto 40px;
+}
+
+.fe-filters label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--heading);
+    flex: 1 1 260px;
+    max-width: 340px;
+}
+
+.fe-filters select {
+    padding: 12px 14px;
+    border: 1px solid #DCE6EE;
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 15px;
+    background: #fff;
+    color: var(--body-text);
+}
+
+.fe-note {
+    text-align: center;
+    color: var(--muted);
+}
+
+.fe-more-link {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--muted);
+}
+
+.fe-more-link a {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   MORE EXECUTIVE FUNCTION SUPPORT
+   ============================================================ */
+
+.fe-more {
+    padding: 60px 40px;
+    background-color: var(--tint);
+}
+
+.fe-more-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.fe-more-card {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    text-align: center;
+}
+
+.fe-more-card-wide {
+    grid-column: 1 / -1;
+}
+
+.fe-more-card h3 {
+    color: var(--heading);
+}
+
+.fe-more-card p {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.fe-more-card .btn {
+    margin-top: 6px;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .fe-grid,
+    .fe-grid-4,
+    .fe-more-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .fe-hero,
+    .fe-jumpto,
+    .fe-featured,
+    .fe-library-cta,
+    .fe-browse,
+    .fe-more {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .fe-grid,
+    .fe-grid-4,
+    .fe-more-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fe-hero h1 {
+        font-size: 30px;
+    }
+
+}
