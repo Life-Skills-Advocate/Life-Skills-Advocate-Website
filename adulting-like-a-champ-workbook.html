@@ -1049,12 +1049,39 @@
                 </div>
 
 
-                <a
-                    href="#"
-                    class="btn"
+                <form
+                    class="workbook-email-form"
+                    id="workbookEmailForm"
+                    novalidate
                 >
-                    Get the free workbook
-                </a>
+
+                    <div class="workbook-email-row">
+
+                        <input
+                            type="email"
+                            id="workbookEmail"
+                            name="email"
+                            class="workbook-email-input"
+                            placeholder="Your email address"
+                            aria-label="Your email address"
+                            autocomplete="email"
+                            required
+                        >
+
+                        <button type="submit" class="btn">
+                            Get the free workbook
+                        </button>
+
+                    </div>
+
+                    <p
+                        class="workbook-form-status"
+                        id="workbookFormStatus"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+
+                </form>
 
             </div>
 
@@ -1082,5 +1109,6 @@
 
       </main>
     <script src="/js/main.js"></script>
+    <script src="/js/pages/adulting-like-a-champ-workbook.js"></script>
   </body>
 </html>

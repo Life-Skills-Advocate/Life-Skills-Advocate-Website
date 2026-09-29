@@ -1,0 +1,534 @@
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.askhelp-hero {
+    background-color: var(--tint);
+    padding: 0px;
+    display: flex;
+}
+
+.askhelp-hero-content {
+    padding: 5% 15%;
+    padding-right: 10px;
+    text-align: left;
+}
+
+.askhelp-hero-content .eyebrow {
+    text-align: left;
+    background-color: white;
+    width: fit-content;
+    padding: 5px 10px;
+    border: 1px solid #0b6e94;
+    border-radius: 25px;
+    color: #0b6e94;
+    font-weight: 600;
+}
+
+.askhelp-hero-content h1 {
+    color: #0b6e94;
+    text-align: left;
+}
+
+.askhelp-hero-content > p {
+    color: var(--muted);
+}
+
+.askhelp-hero-content .btn {
+    background-color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.askhelp-hero-content .hero-note {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0b6e94;
+    filter: brightness(60%);
+}
+
+.askhelp-hero-image {
+    padding: 5% 15%;
+    padding-left: 10px;
+    position: relative;
+}
+
+.askhelp-hero-image .image-label {
+    background-color: var(--gold);
+    padding: 10px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.askhelp-hero-image img {
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* ============================================================
+   PRICE
+   ============================================================ */
+
+.askhelp-price {
+    font-size: 34px;
+    font-weight: 700;
+    color: #0b6e94;
+    margin-bottom: 8px;
+}
+
+.askhelp-price span {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+
+/* ============================================================
+   WHY IT'S HARD
+   ============================================================ */
+
+.askhelp-why {
+    --workbook-intro-bg: #2c3a43;
+    padding: 5% 15%;
+    text-align: center;
+    background-color: var(--workbook-intro-bg);
+}
+
+.askhelp-why .section-inner {
+    color: white;
+}
+
+.askhelp-why .eyebrow {
+    color: var(--gold);
+}
+
+.askhelp-why h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.askhelp-why p {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* ============================================================
+   SHARED SECTION HEADING
+   ============================================================ */
+
+.section-heading h2 {
+    text-align: left;
+}
+
+.section-heading .eyebrow {
+    text-align: left;
+    background-color: white;
+    width: fit-content;
+    padding: 5px 10px;
+    border: 1px solid #0b6e94;
+    border-radius: 25px;
+    color: #0b6e94;
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   WHAT'S INSIDE — LEVELS
+   ============================================================ */
+
+.askhelp-inside {
+    padding: 5% 15%;
+}
+
+.askhelp-levels {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.askhelp-levels article {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid #DCE6EE;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.askhelp-levels .level-badge {
+    flex: none;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--blue);
+    background: #F0F6FB;
+    border-radius: 6px;
+    padding: 6px 9px;
+}
+
+.askhelp-levels h3 {
+    color: #0b6e94;
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.askhelp-levels p {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+
+/* ============================================================
+   LOOK INSIDE THE WORKBOOK
+   ============================================================ */
+
+.askhelp-preview {
+    padding: 5% 15%;
+    background-color: var(--tint);
+}
+
+.askhelp-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.askhelp-preview-grid figure {
+    margin: 0;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.askhelp-preview-grid figcaption {
+    padding: 16px 20px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.askhelp-preview-grid .level-tag {
+    display: block;
+    color: var(--blue);
+    font-weight: 700;
+    letter-spacing: .04em;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+
+/* ============================================================
+   WHO IT'S FOR
+   ============================================================ */
+
+.askhelp-audience {
+    padding: 5% 15%;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.audience-grid article {
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    padding: 20px;
+}
+
+.audience-grid article h3 {
+    color: #0b6e94;
+    font-size: 18px;
+}
+
+.audience-grid article p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.audience-grid article.gold {
+    border-top: 3px solid var(--gold);
+}
+
+.audience-grid article.blue {
+    border-top: 3px solid var(--blue);
+}
+
+.audience-grid article.navy {
+    border-top: 3px solid var(--navy);
+}
+
+
+/* ============================================================
+   WHO MADE IT
+   ============================================================ */
+
+.askhelp-authors {
+    --workbook-intro-bg: #2c3a43;
+    padding: 5% 15%;
+    background-color: var(--workbook-intro-bg);
+    color: white;
+}
+
+.askhelp-authors .section-heading h2,
+.askhelp-authors .section-heading p {
+    color: white;
+}
+
+.authors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.author-card {
+    border-radius: 20px;
+    padding: 20px;
+    background-color: white;
+    color: var(--navy);
+}
+
+.author-card h3 {
+    color: #0b6e94;
+}
+
+.author-card p {
+    margin-bottom: 0;
+}
+
+.author-card img {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    height: auto;
+    width: 20%;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: var(--shadow-lg);
+}
+
+.askhelp-start-free {
+    margin: 30px 0 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.askhelp-start-free strong {
+    display: block;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.askhelp-start-free a {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   COMPLETE THE SET
+   ============================================================ */
+
+.askhelp-bundle {
+    padding: 5% 15%;
+    background-color: var(--tint);
+    text-align: center;
+}
+
+.askhelp-bundle .btn {
+    background-color: var(--gold);
+}
+
+
+/* ============================================================
+   RELATED POWER SKILLS
+   ============================================================ */
+
+.askhelp-related {
+    padding: 5% 15%;
+}
+
+.askhelp-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.askhelp-related-card {
+    display: block;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid #DCE6EE;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.15s ease;
+}
+
+.askhelp-related-card:hover {
+    transform: translateY(-3px);
+}
+
+.askhelp-related-card img {
+    width: 100%;
+}
+
+.askhelp-related-card span {
+    display: block;
+    padding: 14px;
+    font-weight: 700;
+    color: #0b6e94;
+}
+
+
+/* ============================================================
+   HOW YOU GET IT
+   ============================================================ */
+
+.askhelp-how {
+    padding: 5% 15%;
+    background-color: var(--tint);
+}
+
+.askhelp-how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.askhelp-how-grid article h3 {
+    color: #0b6e94;
+    font-size: 18px;
+}
+
+.askhelp-how-grid article p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+
+.askhelp-faq {
+    padding: 5% 15%;
+}
+
+.faq-list {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-list details {
+    border: 1px solid #DCE6EE;
+    border-radius: 12px;
+    padding: 16px 20px;
+}
+
+.faq-list summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #0b6e94;
+    list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-list details p {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+
+.askhelp-cta {
+    padding: 5% 15%;
+    background-color: var(--tint);
+    text-align: center;
+}
+
+.askhelp-cta-content {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.askhelp-cta .askhelp-price {
+    justify-content: center;
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+}
+
+.askhelp-guarantee {
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.askhelp-cta .btn {
+    background-color: var(--gold);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .askhelp-hero {
+        flex-direction: column;
+    }
+
+    .askhelp-levels,
+    .askhelp-preview-grid,
+    .audience-grid,
+    .authors-grid,
+    .askhelp-related-grid,
+    .askhelp-how-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .askhelp-hero-content,
+    .askhelp-why,
+    .askhelp-inside,
+    .askhelp-preview,
+    .askhelp-audience,
+    .askhelp-authors,
+    .askhelp-bundle,
+    .askhelp-related,
+    .askhelp-how,
+    .askhelp-faq,
+    .askhelp-cta {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+}
