@@ -261,14 +261,269 @@
 
 <div class="wrap">
 
-  <header class="masthead">
-    <p class="eyebrow">Advocate360 · Integration reference</p>
-    <h1>Lead Magnet Request API</h1>
-    <p class="standfirst">How a freebie form on lifeskillsadvocate.com hands a lead to Advocate360, and what the new hand-coded site has to send to reproduce what Thrive Leads does today.</p>
-    <div class="meta">
-      <span><b>For</b> Edder Flores</span>
-      <span><b>From</b> Webster Munoz</span>
-      <span><b>Verified against</b> develop @ 2026-09-01</span>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <div class="header-top">
+        <a class="logo" href="index.html" aria-label="Life Skills Advocate home">
+          <img src="/assets/img/Life-Skills-Advocate-1-e1561588375370.png" alt="Life Skills Advocate logo" width="180"
+            height="auto" fetchpriority="high" />
+        </a>
+        <div class="header-cta-cont">
+          <a class="btn btn-primary header-cta" href="https://lifeskillsadvocate.com/discovery/">Book A
+            Complimentary Discovery Meeting</a>
+        </div>
+      </div>
+
+      <div class="nav-scrim" id="navScrim"></div>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <ul>
+          <li>
+            <button class="nav-top-link" aria-expanded="false">
+              About LSA<span class="caret">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li>
+                <a href="/meet-our-team.html">Meet Our Team</a>
+              </li>
+              <li>
+                <a href="/discover-the-life-skills-advocate-difference.html">Discover The LSA
+                  Difference</a>
+              </li>
+              <li>
+                <a href="/core-values.html">Core Values</a>
+              </li>
+              <li><a href="/faqs.html">FAQs</a></li>
+              <li>
+                <a href="https://lifeskillsadvocate.com/blog/what-is-neurodivergence/">What is Neurodivergence?</a>
+              </li>
+              <li>
+                <a href="https://lifeskillsadvocate.com/blog/what-is-executive-functioning/">Understanding Executive
+                  Functioning Skills</a>
+              </li>
+              <li>
+                <a href="https://lifeskillsadvocate.com/blog/executive-functioning-ripple-effect/">Understanding the EF
+                  Ripple Effect</a>
+              </li>
+              <li>
+                <a href="/careers.html">Careers</a>
+              </li>
+              <li>
+                <a href="/contact.html">Contact</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/executive-function-coaching.html" aria-expanded="false" class="nav-top-link">Explore Coaching
+              <span class="caret">▾</span></a>
+            <ul class="dropdown">
+              <li>
+                <button class="nav-sub-toggle">
+                  By Area of Need <span class="caret">▾</span>
+                </button>
+                <ul class="dropdown">
+                  <li>
+                    <a href="/academic-coaching-for-neurodivergent-minds.html">School</a>
+                  </li>
+                  <li>
+                    <a href="https://lifeskillsadvocate.com/career-coaching-for-neurodivergent-minds/">Work</a>
+                  </li>
+                  <li>
+                    <a href="https://lifeskillsadvocate.com/life-skills-coaching-for-neurodivergent-minds/">Life</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <button class="nav-sub-toggle">
+                  By Age <span class="caret">▾</span>
+                </button>
+                <ul class="dropdown">
+                  <li>
+                    <a href="https://lifeskillsadvocate.com/executive-function-coaching-for-high-school-students/">High
+                      School Students</a>
+                  </li>
+                  <li>
+                    <a href="https://lifeskillsadvocate.com/executive-function-coaching-for-college-students/">College
+                      Students</a>
+                  </li>
+                  <li>
+                    <a href="https://lifeskillsadvocate.com/executive-function-coaching-for-young-adults/">Young
+                      Adults</a>
+                  </li>
+                  <li>
+                    <a href="https://lifeskillsadvocate.com/executive-function-coaching-for-adults/">Adults</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="https://lifeskillsadvocate.com/executive-function-coaching-pricing/">Pricing</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/adulting-like-a-champ-workbook.html"  
+              class="nav-top-link adultinglikeachamp-cont"><span class="adultinglikeachamp-img"><img
+                  src="assets/img/newicon.png" alt="adultinglikeachamp-img"></span>Adulting Like
+              A Champ <span class="caret">▾</span></a>
+            <ul class="dropdown">
+              <li>
+                <a href="/adulting-like-a-champ-workbook.html">Get the Free Workbook</a>
+              </li>
+              <li>
+                <button class="nav-sub-toggle">
+                  Communication <span class="caret">▾</span>
+                </button>
+                <ul class="dropdown">
+                  <li>
+                    <a href="https://lifeskillsadvocate.com/asking-for-help-workbook/">Asking for Help</a>
+                  </li>
+                  <li>
+                    <a href="https://lifeskillsadvocate.com/assertive-communication-workbook/">Assertive
+                      Communication</a>
+                  </li>
+                  <li>
+                    <a href="https://lifeskillsadvocate.com/active-listening-workbook/">Active Listening</a>
+                  </li>
+                  <li>
+                    <a href="https://lifeskillsadvocate.com/setting-boundaries-workbook/">Setting Boundaries</a>
+                  </li>
+                  <li>
+                    <a href="https://lifeskillsadvocate.com/conflict-management-workbook/">Conflict Management</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <button class="nav-sub-toggle">
+                  Executive Functioning <span class="caret">▾</span>
+                </button>
+                <ul class="dropdown">
+                  <li>
+                    <a href="https://lifeskillsadvocate.com/time-management-workbook/">Time Management</a>
+                  </li>
+                  <li>
+                    <a href="https://lifeskillsadvocate.com/planning-and-prioritizing-workbook/">Planning &amp;
+                      Prioritizing</a>
+                  </li>
+                  <li>
+                    <a href="https://lifeskillsadvocate.com/task-initiation-workbook/">Task Initiation</a>
+                  </li>
+                  <li>
+                    <a href="https://lifeskillsadvocate.com/organizing-spaces-workbook/">Organizing Spaces</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="https://lifeskillsadvocate.com/adulting-like-a-champ-bundle/">Get the 9-Pack Bundle</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <button class="nav-top-link" aria-expanded="false">
+              Free Resources <span class="caret">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li>
+                <a href="/adulting-like-a-champ-workbook.html">Adulting Like A Champ</a>
+              </li>
+              <li><a href="/blog.html">Blog</a></li>
+              <li>
+                <a href="/free-executive-functioning-worksheets.html">Worksheets &amp;
+                  Printables</a>
+              </li>
+              <li>
+                <a href="https://lifeskillsadvocate.com/free-executive-functioning-assessment/">Executive Functioning
+                  Assessment</a>
+              </li>
+              <li>
+                <a href="https://lifeskillsadvocate.com/the-real-life-executive-functioning-meal-plan/">Executive
+                  Functioning Meal Plan</a>
+              </li>
+              <li>
+                <a href="https://lifeskillsadvocate.com/executive-functioning-101-hub/">Executive Functioning 101
+                  Resource Hub</a>
+              </li>
+              <li>
+                <a href="https://lifeskillsadvocate.com/executive-functioning-iep-goals/">Executive Functioning IEP Goal
+                  Resource Hub</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <button class="nav-top-link" aria-expanded="false">
+              Shop <span class="caret">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li>
+                <a href="https://lifeskillsadvocate.com/real-life-executive-functioning-workbook/">Real-Life Executive
+                  Functioning Workbook</a>
+              </li>
+              <li>
+                <button class="nav-sub-toggle">
+                  The Neurodivergent-Friendly Cookbook
+                  <span class="caret">▾</span>
+                </button>
+                <ul class="dropdown">
+                  <li>
+                    <a href="https://lifeskillsadvocate.com/the-neurodivergent-friendly-cookbook/">Digital</a>
+                  </li>
+                  <li><a href="https://amzn.to/3RifaBq">Paperback</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="https://lifeskillsadvocate.com/comprehensive-iep-goal-bank/">Comprehensive IEP Goal Bank</a>
+              </li>
+              <li>
+                <a href="https://neurowyld.com/" target="_blank" rel="noopener">Neurowyld</a>
+              </li>
+              <li>
+                <a href="https://lifeskillsadvocate.com/neurodivergent-friendly-tools-resources/">Recommended Tools
+                  &amp; Resources</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <button class="nav-top-link" aria-expanded="false">
+              Become a Coach <span class="caret">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li>
+                <a href="https://www.efcoachingacademy.com/pages/resource-page-for-life-skills-advocate?ref=c827c0"
+                  target="_blank" rel="noopener">Executive Function Coach Resource Hub</a>
+              </li>
+              <li>
+                <a
+                  href="https://lifeskillsadvocate.com/resource/how-to-start-your-coaching-business-in-5-steps-workbook/">Free
+                  5-Step Coaching Business Workbook</a>
+              </li>
+              <li>
+                <a href="https://secure.executivefunctioncoachingacademy.com/find-your-niche?am_id=chris6592"
+                  target="_blank" rel="noopener">Transition From Teaching Toolkit</a>
+              </li>
+              <li>
+                <a href="https://secure.executivefunctioncoachingacademy.com/executive-function-coaching-certification?am_id=chris3334"
+                  target="_blank" rel="noopener">Executive Function Coach Certification Course</a>
+              </li>
+              <li>
+                <a href="https://www.skool.com/executive-function-coaches/about" target="_blank"
+                  rel="noopener">Executive Function Coach Community</a>
+              </li>
+              <li>
+                <a href="https://lifeskillsadvocate.com/blog/best-executive-functioning-coach-certification-programs/">Compare
+                  EF Coach Certification Programs</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://advocate360.app/" target="_blank" rel="noopener" class="advocate360-cont"><span
+                class="advocate360-img"><img src="assets/img/advocate360icon.png"
+                  alt="advocate360-img"></span>Advocate360</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 

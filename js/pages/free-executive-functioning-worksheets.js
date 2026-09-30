@@ -684,6 +684,17 @@ function createResourceCard(
     article.className =
         "resource-card";
 
+    article.addEventListener(
+        "click",
+        () => {
+            const url = getResourceUrl(resource);
+
+            if (url && url !== "#") {
+                window.location.href = url;
+            }
+        }
+    );
+
 
     /*
      * Optional resource ID.
@@ -785,21 +796,21 @@ function createResourceCard(
         "resource-card-meta";
 
 
-    const firstAudienceId = resource.audience?.[0];
+    // const firstAudienceId = resource.audience?.[0];
 
-    const firstAudience = getTaxonomyName(
-        FILTER_OPTIONS.audience,
-        firstAudienceId
-    );
+    // const firstAudience = getTaxonomyName(
+    //     FILTER_OPTIONS.audience,
+    //     firstAudienceId
+    // );
 
-    if (firstAudience) {
-        const tag = document.createElement("span");
+    // if (firstAudience) {
+    //     const tag = document.createElement("span");
 
-        tag.className = "resource-card-tag";
-        tag.textContent = firstAudience;
+    //     tag.className = "resource-card-tag";
+    //     tag.textContent = firstAudience;
 
-        meta.appendChild(tag);
-    }
+    //     meta.appendChild(tag);
+    // }
 
     /*
      * --------------------------------------------------------
@@ -822,24 +833,24 @@ function createResourceCard(
      * --------------------------------------------------------
      */
 
-    const link =
-        document.createElement("a");
+    // const link =
+    //     document.createElement("a");
 
 
-    link.className =
-        "resource-card-link";
+    // link.className =
+    //     "resource-card-link";
 
 
-    link.href =
-        getResourceUrl(
-            resource
-        );
+    // link.href =
+    //     getResourceUrl(
+    //         resource
+    //     );
 
 
-    link.innerHTML = `
-        View Resource
-        <span aria-hidden="true">→</span>
-    `;
+    // link.innerHTML = `
+    //     View Resource
+    //     <span aria-hidden="true">→</span>
+    // `;
 
 
     /*
@@ -856,9 +867,9 @@ function createResourceCard(
     );
 
 
-    content.appendChild(
-        link
-    );
+    // content.appendChild(
+    //     link
+    // );
 
 
     /*
@@ -884,40 +895,13 @@ function createResourceCard(
    RESOURCE URL
    ============================================================ */
 
-function getResourceUrl(
-    resource
-) {
+function getResourceUrl(resource) {
 
-    /*
-     * Future local URL.
-     *
-     * Example:
-     *
-     * "local_url":
-     * "resources/weekly-organization-checklist/"
-     */
-
-    if (resource.local_url) {
-
-        return resource.local_url;
-
+    if (!resource.id) {
+        return "#";
     }
 
-
-    /*
-     * Temporary fallback
-     * to original WordPress URL.
-     */
-
-    if (resource.link) {
-
-        return resource.link;
-
-    }
-
-
-    return "#";
-
+    return `resource.html?id=${encodeURIComponent(resource.id)}`;
 }
 
 
