@@ -17,7 +17,8 @@ document.addEventListener(
    NORMALIZE RESOURCE CONTENT
    ============================================================ */
 
-async function normalizeResourceContent() {
+async function normalizeResourceContent(
+    authors) {
 
     const main =
         document.getElementById(
@@ -538,7 +539,7 @@ async function normalizeResourceContent() {
 
             <img
                 class="signature"
-                src="https://lifeskillsadvocate.com/wp-content/uploads/2024/07/signature.png"
+                src="assets/img/signature.png"
                 alt="Chris signature"
             >
         `;
@@ -1250,103 +1251,198 @@ async function normalizeResourceContent() {
     WHO CREATED THIS RESOURCE
     ======================================================== */
 
-    const createdTitle =
-        elements[27];
 
-    const createdDescription =
-        elements[28];
+    /*
+    * Normalizar texto
+    */
 
-    const chrisTitle =
-        elements[29];
+    const normalizeText =
+        text =>
+            text
+                .replace(/\u00a0/g, " ")
+                .replace(/\s+/g, " ")
+                .trim()
+                .toLowerCase();
 
-    const chrisBio1 =
-        elements[30];
 
-    const chrisBio2 =
-        elements[31];
+    /*
+    * Buscar autores dentro del contenido
+    *
+    * Solo consideramos como autor un elemento que:
+    *
+    * 1. Sea un <p>
+    * 2. Tenga un <strong> o <b>
+    * 3. El texto destacado coincida exactamente
+    *    con un autor de authors.json
+    *
+    * Esto evita detectar menciones normales
+    * de autores dentro de otros párrafos.
+    */
 
-    const chrisBio3 =
-        elements[32];
+    const detectedAuthors = [];
 
-    const chrisSignature =
-        elements[33];
 
-    const amyTitle =
-        elements[34];
+    elements.forEach(
+        (element, index) => {
 
-    const amyBio1 =
-        elements[35];
+            if (
+                element.tagName !== "P"
+            ) {
+                return;
+            }
 
-    const amyBio2 =
-        elements[36];
 
-    const amyBio3 =
-        elements[37];
+            const highlighted =
+                element.querySelector(
+                    "strong, b"
+                );
 
-    const amySignature =
-        elements[38];
 
+            if (!highlighted) {
+                return;
+            }
+
+
+            const highlightedName =
+                normalizeText(
+                    highlighted.textContent
+                );
+
+
+            const author =
+                authors.find(
+                    item =>
+                        normalizeText(
+                            item.name
+                        ) ===
+                        highlightedName
+                );
+
+
+            if (!author) {
+                return;
+            }
+
+
+            /*
+            * Evitar duplicados
+            */
+
+            if (
+                detectedAuthors.some(
+                    item =>
+                        item.author.id ===
+                        author.id
+                )
+            ) {
+                return;
+            }
+
+
+            detectedAuthors.push({
+
+                author: author,
+
+                index: index
+
+            });
+
+        }
+    );
+
+
+    /*
+    * Si no encontramos autores,
+    * no hacemos nada.
+    */
 
     if (
-        createdTitle &&
-        createdDescription &&
-        chrisTitle &&
-        chrisBio1 &&
-        chrisBio2 &&
-        chrisBio3 &&
-        chrisSignature &&
-        amyTitle &&
-        amyBio1 &&
-        amyBio2 &&
-        amyBio3 &&
-        amySignature
+        detectedAuthors.length > 0
     ) {
 
+
         /*
-        * Cargar autores
+        * ====================================================
+        * BUSCAR TÍTULO DE LA SECCIÓN
+        * ====================================================
         */
 
-        const response =
-            await fetch(
-                "/authors/authors.json"
+        let createdTitle = null;
+
+        let createdDescription = null;
+
+
+        const titleIndex =
+            elements.findIndex(
+                element => {
+
+                    if (
+                        ![
+                            "H2",
+                            "H3"
+                        ].includes(
+                            element.tagName
+                        )
+                    ) {
+                        return false;
+                    }
+
+
+                    return normalizeText(
+                        element.textContent
+                    ).includes(
+                        "who created this resource"
+                    );
+
+                }
             );
 
 
-        if (!response.ok) {
+        /*
+        * Si existe el título,
+        * lo utilizamos.
+        */
 
-            throw new Error(
-                `Error loading authors: ${response.status}`
-            );
+        if (
+            titleIndex !== -1
+        ) {
+
+            createdTitle =
+                elements[
+                    titleIndex
+                ];
+
+
+            /*
+            * El párrafo inmediatamente
+            * posterior al título puede ser
+            * la descripción de la sección.
+            */
+
+            const possibleDescription =
+                elements[
+                    titleIndex + 1
+                ];
+
+
+            if (
+                possibleDescription &&
+                possibleDescription.tagName ===
+                    "P"
+            ) {
+
+                createdDescription =
+                    possibleDescription;
+
+            }
 
         }
 
 
-        const authors =
-            await response.json();
-
-
         /*
-        * Buscar autores
-        */
-
-        const chrisAuthor =
-            authors.find(
-                author =>
-                    author.name.toLowerCase() ===
-                    "chris hanson"
-            );
-
-
-        const amyAuthor =
-            authors.find(
-                author =>
-                    author.name.toLowerCase() ===
-                    "amy sippl"
-            );
-
-
-        /*
-        * Crear sección
+        * ====================================================
+        * CREAR SECCIÓN
+        * ====================================================
         */
 
         const section =
@@ -1354,213 +1450,282 @@ async function normalizeResourceContent() {
                 "section"
             );
 
+
         section.classList.add(
             "resource-created"
         );
 
 
         /*
-        * Reemplazar primero
+        * El primer autor detectado será
+        * el punto donde insertamos la sección.
         */
 
-        createdTitle.replaceWith(
+        const firstAuthorIndex =
+            detectedAuthors[0].index;
+
+
+        const firstAuthorElement =
+            elements[
+                firstAuthorIndex
+            ];
+
+
+        firstAuthorElement.replaceWith(
             section
         );
 
 
         /*
-        * Título
+        * ====================================================
+        * TÍTULO
+        * ====================================================
         */
 
-        section.appendChild(
+        if (
             createdTitle
-        );
+        ) {
+
+            section.appendChild(
+                createdTitle
+            );
+
+        }
 
 
         /*
-        * Descripción
+        * ====================================================
+        * DESCRIPCIÓN
+        * ====================================================
         */
 
-        section.appendChild(
+        if (
             createdDescription
-        );
+        ) {
 
-
-        /* ====================================================
-        CHRIS
-        ==================================================== */
-
-        const chris =
-            document.createElement(
-                "article"
+            section.appendChild(
+                createdDescription
             );
-
-        chris.classList.add(
-            "resource-author",
-            "resource-author-chris"
-        );
-
-
-        /*
-        * Imagen
-        */
-
-        const chrisImage =
-            document.createElement(
-                "img"
-            );
-
-
-        if (chrisAuthor?.image) {
-
-            chrisImage.src =
-                `/${chrisAuthor.image}`;
 
         }
 
-        chrisImage.alt =
-            chrisAuthor?.name ||
-            "Chris Hanson";
-
 
         /*
-        * Contenido
+        * ====================================================
+        * CREAR CADA AUTOR
+        * ====================================================
         */
 
-        const chrisContent =
-            document.createElement(
-                "div"
-            );
+        detectedAuthors.forEach(
+            (
+                detected,
+                authorIndex
+            ) => {
 
-        chrisContent.classList.add(
-            "resource-author-content"
-        );
-
-        chrisContent.appendChild(
-            chrisTitle
-        );
-
-        chrisContent.appendChild(
-            chrisBio1
-        );
-
-        chrisContent.appendChild(
-            chrisBio2
-        );
-
-        chrisContent.appendChild(
-            chrisBio3
-        );
-
-        chrisContent.appendChild(
-            chrisSignature
-        );
+                const author =
+                    detected.author;
 
 
-        chris.appendChild(
-            chrisImage
-        );
-
-        chris.appendChild(
-            chrisContent
-        );
+                const startIndex =
+                    detected.index;
 
 
-        /* ====================================================
-        AMY
-        ==================================================== */
+                /*
+                * El contenido del autor
+                * termina justo antes del
+                * siguiente autor detectado.
+                */
 
-        const amy =
-            document.createElement(
-                "article"
-            );
-
-        amy.classList.add(
-            "resource-author",
-            "resource-author-amy"
-        );
+                const nextAuthor =
+                    detectedAuthors[
+                        authorIndex + 1
+                    ];
 
 
-        /*
-        * Imagen
-        */
-
-        const amyImage =
-            document.createElement(
-                "img"
-            );
+                const endIndex =
+                    nextAuthor
+                        ? nextAuthor.index
+                        : elements.length;
 
 
-        if (amyAuthor?.image) {
+                /*
+                * Obtener todos los elementos
+                * pertenecientes a este autor.
+                */
 
-            amyImage.src =
-                `/${amyAuthor.image}`;
-
-        }
-
-        amyImage.alt =
-            amyAuthor?.name ||
-            "Amy Sippl";
-
-
-        /*
-        * Contenido
-        */
-
-        const amyContent =
-            document.createElement(
-                "div"
-            );
-
-        amyContent.classList.add(
-            "resource-author-content"
-        );
-
-        amyContent.appendChild(
-            amyTitle
-        );
-
-        amyContent.appendChild(
-            amyBio1
-        );
-
-        amyContent.appendChild(
-            amyBio2
-        );
-
-        amyContent.appendChild(
-            amyBio3
-        );
-
-        amyContent.appendChild(
-            amySignature
-        );
+                const authorElements =
+                    elements.slice(
+                        startIndex,
+                        endIndex
+                    );
 
 
-        /*
-        * Para Amy:
-        * contenido primero, imagen después.
-        */
+                /*
+                * El primer elemento es el
+                * nombre/cargo del autor.
+                */
 
-        amy.appendChild(
-            amyContent
-        );
-
-        amy.appendChild(
-            amyImage
-        );
+                const authorTitle =
+                    authorElements.shift();
 
 
-        /*
-        * Agregar autores
-        */
+                /*
+                * Crear article
+                */
 
-        section.appendChild(
-            chris
-        );
+                const article =
+                    document.createElement(
+                        "article"
+                    );
 
-        section.appendChild(
-            amy
+
+                article.classList.add(
+                    "resource-author"
+                );
+
+
+                /*
+                * Clase específica para
+                * alternar el layout.
+                */
+
+                if (
+                    authorIndex % 2 === 0
+                ) {
+
+                    article.classList.add(
+                        "resource-author-left"
+                    );
+
+                } else {
+
+                    article.classList.add(
+                        "resource-author-right"
+                    );
+
+                }
+
+
+                /*
+                * =================================================
+                * IMAGEN
+                * =================================================
+                */
+
+                const image =
+                    document.createElement(
+                        "img"
+                    );
+
+
+                if (
+                    author.image
+                ) {
+
+                    image.src =
+                        `/${author.image}`;
+
+                }
+
+
+                image.alt =
+                    author.name;
+
+
+                /*
+                * =================================================
+                * CONTENIDO
+                * =================================================
+                */
+
+                const content =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                content.classList.add(
+                    "resource-author-content"
+                );
+
+
+                /*
+                * Nombre + cargo
+                */
+
+                if (
+                    authorTitle
+                ) {
+
+                    content.appendChild(
+                        authorTitle
+                    );
+
+                }
+
+
+                /*
+                * Bio + firma
+                */
+
+                authorElements.forEach(
+                    element => {
+
+                        content.appendChild(
+                            element
+                        );
+
+                    }
+                );
+
+
+                /*
+                * =================================================
+                * ORDEN DEL LAYOUT
+                * =================================================
+                *
+                * Autor 1:
+                * imagen | contenido
+                *
+                * Autor 2:
+                * contenido | imagen
+                *
+                */
+
+                if (
+                    authorIndex % 2 === 0
+                ) {
+
+                    article.appendChild(
+                        image
+                    );
+
+                    article.appendChild(
+                        content
+                    );
+
+                } else {
+
+                    article.appendChild(
+                        content
+                    );
+
+                    article.appendChild(
+                        image
+                    );
+
+                }
+
+
+                /*
+                * Agregar autor a la sección
+                */
+
+                section.appendChild(
+                    article
+                );
+
+            }
         );
 
     }
@@ -1630,6 +1795,28 @@ async function loadResource() {
         window.resourcesData =
             resources;  
 
+        /*
+        * Load authors JSON.
+        */
+
+        const authorsResponse =
+            await fetch(
+                "/authors/authors.json"
+            );
+
+
+        if (!authorsResponse.ok) {
+
+            throw new Error(
+                `HTTP error loading authors: ${authorsResponse.status}`
+            );
+
+        }
+
+
+        const authors =
+            await authorsResponse.json();
+
 
         /*
          * Find resource by ID.
@@ -1663,7 +1850,8 @@ async function loadResource() {
          */
 
         renderResource(
-            resource
+            resource,
+            authors     
         );
 
 
@@ -1689,7 +1877,8 @@ async function loadResource() {
    ============================================================ */
 
 function renderResource(
-    resource
+    resource,
+    authors
 ) {
 
     const main =
@@ -1712,7 +1901,7 @@ function renderResource(
         resource.content || "";
 
 
-    normalizeResourceContent();
+    normalizeResourceContent(authors);
 
 
     /*
