@@ -1,0 +1,529 @@
+.meal-plan-hero {
+    width: 100%;
+    padding: 5% 15%;
+    box-sizing: border-box;
+    background-image: linear-gradient(186deg, rgba(0, 174, 239, 0.85) 35%, rgb(145, 218, 221) 77%), url(/assets/img/Above-the-fold-background-image-e1669222996549.png) !important;
+}
+
+.meal-plan-logo {
+    display: block;
+    width: 250px;
+    max-width: 70%;
+    height: auto;
+    margin: 0 auto 70px;
+}
+
+.meal-plan-hero-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.meal-plan-hero-content {
+    text-align: center;
+}
+
+.meal-plan-hero-content h1 {
+    color: white;
+    margin: 0 0 30px;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    line-height: 1.15;
+}
+
+.meal-plan-hero-content h1 span {
+    color: #fbaf42;
+}
+
+.meal-plan-hero-content p {
+    max-width: 700px;
+    margin: 0 auto 35px;
+    color: #ffffff;
+    font-size: 1.5  rem;
+    line-height: 1.7;
+}
+
+.meal-plan-hero-content p strong:first-child {
+    display: block;
+}
+
+.meal-plan-hero-content p strong:last-child {
+    color: white;
+}
+
+.meal-plan-button {
+    display: inline-block;
+    padding: 16px 30px;
+    background: var(--blue);
+    color: white;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow-lg);
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.meal-plan-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.meal-plan-hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.meal-plan-hero-image img {
+    display: block;
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+
+    .meal-plan-hero {
+        padding: 40px 20px 60px;
+    }
+
+    .meal-plan-logo {
+        margin-bottom: 45px;
+    }
+
+    .meal-plan-hero-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .meal-plan-hero-content {
+        order: 1;
+    }
+
+    .meal-plan-hero-image {
+        order: 2;
+    }
+
+    .meal-plan-hero-image img {
+        max-width: 350px;
+    }
+
+}
+
+.meal-plan-benefits {
+    width: 100%;
+    padding: 5% 15%;
+    box-sizing: border-box;
+    text-align: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(/assets/img/Benefits-background-image.png) !important;
+}
+
+.meal-plan-benefits h2 {
+    margin: 0 0 45px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.meal-plan-benefits-list {
+    max-width: 800px;
+    margin: 0 auto 45px;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+
+.meal-plan-benefits-list li {
+    position: relative;
+    margin-bottom: 48px;
+    padding-left: 40px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.meal-plan-benefits-list li::before {
+    content: "✓";
+
+    position: absolute;
+    left: -15px;
+    top: -10px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+
+    color: var(--navy);
+    border: 3px solid var(--navy);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.meal-plan-benefits > .meal-plan-button {
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+
+    .meal-plan-benefits {
+        padding: 60px 20px;
+    }
+
+    .meal-plan-benefits-list li {
+        padding-left: 35px;
+    }
+
+}
+
+.meal-plan-why {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    box-sizing: border-box;
+}
+
+.meal-plan-why > h2 {
+    margin: 0 0 60px;
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.meal-plan-why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 55px 70px;
+}
+
+.meal-plan-why-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+.meal-plan-why-item img {
+    display: block;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.meal-plan-why-item h3 {
+    margin: 0 0 15px;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.meal-plan-why-item h3 strong {
+    color: #00aeef;
+}
+
+.meal-plan-why-item p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.meal-plan-why-free {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin: 65px auto 45px;
+    text-align: center;
+}
+
+.meal-plan-why-free img {
+    display: block;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.meal-plan-why-free h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.meal-plan-why-free h3 strong {
+    color: #00aeef;
+}
+
+.meal-plan-why > .meal-plan-button {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+
+    .meal-plan-why {
+        padding: 60px 20px;
+    }
+
+    .meal-plan-why > h2 {
+        margin-bottom: 45px;
+    }
+
+    .meal-plan-why-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .meal-plan-why-item {
+        grid-template-columns: 65px 1fr;
+        gap: 20px;
+    }
+
+    .meal-plan-why-item img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .meal-plan-why-free {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 50px;
+    }
+
+}
+
+.meal-plan-inside {
+    width: 100%;
+    padding: 5% 15%;
+    box-sizing: border-box;
+    text-align: center;
+    background-image: linear-gradient(186deg, rgba(0, 174, 239, 0.85) 35%, rgb(145, 218, 221) 77%), url(/assets/img/CTA-background-image.png) !important;
+}
+
+.meal-plan-inside > h2 {
+    margin: 0 0 55px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: white;
+}
+
+.meal-plan-inside-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 35px;
+}
+
+.meal-plan-inside-item h3 {
+    margin: 0 0 25px;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    text-transform: uppercase;
+    
+    color: white;
+}
+
+.meal-plan-inside-item img {
+    display: block;
+    width: 100%;
+    max-width: 406px;
+    height: auto;
+    margin: 0 auto;
+    cursor: zoom-in;
+    transition: transform 0.25s ease;
+}
+
+.meal-plan-inside-item img:hover {
+    transform: scale(1.02);
+}
+
+.meal-plan-inside > .meal-plan-button {
+    display: inline-block;
+    margin-top: 55px;
+}
+
+@media (max-width: 768px) {
+
+    .meal-plan-inside {
+        padding: 60px 20px;
+    }
+
+    .meal-plan-inside > h2 {
+        margin-bottom: 40px;
+    }
+
+    .meal-plan-inside-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .meal-plan-inside-item img {
+        max-width: 500px;
+    }
+
+}
+
+.meal-plan-download {
+    width: 100%;
+    padding: 5% 15%;
+    box-sizing: border-box;
+    background-color: #e1e1e1;
+}
+
+.meal-plan-download > h2 {
+    max-width: 900px;
+    margin: 0 auto 55px;
+    text-align: center;
+    font-size: clamp(1.7rem, 3vw, 1.5rem);
+    line-height: 1.4;
+}
+
+.meal-plan-download > h2 span {
+    color: #00aeef;
+}
+
+.meal-plan-download-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.meal-plan-download-image {
+    display: flex;
+    justify-content: center;
+}
+
+.meal-plan-download-image img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+.meal-plan-download-form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.meal-plan-download-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.meal-plan-download-form input {
+    width: 100%;
+    padding: 18px;
+    box-sizing: border-box;
+    border: 1px solid #dcdcdc;
+    border-radius: 0;
+    background: #ffffff;
+    color: #393939;
+    font-size: 16px;
+}
+
+.meal-plan-download-form input::placeholder {
+    color: #777777;
+}
+
+.meal-plan-download-form button {
+    width: 100%;
+    padding: 18px;
+    border: 0;
+    border-radius: 0;
+    background: #00aeef;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.25);
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.meal-plan-download-form button:hover {
+    background: rgba(0, 174, 239, 0.9);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+
+    .meal-plan-download {
+        padding: 60px 20px;
+    }
+
+    .meal-plan-download > h2 {
+        margin-bottom: 40px;
+    }
+
+    .meal-plan-download-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .meal-plan-download-image img {
+        max-width: 300px;
+    }
+
+}
+
+.meal-plan-shares {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.meal-plan-shares p {
+    margin: 0 0 15px;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.meal-plan-share-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.meal-plan-share-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 48px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    background-color: #333;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.meal-plan-share-links a:hover {
+    background: #555454;
+    color: #fff;
+}
+
+.meal-plan-share-links a svg {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    fill: white;
+
+}
