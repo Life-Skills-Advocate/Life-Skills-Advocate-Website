@@ -1,122 +1,284 @@
 .hero-resource {
-    position: relative;
-    padding: 100px 20px;
-    overflow: hidden;
-    background-image: linear-gradient(rgb(135, 144, 150), rgb(135, 144, 150)) !important;
+  position: relative;
+  padding: 100px 20px;
+  overflow: hidden;
+  background-image: linear-gradient(
+    rgb(135, 144, 150),
+    rgb(135, 144, 150)
+  ) !important;
 }
 
 .hero-resource__content {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .hero-resource h1 {
-    margin: 0 0 24px;
-    color: #fff;
+  margin: 0 0 24px;
+  color: #fff;
 }
 
 .hero-resource p {
-    margin: 0;
-    line-height: 1.6;
-    color: #fff;
+  margin: 0;
+  line-height: 1.6;
+  color: #fff;
 }
 
 .skill-navigation {
-    padding: 80px 20px;
+  padding: 80px 20px;
 }
 
 .skill-navigation__content {
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .skill-navigation h2 {
-    margin: 0 0 40px;
+  margin: 0 0 40px;
 }
 
 .skill-navigation__links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 16px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .skill-navigation__links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    min-height: 60px;
-    padding: 16px 20px;
+  min-height: 60px;
+  padding: 16px 20px;
 
-    text-decoration: none;
-    border: 2px solid #e1e1e1;
-    border-radius: 5px;
+  text-decoration: none;
+  border: 2px solid #e1e1e1;
+  border-radius: 5px;
 }
 
 .section {
-    padding: 70px 20px;
+  padding: 5% 5%;
 }
 
 .section__container {
-    width: min(100%, 1100px);
-    margin: 0 auto;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: var(--tint);
+  box-shadow: var(--shadow-lg);
 }
 
 .section__title {
-    margin: 0 0 20px;
-    text-align: center;
+  margin: 0 0 20px;
+  text-align: center;
 }
 
 .section__text {
-    max-width: 800px;
-    margin: 0 auto 40px;
-    text-align: center;
-    line-height: 1.6;
+  text-align: left;
+  line-height: 1.6;
 }
 
 .section__body {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.section__image {
+  display: flex;
+  justify-content: center;
+}
+
+.section__image img {
+  display: block;
+  width: 235px;
+  max-width: 100%;
+  height: auto;
+}
+
+.content-list {
+    margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  list-style:circle;
+  list-style: inside;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.content-list__item,.content-list li {
+  gap: 12px;
+  padding: 5px 10px;
+}
+
+.content-list__arrow {
+  flex: 0 0 auto;
+  font-size: 28px;
+  line-height: 1;
+}
+.content-list__arrow svg{
+    width: 14px;
+    height: 14px;
+    fill: var(--blue);
+}
+
+.content-link {
+  margin-top: 35px;
+  text-align: center;
+    display: flex;
+    justify-self: center;
+    color: white;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 17px;
+  padding: 14px 26px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  border: none;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  background-color: var(--blue);
+}
+
+.assessment-section {
+    padding: 5% 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.assessment-section__container {
+    width: 90%;
+    padding: 70px;
+    background-color: #00b0f057;
+    border-radius: 3px;
+    border: 1px solid var(--blue);
+}
+
+.assessment-section__intro {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 183px;
     align-items: center;
     gap: 50px;
 }
 
-.section__image {
+.assessment-section__content {
     display: flex;
     justify-content: center;
 }
 
-.section__image img {
+.assessment-section__title {
+    margin: 0;
+    text-align: center;
+}
+
+.assessment-section__title span {
+    font-weight: normal;
+}
+
+.assessment-section__image {
+    display: flex;
+    justify-content: center;
+}
+
+.assessment-section__image img {
     display: block;
-    width: 235px;
+    width: 183px;
     max-width: 100%;
     height: auto;
 }
 
-.resource-list {
-    display: flex;
-    flex-direction: column;
-}
-
-.resource-list__item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 16px 0;
-    text-decoration: none;
-}
-
-.resource-list__arrow {
-    flex: 0 0 auto;
-    font-size: 28px;
-    line-height: 1;
-}
-
-.content-link {
-    display: block;
-    margin-top: 35px;
+.assessment-section__description {
+    margin: 35px 0 20px;
     text-align: center;
+}
+
+.assessment-form {
+    width: 100%;
+}
+
+.assessment-form__fields {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: stretch;
+    gap: 15px;
+}
+
+.assessment-form__input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.assessment-form__icon {
+    display: none;
+    flex: 0 0 auto;
+    width: 20px;
+}
+
+.assessment-form__icon svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.assessment-form__input-wrapper input {
+    width: 100%;
+    min-width: 0;
+    padding: 20px;
+    border: 0;
+    outline: none;
+    font: inherit;
+}
+
+.assessment-form__button {
+    padding: 14px 28px;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    background-color: var(--gold);
+}
+
+.assessment-section__privacy {
+    margin: 20px 0 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+
+    .assessment-section__intro {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .assessment-section__image {
+        order: -1;
+    }
+
+    .assessment-form__fields {
+        grid-template-columns: 1fr;
+    }
+
+    .assessment-form__button {
+        width: 100%;
+    }
+    .section__body{
+        grid-template-columns: 1fr;
+    }
+    .section__container{
+        padding: 10px;
+    }
+
 }

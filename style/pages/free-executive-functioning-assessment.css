@@ -1061,3 +1061,23 @@ html{
 .order-one{
     order: -1;
 }
+
+/* RESPONSIVE */
+/* MOBILE */
+@media (max-width: 768px) {
+    .assessment-hero{
+        padding: 60px 20px;
+    }
+    .testimonial{
+        padding: 60px 20px;
+    }
+    .assessment-skills {
+        padding: 60px 20px;
+    }
+    .assessment-skills .skills-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .orderone{
+        order: 0;
+    }       
+}

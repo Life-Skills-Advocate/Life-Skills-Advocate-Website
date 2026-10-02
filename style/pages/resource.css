@@ -571,3 +571,56 @@ p a img{
 .resource-author-content p:last-child {
     margin-bottom: 0;
 }
+
+/* RESPONSIVE STYLES */
+/* MOBILE */
+@media (max-width: 768px) {
+    .resource-included {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 5% 5%;
+    }
+
+    .resource-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .resource-download-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .resource-advocate-card {
+        padding: 30px;
+    }
+
+    .resource-related-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .resource-author {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .resource-advocate{
+        padding: 15% 5%;
+    }
+    .resource-faq{
+        padding: 15% 5%;
+    }
+    .resource-related{
+        padding: 15% 5%;    
+    }
+    .resource-created{
+        padding: 15% 5%;
+    }
+
+    section.resource-created .resource-author {
+        grid-template-columns: 1fr !important;
+        gap: 40px;
+    }
+    .resource-author.resource-author-right .resource-author-content{
+        order: 1;
+    }
+}
