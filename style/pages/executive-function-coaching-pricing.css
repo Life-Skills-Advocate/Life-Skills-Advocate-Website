@@ -1029,7 +1029,7 @@
   height: 550px;
   padding: 50px 40px 10px;
   text-align: center;
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .page-hero h1 {
@@ -1051,11 +1051,11 @@
 }
 
 .hero-text {
-  width: 60%;
-  text-align: center;
+  width: 80%;
+  text-align: left;
   padding: 1% 7%;
   /* horizontal | vertical | difuminado | color */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
 }
 .hero-text p {
   font-size: 20px;
@@ -1069,6 +1069,14 @@
 }
 .hero-img {
   width: 40%;
+}
+.hero-pricing p {
+  font-size: 18px;
+  color: white;
+}
+.hero-pricing .price {
+  font-size: 80px;
+  color: white;
 }
 /* #endregion */
 
@@ -1098,7 +1106,7 @@
 .efc-intro p {
   color: var(--navy);
 }
-.efc-intro a.btn{
+.efc-intro a.btn {
   background-color: white;
   color: var(--navy);
 }
@@ -1634,13 +1642,17 @@ section.efc-section.tint.what-can-you-expect-section .efc-intro p {
   margin-left: 20px;
 }
 
-
 /* ============================================================
    BENEFITS SECTION
    ============================================================ */
 
 .benefits-section {
   padding: 80px 20px;
+}
+.benefits-section h2,
+.benefits-section p {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .benefits-section > * {
@@ -1649,18 +1661,10 @@ section.efc-section.tint.what-can-you-expect-section .efc-intro p {
   margin-right: auto;
 }
 
-.benefits-section h2,.benefits-section p{
-  text-align: center;
-  margin-bottom: 50px;
-}
-.efc-section .learn-more-btn{
-  display: flex;
-  justify-self: center;
-  align-self: center;
+.efc-section.tint .learn-more-btn {
   background-color: var(--blue);
   color: white;
 }
-
 
 /* ============================================================
    TESTIMONIAL
@@ -1708,7 +1712,6 @@ section.efc-section.tint.what-can-you-expect-section .efc-intro p {
   height: auto;
 }
 
-
 /* ============================================================
    SECTION HEADER
    ============================================================ */
@@ -1728,7 +1731,6 @@ section.efc-section.tint.what-can-you-expect-section .efc-intro p {
   line-height: 1.7;
 }
 
-
 /* ============================================================
    BENEFITS GRID
    ============================================================ */
@@ -1738,7 +1740,6 @@ section.efc-section.tint.what-can-you-expect-section .efc-intro p {
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 }
-
 
 /* ============================================================
    BENEFIT CARD
@@ -1775,14 +1776,13 @@ section.efc-section.tint.what-can-you-expect-section .efc-intro p {
   border-radius: 50%;
   font-weight: 700;
   background-color: var(--blue);
-  color: white; 
+  color: white;
 }
-
 
 /* ============================================================
    CARD DETAILS
    ============================================================ */
-.card-content{
+.card-content {
   padding: 24px;
 }
 .card-content details {
@@ -1825,7 +1825,6 @@ section.efc-section.tint.what-can-you-expect-section .efc-intro p {
   line-height: 1.7;
 }
 
-
 /* ============================================================
    CTA
    ============================================================ */
@@ -1839,21 +1838,17 @@ section.efc-section.tint.what-can-you-expect-section .efc-intro p {
   display: inline-block;
 }
 
-
 /* ============================================================
    RESPONSIVE
    ============================================================ */
 
 @media (max-width: 900px) {
-
   .benefits-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
 @media (max-width: 700px) {
-
   .benefits-section {
     padding: 60px 20px;
   }
@@ -1867,5 +1862,848 @@ section.efc-section.tint.what-can-you-expect-section .efc-intro p {
   .benefits-grid {
     grid-template-columns: 1fr;
   }
+}
 
+.learn-more-btn {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+}
+
+/* Container & Header */
+.coaching-expectations {
+  background-color: #f0f0f0;
+  padding: 5% 5%;
+  font-family: "Open Sans", sans-serif;
+}
+
+.expectations-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.expectations-header h2 {
+  font-size: 2.25rem;
+  color: var(--blue);
+  margin-bottom: 1rem;
+}
+
+.expectations-header p {
+  font-size: 1.125rem;
+  color: #4b5563;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grid Layout */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Cards */
+.pricing-grid .pricing-card {
+  background-color: white;
+  box-shadow: var(--shadow-lg);
+  border-radius: 5px;
+  padding: 1.5rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Para destacar sutilmente la última tarjeta si se desea */
+.pricing-card.highlight {
+  background-color: white;
+}
+
+/* Card Content */
+.card-title h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.card-price {
+  margin-bottom: 0.9rem;
+}
+
+.card-price .amount {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--blue);
+}
+
+.card-price .interval {
+  font-size: 1.125rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.card-description {
+  flex-grow: 1; /* Permite que los textos empujen el contenido uniformemente si tienen distintas alturas */
+}
+
+.card-description p {
+  font-size: 0.7rem;
+  color: #4b5563;
+  line-height: 1.5;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Responsividad para móviles pequeños */
+@media (max-width: 768px) {
+  .coaching-expectations {
+    padding: 2.5rem 1rem;
+  }
+
+  .expectations-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .card-price .amount {
+    font-size: 2.5rem;
+  }
+}
+
+/* Sección General */
+.why-sessions-section {
+  padding: 5% 5%;
+  background-color: white; /* Fondo sutil opcional, cámbialo si prefieres blanco */
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Grilla de dos columnas */
+.why-sessions-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Columna de Texto */
+.why-sessions-content h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.why-sessions-content p {
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Lista de Beneficios */
+.why-sessions-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.why-sessions-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  font-size: 1.05rem;
+  color: #374151;
+  font-weight: 600;
+}
+
+/* Iconos de Check */
+.why-sessions-list .icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #008fc4; /* Color corporativo basado en el snippet original */
+}
+
+.why-sessions-list .icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* Responsividad para móviles y tablets */
+@media (max-width: 900px) {
+  .why-sessions-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .why-sessions-content h2 {
+    font-size: 1.85rem;
+    text-align: center;
+  }
+
+  .why-sessions-content p {
+    text-align: center;
+  }
+}
+
+/* Sección General */
+.included-section {
+  padding: 5% 5%;
+  background-color: #f0f0f0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.included-section h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Cuadrícula de 3 columnas */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* Tarjetas individuales */
+.feature-card {
+  background-color: white;
+  border-radius: 5px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 4px 6px -2px rgba(0, 0, 0, 0.025);
+}
+
+.feature-card h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+  .included-section {
+    padding: 3rem 1rem;
+  }
+
+  .included-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Sección General */
+.why-rate-section {
+  padding: 5rem 1.5rem;
+  background-color: white; /* Fondo sutil para diferenciar la sección, cámbialo a #ffffff si prefieres fondo blanco */
+  font-family: "Open Sans", sans-serif;
+}
+
+.why-rate-section .container {
+  margin: 20px auto;
+}
+
+.why-rate-content {
+  text-align: center;
+}
+
+.why-rate-content h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.why-rate-content p {
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.why-rate-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+  .why-rate-section {
+    padding: 3rem 1rem;
+  }
+
+  .why-rate-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .why-rate-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Sección General */
+.why-rate-section {
+  padding: 5rem 1.5rem;
+  background-color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+.why-rate-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.why-rate-content {
+  text-align: center;
+}
+
+.why-rate-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.why-rate-text {
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.why-rate-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+  .why-rate-section {
+    padding: 3rem 1rem;
+  }
+
+  .why-rate-title {
+    font-size: 1.75rem;
+  }
+
+  .why-rate-text {
+    font-size: 1rem;
+  }
+}
+
+/* Sección General */
+.financial-section {
+  padding: 5rem 1.5rem;
+  background-color: #f9fafb;
+  font-family: "Open Sans", sans-serif;
+}
+
+.financial-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Encabezado */
+.financial-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.financial-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.financial-subtitle {
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.financial-note {
+  font-size: 1rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Grilla de 3 Columnas */
+.financial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Tarjetas */
+.financial-card {
+  background-color: white;
+  border-radius: 5px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: var(--shadow-lg);
+}
+
+.financial-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.financial-card-text {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* Divisor sutil */
+.financial-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--blue) 100%);
+  margin: 1.5rem 0;
+}
+.financial-divider-2 {
+  border: 1px dotted #4b556388;
+  margin: 1.5rem 0;
+}
+
+/* Enlace / Botón de texto */
+.financial-link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #008fc4;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.financial-link:hover {
+  color: #006b93;
+  text-decoration: underline;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+  .financial-section {
+    padding: 3rem 1rem;
+  }
+
+  .financial-title {
+    font-size: 1.75rem;
+  }
+
+  .financial-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Sección General */
+.fit-section {
+  padding: 5rem 1.5rem;
+  background-color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+.fit-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fit-main-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 3rem;
+  line-height: 1.2;
+}
+
+/* Grilla de 2 Columnas */
+.fit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+/* Tarjetas */
+.fit-card {
+  background-color: #ffffff;
+  border-radius: 3px;
+  padding: 2.5rem 2rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.fit-card-pros {
+  border-top: 1px solid #10b981; /* Acento verde para el buen fit */
+}
+
+.fit-card-cons {
+  border-top: 1px solid #ef4444; /* Acento rojo para cuando no es el fit */
+}
+
+/* Encabezado de la Tarjeta */
+.fit-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+    background-color: #f3f4f4;
+}
+
+.fit-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    line-height: 1.4;
+    padding-left: 10px;
+}
+
+/* Iconos de Pulgar (Thumbls Up/Down) */
+.fit-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fit-icon-thumbs-up {
+  color: white;
+  padding: 5px;
+  background-color: #0ab05999;
+}
+
+.fit-icon-thumbs-down {
+  color: white;
+  padding: 5px;
+  background-color: #f15e6499;
+}
+
+.fit-icon-wrapper svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* Listas */
+.fit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex-grow: 1;
+}
+
+.fit-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+    font-size: 0.8rem;
+
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* Iconos de Check y Cross dentro de la lista */
+.fit-check-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #10b981;
+  margin-top: 2px;
+}
+
+.fit-times-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: #ef4444;
+  margin-top: 3px;
+}
+
+.fit-check-icon svg,
+.fit-times-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+  .fit-section {
+    padding: 3rem 1rem;
+  }
+
+  .fit-main-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .fit-card {
+    padding: 2rem 1.25rem;
+  }
+}
+
+/* Sección General */
+.cta-section {
+  padding: 5% 5%;
+  background-color: #f9fafb;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.cta-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Introducción */
+.cta-intro {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.cta-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.cta-text {
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+/* Botones y Contenedor Interactivo */
+.cta-action-wrapper {
+  text-align: center;
+  padding: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.cta-or-text {
+  font-family: 'Nunito', sans-serif;
+  color: #5F5E5A;
+  font-size: 16px;
+    margin: 24px 0 24px;
+}
+
+.cta-step2-title {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  color: #292f33;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  width: 220px;
+  min-height: 46px;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #00aeef;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.cta-btn:hover {
+  background-color: #008fcc;
+  color: white;
+}
+
+.cta-btn-secondary {
+  background-color: rgb(251, 175, 66) !important;
+  color: white !important;
+  margin-top: 0;
+}
+
+.cta-btn-secondary:hover {
+  background-color: rgb(251, 175, 66) !important;
+  color: white !important;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.cta-back-btn {
+  margin-top: 18px;
+  background: none;
+  border: none;
+  color: #5F5E5A;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+  font-family: 'Nunito', sans-serif;
+}
+
+.cta-back-btn:hover {
+  color: #1f2937;
+}
+
+/* Grilla de Pasos (Qué esperar) */
+.cta-expectations-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.cta-steps-grid {
+  display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  align-items: stretch;
+}
+
+.cta-step-card {
+    background-color: #f9fafb;
+    justify-self: center;
+    height: 270px;
+    width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-lg);
+  border-radius: 5px;
+    align-items: center;
+}
+
+.cta-step-number {
+  width: 55px;
+  height: 70px;
+  background-color: #00aeef33
+;
+    align-self: flex-start;
+  color: var(--blue);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta-step-heading {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.cta-step-desc {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 3rem 1rem;
+  }
+  
+  .cta-title {
+    font-size: 1.75rem;
+  }
+
+  .cta-steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-text h1,
+  .hero-text p{
+    text-align: center;
+  }
+  .hero-text a.btn{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+  }
 }

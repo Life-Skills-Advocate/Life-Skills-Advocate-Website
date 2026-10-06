@@ -1649,6 +1649,11 @@ section.efc-section.tint.what-can-you-expect-section .efc-intro p {
   margin-right: auto;
 }
 
+.benefits-section h2,.benefits-section p{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
 .efc-section.tint .learn-more-btn{
   background-color: var(--blue);
   color: white;

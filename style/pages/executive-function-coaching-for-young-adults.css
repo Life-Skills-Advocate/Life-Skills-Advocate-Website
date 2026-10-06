@@ -1642,6 +1642,10 @@ section.efc-section.tint.what-can-you-expect-section .efc-intro p {
 .benefits-section {
   padding: 80px 20px;
 }
+.benefits-section h2,.benefits-section p{
+  text-align: center;
+  margin-bottom: 50px;
+}
 
 .benefits-section > * {
   width: min(1100px, 100%);
@@ -1649,14 +1653,7 @@ section.efc-section.tint.what-can-you-expect-section .efc-intro p {
   margin-right: auto;
 }
 
-.benefits-section h2,.benefits-section p{
-  text-align: center;
-  margin-bottom: 50px;
-}
-.efc-section .learn-more-btn{
-  display: flex;
-  justify-self: center;
-  align-self: center;
+.efc-section.tint .learn-more-btn{
   background-color: var(--blue);
   color: white;
 }
@@ -1868,4 +1865,10 @@ section.efc-section.tint.what-can-you-expect-section .efc-intro p {
     grid-template-columns: 1fr;
   }
 
+}
+
+.learn-more-btn{
+  display: flex;
+  justify-self: center;
+  align-self: center;
 }
