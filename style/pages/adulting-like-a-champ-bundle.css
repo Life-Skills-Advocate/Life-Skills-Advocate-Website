@@ -26,10 +26,37 @@
   padding: 5% 15%;
   padding-right: 10px;
   text-align: left;
+  width: 90%;
 } 
 
+.workbook-hero-content span.tached{
+  text-decoration: line-through;
+}
+.tached{
+  text-decoration: line-through;
+}
+.workbook-hero-content span.-save-badge{
+  background-color: var(--gold);
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid white;
+}
+.-save-badge{
+  background-color: var(--gold);
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid white;
+}
+
+
 .workbook-hero-content p strong{
-  font-size: 48px;
+  font-size: 32px;
   color: #0b6e94;
 }
 
@@ -51,13 +78,16 @@
 .workbook-hero-content h1 {
   color: #0b6e94;
   text-align: left;
+  font-size: 32px;
 }
 
 /* Subtítulo */
 
 .workbook-hero-content h2 {
-  font-weight: 600;
+  font-weight: 300;
   text-align: left;
+  color: var(--muted);
+  font-size: 24px;
 }
 
 /* Descripción */
@@ -113,10 +143,20 @@
    ============================================================ */
 
 .workbook-hero-image {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  justify-self: center;
+  align-self: center;
   padding: 5% 15%;
   padding-left: 10px;
-  width: 80%;
+  width: 100%;
   height: auto;
+}
+.workbook-hero-image span{
+  display: flex;
+  justify-self: center;
+  align-self: center;
 }
 
 /* Badge "FREE PDF" */
@@ -136,9 +176,7 @@
 /* Imagen */
 
 .workbook-hero-image img {
-  border: 3px solid white;
   border-radius: 10px;
-  box-shadow: var(--shadow-lg);
   height: auto;
   width: 100%;
 }
@@ -148,6 +186,7 @@
 }
 .section-heading h2 {
   text-align: left;
+  color: white;
 }
 .section-heading .eyebrow {
   text-align: left;
@@ -301,7 +340,7 @@ figure.assessment-image figcaption {
 }
 
 .who-its-for {
-  background-color: var(--tint);
+  background-color: white;
   padding: 5% 15%;
 }
 .audience-grid {
@@ -342,13 +381,13 @@ figure.assessment-image figcaption {
 .who-made-it {
   --workbook-intro-bg: #2c3a43;
   padding: 5% 15%;
-  background-color: var(--tint);
+  background-color: var(--workbook-intro-bg);
   color: white;
 }
 .who-made-it .new-here-text{
   margin-top: 40px;
   margin-bottom: 40px;
-  color: var(--navy);
+  color: white;
   font-size: 24px;
   display: flex;
   justify-self: center;
@@ -359,7 +398,7 @@ figure.assessment-image figcaption {
   
   margin-top: 10px;
   margin-bottom: 20px;
-  color: var(--navy);
+  color: white;
   font-size: 14px;
   display: flex;
   justify-self: center;
@@ -392,7 +431,11 @@ figure.assessment-image figcaption {
 .who-made-it h2,
 .who-made-it p,
 h3 {
-  color: var(--navy);
+  color: white;
+}
+
+.who-made-it p{
+  color:white;
 }
 .authors-grid {
   display: grid;
@@ -407,6 +450,7 @@ h3 {
   border: 1px solid #dce6ee;
 }
 .author-card h3,
+.author-card p,
 h2 {
   color: var(--navy);
 }
@@ -444,6 +488,10 @@ h2 {
 
 .coming-soon {
   padding: 5% 15%;
+  background-color: var(--tint);
+}
+.coming-soon .section-heading h2{
+  color: var(--navy);
 }
 .coming-soon h2 {
   display: flex;
@@ -495,6 +543,9 @@ h2 {
   padding: 5% 15%;
   background-color: var(--tint);
 }
+.workbook-faq .section-heading h2{
+  color: var(--navy);
+}
 .faq-list {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -530,6 +581,7 @@ h2 {
 
 .get-workbook {
   padding: 5% 15%;
+  background-color: var(--tint);
 }
 .get-workbook-content h2 {
   text-align: left;
@@ -638,7 +690,6 @@ h2 {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  background-color: white;
   padding: 20px;
   border-radius: 50px;
 }
@@ -794,7 +845,9 @@ h2 {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
-  .workbook-inside-images {
+  .workbook-inside-include .workbook-inside-grid  .workbook-inside-images {
+    
+    grid-template-columns: repeat(1, 1fr) !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -859,6 +912,7 @@ h2 {
   }
   .who-made-it {
     padding: 5%;
+    background-color: #2c3a43;
   }
   .who-made-it h1,
   .who-made-it h2,
@@ -1446,6 +1500,10 @@ h2 {
   padding: 3rem 2rem;
 }
 
+.checkout-box-desc{
+  color: white;
+}
+
 .checkout-title {
   font-size: 2.25rem;
   font-weight: 700;
@@ -1634,3 +1692,55 @@ h2 {
 .masterCard-style-1-st3 { fill: #ff5f00; }
 .americanExpress-style-1-st1 { fill: #007bc1; }
 .discover-style-1-st1 { fill: #ff6000; }
+
+
+.workbook-inside-include{
+  padding: 5% 15%;
+  background-color: var(--tint);
+
+}
+.workbook-inside-include .section-heading h2{
+  color: var(--navy);
+}
+.workbook-inside-include .workbook-inside-grid .workbook-inside-images{
+  
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.workbook-inside-include .workbook-inside-grid .workbook-inside-images figure{
+  background-color: white;
+}
+.workbook-inside-include .workbook-inside-grid .workbook-inside-images figure figcaption{
+  justify-self: center;
+  align-self: center;
+  color: #00678a;
+}
+.workbook-inside-include .workbook-inside-grid .workbook-inside-images figure figcaption strong{
+  font-size: 16px;
+  color: #00678a;
+}
+.workbook-inside-include .workbook-inside-grid .workbook-inside-images figure a{
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #00678a;
+  gap: 10px;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+.workbook-inside-include .workbook-inside-grid .workbook-inside-images figure a svg{
+  height: 18px;
+  width: 18px;
+}
+.workbook-inside-include-btn{
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  background-color: var(--gold);
+  color: var(--navy);
+}
