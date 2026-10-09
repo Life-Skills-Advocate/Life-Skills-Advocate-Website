@@ -16,6 +16,7 @@
   background-color: var(--tint);
   padding: 5% 15%;
   display: flex;
+    gap: 24px;
 }
 
 /* ============================================================
