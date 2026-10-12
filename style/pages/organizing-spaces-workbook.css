@@ -5,13 +5,12 @@
 
 .org-hero {
     background-color: var(--tint);
-    padding: 0px;
+    padding: 5% 15%;
     display: flex;
+    gap: 24px;
 }
 
 .org-hero-content {
-    padding: 5% 15%;
-    padding-right: 10px;
     text-align: left;
 }
 
@@ -48,9 +47,8 @@
 }
 
 .org-hero-image {
-    padding: 5% 15%;
-    padding-left: 10px;
     position: relative;
+    gap: 24px;
 }
 
 .org-hero-image .image-label {
@@ -58,8 +56,8 @@
     padding: 10px;
     border-radius: 20px;
     position: absolute;
-    top: 50px;
-    right: 30px;
+    top: -20px;
+    right: -20px;
     font-size: 14px;
     font-weight: 700;
     color: var(--muted);

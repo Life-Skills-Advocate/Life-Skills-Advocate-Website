@@ -1,56 +1,94 @@
 /* =========================================================
-   PAGE HERO
+   GLOBAL / BOX SIZING
    ========================================================= */
-/* =========================================================
-      3. PAGE HERO
-      ========================================================= */
-.page-hero {
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 50px 40px 10px;
-  background-image:
-    linear-gradient(
-      158deg,
-      rgba(255, 255, 255, 0.28) 19%,
-      rgba(2, 3, 4, 0.65) 100%
-    ),
-    linear-gradient(rgba(54, 69, 79, 0.8), rgba(54, 69, 79, 0.8)) !important;
-}
-.page-hero h1 {
-  color: var(--white);
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+img,
+svg,
+video,
+iframe {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   PAGE HERO
+   ========================================================= */
 
 .page-hero {
     width: 100%;
+    min-height: 400px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     padding: 80px 20px;
+
     text-align: center;
+
+    background-image:
+        linear-gradient(
+            158deg,
+            rgba(255, 255, 255, 0.28) 19%,
+            rgba(2, 3, 4, 0.65) 100%
+        ),
+        linear-gradient(
+            rgba(54, 69, 79, 0.8),
+            rgba(54, 69, 79, 0.8)
+        ) !important;
 }
 
 .page-hero h1 {
+    width: 100%;
     max-width: 1000px;
+
     margin: 0 auto;
+
+    color: var(--white);
 
     font-size: clamp(2rem, 4vw, 3.5rem);
     line-height: 1.15;
+
+    overflow-wrap: break-word;
 }
 
 
 /* =========================================================
    POST
    ========================================================= */
-main{
+
+main {
+    width: 100%;
+    max-width: 100%;
+
     background-color: #d7d7d7;
 }
 
 .post-section {
-    width: min(1200px, 90%);
+    width: min(1200px, calc(100% - 40px));
+
     margin: 0 auto 100px;
 
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 300px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
+
     gap: 60px;
 
     align-items: start;
@@ -60,104 +98,177 @@ main{
 /* =========================================================
    POST CONTENT
    ========================================================= */
-.left-side{
+
+.left-side {
+    min-width: 0;
+
     padding: 40px 10px;
+
     background-color: white;
 }
 
-.divisor{
+.divisor {
     border-top: 2px dotted #ccc;
     margin: 20px;
 }
-.filed-under{
+
+.filed-under {
     text-align: center;
     font-style: italic;
 }
-.post-dates{
+
+.post-dates {
     display: flex;
     justify-content: space-around;
-
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.lead-conversion-section{
-    margin: 10px;
+
+/* =========================================================
+   LEAD CONVERSION
+   ========================================================= */
+
+.lead-conversion-section {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 10px 0;
     padding: 20px;
+
     display: flex;
     flex-direction: column;
+
     background-color: var(--blue-light);
+
     border: 1px solid var(--blue);
     border-radius: 5px;
 }
-.lead-conversion-p1{
-    display: flex;
 
+.lead-conversion-p1 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
-.lead-conversion-p1 img{
-    height: auto;
+
+.lead-conversion-p1 img {
     width: 30%;
+    max-width: 100%;
+    height: auto;
+    flex: 0 1 30%;
 }
-.lead-conversion-p1 p{
+
+.lead-conversion-p1 p {
+    flex: 1;
+    min-width: 0;
+
+    margin: 0;
+
     text-align: center;
-    align-self: center;
     font-size: 30px;
+
+    overflow-wrap: break-word;
 }
-.lead-conversion-p2{
+
+.lead-conversion-p2 {
     text-align: center;
+
     margin: 10px;
+
     font-weight: 700;
 }
-.lead-conversion-p3{
+
+.lead-conversion-p3 {
+    width: 100%;
+
     display: flex;
     justify-content: center;
+    align-items: stretch;
+
     gap: 5%;
-    margin-left: 2.5%;
+
+    margin-left: 0;
 }
-.lead-conversion-p3 input{
+
+.lead-conversion-p3 input {
     width: 65%;
+    min-width: 0;
+
     padding: 15px;
+
     background-color: #ffffffb1;
+
     font-size: 18px;
+
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.lead-conversion-p3 input:focus{
-    border: var(--gold);
+
+.lead-conversion-p3 input:focus {
+    border-color: var(--gold);
     outline: 1px solid var(--gold);
 }
-.lead-conversion-p3 button{ 
-    width: 25%;      
+
+.lead-conversion-p3 button {
+    width: 25%;
+    min-width: 0;
+
+    padding: 15px;
+
     background-color: var(--gold);
+
     box-shadow: var(--shadow-lg);
+
     border: none;
+
     color: white;
+
+    cursor: pointer;
 }
-.lead-conversion-p3 button:hover{
+
+.lead-conversion-p3 button:hover {
     filter: brightness(90%);
 }
-.lead-conversion-p4{
+
+.lead-conversion-p4 {
     padding: 10px;
+
     text-align: center;
+
     color: var(--muted);
 }
-.lead-conversion-p4 p{
+
+.lead-conversion-p4 p {
     font-size: 14px;
 }
-.lead-conversion-p4 span{
+
+.lead-conversion-p4 span {
     color: var(--blue);
 }
-.lead-conversion-p4 span:hover{
+
+.lead-conversion-p4 span:hover {
     cursor: pointer;
     color: var(--blue-dark);
 }
 
+
+/* =========================================================
+   POST CONTENT
+   ========================================================= */
+
 .post-content {
+    width: 100%;
     min-width: 0;
+    max-width: 100%;
+
+    padding: 20px;
+
+    background-color: white;
 
     font-size: 1.05rem;
     line-height: 1.8;
-    padding: 20px;
-    
-    background-color: white;
+
+    overflow-wrap: break-word;
 }
 
 
@@ -173,16 +284,21 @@ main{
 .post-content h2,
 .post-content h3,
 .post-content h4 {
+    max-width: 100%;
+
     margin-top: 2.5rem;
     margin-bottom: 1rem;
 
     line-height: 1.3;
+
+    overflow-wrap: break-word;
 }
 
 
 /* Links */
 
 .post-content a {
+    overflow-wrap: anywhere;
     text-decoration: underline;
 }
 
@@ -191,7 +307,10 @@ main{
 
 .post-content ul,
 .post-content ol {
+    max-width: 100%;
+
     margin: 0 0 1.5rem;
+
     padding-left: 1.5rem;
 }
 
@@ -207,6 +326,7 @@ main{
 .post-content img {
     display: block;
 
+    width: auto;
     max-width: 100%;
     height: auto;
 
@@ -217,12 +337,29 @@ main{
 
 
 /* =========================================================
+   EMBEDS / IFRAMES
+   ========================================================= */
+
+.post-content iframe,
+.post-content video {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/* =========================================================
    RIGHT SIDE
    ========================================================= */
 
 .right-side {
+    width: 100%;
+    min-width: 0;
+
     display: flex;
     flex-direction: column;
+
     gap: 30px;
 
     position: sticky;
@@ -236,6 +373,39 @@ main{
 
 .related-post {
     width: 100%;
+    max-width: 100%;
+
+    padding: 20px;
+}
+
+.related-post h2 {
+    text-align: left;
+}
+
+.related-post-list {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 20px;
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.related-post-item {
+    max-width: 100%;
+
+    font-weight: 700;
+
+    overflow-wrap: anywhere;
+}
+
+.related-post-item:hover {
+    text-decoration: underline;
 }
 
 
@@ -245,6 +415,22 @@ main{
 
 .share-this-post {
     width: 100%;
+    max-width: 100%;
+}
+
+.share-this-post .footer-social {
+    max-width: 100%;
+}
+
+.share-this-post .footer-social a {
+    background-color: #545454;
+}
+
+.share-this-post .footer-social svg {
+    color: white;
+    fill: white;
+
+    max-width: 100%;
 }
 
 
@@ -253,15 +439,22 @@ main{
    ========================================================= */
 
 .post-content table {
+    display: block;
+
     width: 100%;
-    border-collapse: collapse;
+    max-width: 100%;
 
     margin: 2rem 0;
+
+    border-collapse: collapse;
+
+    overflow-x: auto;
 }
 
 .post-content th,
 .post-content td {
     padding: 10px;
+
     border: 1px solid #ddd;
 
     text-align: left;
@@ -273,115 +466,221 @@ main{
    ========================================================= */
 
 .post-content blockquote {
+    max-width: 100%;
+
     margin: 2rem 0;
     padding: 1rem 1.5rem;
 
     border-left: 4px solid currentColor;
-}
 
-/* =========================================================
-   RELATED POST
-   ========================================================= */
-.right-side{
-    display: flex;
-    flex-direction: column;
+    overflow-wrap: break-word;
 }
-.related-post{
-    padding: 20px;
-}
-.related-post h2{
-    text-align: left;
-}
-.related-post-list{
-    padding: 20px;
-    background-color: white;
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-}
-.related-post-item{
-    font-weight: 700;
-}
-.related-post-item:hover{
-    text-decoration: underline;
-}
-
-/* =========================================================
-   SHARE THIS POST
-   ========================================================= */
-.share-this-post .footer-social a {
-    background-color: #545454;
-}
-.share-this-post .footer-social svg {
-    color: white;
-    fill: white;
-}
-
 
 
 /* =========================================================
    CTA BLUE CARD
    ========================================================= */
 
-.cta-blue-card{
+.cta-blue-card {
+    width: 100%;
+    max-width: 100%;
+
     display: flex;
     flex-direction: column;
+
     justify-content: center;
-    text-align: center;
     align-items: center;
-    color: white;
+
     padding: 20px;
+
+    text-align: center;
+
+    color: white;
+
     background-color: var(--blue);
+
     outline: 1px solid var(--blue);
     border: 3px solid white;
 }
-.cta-blue-card h2{
+
+.cta-blue-card h2 {
+    max-width: 100%;
+
     color: white;
+
     font-size: 24px;
+
+    overflow-wrap: break-word;
 }
-.cta-blue-card img{
+
+.cta-blue-card img {
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+    height: auto;
+
     border-radius: 45%;
 }
 
+
 /* =========================================================
-   MOBILE
+   TABLET
    ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
     .post-section {
+        width: 100%;
+
         grid-template-columns: 1fr;
-        gap: 50px;
+        padding: 5%;
+
+        gap: 40px;
     }
 
     .right-side {
         position: static;
 
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
         gap: 30px;
     }
 }
 
 
-@media (max-width: 600px) {
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
 
     .page-hero {
-        padding: 50px 20px;
+        min-height: 300px;
+
+        padding: 60px 20px;
     }
+
+    .page-hero h1 {
+        font-size: clamp(1.8rem, 8vw, 2.6rem);
+    }
+
 
     .post-section {
-        width: 92%;
-        margin-bottom: 60px;
+        width: calc(100% - 20px);
+
+        margin-bottom: 50px;
+
+        gap: 30px;
     }
 
-    .post-content {
-        font-size: 1rem;
-        line-height: 1.7;
+
+    .left-side {
+        padding: 25px 10px;
     }
+
+
+    .post-content {
+        padding: 15px;
+
+        font-size: 1rem;
+    }
+
+
+    /* Lead conversion */
+
+    .lead-conversion-section {
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    .lead-conversion-p1 {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .lead-conversion-p1 img {
+        width: min(180px, 100%);
+        flex: none;
+    }
+
+    .lead-conversion-p1 p {
+        width: 100%;
+
+        font-size: 24px;
+    }
+
+    .lead-conversion-p3 {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .lead-conversion-p3 input,
+    .lead-conversion-p3 button {
+        width: 100%;
+    }
+
+
+    /* Sidebar */
 
     .right-side {
         grid-template-columns: 1fr;
+
+        gap: 20px;
     }
 
+    .related-post {
+        padding: 15px;
+    }
+
+    .related-post-list {
+        padding: 15px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .page-hero {
+        padding: 50px 15px;
+    }
+
+    .page-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .post-section {
+        width: calc(100% - 16px);
+    }
+
+    .left-side {
+        padding: 20px 5px;
+    }
+
+    .post-content {
+        padding: 10px;
+    }
+
+    .post-content ul,
+    .post-content ol {
+        padding-left: 1.2rem;
+    }
+
+    .lead-conversion-section {
+        padding: 12px;
+    }
+
+    .lead-conversion-p1 p {
+        font-size: 21px;
+    }
+
+    .related-post {
+        padding: 10px;
+    }
 }
