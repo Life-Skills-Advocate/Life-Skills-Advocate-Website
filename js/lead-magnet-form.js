@@ -25,9 +25,13 @@ const LEAD_MAGNET_ENDPOINT = "/api/lead-magnet/request";
 
 async function handleLeadMagnetSubmit(event) {
 
-    event.preventDefault();
+    const form = event.target;
 
-    const form = event.currentTarget;
+    if (!form.matches("form[data-resource-id], form[data-exercise-id]")) {
+        return;
+    }
+
+    event.preventDefault();
     const emailInput = form.elements.email;
     const nameInput = form.elements.first_name;
     const submitButton = form.querySelector('button[type="submit"]');
@@ -135,7 +139,15 @@ function setLeadMagnetSubmitting(button, isSubmitting) {
 
 function showLeadMagnetStatus(form, message, type) {
 
+    // Reuse a status element inside the form if the page has one;
+    // otherwise create it right after the form so it doesn't break
+    // inline (email + button) form layouts.
     let status = form.querySelector(".lead-magnet-status");
+
+    if (!status && form.nextElementSibling &&
+        form.nextElementSibling.classList.contains("lead-magnet-status")) {
+        status = form.nextElementSibling;
+    }
 
     if (!status) {
 
@@ -144,7 +156,7 @@ function showLeadMagnetStatus(form, message, type) {
         status.setAttribute("role", "status");
         status.setAttribute("aria-live", "polite");
 
-        form.appendChild(status);
+        form.insertAdjacentElement("afterend", status);
 
     }
 
@@ -162,8 +174,6 @@ function showLeadMagnetStatus(form, message, type) {
 // INICIALIZAR
 // ============================================================
 
-document
-    .querySelectorAll("form[data-resource-id], form[data-exercise-id]")
-    .forEach(form => {
-        form.addEventListener("submit", handleLeadMagnetSubmit);
-    });
+// Delegated so forms added later by page scripts (resource.js) are
+// covered too.
+document.addEventListener("submit", handleLeadMagnetSubmit);

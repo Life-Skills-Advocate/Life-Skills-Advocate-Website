@@ -117,10 +117,10 @@
           <div class="cta-post-hero-content">
               <h2>Send me the free workbook</h2>
               <p>Enter your email and we will send your workbook.</p>
-              <div class="input-cont">
-                <input type="text" placeholder="Your email address">
-                <button class="btn btn-white">Get the free workbook</button>
-              </div>
+              <form class="input-cont" data-resource-id="106" novalidate>
+                <input type="email" name="email" placeholder="Your email address" autocomplete="email" required>
+                <button type="submit" class="btn btn-white">Get the free workbook</button>
+              </form>
           </div>
         </section>
 
@@ -1052,10 +1052,20 @@
                 <form
                     class="workbook-email-form"
                     id="workbookEmailForm"
+                    data-resource-id="106"
                     novalidate
                 >
 
                     <div class="workbook-email-row">
+
+                        <input
+                            class="workbook-email-input"
+                            type="email"
+                            name="email"
+                            placeholder="Your email address"
+                            autocomplete="email"
+                            required
+                        >
 
                         <button type="submit" class="btn">
                             Get the free workbook
@@ -1064,7 +1074,7 @@
                     </div>
 
                     <p
-                        class="workbook-form-status"
+                        class="workbook-form-status lead-magnet-status"
                         id="workbookFormStatus"
                         role="status"
                         aria-live="polite"
@@ -1098,6 +1108,6 @@
 
       </main>
     <script src="/js/main.js"></script>
-    <script src="/js/pages/adulting-like-a-champ-workbook.js"></script>
+    <script src="/js/lead-magnet-form.js"></script>
   </body>
 </html>
