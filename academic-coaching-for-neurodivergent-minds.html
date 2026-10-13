@@ -865,7 +865,7 @@
             </div>
           </div>
           <a
-            href="#tve-jump-1999be51162"
+            href="#discovery-meeting"
             class="btn btn-primary tabs-getStarted"
             >Get Started</a
           >
@@ -1040,7 +1040,7 @@
 
         <div class="cont-btn-cta">
           <a
-            href="#tve-jump-191f2e2d4c1"
+            href="#discovery-meeting"
             class="btn btn-primary aca-section-cta"
             >Book a Complimentary Discovery Meeting</a
           >
@@ -1107,7 +1107,7 @@
         </div>
         <div class="cont-btn-cta">
           <a
-            href="#tve-jump-191f2e2d4c1"
+            href="#discovery-meeting"
             class="btn btn-primary aca-section-cta"
             >Book a Complimentary Discovery Meeting</a
           >
@@ -1298,7 +1298,7 @@
 
 <!-- Botón "Get Started" simplificado -->
 <div class="cont-btn-cta">
-  <a class = "btn btn-primary" href="#tve-jump-1999be51162">
+  <a class = "btn btn-primary" href="#discovery-meeting">
     Get Started
   </a>
 </div>
@@ -1437,6 +1437,43 @@
     </div>
   </footer>
     <!-- #endregion FOOTER -->
+     <script>
+      document.addEventListener('DOMContentLoaded', () => {
+  const tabContainers = document.querySelectorAll('[data-tabs]');
+
+  tabContainers.forEach(container => {
+    const buttons = container.querySelectorAll('.tab-button');
+    const panels = container.querySelectorAll('.tab-panel');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const targetId = button.getAttribute('aria-controls');
+        const targetPanel = container.querySelector(`#${targetId}`);
+
+        if (!targetPanel) return;
+
+        // Desactivar todos los botones y ocultar paneles del grupo actual
+        buttons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-selected', 'false');
+        });
+
+        panels.forEach(panel => {
+          panel.classList.remove('active');
+          panel.setAttribute('hidden', '');
+        });
+
+        // Activar el botón y panel seleccionados
+        button.classList.add('active');
+        button.setAttribute('aria-selected', 'true');
+
+        targetPanel.classList.add('active');
+        targetPanel.removeAttribute('hidden');
+      });
+    });
+  });
+});
+     </script>
 
   <script src="/js/main.js"></script> 
   </body>
