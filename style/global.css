@@ -754,3 +754,23 @@ section {
 }
 
 /* #endregion */
+
+/* #region Lead magnet form status (js/lead-magnet-form.js) */
+.lead-magnet-status {
+  margin: 10px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.lead-magnet-status:empty {
+  display: none;
+}
+
+.lead-magnet-status.is-success {
+  color: #2e7d32;
+}
+
+.lead-magnet-status.is-error {
+  color: #c62828;
+}
+/* #endregion */

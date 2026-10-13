@@ -1,0 +1,1249 @@
+{
+  "generated": "2026-09-30",
+  "notes": [
+    "IDs are from production (advocate360.app).",
+    "Send resources as resource_id and exercises as exercise_id, next to email and first_name in the request body.",
+    "not_available items return 400 from the endpoint; do not map a form to them."
+  ],
+  "resources": [
+    {
+      "title": "11 Evidence Based Dls",
+      "type": "resource",
+      "resource_id": 1
+    },
+    {
+      "title": "25 Daily Living Skills",
+      "type": "resource",
+      "resource_id": 2
+    },
+    {
+      "title": "A B C Data Collection",
+      "type": "resource",
+      "resource_id": 4
+    },
+    {
+      "title": "Adulting Like A Champ",
+      "type": "resource",
+      "resource_id": 106
+    },
+    {
+      "title": "Backwards Planning",
+      "type": "resource",
+      "resource_id": 5
+    },
+    {
+      "title": "Behavior Contract",
+      "type": "resource",
+      "resource_id": 6
+    },
+    {
+      "title": "Behavior Data Collection Worksheets",
+      "type": "resource",
+      "resource_id": 22
+    },
+    {
+      "title": "Behavior Log",
+      "type": "resource",
+      "resource_id": 7
+    },
+    {
+      "title": "Behavior Skills Training Plan",
+      "type": "resource",
+      "resource_id": 8
+    },
+    {
+      "title": "Better Choices Worksheet",
+      "type": "resource",
+      "resource_id": 9
+    },
+    {
+      "title": "Brainstorming the Behavior Contract",
+      "type": "resource",
+      "resource_id": 10
+    },
+    {
+      "title": "Break Box Ideas",
+      "type": "resource",
+      "resource_id": 11
+    },
+    {
+      "title": "Budget Worksheet",
+      "type": "resource",
+      "resource_id": 12
+    },
+    {
+      "title": "Build Your Help Network",
+      "type": "resource",
+      "resource_id": 121
+    },
+    {
+      "title": "Can Do Cube Template",
+      "type": "resource",
+      "resource_id": 13
+    },
+    {
+      "title": "Care Team Contact List",
+      "type": "resource",
+      "resource_id": 14
+    },
+    {
+      "title": "Career Builder Brainstorming",
+      "type": "resource",
+      "resource_id": 15
+    },
+    {
+      "title": "Check in Check Out",
+      "type": "resource",
+      "resource_id": 16
+    },
+    {
+      "title": "College Program Research Questions",
+      "type": "resource",
+      "resource_id": 17
+    },
+    {
+      "title": "Daily Homework Planner",
+      "type": "resource",
+      "resource_id": 18
+    },
+    {
+      "title": "Daily Journal",
+      "type": "resource",
+      "resource_id": 19
+    },
+    {
+      "title": "Daily Living Skills 101",
+      "type": "resource",
+      "resource_id": 20
+    },
+    {
+      "title": "Daily Living Skills Development By Age",
+      "type": "resource",
+      "resource_id": 21
+    },
+    {
+      "title": "Daily Time Log",
+      "type": "resource",
+      "resource_id": 23
+    },
+    {
+      "title": "Data Collection Worksheets",
+      "type": "resource",
+      "resource_id": 24
+    },
+    {
+      "title": "Decision Fatigue",
+      "type": "resource",
+      "resource_id": 25
+    },
+    {
+      "title": "Dls Observation Sheet",
+      "type": "resource",
+      "resource_id": 27
+    },
+    {
+      "title": "Emotional Control Body Scan Script",
+      "type": "resource",
+      "resource_id": 28
+    },
+    {
+      "title": "End of the Day Checklist",
+      "type": "resource",
+      "resource_id": 29
+    },
+    {
+      "title": "Exam Study Planner",
+      "type": "resource",
+      "resource_id": 30
+    },
+    {
+      "title": "Executive Functioning Assessment",
+      "type": "resource",
+      "resource_id": 110
+    },
+    {
+      "title": "Executive Functioning Skill Development By Age",
+      "type": "resource",
+      "resource_id": 31
+    },
+    {
+      "title": "Exercise Evaluation",
+      "type": "resource",
+      "resource_id": 32
+    },
+    {
+      "title": "Fairness Warning",
+      "type": "resource",
+      "resource_id": 33
+    },
+    {
+      "title": "First Then Flashcards",
+      "type": "resource",
+      "resource_id": 35
+    },
+    {
+      "title": "Flexibility Flow Chart",
+      "type": "resource",
+      "resource_id": 36
+    },
+    {
+      "title": "Flexible Thinking Big Deal or No Big Deal",
+      "type": "resource",
+      "resource_id": 37
+    },
+    {
+      "title": "Flexible Thinking Disruptions Deck",
+      "type": "resource",
+      "resource_id": 38
+    },
+    {
+      "title": "Flexible Thinking Stretch Break Script",
+      "type": "resource",
+      "resource_id": 39
+    },
+    {
+      "title": "Graphing Sheet",
+      "type": "resource",
+      "resource_id": 40
+    },
+    {
+      "title": "How My Body Pays Attention Meditation Script",
+      "type": "resource",
+      "resource_id": 41
+    },
+    {
+      "title": "How to Start Your Coaching Business in 5 Steps Workbook",
+      "type": "resource",
+      "resource_id": 42
+    },
+    {
+      "title": "IEP Meeting Questions Worksheet",
+      "type": "resource",
+      "resource_id": 44
+    },
+    {
+      "title": "Job Posting Organizer",
+      "type": "resource",
+      "resource_id": 47
+    },
+    {
+      "title": "Job Search Checklist",
+      "type": "resource",
+      "resource_id": 48
+    },
+    {
+      "title": "Late Log Tally Sheet",
+      "type": "resource",
+      "resource_id": 49
+    },
+    {
+      "title": "Learning Styles Inventory",
+      "type": "resource",
+      "resource_id": 50
+    },
+    {
+      "title": "Long Term Planning",
+      "type": "resource",
+      "resource_id": 51
+    },
+    {
+      "title": "Materials",
+      "type": "resource",
+      "resource_id": 53
+    },
+    {
+      "title": "Meal Planning Data Collection",
+      "type": "resource",
+      "resource_id": 54
+    },
+    {
+      "title": "Medication Log",
+      "type": "resource",
+      "resource_id": 55
+    },
+    {
+      "title": "Mind Map Templates",
+      "type": "resource",
+      "resource_id": 52
+    },
+    {
+      "title": "Monthly Calendar Template",
+      "type": "resource",
+      "resource_id": 56
+    },
+    {
+      "title": "Monthly Review",
+      "type": "resource",
+      "resource_id": 57
+    },
+    {
+      "title": "My Adhd Iceberg",
+      "type": "resource",
+      "resource_id": 58
+    },
+    {
+      "title": "My Daily Agenda",
+      "type": "resource",
+      "resource_id": 59
+    },
+    {
+      "title": "My Distractions",
+      "type": "resource",
+      "resource_id": 60
+    },
+    {
+      "title": "My Phone a Friend List",
+      "type": "resource",
+      "resource_id": 61
+    },
+    {
+      "title": "My Problem Solving Contact List",
+      "type": "resource",
+      "resource_id": 62
+    },
+    {
+      "title": "My Savings Plan",
+      "type": "resource",
+      "resource_id": 63
+    },
+    {
+      "title": "My Savings Plan Log",
+      "type": "resource",
+      "resource_id": 64
+    },
+    {
+      "title": "Pace Yourself Reflection",
+      "type": "resource",
+      "resource_id": 65
+    },
+    {
+      "title": "Parent Teacher Communication Log",
+      "type": "resource",
+      "resource_id": 67
+    },
+    {
+      "title": "Plan B for Problem Solving",
+      "type": "resource",
+      "resource_id": 68
+    },
+    {
+      "title": "Printable Sticky Note Template",
+      "type": "resource",
+      "resource_id": 69
+    },
+    {
+      "title": "Problem Solving Practice Cards",
+      "type": "resource",
+      "resource_id": 70
+    },
+    {
+      "title": "Procrastination Station",
+      "type": "resource",
+      "resource_id": 71
+    },
+    {
+      "title": "Project Timeline",
+      "type": "resource",
+      "resource_id": 72
+    },
+    {
+      "title": "Prompt Fading Worksheet",
+      "type": "resource",
+      "resource_id": 73
+    },
+    {
+      "title": "Quality Control",
+      "type": "resource",
+      "resource_id": 74
+    },
+    {
+      "title": "Real Life Generalization Examples",
+      "type": "resource",
+      "resource_id": 75
+    },
+    {
+      "title": "Real-Life EF Meal Plan",
+      "type": "resource",
+      "resource_id": 105
+    },
+    {
+      "title": "Research Log",
+      "type": "resource",
+      "resource_id": 76
+    },
+    {
+      "title": "Rewarding Success Worksheet",
+      "type": "resource",
+      "resource_id": 77
+    },
+    {
+      "title": "S.t.a.r. Method",
+      "type": "resource",
+      "resource_id": 78
+    },
+    {
+      "title": "Sample Bulletin Board Organization",
+      "type": "resource",
+      "resource_id": 79
+    },
+    {
+      "title": "Smart Goal Setting Worksheet",
+      "type": "resource",
+      "resource_id": 80
+    },
+    {
+      "title": "Social Scenario Cards",
+      "type": "resource",
+      "resource_id": 81
+    },
+    {
+      "title": "Starter IEP Goal Bank",
+      "type": "resource",
+      "resource_id": 111
+    },
+    {
+      "title": "Stay Cool Pool",
+      "type": "resource",
+      "resource_id": 84
+    },
+    {
+      "title": "Stop Think Act Method",
+      "type": "resource",
+      "resource_id": 85
+    },
+    {
+      "title": "Task Analysis Generator",
+      "type": "resource",
+      "resource_id": 86
+    },
+    {
+      "title": "The Brain Dump",
+      "type": "resource",
+      "resource_id": 87
+    },
+    {
+      "title": "The Dawdler Role Play Idea Cards",
+      "type": "resource",
+      "resource_id": 88
+    },
+    {
+      "title": "The Eisenhower Matrix",
+      "type": "resource",
+      "resource_id": 89
+    },
+    {
+      "title": "Time Estimating Worksheet",
+      "type": "resource",
+      "resource_id": 90
+    },
+    {
+      "title": "Time Log Summary",
+      "type": "resource",
+      "resource_id": 91
+    },
+    {
+      "title": "Topic Selector",
+      "type": "resource",
+      "resource_id": 92
+    },
+    {
+      "title": "Tough Stuff Emotional Control Deck",
+      "type": "resource",
+      "resource_id": 93
+    },
+    {
+      "title": "Video Modeling Storyboard",
+      "type": "resource",
+      "resource_id": 94
+    },
+    {
+      "title": "Weekly Meal Planner Grocery List",
+      "type": "resource",
+      "resource_id": 95
+    },
+    {
+      "title": "Weekly Meal Planner Schedule",
+      "type": "resource",
+      "resource_id": 96
+    },
+    {
+      "title": "Weekly Movement Planner",
+      "type": "resource",
+      "resource_id": 97
+    },
+    {
+      "title": "Weekly Organization Checklist",
+      "type": "resource",
+      "resource_id": 98
+    },
+    {
+      "title": "Weekly Planning Agenda",
+      "type": "resource",
+      "resource_id": 99
+    },
+    {
+      "title": "What Do I Need Worksheet",
+      "type": "resource",
+      "resource_id": 100
+    },
+    {
+      "title": "What Would Do",
+      "type": "resource",
+      "resource_id": 101
+    },
+    {
+      "title": "When I Want to Quit",
+      "type": "resource",
+      "resource_id": 102
+    },
+    {
+      "title": "Workspace Audit",
+      "type": "resource",
+      "resource_id": 104
+    }
+  ],
+  "exercises": [
+    {
+      "title": "10 Minutes of Focus",
+      "type": "exercise",
+      "exercise_id": 124
+    },
+    {
+      "title": "3-Step Prioritizing Path",
+      "type": "exercise",
+      "exercise_id": 103
+    },
+    {
+      "title": "ADHD Iceberg",
+      "type": "exercise",
+      "exercise_id": 82
+    },
+    {
+      "title": "Ask For Help Checklist",
+      "type": "exercise",
+      "exercise_id": 101
+    },
+    {
+      "title": "Assertive Communication Mirror Practice",
+      "type": "exercise",
+      "exercise_id": 115
+    },
+    {
+      "title": "Barriers to Asking for Help",
+      "type": "exercise",
+      "exercise_id": 102
+    },
+    {
+      "title": "Behavior Log",
+      "type": "exercise",
+      "exercise_id": 79
+    },
+    {
+      "title": "Better Choices",
+      "type": "exercise",
+      "exercise_id": 64
+    },
+    {
+      "title": "Big Deal or No Big Deal",
+      "type": "exercise",
+      "exercise_id": 40
+    },
+    {
+      "title": "Body Language Booster",
+      "type": "exercise",
+      "exercise_id": 114
+    },
+    {
+      "title": "Body Scan",
+      "type": "exercise",
+      "exercise_id": 53
+    },
+    {
+      "title": "Bounce Back",
+      "type": "exercise",
+      "exercise_id": 80
+    },
+    {
+      "title": "Boundaries Journal Prompts",
+      "type": "exercise",
+      "exercise_id": 127
+    },
+    {
+      "title": "Boundary Affirmations",
+      "type": "exercise",
+      "exercise_id": 132
+    },
+    {
+      "title": "Boundary Check-In Map",
+      "type": "exercise",
+      "exercise_id": 126
+    },
+    {
+      "title": "Break Box",
+      "type": "exercise",
+      "exercise_id": 71
+    },
+    {
+      "title": "Break Down The Beast",
+      "type": "exercise",
+      "exercise_id": 108
+    },
+    {
+      "title": "Build Your Help Network",
+      "type": "exercise",
+      "exercise_id": 104
+    },
+    {
+      "title": "Build-Your-Boundary Scripts",
+      "type": "exercise",
+      "exercise_id": 130
+    },
+    {
+      "title": "Bulletin Board",
+      "type": "exercise",
+      "exercise_id": 34
+    },
+    {
+      "title": "Calendar Construction",
+      "type": "exercise",
+      "exercise_id": 7
+    },
+    {
+      "title": "Can-Do Cubes",
+      "type": "exercise",
+      "exercise_id": 61
+    },
+    {
+      "title": "Change is a Good Thing",
+      "type": "exercise",
+      "exercise_id": 42
+    },
+    {
+      "title": "Check-In, Check-Out",
+      "type": "exercise",
+      "exercise_id": 76
+    },
+    {
+      "title": "Clock Calibration",
+      "type": "exercise",
+      "exercise_id": 96
+    },
+    {
+      "title": "Clutter Types",
+      "type": "exercise",
+      "exercise_id": 123
+    },
+    {
+      "title": "Communication Values",
+      "type": "exercise",
+      "exercise_id": 87
+    },
+    {
+      "title": "Countdown",
+      "type": "exercise",
+      "exercise_id": 22
+    },
+    {
+      "title": "Daily Homework Planner",
+      "type": "exercise",
+      "exercise_id": 8
+    },
+    {
+      "title": "Daily Planning Worksheet",
+      "type": "exercise",
+      "exercise_id": 15
+    },
+    {
+      "title": "Designated Places",
+      "type": "exercise",
+      "exercise_id": 29
+    },
+    {
+      "title": "Developing Behavior Contracts",
+      "type": "exercise",
+      "exercise_id": 83
+    },
+    {
+      "title": "DLS Values",
+      "type": "exercise",
+      "exercise_id": 91
+    },
+    {
+      "title": "Eisenhower Matrix",
+      "type": "exercise",
+      "exercise_id": 84
+    },
+    {
+      "title": "End of the Day Checklist",
+      "type": "exercise",
+      "exercise_id": 32
+    },
+    {
+      "title": "End of the Month Review",
+      "type": "exercise",
+      "exercise_id": 81
+    },
+    {
+      "title": "Exam Study Plan",
+      "type": "exercise",
+      "exercise_id": 9
+    },
+    {
+      "title": "Executive Functioning Values Worksheet",
+      "type": "exercise",
+      "exercise_id": 86
+    },
+    {
+      "title": "Exercise Evaluation",
+      "type": "exercise",
+      "exercise_id": 72
+    },
+    {
+      "title": "First/Then",
+      "type": "exercise",
+      "exercise_id": 23
+    },
+    {
+      "title": "Flexibility Flow Chart",
+      "type": "exercise",
+      "exercise_id": 41
+    },
+    {
+      "title": "Freeze or Fume Meter",
+      "type": "exercise",
+      "exercise_id": 133
+    },
+    {
+      "title": "Frustration Folder",
+      "type": "exercise",
+      "exercise_id": 51
+    },
+    {
+      "title": "Fun Planner",
+      "type": "exercise",
+      "exercise_id": 19
+    },
+    {
+      "title": "Goal Attainment Scaling (gas)",
+      "type": "exercise",
+      "exercise_id": 93
+    },
+    {
+      "title": "Healthy Living Values",
+      "type": "exercise",
+      "exercise_id": 88
+    },
+    {
+      "title": "High Stakes Listening",
+      "type": "exercise",
+      "exercise_id": 125
+    },
+    {
+      "title": "Holding the Line On Your Boundaries",
+      "type": "exercise",
+      "exercise_id": 131
+    },
+    {
+      "title": "Household Values",
+      "type": "exercise",
+      "exercise_id": 90
+    },
+    {
+      "title": "How I Pay Attention",
+      "type": "exercise",
+      "exercise_id": 65
+    },
+    {
+      "title": "Inventive Incentives",
+      "type": "exercise",
+      "exercise_id": 73
+    },
+    {
+      "title": "Job Planner",
+      "type": "exercise",
+      "exercise_id": 11
+    },
+    {
+      "title": "Know Your Conflict Style",
+      "type": "exercise",
+      "exercise_id": 113
+    },
+    {
+      "title": "Late Log",
+      "type": "exercise",
+      "exercise_id": 18
+    },
+    {
+      "title": "Learning Styles",
+      "type": "exercise",
+      "exercise_id": 48
+    },
+    {
+      "title": "Listening Skills Assessment",
+      "type": "exercise",
+      "exercise_id": 116
+    },
+    {
+      "title": "Long-Term Vision",
+      "type": "exercise",
+      "exercise_id": 77
+    },
+    {
+      "title": "Managing Distractions",
+      "type": "exercise",
+      "exercise_id": 66
+    },
+    {
+      "title": "Managing Stress & Big Feelings",
+      "type": "exercise",
+      "exercise_id": 100
+    },
+    {
+      "title": "Mess Zone Mapping",
+      "type": "exercise",
+      "exercise_id": 122
+    },
+    {
+      "title": "Messed Up Morning",
+      "type": "exercise",
+      "exercise_id": 44
+    },
+    {
+      "title": "Navigating Your Schedule",
+      "type": "exercise",
+      "exercise_id": 99
+    },
+    {
+      "title": "Non-Verbal Listening Cues",
+      "type": "exercise",
+      "exercise_id": 120
+    },
+    {
+      "title": "Pace Yourself",
+      "type": "exercise",
+      "exercise_id": 16
+    },
+    {
+      "title": "Pep Talk",
+      "type": "exercise",
+      "exercise_id": 21
+    },
+    {
+      "title": "Phone-A-Friend",
+      "type": "exercise",
+      "exercise_id": 36
+    },
+    {
+      "title": "Photo Bomb",
+      "type": "exercise",
+      "exercise_id": 30
+    },
+    {
+      "title": "Plan B",
+      "type": "exercise",
+      "exercise_id": 37
+    },
+    {
+      "title": "Planning for Pushback",
+      "type": "exercise",
+      "exercise_id": 106
+    },
+    {
+      "title": "Planning Strategies Vision Board",
+      "type": "exercise",
+      "exercise_id": 2
+    },
+    {
+      "title": "Pomodoro",
+      "type": "exercise",
+      "exercise_id": 69
+    },
+    {
+      "title": "Priorities Post-Its",
+      "type": "exercise",
+      "exercise_id": 4
+    },
+    {
+      "title": "Problem-Solver Practice",
+      "type": "exercise",
+      "exercise_id": 35
+    },
+    {
+      "title": "Problem-Solving Playbook",
+      "type": "exercise",
+      "exercise_id": 39
+    },
+    {
+      "title": "Procrastination Station",
+      "type": "exercise",
+      "exercise_id": 24
+    },
+    {
+      "title": "Progress Monitoring",
+      "type": "exercise",
+      "exercise_id": 75
+    },
+    {
+      "title": "Quality Control",
+      "type": "exercise",
+      "exercise_id": 70
+    },
+    {
+      "title": "Reading Others",
+      "type": "exercise",
+      "exercise_id": 56
+    },
+    {
+      "title": "Red Flag Radar",
+      "type": "exercise",
+      "exercise_id": 129
+    },
+    {
+      "title": "Reflect And Regulate",
+      "type": "exercise",
+      "exercise_id": 92
+    },
+    {
+      "title": "Reminder Cards",
+      "type": "exercise",
+      "exercise_id": 28
+    },
+    {
+      "title": "Rewarding Success",
+      "type": "exercise",
+      "exercise_id": 12
+    },
+    {
+      "title": "Safety Values",
+      "type": "exercise",
+      "exercise_id": 89
+    },
+    {
+      "title": "Savings Plan",
+      "type": "exercise",
+      "exercise_id": 38
+    },
+    {
+      "title": "Script it Out - Asking for Help",
+      "type": "exercise",
+      "exercise_id": 109
+    },
+    {
+      "title": "Sleep Study",
+      "type": "exercise",
+      "exercise_id": 63
+    },
+    {
+      "title": "SMART Goal Setting",
+      "type": "exercise",
+      "exercise_id": 1
+    },
+    {
+      "title": "Starter Menu Challenge",
+      "type": "exercise",
+      "exercise_id": 118
+    },
+    {
+      "title": "Stay Cool Pool",
+      "type": "exercise",
+      "exercise_id": 58
+    },
+    {
+      "title": "Stop, Think, Act",
+      "type": "exercise",
+      "exercise_id": 52
+    },
+    {
+      "title": "Stretch Break",
+      "type": "exercise",
+      "exercise_id": 46
+    },
+    {
+      "title": "Stuck in the Mud",
+      "type": "exercise",
+      "exercise_id": 26
+    },
+    {
+      "title": "Success Stories",
+      "type": "exercise",
+      "exercise_id": 74
+    },
+    {
+      "title": "Summarize",
+      "type": "exercise",
+      "exercise_id": 50
+    },
+    {
+      "title": "Task Analysis Generator",
+      "type": "exercise",
+      "exercise_id": 5
+    },
+    {
+      "title": "That's Unfair",
+      "type": "exercise",
+      "exercise_id": 47
+    },
+    {
+      "title": "The \"No\" Practice Game",
+      "type": "exercise",
+      "exercise_id": 128
+    },
+    {
+      "title": "The 3 Part Assertive Message",
+      "type": "exercise",
+      "exercise_id": 105
+    },
+    {
+      "title": "The Activation Environment",
+      "type": "exercise",
+      "exercise_id": 121
+    },
+    {
+      "title": "The Dawdler",
+      "type": "exercise",
+      "exercise_id": 25
+    },
+    {
+      "title": "The Demander",
+      "type": "exercise",
+      "exercise_id": 60
+    },
+    {
+      "title": "The Distraction-ator",
+      "type": "exercise",
+      "exercise_id": 68
+    },
+    {
+      "title": "The Feel Wheel",
+      "type": "exercise",
+      "exercise_id": 85
+    },
+    {
+      "title": "The Interrupter",
+      "type": "exercise",
+      "exercise_id": 59
+    },
+    {
+      "title": "The Interruptions Filter",
+      "type": "exercise",
+      "exercise_id": 119
+    },
+    {
+      "title": "The Juggler",
+      "type": "exercise",
+      "exercise_id": 17
+    },
+    {
+      "title": "The Quitter",
+      "type": "exercise",
+      "exercise_id": 62
+    },
+    {
+      "title": "The Sandbox",
+      "type": "exercise",
+      "exercise_id": 6
+    },
+    {
+      "title": "The Sandwich Technique",
+      "type": "exercise",
+      "exercise_id": 110
+    },
+    {
+      "title": "Time Awareness Check In",
+      "type": "exercise",
+      "exercise_id": 94
+    },
+    {
+      "title": "Time Estimation",
+      "type": "exercise",
+      "exercise_id": 13
+    },
+    {
+      "title": "Time Log",
+      "type": "exercise",
+      "exercise_id": 14
+    },
+    {
+      "title": "Time Management Tech Tools",
+      "type": "exercise",
+      "exercise_id": 98
+    },
+    {
+      "title": "Time Mapping",
+      "type": "exercise",
+      "exercise_id": 95
+    },
+    {
+      "title": "Topic Selector",
+      "type": "exercise",
+      "exercise_id": 20
+    },
+    {
+      "title": "Tough Stuff",
+      "type": "exercise",
+      "exercise_id": 54
+    },
+    {
+      "title": "Transition Trainer",
+      "type": "exercise",
+      "exercise_id": 45
+    },
+    {
+      "title": "Try My Way",
+      "type": "exercise",
+      "exercise_id": 43
+    },
+    {
+      "title": "Watch and Listen Game",
+      "type": "exercise",
+      "exercise_id": 107
+    },
+    {
+      "title": "Weekly Binder",
+      "type": "exercise",
+      "exercise_id": 31
+    },
+    {
+      "title": "Weekly Meal Planner",
+      "type": "exercise",
+      "exercise_id": 10
+    },
+    {
+      "title": "Weekly Organization Checklist",
+      "type": "exercise",
+      "exercise_id": 33
+    },
+    {
+      "title": "Weekly Planning Meeting and Agenda",
+      "type": "exercise",
+      "exercise_id": 3
+    },
+    {
+      "title": "What Do I Need?",
+      "type": "exercise",
+      "exercise_id": 49
+    },
+    {
+      "title": "What Would ______ Do?",
+      "type": "exercise",
+      "exercise_id": 55
+    },
+    {
+      "title": "What's Zapping Your Time?",
+      "type": "exercise",
+      "exercise_id": 97
+    },
+    {
+      "title": "When Things Go Right (and Wrong)",
+      "type": "exercise",
+      "exercise_id": 78
+    },
+    {
+      "title": "Why it Matters",
+      "type": "exercise",
+      "exercise_id": 57
+    },
+    {
+      "title": "Work Room Renovation",
+      "type": "exercise",
+      "exercise_id": 67
+    },
+    {
+      "title": "Working Backwards",
+      "type": "exercise",
+      "exercise_id": 27
+    }
+  ],
+  "not_available": [
+    {
+      "title": "Adulting Like A Champ: Active Listening (Power Skill Workbook)",
+      "type": "resource",
+      "resource_id": 114,
+      "reason": "paid"
+    },
+    {
+      "title": "Adulting Like A Champ: Asking for Help (Power Skill Workbook)",
+      "type": "resource",
+      "resource_id": 112,
+      "reason": "paid"
+    },
+    {
+      "title": "Adulting Like A Champ: Assertive Communication (Power Skill Workbook)",
+      "type": "resource",
+      "resource_id": 113,
+      "reason": "paid"
+    },
+    {
+      "title": "Adulting Like A Champ: Conflict Management (Power Skill Workbook)",
+      "type": "resource",
+      "resource_id": 116,
+      "reason": "paid"
+    },
+    {
+      "title": "Adulting Like A Champ: Organizing Spaces (Power Skill Workbook)",
+      "type": "resource",
+      "resource_id": 120,
+      "reason": "paid"
+    },
+    {
+      "title": "Adulting Like A Champ: Planning & Prioritizing (Power Skill Workbook)",
+      "type": "resource",
+      "resource_id": 118,
+      "reason": "paid"
+    },
+    {
+      "title": "Adulting Like A Champ: Setting Boundaries (Power Skill Workbook)",
+      "type": "resource",
+      "resource_id": 115,
+      "reason": "paid"
+    },
+    {
+      "title": "Adulting Like A Champ: Task Initiation (Power Skill Workbook)",
+      "type": "resource",
+      "resource_id": 119,
+      "reason": "paid"
+    },
+    {
+      "title": "Adulting Like A Champ: Time Management (Power Skill Workbook)",
+      "type": "resource",
+      "resource_id": 117,
+      "reason": "paid"
+    },
+    {
+      "title": "Comprehensive IEP Goal Bank",
+      "type": "resource",
+      "resource_id": 109,
+      "reason": "paid"
+    },
+    {
+      "title": "Neurodivergent-Friendly Cookbook",
+      "type": "resource",
+      "resource_id": 108,
+      "reason": "paid"
+    },
+    {
+      "title": "Real-Life Executive Functioning Workbook",
+      "type": "resource",
+      "resource_id": 107,
+      "reason": "paid"
+    },
+    {
+      "title": "Calendars, Checklists & Color Codes",
+      "type": "exercise",
+      "exercise_id": 112,
+      "reason": "not published"
+    },
+    {
+      "title": "Protecting Your Planning Time",
+      "type": "exercise",
+      "exercise_id": 111,
+      "reason": "not published"
+    },
+    {
+      "title": "The 5 Second Launch Pad",
+      "type": "exercise",
+      "exercise_id": 117,
+      "reason": "not published"
+    }
+  ]
+}
