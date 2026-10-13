@@ -65,7 +65,7 @@ async function normalizeResourceContent(
             "Download Now";
 
         button.href =
-            "#";
+            "#resource-download-section";
 
         button.classList.add(
             "resource-download-button"
@@ -365,7 +365,7 @@ async function normalizeResourceContent(
             document.createElement(
                 "section"
             );
-
+        section.id = "resource-download-section";
         section.classList.add(
             "resource-download-section"
         );
@@ -977,7 +977,7 @@ async function normalizeResourceContent(
             );
 
         cta.href =
-            "#";
+            "#resource-download-section";
 
         cta.textContent =
             "Get The Free Resource";
