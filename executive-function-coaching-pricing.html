@@ -629,8 +629,7 @@
 
                 <hr class="financial-divider-2" />
                 <a
-                  href="https://lifeskillsadvocate.com/financial-aid-for-executive-function-coaching/#tve-jump-19b042a1bbc"
-                  target="_blank"
+                  href="#discovery-meeting"
                   rel="noopener noreferrer"
                   class="financial-link"
                   >Learn more &rarr;</a
@@ -650,8 +649,7 @@
 
                 <hr class="financial-divider-2" />
                 <a
-                  href="https://lifeskillsadvocate.com/financial-aid-for-executive-function-coaching/#tve-jump-19b042a9186"
-                  target="_blank"
+                  href="#discovery-meeting"
                   rel="noopener noreferrer"
                   class="financial-link"
                   >Learn more &rarr;</a
@@ -673,8 +671,7 @@
 
                 <hr class="financial-divider-2" />
                 <a
-                  href="https://lifeskillsadvocate.com/financial-aid-for-executive-function-coaching/#tve-jump-19b042a4811"
-                  target="_blank"
+                  href="#discovery-meeting"
                   rel="noopener noreferrer"
                   class="financial-link"
                   >Learn more &rarr;</a
@@ -866,7 +863,7 @@
               <p class="cta-or-text">Or</p>
               <a
                 class="cta-btn cta-btn-secondary"
-                href="https://lifeskillsadvocate.com/free-executive-functioning-worksheets/"
+                href="/free-executive-functioning-worksheets.html"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -1018,7 +1015,29 @@
     </div>
   </footer>
     <!-- #endregion FOOTER -->
+    <script>
+      // Función para mostrar el paso 2 (oculta el paso 1 y muestra el 2)
+function lsaShowBooking() {
+  const step1 = document.getElementById('lsa-step-1');
+  const step2 = document.getElementById('lsa-step-2');
 
+  if (step1 && step2) {
+    step1.style.display = 'none';
+    step2.style.display = 'block';
+  }
+}
+
+// Función para volver atrás (oculta el paso 2 y muestra el 1)
+function lsaResetCta() {
+  const step1 = document.getElementById('lsa-step-1');
+  const step2 = document.getElementById('lsa-step-2');
+
+  if (step1 && step2) {
+    step2.style.display = 'none';
+    step1.style.display = 'block';
+  }
+}
+    </script>
     <script src="/js/main.js"></script>
   </body>
 </html>
