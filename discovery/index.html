@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discovery Meeting | Life Skills Advocate</title>
+  <meta name="description" content="Book a complimentary 30-minute coaching discovery meeting with Life Skills Advocate and learn how we can support your neurodivergent goals." />
+  <link rel="canonical" href="/discovery.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:wght@400;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Muli:wght@400;600;700;800&family=Nunito:wght@400;700;800&display=swap" />
+  <link rel="stylesheet" href="/style/global.css" />
+
+  <style>
+    body { background: #f5f9fc; }
+    .discovery-page { background: linear-gradient(180deg, #f6fbff 0%, #eef7fb 100%); }
+    .hero-discovery { padding: 72px 0 24px; background: linear-gradient(180deg, rgba(162, 229, 255, 0.18), rgba(255,255,255,.8)); }
+    .hero-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 32px; align-items: center; }
+    .eyebrow { color: var(--blue); font-size: 14px; letter-spacing: 2px; text-transform: uppercase; display: inline-block; margin-bottom: 12px; font-weight: 800; }
+    .hero-discovery h1 { font-size: clamp(34px, 5vw, 62px); line-height: 1.08; margin-bottom: 18px; color: #11212d; }
+    .hero-subtitle { font-size: clamp(22px, 2vw, 28px); font-weight: 700; color: rgba(17, 33, 45, 0.9); margin-bottom: 24px; font-family: var(--font-heading); }
+    .hero-cta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 18px; }
+    .hero-card { background: rgba(255,255,255,0.9); border: 1px solid rgba(0, 174, 239, 0.12); border-radius: 24px; box-shadow: 0 16px 40px rgba(12, 17, 21, 0.08); padding: 22px 20px 18px; }
+    .hero-card .quote-mark { font-size: 44px; color: var(--blue); line-height: 1; display: block; margin-bottom: 6px; font-family: var(--font-heading); }
+    .hero-card blockquote { margin: 0; font-size: clamp(22px, 2vw, 28px); font-family: var(--font-heading); line-height: 1.35; color: #0f212b; }
+    .hero-card .author { margin-top: 18px; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); font-weight: 800; }
+    .section-shell { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .section-block { padding: 72px 0; }
+    .section-title { font-size: clamp(34px, 3vw, 48px); margin-bottom: 20px; text-align: center; color: #10212e; }
+    .section-subtitle { max-width: 860px; margin: 0 auto 40px; text-align: center; color: var(--muted); font-size: 19px; line-height: 1.7; }
+    .coach-grid { display: grid; grid-template-columns: repeat(4, minmax(220px, 1fr)); gap: 24px; margin-top: 36px; }
+    .coach-card { background: rgba(255,255,255,0.9); border-radius: 18px; padding: 18px; text-align: center; box-shadow: 0 10px 26px rgba(12, 17, 21, 0.06); border: 1px solid rgba(0,174,239,0.08); }
+    .coach-card img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; margin: 0 auto 18px; border: 4px solid rgba(0,174,239,0.18); }
+    .coach-card h3 { margin: 0 0 6px; font-size: 22px; }
+    .coach-card p { margin: 0; font-size: 15px; color: var(--muted); }
+    .expectation-grid { display: grid; grid-template-columns: repeat(5, minmax(180px, 1fr)); gap: 20px; margin-top: 36px; }
+    .expectation-card { background: #fff; border-radius: 18px; padding: 22px 18px; border: 1px solid rgba(0,174,239,0.12); box-shadow: 0 12px 24px rgba(12, 17, 21, 0.05); text-align: center; }
+    .expectation-icon { width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; margin: 0 auto 14px; background: rgba(0, 174, 239, 0.12); color: var(--blue); font-size: 28px; }
+    .expectation-card h3 { margin: 0 0 8px; font-size: 20px; }
+    .expectation-card p { margin: 0; font-size: 15px; color: var(--muted); line-height: 1.7; }
+    .group-grid { display: grid; grid-template-columns: repeat(4, minmax(220px, 1fr)); gap: 22px; margin-top: 26px; }
+    .group-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,174,239,0.12); box-shadow: 0 12px 25px rgba(12,17,21,0.05); }
+    .group-card img { width: 100%; height: 220px; object-fit: cover; background: #dfeefb; }
+    .group-card-body { padding: 20px 18px 24px; }
+    .group-card h3 { margin: 0 0 10px; font-size: 22px; }
+    .group-card a { color: var(--blue); font-weight: 700; }
+    .areas-grid { display: grid; grid-template-columns: repeat(3, minmax(220px, 1fr)); gap: 22px; margin-top: 36px; }
+    .area-card { background: #fff; border-radius: 18px; overflow: hidden; border: 1px solid rgba(0,174,239,0.12); box-shadow: 0 12px 25px rgba(12,17,21,0.05); }
+    .area-card img { width: 100%; height: 230px; object-fit: cover; display: block; }
+    .area-card-body { padding: 22px 18px; }
+    .area-card h3 { margin: 0 0 10px; font-size: 24px; }
+    .area-card a { color: var(--blue); font-weight: 700; }
+    .faq-list { max-width: 980px; margin: 0 auto; display: grid; gap: 14px; }
+    details { background: #fff; border: 1px solid rgba(0,174,239,0.12); border-radius: 15px; padding: 0 18px; box-shadow: 0 10px 24px rgba(12,17,21,0.04); }
+    summary { cursor: pointer; list-style: none; font-weight: 700; font-size: 18px; color: #11212d; padding: 18px 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; font-size: 30px; line-height: 1; color: var(--blue); flex-shrink: 0; }
+    details[open] summary::after { content: "−"; }
+    details p { margin: 0 0 18px; color: var(--muted); line-height: 1.7; font-size: 17px; }
+    .final-booking { background: linear-gradient(180deg, rgba(0,174,239,0.08), rgba(255,255,255,0.96)); }
+    .booking-layout { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 28px; align-items: start; margin-top: 28px; }
+    .booking-person { background: #fff; border-radius: 18px; padding: 18px; box-shadow: 0 16px 32px rgba(12,17,21,0.06); border: 1px solid rgba(0,174,239,0.12); }
+    .booking-person img { width: 100%; height: 320px; object-fit: cover; border-radius: 14px; margin-bottom: 12px; }
+    .booking-person h3 { margin: 0 0 8px; font-size: 26px; }
+    .booking-person p { margin: 0; color: var(--muted); font-size: 16px; }
+    .booking-form { background: rgba(255,255,255,0.95); border: 1px solid rgba(0,174,239,0.12); border-radius: 18px; padding: 28px; box-shadow: 0 16px 32px rgba(12,17,21,0.06); }
+    .booking-form h3 { margin-bottom: 14px; font-size: 28px; }
+    .booking-form .subhead { margin-bottom: 22px; color: var(--muted); font-size: 18px; }
+    .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .field { display: grid; gap: 8px; }
+    .field.full { grid-column: 1 / -1; }
+    label { font-weight: 700; color: #0f212b; font-size: 15px; }
+    input, select, textarea { width: 100%; background: #f9fbfc; border: 1px solid rgba(0,174,239,0.22); border-radius: 10px; padding: 12px 14px; font: inherit; color: #0f212b; }
+    textarea { min-height: 120px; resize: vertical; }
+    .radio-group { display: flex; gap: 22px; flex-wrap: wrap; padding-top: 6px; }
+    .radio-option { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: rgba(17,33,45,0.9); }
+    .radio-option input { width: auto; }
+    .form-note { margin-top: 20px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    @media (max-width: 980px) { .hero-content, .booking-layout { grid-template-columns: 1fr; } .coach-grid, .expectation-grid, .group-grid, .areas-grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); } }
+    @media (max-width: 640px) { .hero-discovery { padding-top: 40px; } .coach-grid, .expectation-grid, .group-grid, .areas-grid, .booking-grid { grid-template-columns: 1fr; } .section-block { padding: 56px 0; } }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <div class="header-top">
+        <a class="logo" href="index.html" aria-label="Life Skills Advocate home">
+          <img src="/assets/img/Life-Skills-Advocate-1-e1561588375370.png" alt="Life Skills Advocate logo" width="180"
+            height="auto" fetchpriority="high" />
+        </a>
+        <div class="header-cta-cont">
+          <a class="btn btn-primary header-cta" href="/discovery.html">Book A
+            Complimentary Discovery Meeting</a>
+        </div>
+      </div>
+
+      <div class="nav-scrim" id="navScrim"></div>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <ul>
+          <li>
+            <button class="nav-top-link" aria-expanded="false">
+              About LSA<span class="caret">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li>
+                <a href="/meet-our-team.html">Meet Our Team</a>
+              </li>
+              <li>
+                <a href="/discover-the-life-skills-advocate-difference.html">Discover The LSA
+                  Difference</a>
+              </li>
+              <li>
+                <a href="/core-values.html">Core Values</a>
+              </li>
+              <li><a href="/faqs.html">FAQs</a></li>
+              <li>
+                <a href="post.html?slug=what-is-neurodivergence">What is Neurodivergence?</a>
+              </li>
+              <li>
+                <a href="post.html?slug=executive-functioning-skills">Understanding Executive
+                  Functioning Skills</a>
+              </li>
+              <li>
+                <a href="post.html?slug=executive-functioning-ripple-effect">Understanding the EF
+                  Ripple Effect</a>
+              </li>
+              <li>
+                <a href="/careers.html">Careers</a>
+              </li>
+              <li>
+                <a href="/contact.html">Contact</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/executive-function-coaching.html" aria-expanded="false" class="nav-top-link">Explore Coaching
+              <span class="caret">▾</span></a>
+            <ul class="dropdown">
+              <li>
+                <button class="nav-sub-toggle">
+                  By Area of Need <span class="caret">▾</span>
+                </button>
+                <ul class="dropdown">
+                  <li>
+                    <a href="/academic-coaching-for-neurodivergent-minds.html">School</a>
+                  </li>
+                  <li>
+                    <a href="/career-coaching-for-neurodivergent-minds.html">Work</a>
+                  </li>
+                  <li>
+                    <a href="/life-skills-coaching-for-neurodivergent-minds.html">Life</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <button class="nav-sub-toggle">
+                  By Age <span class="caret">▾</span>
+                </button>
+                <ul class="dropdown">
+                  <li>
+                    <a href="/executive-function-coaching-for-high-school-students.html">High
+                      School Students</a>
+                  </li>
+                  <li>
+                    <a href="/executive-function-coaching-for-college-students.html">College
+                      Students</a>
+                  </li>
+                  <li>
+                    <a href="/executive-function-coaching-for-young-adults.html">Young
+                      Adults</a>
+                  </li>
+                  <li>
+                    <a href="/executive-function-coaching-for-adults.html">Adults</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/executive-function-coaching-pricing.html">Pricing</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/adulting-like-a-champ-workbook.html"  
+              class="nav-top-link adultinglikeachamp-cont"><span class="adultinglikeachamp-img"><img
+                  src="/assets/img/newicon.png" alt="adultinglikeachamp-img"></span>Adulting Like
+              A Champ <span class="caret">▾</span></a>
+            <ul class="dropdown">
+              <li>
+                <a href="/adulting-like-a-champ-workbook.html">Get the Free Workbook</a>
+              </li>
+              <li>
+                <button class="nav-sub-toggle">
+                  Communication <span class="caret">▾</span>
+                </button>
+                <ul class="dropdown">
+                  <li>
+                    <a href="/asking-for-help-workbook.html">Asking for Help</a>
+                  </li>
+                  <li>
+                    <a href="/assertive-communication-workbook.html">Assertive
+                      Communication</a>
+                  </li>
+                  <li>
+                    <a href="/active-listening-workbook.html">Active Listening</a>
+                  </li>
+                  <li>
+                    <a href="/setting-boundaries-workbook.html">Setting Boundaries</a>
+                  </li>
+                  <li>
+                    <a href="/conflict-management-workbook.html">Conflict Management</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <button class="nav-sub-toggle">
+                  Executive Functioning <span class="caret">▾</span>
+                </button>
+                <ul class="dropdown">
+                  <li>
+                    <a href="/time-management-workbook.html">Time Management</a>
+                  </li>
+                  <li>
+                    <a href="/planning-and-prioritizing-workbook.html">Planning &amp;
+                      Prioritizing</a>
+                  </li>
+                  <li>
+                    <a href="/task-initiation-workbook.html">Task Initiation</a>
+                  </li>
+                  <li>
+                    <a href="/organizing-spaces-workbook.html">Organizing Spaces</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/adulting-like-a-champ-bundle.html">Get the 9-Pack Bundle</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <button class="nav-top-link" aria-expanded="false">
+              Free Resources <span class="caret">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li>
+                <a href="/adulting-like-a-champ-workbook.html">Adulting Like A Champ</a>
+              </li>
+              <li><a href="/blog.html">Blog</a></li>
+              <li>
+                <a href="/free-executive-functioning-worksheets.html">Worksheets &amp;
+                  Printables</a>
+              </li>
+              <li>
+                <a href="/free-executive-functioning-assessment.html">Executive Functioning
+                  Assessment</a>
+              </li>
+              <li>
+                <a href="/the-real-life-executive-functioning-meal-plan.html">Executive
+                  Functioning Meal Plan</a>
+              </li>
+              <li>
+                <a href="/executive-functioning-101-hub.html">Executive Functioning 101
+                  Resource Hub</a>
+              </li>
+              <li>
+                <a href="/post.html?slug=executive-function-iep-goals">Executive Functioning IEP Goal
+                  Resource Hub</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <button class="nav-top-link" aria-expanded="false">
+              Shop <span class="caret">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li>
+                <a href="/real-life-executive-functioning-workbook.html">Real-Life Executive
+                  Functioning Workbook</a>
+              </li>
+              <li>
+                <button class="nav-sub-toggle">
+                  The Neurodivergent-Friendly Cookbook
+                  <span class="caret">▾</span>
+                </button>
+                <ul class="dropdown">
+                  <li>
+                    <a href="/the-neurodivergent-friendly-cookbook.html">Digital</a>
+                  </li>
+                  <li><a href="https://amzn.to/3RifaBq">Paperback</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="/comprehensive-iep-goal-bank.html">Comprehensive IEP Goal Bank</a>
+              </li>
+              <li>
+                <a href="https://neurowyld.com/" target="_blank" rel="noopener">Neurowyld</a>
+              </li>
+              <li>
+                <a href="/neurodivergent-friendly-tools-resources.html">Recommended Tools
+                  &amp; Resources</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <button class="nav-top-link" aria-expanded="false">
+              Become a Coach <span class="caret">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li>
+                <a href="https://www.efcoachingacademy.com/pages/resource-page-for-life-skills-advocate?ref=c827c0"
+                  target="_blank" rel="noopener">Executive Function Coach Resource Hub</a>
+              </li>
+              <li>
+                <a
+                  href="/resource.html?id=21601">Free
+                  5-Step Coaching Business Workbook</a>
+              </li>
+              <li>
+                <a href="https://secure.executivefunctioncoachingacademy.com/find-your-niche?am_id=chris6592"
+                  target="_blank" rel="noopener">Transition From Teaching Toolkit</a>
+              </li>
+              <li>
+                <a href="https://secure.executivefunctioncoachingacademy.com/executive-function-coaching-certification?am_id=chris3334"
+                  target="_blank" rel="noopener">Executive Function Coach Certification Course</a>
+              </li>
+              <li>
+                <a href="https://www.skool.com/executive-function-coaches/about" target="_blank"
+                  rel="noopener">Executive Function Coach Community</a>
+              </li>
+              <li>
+                <a href="/post.html?slug=best-executive-functioning-coach-certification-programs">Compare
+                  EF Coach Certification Programs</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://advocate360.app/" target="_blank" rel="noopener" class="advocate360-cont"><span
+                class="advocate360-img"><img src="/assets/img/advocate360icon.png"
+                  alt="advocate360-img"></span>Advocate360</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="discovery-page">
+    <section class="hero-discovery">
+      <div class="hero-content">
+        <div>
+          <span class="eyebrow">Life Skills Advocate</span>
+          <h1>Discover The Life-Changing Impact Of Working With A Coach Who Truly Gets How Your Brain Works</h1>
+          <div class="hero-subtitle">Navigate Your Neurodiversity With Confidence &amp; Become Your Own Best Advocate</div>
+          <div class="hero-cta-row"><a href="#book-discovery" class="btn btn-primary">Take The First Step</a></div>
+        </div>
+        <div class="hero-card">
+          <span class="quote-mark">“</span>
+          <blockquote>"I finally feel like I have a plan and tools that work for me."</blockquote>
+          <div class="author">Tyler — College Student</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-shell">
+        <h2 class="section-title">Meet Our Incredible Coaches</h2>
+        <p class="section-subtitle">Life Skills Advocate is a judgment-free environment where our coaches personally understand the impact of being neurodivergent. We believe in a shame-free approach with curiosity and a growth mindset. Our favorite metric for success is the comfort level our clients have with their own brains—whether their brains are ADHD, ASD, OCD, or any other neurodivergent experience.</p>
+        <div class="coach-grid">
+          <article class="coach-card"><img src="https://lifeskillsadvocate.com/wp-content/uploads/2025/04/Heather-Reed-Executive-Function-Coach.png" alt="Heather Reed" /><h3>Heather Reed</h3><p>Executive Function Coach</p></article>
+          <article class="coach-card"><img src="https://lifeskillsadvocate.com/wp-content/uploads/2025/04/Morgan-Hale-Executive-Function-Coach-150x150.png" alt="Morgan Hale" /><h3>Morgan Hale</h3><p>Executive Function Coach</p></article>
+          <article class="coach-card"><img src="https://lifeskillsadvocate.com/wp-content/uploads/2022/08/GRACEWAY_015-Shannon-Snow2-150x150.jpg" alt="Shannon Snow" /><h3>Shannon Snow</h3><p>Executive Function Coach</p></article>
+          <article class="coach-card"><img src="https://lifeskillsadvocate.com/wp-content/uploads/2024/01/headshot-e1704317069673-150x150.jpg" alt="Jess Brady" /><h3>Jess Brady</h3><p>Executive Function Coach</p></article>
+          <article class="coach-card"><img src="https://lifeskillsadvocate.com/wp-content/uploads/2024/12/headshot-Eleanor-Chapman-e1733241694301-150x150.jpeg" alt="Eleanor Chapman" /><h3>Eleanor Chapman</h3><p>Executive Function Coach</p></article>
+          <article class="coach-card"><img src="https://lifeskillsadvocate.com/wp-content/uploads/2025/07/Liz-Makhramadzhyan-Executive-Function-Coach-150x150.png" alt="Liz Makhramadzhyan" /><h3>Liz Makhramadzhyan</h3><p>Executive Function Coach</p></article>
+          <article class="coach-card"><img src="https://lifeskillsadvocate.com/wp-content/uploads/2025/08/Ket-Buchholz-Executive-Function-Coach-150x150.png" alt="Ket Buchholz" /><h3>Ket Buchholz</h3><p>Executive Function Coach</p></article>
+          <article class="coach-card"><img src="https://lifeskillsadvocate.com/wp-content/uploads/2025/08/Danny-Doyle-Executive-Function-Coach-150x150.png" alt="Danny Doyle" /><h3>Danny Doyle</h3><p>Executive Function Coach</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-shell">
+        <h2 class="section-title">What Can You Expect From Your Coach?</h2>
+        <div class="expectation-grid">
+          <article class="expectation-card"><div class="expectation-icon">💛</div><h3>Feel Truly Seen &amp; Understood</h3><p>Our coaches create a coaching relationship built on trust, empathy, and genuine care for our clients’ well-being.</p></article>
+          <article class="expectation-card"><div class="expectation-icon">🧰</div><h3>Build a Personalized Toolkit</h3><p>Learn practical systems and strategies that actually fit your brain, routines, and life stage.</p></article>
+          <article class="expectation-card"><div class="expectation-icon">🎯</div><h3>Make Progress Toward Goals</h3><p>Move with intention from overwhelm into focused action using realistic, supportive accountability.</p></article>
+          <article class="expectation-card"><div class="expectation-icon">🗣️</div><h3>Increase Self-Advocacy Skills</h3><p>Develop the confidence to ask for help, communicate needs, and navigate life more effectively.</p></article>
+          <article class="expectation-card"><div class="expectation-icon">🌱</div><h3>Deepen Self-Awareness</h3><p>Understand your patterns, strengths, and support needs so you can work with your brain—not against it.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-shell">
+        <h2 class="section-title">Who We Work With</h2>
+        <div class="group-grid">
+          <article class="group-card"><img src="https://lifeskillsadvocate.com/wp-content/uploads/2024/08/High-school-student-client-headshot-300x300.png" alt="High school student" /><div class="group-card-body"><h3>High School Students</h3><a href="/executive-function-coaching-for-high-school-students.html">Learn More</a></div></article>
+          <article class="group-card"><img src="https://lifeskillsadvocate.com/wp-content/uploads/2024/08/College-student-client-headshot-300x300.png" alt="College student" /><div class="group-card-body"><h3>College Students</h3><a href="/executive-function-coaching-for-college-students.html">Learn More</a></div></article>
+          <article class="group-card"><img src="https://lifeskillsadvocate.com/wp-content/uploads/2024/08/Young-adult-client-headshot-300x300.png" alt="Young adult" /><div class="group-card-body"><h3>Young Adults</h3><a href="/executive-function-coaching-for-young-adults.html">Learn More</a></div></article>
+          <article class="group-card"><img src="https://lifeskillsadvocate.com/wp-content/uploads/2024/08/Adult-client-headshot-300x300.png" alt="Adult client" /><div class="group-card-body"><h3>Adults</h3><a href="/executive-function-coaching-for-adults.html">Learn More</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-shell">
+        <h2 class="section-title">Across THESE Key Areas</h2>
+        <p class="section-subtitle">Life is interconnected, and challenges in one area—like school—can spill over into others, such as home or work. At Life Skills Advocate, we understand that your needs aren't confined to just one domain. Our coaching approach considers the whole picture, providing support across various aspects of life.</p>
+        <div class="areas-grid">
+          <article class="area-card"><img src="https://lifeskillsadvocate.com/wp-content/uploads/2024/08/High-school-student-client-headshot-300x300.png" alt="School support" /><div class="area-card-body"><h3>School</h3><a href="/academic-coaching-for-neurodivergent-minds.html">Learn More</a></div></article>
+          <article class="area-card"><img src="https://lifeskillsadvocate.com/wp-content/uploads/2024/08/Adult-client-headshot-300x300.png" alt="Work support" /><div class="area-card-body"><h3>Work</h3><a href="/career-coaching-for-neurodivergent-minds.html">Learn More</a></div></article>
+          <article class="area-card"><img src="https://lifeskillsadvocate.com/wp-content/uploads/2025/04/Heather-Reed-Executive-Function-Coach.png" alt="Life support" /><div class="area-card-body"><h3>Life</h3><a href="/life-skills-coaching-for-neurodivergent-minds.html">Learn More</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-shell">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details open>
+            <summary>What is executive function coaching?</summary>
+            <p>Executive function coaching helps individuals build skills and systems for planning, organizing, time management, task initiation, emotional regulation, and follow-through so they can manage real-life demands with less stress.</p>
+          </details>
+          <details>
+            <summary>Why choose Life Skills Advocate?</summary>
+            <p>We pair lived experience with professional expertise. Our coaches understand neurodivergent strengths and challenges and support clients in a shame-free, collaborative, practical way.</p>
+          </details>
+          <details>
+            <summary>How does the coaching process work?</summary>
+            <p>We begin with a complimentary discovery meeting, identify your goals and needs, and then match you with the right coach for a supportive, personalized coaching plan.</p>
+          </details>
+          <details>
+            <summary>What are the backgrounds of your coaches?</summary>
+            <p>Our coaches bring a blend of lived neurodivergent experience, professional training, and real-world experience supporting students, young adults, and adults in building useful skills.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block final-booking" id="book-discovery">
+      <div class="section-shell">
+        <h2 class="section-title">Book Your Complimentary 30-Minute Coaching Discovery Meeting With Amy Below 👇</h2>
+        <div class="booking-layout">
+          <aside class="booking-person">
+            <img src="https://lifeskillsadvocate.com/wp-content/uploads/2023/10/Amy-Kim-Waschke-e1698804605805.jpg" alt="Amy Kim Waschke" />
+            <h3>Amy Kim Waschke</h3>
+            <p>Client Onboarding Specialist</p>
+          </aside>
+          <div class="booking-form">
+            <h3>Who Is Coaching For?</h3>
+            <div class="subhead">Take the first step and let’s explore what support could look like for you.</div>
+            <form>
+              <div class="booking-grid">
+                <div class="field full"><label>Who is coaching for?</label><div class="radio-group"><label class="radio-option"><input type="radio" name="for" value="For Myself" checked /> For Myself</label><label class="radio-option"><input type="radio" name="for" value="For Someone Else" /> For Someone Else</label></div></div>
+                <div class="field"><label for="firstName">First Name</label><input id="firstName" type="text" placeholder="Your first name" /></div>
+                <div class="field"><label for="lastName">Last Name</label><input id="lastName" type="text" placeholder="Your last name" /></div>
+                <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@example.com" /></div>
+                <div class="field"><label for="phone">Phone</label><input id="phone" type="tel" placeholder="(555) 123-4567" /></div>
+                <div class="field full"><label for="goals">What are you hoping coaching will help with?</label><textarea id="goals" placeholder="Tell us a little about your goals and what you’re looking for support with..."></textarea></div>
+                <div class="field full"><label for="timeline">When are you looking to begin?</label><select id="timeline"><option>ASAP</option><option>Within 1 month</option><option>Within 2-3 months</option><option>Just exploring</option></select></div>
+              </div>
+              <div class="form-note">By sending this request, you agree to be contacted by Life Skills Advocate about your discovery meeting. We’ll be in touch shortly with next steps.</div>
+              <div class="hero-cta-row" style="margin-top:22px;"><button type="submit" class="btn btn-primary">Book My Discovery Meeting</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-social">
+      <a href="https://www.facebook.com/LifeSkillsAdvocate/" target="_blank" rel="nofollow noopener"
+        aria-label="Facebook"><svg viewBox="0 0 264 512">
+          <path
+            d="M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H256l-11.7 91h-73.6v229" />
+        </svg></a>
+      <a href="https://www.instagram.com/life_skills_advocate/" target="_blank" rel="nofollow noopener"
+        aria-label="Instagram"><svg viewBox="0 0 448 512" data-id="instagram" data-name="">
+          <path
+            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+          </path>
+        </svg></a>
+      <a href="https://www.pinterest.com/LifeSkillsAdvocate/" target="_blank" rel="nofollow noopener"
+        aria-label="Pinterest"><svg viewBox="0 0 384 512">
+          <path
+            d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4 0-9.3-23.7-29.1-23.7-67.8 0-80.4 61.2-137.4 140.4-137.4 68.1 0 118.5 38.7 118.5 109.8 0 53.1-21.3 152.7-90.3 152.7-24.9 0-46.2-18-46.2-43.8 0-37.8 26.4-74.4 26.4-113.4 0-66.2-93.9-54.2-93.9 25.8 0 16.8 2.1 35.4 9.6 50.7-13.8 59.4-42 147.9-42 209.1 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z" />
+        </svg></a>
+      <a href="https://www.linkedin.com/company/life-skills-advocate-llc/" target="_blank" rel="nofollow noopener"
+        aria-label="LinkedIn"><svg viewBox="0 0 448 512">
+          <path
+            d="M100.3 480H7.4V180.9h92.9V480zM53.8 140.1C24.1 140.1 0 115.5 0 85.8 0 56.1 24.1 32 53.8 32c29.7 0 53.8 24.1 53.8 53.8 0 29.7-24.1 54.3-53.8 54.3zM448 480h-92.7V334.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V480h-92.8V180.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V480z" />
+        </svg></a>
+    </div>
+
+    <div class="footer-logos">
+      <img src="assets/img/Life-Skills-Advocate-white-cropped.png" alt="Life Skills Advocate" loading="lazy" />
+      <a href="https://neurowyld.com/" target="_blank" rel="noopener"><img
+          src="assets/img/Neurowyld-Featured-Image-5-e1758586279818.png" alt="Neurowyld" loading="lazy" /></a>
+    </div>
+
+    <hr class="footer-divider" />
+
+    <div class="footer-bottom">
+      <p>
+        Copyright <span id="copyYear">2026</span> Life Skills Advocate, LLC
+      </p>
+      <p class="footer-legal">
+        <a href="/privacy-policy.html">Privacy Policy</a><span>&bull;</span>
+        <a href="/terms-of-service.html">Terms of Service</a><span>&bull;</span>
+        <a href="/cookie-policy.html">Cookie Policy</a><span>&bull;</span>
+        <a href="/disclaimer.html">Disclaimer</a><span>&bull;</span>
+        <a href="/contact.html">Contact</a>
+      </p>
+      <p class="footer-legal footer-legal-secondary">
+        <a href="/privacy-policy.html">Privacy Settings</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="/js/pages/home.js"></script>
+  <script src="/js/main.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', function(){ var y=document.getElementById('copyYear'); if(y){ y.textContent = new Date().getFullYear(); } });</script>
+</body>
+</html>
