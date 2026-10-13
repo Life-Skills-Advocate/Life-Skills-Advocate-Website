@@ -765,7 +765,7 @@
 
         <!-- Call to Action -->
         <div class="cta-container">
-          <a href="#tve-jump-1999bf10e05" class="btn btn-primary">
+          <a href="#discovery-meeting" class="btn btn-primary">
             Take The First Step
           </a>
         </div>
@@ -1618,7 +1618,44 @@
     </div>
   </footer>
     <!-- #endregion FOOTER -->
+<script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Seleccionamos todos los contenedores de tabs por si hay más de uno en la página
+        const tabContainers = document.querySelectorAll("[data-tabs]");
 
+        tabContainers.forEach((container) => {
+          const buttons = container.querySelectorAll(".tab-button");
+          const panels = container.querySelectorAll(".tab-panel");
+
+          buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+              const targetId = button.getAttribute("aria-controls");
+              const targetPanel = container.querySelector(`#${targetId}`);
+
+              if (!targetPanel) return;
+
+              // 1. Desactivar todos los botones y ocultar todos los paneles
+              buttons.forEach((btn) => {
+                btn.classList.remove("active");
+                btn.setAttribute("aria-selected", "false");
+              });
+
+              panels.forEach((panel) => {
+                panel.classList.remove("active");
+                panel.setAttribute("hidden", ""); // Oculta el panel nativamente
+              });
+
+              // 2. Activar el botón seleccionado y mostrar su panel correspondiente
+              button.classList.add("active");
+              button.setAttribute("aria-selected", "true");
+
+              targetPanel.classList.add("active");
+              targetPanel.removeAttribute("hidden"); // Muestra el panel
+            });
+          });
+        });
+      });
+    </script>
     <script src="/js/main.js"></script>
   </body>
 </html>
