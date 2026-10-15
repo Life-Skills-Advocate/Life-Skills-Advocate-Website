@@ -329,23 +329,6 @@ html{
     cursor: wait;
 }
 
-.lead-magnet-status {
-    margin: 0;
-    font-size: 15px;
-}
-
-.lead-magnet-status:empty {
-    display: none;
-}
-
-.lead-magnet-status.is-success {
-    color: #2e7d32;
-}
-
-.lead-magnet-status.is-error {
-    color: #c62828;
-}
-
 /* Info */
 
 .assessment-form-info {

@@ -8,7 +8,14 @@ const authorName = document.querySelector(".written-by-cont a");
 const relatedPostList = document.querySelector(".related-post-list");
 
 const params = new URLSearchParams(window.location.search);
-const slug = params.get("slug");
+let slug = params.get("slug");
+
+if (!slug) {
+    const blogMatch = window.location.pathname.match(/^\/blog\/(.+?)\/?$/);
+    if (blogMatch) {
+        slug = decodeURIComponent(blogMatch[1]);
+    }
+}
 
 // ============================================================
 // RELATED POSTS
@@ -60,8 +67,8 @@ async function loadPost() {
         // CARGAR JSON
         // ========================================================
 
-        const postsResponse = await fetch("./posts/posts.json");
-        const categoriesResponse = await fetch("./posts/categories.json");
+        const postsResponse = await fetch("/posts/posts.json");
+        const categoriesResponse = await fetch("/posts/categories.json");
 
 
         if (!postsResponse.ok) {
@@ -149,18 +156,18 @@ async function loadPost() {
         postDates.innerHTML = `
             <p>
                 Published: ${publishedDate.toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric"
-                })}
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        })}
             </p>
 
             <p>
                 Updated: ${modifiedDate.toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric"
-                })}
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        })}
             </p>
         `;
 

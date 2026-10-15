@@ -60,7 +60,7 @@
 }
 
 .section {
-  padding: 5% 5%;
+  padding: 5% 15%;
 }
 
 .section__container {
@@ -281,4 +281,10 @@
         padding: 10px;
     }
 
+}
+
+@media (max-width: 1368px) {
+  .section{
+    padding: 5% 5%;
+  }
 }

@@ -4,6 +4,64 @@
 
 
 /* ============================================================
+   ADVOCATE360 IDS
+   resources.json id -> Advocate360 resource_id / exercise_id
+   (see advocate360-lead-magnet-assets.json). Resources not listed
+   here have no confirmed match yet, so their download form is
+   not shown.
+   ============================================================ */
+
+const ADVOCATE360_IDS = {
+    21869: { resource: 1 },    // 11 Evidence-Based Ways to Teach DLS
+    21550: { resource: 2 },    // 25 Daily Living Skills Checklist
+    21555: { resource: 6 },    // Behavior Contract
+    21561: { resource: 8 },    // Behavior Skills Training Plan
+    21580: { resource: 9 },    // Better Choices Worksheet
+    21591: { resource: 11 },   // Break Box Exercise -> Break Box Ideas
+    21061: { resource: 12 },   // Budget Worksheet
+    21596: { resource: 16 },   // Check-In Check-Out Activity
+    21615: { resource: 17 },   // College Program Research Questions
+    21620: { resource: 19 },   // Daily Journaling Template -> Daily Journal
+    21633: { resource: 20 },   // Daily Living Skills 101 Chart
+    21626: { resource: 21 },   // Daily Living Skills Development by Age
+    21656: { resource: 24 },   // Data Collection Worksheets
+    21661: { resource: 25 },   // Decision Fatigue Audit Worksheet
+    21636: { resource: 27 },   // DLS Observation Sheet
+    21586: { resource: 28 },   // Body Scan -> Emotional Control Body Scan Script
+    21671: { resource: 29 },   // End of the Day Reminder Checklist
+    21676: { resource: 31 },   // EF Skill Development by Age Infographic
+    21693: { resource: 35 },   // First Then Flashcards
+    21698: { resource: 38 },   // Flexible Thinking Disruptions Deck
+    21703: { resource: 41 },   // How My Body Pays Attention
+    21601: { resource: 42 },   // How to Start Your Coaching Business in 5 Steps
+    21717: { resource: 44 },   // IEP Meeting Questions Worksheet
+    21727: { resource: 50 },   // Learning Styles Quiz -> Learning Styles Inventory
+    21738: { resource: 52 },   // Mind Mapping Worksheet -> Mind Map Templates
+    21732: { resource: 55 },   // Medication Log
+    21519: { resource: 58 },   // ADHD Iceberg -> My Adhd Iceberg
+    21749: { resource: 61 },   // Phone-A-Friend -> My Phone a Friend List
+    21743: { resource: 67 },   // Parent-Teacher Communication Log
+    21754: { resource: 70 },   // Problem Solving Flashcards -> Practice Cards
+    21773: { resource: 77 },   // Rewarding Success Worksheet
+    21783: { resource: 80 },   // SMART Goal Setting Worksheet
+    21610: { resource: 87 },   // Brain Dump Strategy -> The Brain Dump
+    21666: { resource: 89 },   // Eisenhower Matrix
+    21818: { resource: 90 },   // Time Estimation Worksheet
+    21828: { resource: 93 },   // Tough Stuff Flashcard Deck
+    21859: { resource: 98 },   // Weekly Organization Checklist
+    21864: { resource: 100 },  // What Do I Need Reminder Worksheet
+    21709: { resource: 111 },  // IEP Goal Bank -> Starter IEP Goal Bank (free)
+    21767: { exercise: 39 },   // Problem Solving Playbook
+    21778: { exercise: 63 },   // Sleep Study Activity
+    21805: { exercise: 85 },   // Feel Wheel Exercise -> The Feel Wheel
+    21812: { exercise: 59 }    // Interrupter Activity -> The Interrupter
+    // Not mapped yet (awaiting confirmation): 21843 Weekly Menu Planner,
+    // 21823 Time Log Worksheet, 21800 Stretch Break, 21755 Printable
+    // Reminders Template, 21642 Daily Planner Worksheet.
+};
+
+
+/* ============================================================
    INITIALIZATION
    ============================================================ */
 
@@ -65,7 +123,7 @@ async function normalizeResourceContent(
             "Download Now";
 
         button.href =
-            "#";
+            "#resource-download-section";
 
         button.classList.add(
             "resource-download-button"
@@ -365,7 +423,7 @@ async function normalizeResourceContent(
             document.createElement(
                 "section"
             );
-
+        section.id = "resource-download-section";
         section.classList.add(
             "resource-download-section"
         );
@@ -448,6 +506,25 @@ async function normalizeResourceContent(
             "resource-resource-form"
         );
 
+        form.noValidate = true;
+
+
+        /*
+        * Advocate360 ID (submitted by js/lead-magnet-form.js)
+        */
+
+        const leadMagnet =
+            ADVOCATE360_IDS[
+                new URLSearchParams(window.location.search).get("id") ||
+                (window.currentResource && window.currentResource.id)
+            ];
+
+        if (leadMagnet && leadMagnet.resource) {
+            form.dataset.resourceId = leadMagnet.resource;
+        } else if (leadMagnet && leadMagnet.exercise) {
+            form.dataset.exerciseId = leadMagnet.exercise;
+        }
+
 
         /*
         * Email input
@@ -484,7 +561,7 @@ async function normalizeResourceContent(
             "submit";
 
         button.textContent =
-            "SEND ME THE 11 EVIDENCE-BASED WAYS TO TEACH DAILY LIVING SKILLS";
+            "SEND ME THIS FREE RESOURCE";
 
 
         form.appendChild(
@@ -549,9 +626,12 @@ async function normalizeResourceContent(
         * Add form and information
         */
 
-        formContainer.appendChild(
-            form
-        );
+        // Only show the form when the resource has an Advocate360 ID.
+        if (leadMagnet) {
+            formContainer.appendChild(
+                form
+            );
+        }
 
         formContainer.appendChild(
             afterSubmit
@@ -977,7 +1057,7 @@ async function normalizeResourceContent(
             );
 
         cta.href =
-            "#";
+            "#resource-download-section";
 
         cta.textContent =
             "Get The Free Resource";
@@ -1742,7 +1822,7 @@ async function loadResource() {
     try {
 
         /*
-         * Get resource ID from URL.
+         * Get resource ID or slug from URL.
          */
 
         const params =
@@ -1750,16 +1830,20 @@ async function loadResource() {
                 window.location.search
             );
 
+        let identifier = params.get("id");
 
-        const resourceId =
-            params.get("id");
-
+        if (!identifier) {
+            const resourceMatch = window.location.pathname.match(/^\/resource\/(.+?)\/?$/);
+            if (resourceMatch) {
+                identifier = decodeURIComponent(resourceMatch[1]);
+            }
+        }
 
         /*
-         * Make sure an ID was provided.
+         * Make sure an identifier was provided.
          */
 
-        if (!resourceId) {
+        if (!identifier) {
 
             renderResourceError(
                 "Resource not found."
@@ -1819,15 +1903,19 @@ async function loadResource() {
 
 
         /*
-         * Find resource by ID.
+         * Find resource by ID or slug.
          */
 
         const resource =
             resources.find(
                 item =>
-                    String(item.id) ===
-                    String(resourceId)
+                    String(item.id) === String(identifier) ||
+                    item.slug === identifier
             );
+
+        if (resource) {
+            window.currentResource = resource;
+        }
 
 
         /*
