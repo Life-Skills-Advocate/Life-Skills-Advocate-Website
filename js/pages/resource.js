@@ -515,7 +515,8 @@ async function normalizeResourceContent(
 
         const leadMagnet =
             ADVOCATE360_IDS[
-                new URLSearchParams(window.location.search).get("id")
+                new URLSearchParams(window.location.search).get("id") ||
+                (window.currentResource && window.currentResource.id)
             ];
 
         if (leadMagnet && leadMagnet.resource) {
@@ -1821,7 +1822,7 @@ async function loadResource() {
     try {
 
         /*
-         * Get resource ID from URL.
+         * Get resource ID or slug from URL.
          */
 
         const params =
@@ -1829,16 +1830,20 @@ async function loadResource() {
                 window.location.search
             );
 
+        let identifier = params.get("id");
 
-        const resourceId =
-            params.get("id");
-
+        if (!identifier) {
+            const resourceMatch = window.location.pathname.match(/^\/resource\/(.+?)\/?$/);
+            if (resourceMatch) {
+                identifier = decodeURIComponent(resourceMatch[1]);
+            }
+        }
 
         /*
-         * Make sure an ID was provided.
+         * Make sure an identifier was provided.
          */
 
-        if (!resourceId) {
+        if (!identifier) {
 
             renderResourceError(
                 "Resource not found."
@@ -1898,15 +1903,19 @@ async function loadResource() {
 
 
         /*
-         * Find resource by ID.
+         * Find resource by ID or slug.
          */
 
         const resource =
             resources.find(
                 item =>
-                    String(item.id) ===
-                    String(resourceId)
+                    String(item.id) === String(identifier) ||
+                    item.slug === identifier
             );
+
+        if (resource) {
+            window.currentResource = resource;
+        }
 
 
         /*

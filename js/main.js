@@ -1,3 +1,72 @@
+window.addEventListener("DOMContentLoaded", () => {
+  const currentPath = window.location.pathname;
+  const currentSearch = window.location.search;
+  const currentHash = window.location.hash;
+
+  // ============================================
+  // CONFIGURACIÓN
+  // ============================================
+
+  const VIEWS_FOLDER = "/";
+
+  // ============================================
+  // 1. LIMPIAR LA URL DE LA PÁGINA ACTUAL
+  // ============================================
+
+  // Si estamos en post.html, convertir su slug
+  // en una URL limpia bajo /blog/.
+  if (
+    currentPath.endsWith("/post.html") ||
+    currentPath === "/post.html"
+  ) {
+    const params = new URLSearchParams(currentSearch);
+    const slug = params.get("slug");
+
+    if (slug) {
+      const cleanUrl = `/blog/${encodeURIComponent(slug)}${currentHash}`;
+
+      window.history.replaceState({}, "", cleanUrl);
+    }
+
+    return;
+  }
+
+  // No modificar resource.html.
+  if (
+    currentPath.endsWith("/resource.html") ||
+    currentPath === "/resource.html"
+  ) {
+    return;
+  }
+
+  // Limpiar el resto de las páginas HTML.
+  if (currentPath.endsWith(".html")) {
+    let cleanPath = currentPath;
+
+    // Eliminar /views/ de la URL.
+    if (cleanPath.startsWith(VIEWS_FOLDER)) {
+      cleanPath = cleanPath.slice(VIEWS_FOLDER.length - 1);
+    }
+
+    // Eliminar la extensión .html.
+    cleanPath = cleanPath.slice(0, -5);
+
+    // Convertir /home en la raíz.
+    if (cleanPath === "/home") {
+      cleanPath = "/";
+    }
+
+    window.history.replaceState(
+      {},
+      "",
+      cleanPath + currentSearch + currentHash
+    );
+  }
+});
+
+
+
+
 (function () {
   "use strict";
   /* ---- Footer year ---- */
@@ -137,6 +206,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ultimoScroll = scrollActual;
   });
 
-  
+
 });
 // #endregion Header JS
