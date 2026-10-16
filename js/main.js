@@ -16,8 +16,8 @@ window.addEventListener("DOMContentLoaded", () => {
   // BLOG: convertir post.html?slug=mi-articulo
   // en /blog/mi-articulo.
   if (
-    currentPath.endsWith("/post.html") ||
-    currentPath === "/post.html"
+    currentPath === "/post" ||
+    currentPath.endsWith("/post.html")
   ) {
     const params = new URLSearchParams(currentSearch);
     const slug = params.get("slug");
@@ -35,8 +35,8 @@ window.addEventListener("DOMContentLoaded", () => {
   // RECURSOS: convertir resource.html?id=21869
   // en /resource/slug-del-recurso.
   if (
-    currentPath.endsWith("/resource.html") ||
-    currentPath === "/resource.html"
+    currentPath === "/resource" ||
+    currentPath.endsWith("/resource.html")
   ) {
     const params = new URLSearchParams(currentSearch);
     const id = params.get("id");
