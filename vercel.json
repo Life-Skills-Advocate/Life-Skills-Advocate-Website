@@ -10,18 +10,6 @@
     {
       "source": "/resource/:idOrSlug",
       "destination": "/resource.html?id=:idOrSlug"
-    },
-    {
-      "source": "/post.html",
-      "destination": "/post.html"
-    },
-    {
-      "source": "/resource.html",
-      "destination": "/resource.html"
-    },
-    {
-      "source": "/:path*",
-      "destination": "/:path*"
     }
   ],
   "redirects": [
