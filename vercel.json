@@ -2,20 +2,21 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/blog/:slug",
-      "destination": "/post.html?slug=:slug"
-    },
-    {
-      "source": "/resource/:idOrSlug",
-      "destination": "/resource.html?id=:idOrSlug"
-    }
-  ],
+  "rewrites": [],
   "redirects": [
     {
       "source": "/home",
       "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/post.html?slug=:slug",
+      "permanent": true
+    },
+    {
+      "source": "/resource/:idOrSlug",
+      "destination": "/resource.html?id=:idOrSlug",
       "permanent": true
     }
   ]

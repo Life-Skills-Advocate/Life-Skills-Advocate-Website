@@ -1,117 +1,117 @@
-// window.addEventListener("DOMContentLoaded", () => {
-//   const currentPath = window.location.pathname;
-//   const currentSearch = window.location.search;
-//   const currentHash = window.location.hash;
+window.addEventListener("DOMContentLoaded", () => {
+  const currentPath = window.location.pathname;
+  const currentSearch = window.location.search;
+  const currentHash = window.location.hash;
 
-//   // ============================================
-//   // CONFIGURACIÓN
-//   // ============================================
+  // ============================================
+  // CONFIGURACIÓN
+  // ============================================
 
-//   const VIEWS_FOLDER = "/";
+  const VIEWS_FOLDER = "/";
 
-//   // ============================================
-//   // 1. LIMPIAR LA URL DE LA PÁGINA ACTUAL
-//   // ============================================
+  // ============================================
+  // 1. LIMPIAR LA URL DE LA PÁGINA ACTUAL
+  // ============================================
 
-//   // BLOG: convertir post.html?slug=mi-articulo
-//   // en /blog/mi-articulo.
-//   if (
-//     currentPath === "/post" ||
-//     currentPath.endsWith("/post.html")
-//   ) {
-//     const params = new URLSearchParams(currentSearch);
-//     const slug = params.get("slug");
+  // BLOG: convertir post.html?slug=mi-articulo
+  // en /blog/mi-articulo.
+  if (
+    currentPath === "/post" ||
+    currentPath.endsWith("/post.html")
+  ) {
+    const params = new URLSearchParams(currentSearch);
+    const slug = params.get("slug");
 
-//     if (slug) {
-//       const cleanSlug = slug.trim();
-//       const cleanUrl = `/blog/${encodeURIComponent(cleanSlug)}${currentHash}`;
+    if (slug) {
+      const cleanSlug = slug.trim();
+      const cleanUrl = `/blog/${encodeURIComponent(cleanSlug)}${currentHash}`;
 
-//       window.history.replaceState({}, "", cleanUrl);
-//     }
+      window.history.replaceState({}, "", cleanUrl);
+    }
 
-//     return;
-//   }
+    return;
+  }
 
-//   // RECURSOS: convertir resource.html?id=21869
-//   // en /resource/slug-del-recurso.
-//   if (
-//     currentPath === "/resource" ||
-//     currentPath.endsWith("/resource.html")
-//   ) {
-//     const params = new URLSearchParams(currentSearch);
-//     const id = params.get("id");
-//     const existingSlug = params.get("slug");
+  // RECURSOS: convertir resource.html?id=21869
+  // en /resource/slug-del-recurso.
+  if (
+    currentPath === "/resource" ||
+    currentPath.endsWith("/resource.html")
+  ) {
+    const params = new URLSearchParams(currentSearch);
+    const id = params.get("id");
+    const existingSlug = params.get("slug");
 
-//     if (id || existingSlug) {
-//       (async () => {
-//         let slug = existingSlug ? existingSlug.trim() : "";
+    if (id || existingSlug) {
+      (async () => {
+        let slug = existingSlug ? existingSlug.trim() : "";
 
-//         // Si tenemos un ID, buscar el slug correspondiente
-//         // en resources.json.
-//         if (id) {
-//           try {
-//             const response = await fetch("/resources/resources.json");
+        // Si tenemos un ID, buscar el slug correspondiente
+        // en resources.json.
+        if (id) {
+          try {
+            const response = await fetch("/resources/resources.json");
 
-//             if (!response.ok) {
-//               throw new Error("No se pudo cargar resources.json");
-//             }
+            if (!response.ok) {
+              throw new Error("No se pudo cargar resources.json");
+            }
 
-//             const resources = await response.json();
+            const resources = await response.json();
 
-//             const resource = resources.find(
-//               item => String(item.id) === String(id).trim()
-//             );
+            const resource = resources.find(
+              item => String(item.id) === String(id).trim()
+            );
 
-//             if (resource && resource.slug) {
-//               slug = resource.slug.trim();
-//             }
-//           } catch (error) {
-//             console.error("Error buscando el slug del recurso:", error);
-//           }
-//         }
+            if (resource && resource.slug) {
+              slug = resource.slug.trim();
+            }
+          } catch (error) {
+            console.error("Error buscando el slug del recurso:", error);
+          }
+        }
 
-//         // Cambiar la URL únicamente si tenemos un slug válido.
-//         if (slug) {
-//           const cleanSlug = slug.trim();
-//           const cleanUrl = `/resource/${encodeURIComponent(cleanSlug)}${currentHash}`;
+        // Cambiar la URL únicamente si tenemos un slug válido.
+        if (slug) {
+          const cleanSlug = slug.trim();
+          const cleanUrl = `/resource/${encodeURIComponent(cleanSlug)}${currentHash}`;
 
-//           window.history.replaceState({}, "", cleanUrl);
-//         }
-//       })();
-//     }
+          window.history.replaceState({}, "", cleanUrl);
+        }
+      })();
+    }
 
-//     return;
-//   }
+    return;
+  }
 
 
-//   // ============================================
-//   // 2. LIMPIAR EL RESTO DE LAS PÁGINAS HTML
-//   // ============================================
+  // ============================================
+  // 2. LIMPIAR EL RESTO DE LAS PÁGINAS HTML
+  // ============================================
 
-//   if (currentPath.endsWith(".html")) {
-//     let cleanPath = currentPath;
+  if (currentPath.endsWith(".html")) {
+    let cleanPath = currentPath;
 
-//     // Eliminar el prefijo de la carpeta de vistas,
-//     // si corresponde.
-//     if (cleanPath.startsWith("/views/")) {
-//       cleanPath = cleanPath.slice("/views".length);
-//     }
+    // Eliminar el prefijo de la carpeta de vistas,
+    // si corresponde.
+    if (cleanPath.startsWith("/views/")) {
+      cleanPath = cleanPath.slice("/views".length);
+    }
 
-//     // Eliminar la extensión .html.
-//     cleanPath = cleanPath.slice(0, -5);
+    // Eliminar la extensión .html.
+    cleanPath = cleanPath.slice(0, -5);
 
-//     // Convertir /home en la raíz.
-//     if (cleanPath === "/home") {
-//       cleanPath = "/";
-//     }
+    // Convertir /home en la raíz.
+    if (cleanPath === "/home") {
+      cleanPath = "/";
+    }
 
-//     window.history.replaceState(
-//       {},
-//       "",
-//       cleanPath + currentSearch + currentHash
-//     );
-//   }
-// });
+    window.history.replaceState(
+      {},
+      "",
+      cleanPath + currentSearch + currentHash
+    );
+  }
+});
 
 (function () {
   "use strict";
