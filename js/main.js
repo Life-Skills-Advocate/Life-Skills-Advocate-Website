@@ -46,34 +46,42 @@ window.addEventListener("DOMContentLoaded", () => {
       (async () => {
         let slug = existingSlug ? existingSlug.trim() : "";
 
-        // Si tenemos un ID, buscar el slug correspondiente
-        // en resources.json.
         if (id) {
-          try {
-            const response = await fetch("/resources/resources.json");
+          const value = id.trim();
 
-            if (!response.ok) {
-              throw new Error("No se pudo cargar resources.json");
+          // Si el parámetro es un slug, utilizarlo directamente.
+          if (!/^\d+$/.test(value)) {
+            slug = value;
+          } else {
+            // Si es un ID numérico, buscar el slug en resources.json.
+            try {
+              const response = await fetch("/resources/resources.json");
+
+              if (!response.ok) {
+                throw new Error("No se pudo cargar resources.json");
+              }
+
+              const resources = await response.json();
+
+              const resource = resources.find(
+                item => String(item.id) === value
+              );
+
+              if (resource?.slug) {
+                slug = resource.slug.trim();
+              }
+            } catch (error) {
+              console.error("Error buscando el slug del recurso:", error);
             }
-
-            const resources = await response.json();
-
-            const resource = resources.find(
-              item => String(item.id) === String(id).trim()
-            );
-
-            if (resource && resource.slug) {
-              slug = resource.slug.trim();
-            }
-          } catch (error) {
-            console.error("Error buscando el slug del recurso:", error);
           }
         }
 
         // Cambiar la URL únicamente si tenemos un slug válido.
         if (slug) {
-          const cleanSlug = slug.trim();
-          const cleanUrl = `/resource/${encodeURIComponent(cleanSlug)}${currentHash}`;
+          // hacer el trimp
+          const trimeSlg = slug.trim();
+
+          const cleanUrl = `/resource/${encodeURIComponent(trimeSlg)}${currentHash}`;
 
           window.history.replaceState({}, "", cleanUrl);
         }
@@ -81,7 +89,9 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     return;
+
   }
+
 
 
   // ============================================
